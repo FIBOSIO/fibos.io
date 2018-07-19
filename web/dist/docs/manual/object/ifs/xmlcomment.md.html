@@ -1,0 +1,616 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=icon type=image/png href=../../../../imgs/icon.png><title> 对象 XmlComment - JavaScript on Fiber</title><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body><div class="navbar navbar-default navbar-static-top" role=navigation><div class=container><div class=navbar-header><button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navbar aria-expanded=false aria-controls=navbar><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href=../../../../index.html><img src=../../../../imgs/logo-dark.png></a></div><div id=navbar class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href=../../../../index.html>HOME</a></li><li><a href=../../../guide/readme.md.html>GUIDE</a></li><li><a href=../../module/readme.md.html>MODULE</a></li><li><a href=../readme.md.html>OBJECT</a></li><li><a href=../../../awesome/readme.md.html>AWESOME</a></li><li><a href=../../../../download/index.html>DOWNLOAD</a></li></ul></div></div></div><div class=band><div class=container><span class=group> Object 内置对象 </span><div class=search><input type=text class=searchbox placeholder=Search></div></div></div><div class=container><ol class=breadcrumb><li><a href=../../../../index.html>首页</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 XmlComment </li></ol></div><div class=page-body><div class=container><div class="sidebar hidden-xs"><div class=panel-group id=accordion role=tablist>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_guide" aria-controls="collapse_guide"> 开发指南 </a></h4></div><div id="collapse_guide" class="panel-collapse collapse " aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=../../../guide/about.md.html>fibjs 是什么？</a></li>
+<li><a href=../../../guide/install.md.html>安装运行环境</a></li>
+<li><a href=../../../guide/hello.md.html>hello, world</a></li>
+<li><a href=../../../guide/test.md.html>美好生活从测试开始</a></li>
+<li><a href=../../../guide/profiler.md.html>找出性能杀手</a></li>
+<li><a href=../../../guide/contribute.md.html>添加 native 模块</a></li>
+<li><a href=../../../guide/server-hot-update.md.html>服务端模块热更新</a></li>
+</ul>
+ </div></div></div>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse in" aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li class="active"><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_awesome" aria-controls="collapse_awesome"> 社区模块 </a></h4></div><div id="collapse_awesome" class="panel-collapse collapse " aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=../../../awesome/module/fib-session.md.html>fib-session</a></li>
+<li><a href=../../../awesome/module/fib-pool.md.html>fib-pool</a></li>
+<li><a href=../../../awesome/module/fib-orm.md.html>fib-orm</a></li>
+<li><a href=../../../awesome/module/fib-app.md.html>fib-app</a></li>
+<li><a href=../../../awesome/module/fib-kv.md.html>fib-kv</a></li>
+<li><a href=../../../awesome/module/fib-rpc.md.html>fib-rpc</a></li>
+<li><a href=../../../awesome/module/fib-qr.md.html>fib-qr</a></li>
+<li><a href=../../../awesome/module/fib-pug.md.html>fib-pug</a></li>
+<li><a href=../../../awesome/module/ejs.md.html>ejs</a></li>
+<li><a href=../../../awesome/module/juicer.md.html>Juicer</a></li>
+<li><a href=../../../awesome/module/highlight.js.md.html>highlight.js</a></li>
+<li><a href=../../../awesome/module/marked.md.html>marked</a></li>
+<li><a href=../../../awesome/module/node-cron.md.html>node-cron</a></li>
+<li><a href=../../../awesome/module/debug.md.html>debug</a></li>
+<li><a href=../../../awesome/module/benchmark.js.md.html>benchmark.js</a></li>
+<li><a href=../../../awesome/module/sinon.md.html>sinon</a></li>
+<li><a href=../../../awesome/module/node-mime.md.html>node-mime</a></li>
+<li><a href=../../../awesome/module/validatorjs.md.html>validatorjs</a></li>
+<li><a href=../../../awesome/module/superstruct.md.html>superstruct</a></li>
+<li><a href=../../../awesome/module/cluster-server.md.html>cluster-server</a></li>
+<li><a href=../../../awesome/module/synaptic.md.html>synaptic</a></li>
+<li><a href=../../../awesome/module/source-map.md.html>source-map</a></li>
+<li><a href=../../../awesome/module/json-format.md.html>json-format</a></li>
+<li><a href=../../../awesome/module/viz.js.md.html>viz.js</a></li>
+<li><a href=../../../awesome/module/nomnoml.md.html>nomnoml</a></li>
+<li><a href=../../../awesome/module/pegjs.md.html>pegjs</a></li>
+<li><a href=../../../awesome/module/uglify-js.md.html>uglify-js</a></li>
+<li><a href=../../../awesome/module/js-beautify.md.html>js-beautify</a></li>
+<li><a href=../../../awesome/module/chalk-animation.md.html>chalk-animation</a></li>
+<li><a href=../../../awesome/module/jsrsasign.md.html>jsrsasign</a></li>
+<li><a href=../../../awesome/module/crypto-js.md.html>crypto-js</a></li>
+<li><a href=../../../awesome/module/ascii-table.md.html>ascii-table</a></li>
+<li><a href=../../../awesome/module/logstream.md.html>logstream</a></li>
+<li><a href=../../../awesome/module/ci.md.html>ci</a></li>
+<li><a href=../../../awesome/module/fs-readdir-recursive.md.html>fs-readdir-recursive</a></li>
+<li><a href=../../../awesome/module/mkdirp.md.html>mkdirp</a></li>
+<li><a href=../../../awesome/module/rmdirr.md.html>rmdirr</a></li>
+<li><a href=../../../awesome/module/detect-port.md.html>detect-port</a></li>
+<li><a href=../../../awesome/module/bitcoinjs-lib.md.html>bitcoinjs-lib</a></li>
+<li><a href=../../../awesome/module/rakuten.md.html>Rakuten</a></li>
+</ul>
+ </div></div></div>  </div></div><div class=content><div class=social-share data-sites=weibo,twitter data-description=分享></div> <h1 id="对象-XmlComment">对象 XmlComment</h1>
+<p>XmlComment 对象表示文档中注释节点的内容</p>
+<p>XmlComment 节点表示 XML 文档中的注释。
+使用由 <a href=xmlcharacterdata.md.html>XmlCharacterData</a> 接口继承的 data 属性，或使用由 <a href=xmlnode.md.html>XmlNode</a> 接口继承的 nodeValue 属性，可以访问注释的内容。（即 <!-- 和 --> 之间的文本）。使用由 <a href=xmlcharacterdata.md.html>XmlCharacterData</a> 接口继承的各种方法可以操作注释的内容。</p>
+<p>使用 <a href=xmldocument.md.html#createComment>XmlDocument.createComment</a>() 来创建一个注释对象。</p>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="131pt" height="604pt"
+ viewBox="0.00 0.00 130.67 604.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 600)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-600 126.673,-600 126.673,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="32.505,-543.5 32.505,-595.5 90.168,-595.5 90.168,-543.5 32.505,-543.5"/>
+<text text-anchor="middle" x="61.3365" y="-582.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="32.505,-575.5 90.168,-575.5 "/>
+<text text-anchor="start" x="40.505" y="-562.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="40.505" y="-550.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- XmlNode -->
+<g id="node2" class="node">
+<title>XmlNode</title>
+<g id="a_node2"><a xlink:href=xmlnode.md.html xlink:title="XmlNode">
+<polygon fill="#ffffff" stroke="#000000" points="0,-230.5 0,-506.5 122.673,-506.5 122.673,-230.5 0,-230.5"/>
+<text text-anchor="middle" x="61.3365" y="-493.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">XmlNode</text>
+<polyline fill="none" stroke="#000000" points="0,-486.5 122.673,-486.5 "/>
+<text text-anchor="start" x="8" y="-473.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nodeType</text>
+<text text-anchor="start" x="8" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nodeName</text>
+<text text-anchor="start" x="8" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nodeValue</text>
+<text text-anchor="start" x="8" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ownerDocument</text>
+<text text-anchor="start" x="8" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">parentNode</text>
+<text text-anchor="start" x="8" y="-413.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">childNodes</text>
+<text text-anchor="start" x="8" y="-401.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">firstChild</text>
+<text text-anchor="start" x="8" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lastChild</text>
+<text text-anchor="start" x="8" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">previousSibling</text>
+<text text-anchor="start" x="8" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nextSibling</text>
+<polyline fill="none" stroke="#000000" points="0,-358.5 122.673,-358.5 "/>
+<text text-anchor="start" x="8" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">hasChildNodes()</text>
+<text text-anchor="start" x="8" y="-333.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">normalize()</text>
+<text text-anchor="start" x="8" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">cloneNode()</text>
+<text text-anchor="start" x="8" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lookupPrefix()</text>
+<text text-anchor="start" x="8" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lookupNamespaceURI()</text>
+<text text-anchor="start" x="8" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">insertBefore()</text>
+<text text-anchor="start" x="8" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">insertAfter()</text>
+<text text-anchor="start" x="8" y="-261.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">appendChild()</text>
+<text text-anchor="start" x="8" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">replaceChild()</text>
+<text text-anchor="start" x="8" y="-237.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">removeChild()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;XmlNode -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;XmlNode</title>
+<path fill="none" stroke="#000000" d="M61.3365,-533.0057C61.3365,-525.0715 61.3365,-516.2257 61.3365,-506.8667"/>
+<polygon fill="#000000" stroke="#000000" points="57.8366,-533.2227 61.3365,-543.2228 64.8366,-533.2228 57.8366,-533.2227"/>
+</g>
+<!-- XmlCharacterData -->
+<g id="node3" class="node">
+<title>XmlCharacterData</title>
+<g id="a_node3"><a xlink:href=xmlcharacterdata.md.html xlink:title="XmlCharacterData">
+<polygon fill="#ffffff" stroke="#000000" points="12.224,-73.5 12.224,-193.5 110.449,-193.5 110.449,-73.5 12.224,-73.5"/>
+<text text-anchor="middle" x="61.3365" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">XmlCharacterData</text>
+<polyline fill="none" stroke="#000000" points="12.224,-173.5 110.449,-173.5 "/>
+<text text-anchor="start" x="20.224" y="-160.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">data</text>
+<text text-anchor="start" x="20.224" y="-148.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">length</text>
+<polyline fill="none" stroke="#000000" points="12.224,-141.5 110.449,-141.5 "/>
+<text text-anchor="start" x="20.224" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">substringData()</text>
+<text text-anchor="start" x="20.224" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">appendData()</text>
+<text text-anchor="start" x="20.224" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">insertData()</text>
+<text text-anchor="start" x="20.224" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">deleteData()</text>
+<text text-anchor="start" x="20.224" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">replaceData()</text>
+</a>
+</g>
+</g>
+<!-- XmlNode&#45;&gt;XmlCharacterData -->
+<g id="edge2" class="edge">
+<title>XmlNode&#45;&gt;XmlCharacterData</title>
+<path fill="none" stroke="#000000" d="M61.3365,-220.3324C61.3365,-211.1046 61.3365,-202.1482 61.3365,-193.7132"/>
+<polygon fill="#000000" stroke="#000000" points="57.8366,-220.4402 61.3365,-230.4403 64.8366,-220.4403 57.8366,-220.4402"/>
+</g>
+<!-- XmlComment -->
+<g id="me" class="node">
+<title>XmlComment</title>
+<g id="a_me"><a xlink:title="XmlComment">
+<polygon fill="#d3d3d3" stroke="#000000" points="23.0615,-.5 23.0615,-36.5 99.6115,-36.5 99.6115,-.5 23.0615,-.5"/>
+<text text-anchor="middle" x="61.3365" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">XmlComment</text>
+</a>
+</g>
+</g>
+<!-- XmlCharacterData&#45;&gt;XmlComment -->
+<g id="edge3" class="edge">
+<title>XmlCharacterData&#45;&gt;XmlComment</title>
+<path fill="none" stroke="#000000" d="M61.3365,-63.1364C61.3365,-53.5078 61.3365,-44.3864 61.3365,-36.9289"/>
+<polygon fill="#000000" stroke="#000000" points="57.8366,-63.3055 61.3365,-73.3056 64.8366,-63.3056 57.8366,-63.3055"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="成员属性">成员属性</h2>
+<h3 id="data">data</h3>
+<p><strong>String, 该节点包含的文本</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlComment.data;
+</code></pre>
+<hr>
+<h3 id="length">length</h3>
+<p><strong>Integer, 该节点包含的字符数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer XmlComment.length;
+</code></pre>
+<hr>
+<h3 id="nodeType">nodeType</h3>
+<p><strong>Integer, 返回节点的节点类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer XmlComment.nodeType;
+</code></pre>
+<p>不同对象的 nodeType 会返回不同的值：</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>: ELEMENT_NODE(1)</li>
+<li><a href=xmlattr.md.html>XmlAttr</a>: ATTRIBUTE_NODE(2)</li>
+<li><a href=xmltext.md.html>XmlText</a>: TEXT_NODE(3)</li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>: CDATA_SECTION_NODE(4)</li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>: PROCESSING_INSTRUCTION_NODE(7)</li>
+<li>XmlComment: COMMENT_NODE(8)</li>
+<li><a href=xmldocument.md.html>XmlDocument</a>: DOCUMENT_NODE(9)</li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a>: DOCUMENT_TYPE_NODE(10)</li>
+</ul>
+<hr>
+<h3 id="nodeName">nodeName</h3>
+<p><strong>String, 返回节点的名称，根据其类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly <span class="hljs-built_in">String</span> XmlComment.nodeName;
+</code></pre>
+<p>不同对象的 nodeName 会返回不同的值：</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>: element name</li>
+<li><a href=xmlattr.md.html>XmlAttr</a>: 属性名称</li>
+<li><a href=xmltext.md.html>XmlText</a>: #text</li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>: #cdata-section</li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>: 返回指定目标 target</li>
+<li>XmlComment: #comment</li>
+<li><a href=xmldocument.md.html>XmlDocument</a>: #document</li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a>: doctype 名称</li>
+</ul>
+<hr>
+<h3 id="nodeValue">nodeValue</h3>
+<p><strong>String, 返回节点的名称，根据其类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlComment.nodeValue;
+</code></pre>
+<p>不同对象的 nodeName 会返回不同的值：</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>: null</li>
+<li><a href=xmlattr.md.html>XmlAttr</a>: 属性的值</li>
+<li><a href=xmltext.md.html>XmlText</a>: 节点的内容</li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>: 节点的内容</li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>: 返回指定内容 data</li>
+<li>XmlComment: 注释文本</li>
+<li><a href=xmldocument.md.html>XmlDocument</a>: null</li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a>: null</li>
+</ul>
+<hr>
+<h3 id="ownerDocument">ownerDocument</h3>
+<p><strong><a href=xmldocument.md.html>XmlDocument</a>, 返回节点的根元素（<a href=xmldocument.md.html>XmlDocument</a> 对象）</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlDocument XmlComment.ownerDocument;
+</code></pre>
+<hr>
+<h3 id="parentNode">parentNode</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 可返回某节点的父节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlComment.parentNode;
+</code></pre>
+<hr>
+<h3 id="childNodes">childNodes</h3>
+<p><strong><a href=xmlnodelist.md.html>XmlNodeList</a>, 返回指定节点的子节点的节点列表</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNodeList XmlComment.childNodes;
+</code></pre>
+<hr>
+<h3 id="firstChild">firstChild</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回节点的首个子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlComment.firstChild;
+</code></pre>
+<hr>
+<h3 id="lastChild">lastChild</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回节点的最后一个子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlComment.lastChild;
+</code></pre>
+<hr>
+<h3 id="previousSibling">previousSibling</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回某节点之前紧跟的节点（处于同一树层级），如果没有此节点，那么该属性返回 null</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlComment.previousSibling;
+</code></pre>
+<hr>
+<h3 id="nextSibling">nextSibling</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回某个元素之后紧跟的节点（处于同一树层级中），如果无此节点，则属性返回 null</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlComment.nextSibling;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="substringData">substringData</h3>
+<p><strong>从节点中提取子串</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">String</span> XmlComment.substringData(Integer offset,
+    Integer count);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>offset: Integer, 要返回的第一个字符的位置</li>
+<li>count: Integer, 要返回的子串中的字符数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回提取的字符串</li>
+</ul>
+<hr>
+<h3 id="appendData">appendData</h3>
+<p><strong>把字符串附加到节点上</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlComment.appendData(<span class="hljs-built_in">String</span> arg);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>arg: String, 要附加到节点的字符串</li>
+</ul>
+<hr>
+<h3 id="insertData">insertData</h3>
+<p><strong>把字符串插入节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlComment.insertData(Integer offset,
+    <span class="hljs-built_in">String</span> arg);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>offset: Integer, 要把字符串插入节点的字符位置</li>
+<li>arg: String, 要插入的字符串</li>
+</ul>
+<hr>
+<h3 id="deleteData">deleteData</h3>
+<p><strong>从节点删除文本</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlComment.deleteData(Integer offset,
+    Integer count);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>offset: Integer, 要删除的第一个字符的位置</li>
+<li>count: Integer, 要删除的字符的数量</li>
+</ul>
+<hr>
+<h3 id="replaceData">replaceData</h3>
+<p><strong>用指定的字符串替换节点的字符</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>XmlComment.replaceData(Integer offset,
+    Integer count,
+    <span class="hljs-built_in">String</span> arg);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>offset: Integer, 节点要替换的字符位置</li>
+<li>count: Integer, 要替换的字符的数量</li>
+<li>arg: String, 要插入的字符串</li>
+</ul>
+<hr>
+<h3 id="hasChildNodes">hasChildNodes</h3>
+<p><strong>查询是否存在子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> XmlComment.hasChildNodes();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 存在任何子节点时返回 true，否则返回 false</li>
+</ul>
+<hr>
+<h3 id="normalize">normalize</h3>
+<p><strong>合并相邻的 Text 节点并删除空的 Text 节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlComment.normalize();
+</code></pre>
+<p>这个方法将遍历当前节点的所有子孙节点，通过删除空的 Text 节点，已经合并所有相邻的 Text 节点来规范化文档。该方法在进行节点的插入或删除操作后，对于简化文档树的结构很有用。</p>
+<hr>
+<h3 id="cloneNode">cloneNode</h3>
+<p><strong>创建指定的节点的精确拷贝</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNode XmlComment.cloneNode(<span class="hljs-built_in">Boolean</span> deep = <span class="hljs-literal">true</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>deep: Boolean, 是否深度拷贝，为 true 时，被克隆的节点会克隆原节点的所有子节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回所复制的节点</li>
+</ul>
+<p>该方法将复制并返回调用它的节点的副本。如果传递给它的参数是 true，它还将递归复制当前节点的所有子孙节点。 否则，它只复制当前节点。返回的节点不属于文档树，它的 parentNode 属性为 null。当复制的是 Element 节点时，它的所有属性都将被复制。</p>
+<hr>
+<h3 id="lookupPrefix">lookupPrefix</h3>
+<p><strong>返回在当前节点上匹配指定的命名空间 URI 的前缀</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlComment.lookupPrefix(<span class="hljs-built_in">String</span> namespaceURI);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>namespaceURI: String, 指定匹配的命名空间 URI</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回匹配的前缀，未匹配到返回 null</li>
+</ul>
+<hr>
+<h3 id="lookupNamespaceURI">lookupNamespaceURI</h3>
+<p><strong>返回在当前节点上匹配指定的前缀的命名空间 URI</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlComment.lookupNamespaceURI(<span class="hljs-built_in">String</span> prefix);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>prefix: String, 指定匹配的前缀</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回匹配的命名空间 URI，未匹配到返回 null</li>
+</ul>
+<hr>
+<h3 id="insertBefore">insertBefore</h3>
+<p><strong>在已有的子节点前插入一个新的子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNode XmlComment.insertBefore(XmlNode newChild,
+    XmlNode refChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 插入新的节点</li>
+<li>refChild: <a href=xmlnode.md.html>XmlNode</a>, 在此节点前插入新节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回新的子节点</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="insertAfter">insertAfter</h3>
+<p><strong>在已有的子节点后插入一个新的子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNode XmlComment.insertAfter(XmlNode newChild,
+    XmlNode refChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 插入新的节点</li>
+<li>refChild: <a href=xmlnode.md.html>XmlNode</a>, 在此节点后插入新节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回新的子节点</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="appendChild">appendChild</h3>
+<p><strong>向节点的子节点列表的末尾添加新的子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNode XmlComment.appendChild(XmlNode newChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 指定添加的节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回这个新的子节点</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="replaceChild">replaceChild</h3>
+<p><strong>将某个子节点替换为另一个</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNode XmlComment.replaceChild(XmlNode newChild,
+    XmlNode oldChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 指定新的节点</li>
+<li>oldChild: <a href=xmlnode.md.html>XmlNode</a>, 指定被替换的节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 如替换成功，此方法可返回被替换的节点，如替换失败，则返回 null</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="removeChild">removeChild</h3>
+<p><strong>从子节点列表中删除某个节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNode XmlComment.removeChild(XmlNode oldChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>oldChild: <a href=xmlnode.md.html>XmlNode</a>, 指定被删除的节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 如删除成功，此方法可返回被删除的节点，如失败，则返回 null</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlComment.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value XmlComment.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div><div class="sidebar hidden-sm hidden-xs hidden-md"><div id=toc></div></div></div></div><div class=footer><div class=container>&copy; Copyright 2018 fibjs.org | <a href=../../../../support.html>支持我们</a></div></div><a id=back-to-top href=# class="btn btn-default btn-lg back-to-top" role=button title="Click to return on the top page" data-toggle=tooltip data-placement=left><span class="glyphicon glyphicon-chevron-up"></span></a><script type=text/javascript src=https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js></script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

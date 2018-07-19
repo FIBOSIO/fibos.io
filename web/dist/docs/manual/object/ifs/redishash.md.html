@@ -1,0 +1,441 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=icon type=image/png href=../../../../imgs/icon.png><title> 对象 RedisHash - JavaScript on Fiber</title><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body><div class="navbar navbar-default navbar-static-top" role=navigation><div class=container><div class=navbar-header><button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navbar aria-expanded=false aria-controls=navbar><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href=../../../../index.html><img src=../../../../imgs/logo-dark.png></a></div><div id=navbar class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href=../../../../index.html>HOME</a></li><li><a href=../../../guide/readme.md.html>GUIDE</a></li><li><a href=../../module/readme.md.html>MODULE</a></li><li><a href=../readme.md.html>OBJECT</a></li><li><a href=../../../awesome/readme.md.html>AWESOME</a></li><li><a href=../../../../download/index.html>DOWNLOAD</a></li></ul></div></div></div><div class=band><div class=container><span class=group> Object 内置对象 </span><div class=search><input type=text class=searchbox placeholder=Search></div></div></div><div class=container><ol class=breadcrumb><li><a href=../../../../index.html>首页</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 RedisHash </li></ol></div><div class=page-body><div class=container><div class="sidebar hidden-xs"><div class=panel-group id=accordion role=tablist>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_guide" aria-controls="collapse_guide"> 开发指南 </a></h4></div><div id="collapse_guide" class="panel-collapse collapse " aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=../../../guide/about.md.html>fibjs 是什么？</a></li>
+<li><a href=../../../guide/install.md.html>安装运行环境</a></li>
+<li><a href=../../../guide/hello.md.html>hello, world</a></li>
+<li><a href=../../../guide/test.md.html>美好生活从测试开始</a></li>
+<li><a href=../../../guide/profiler.md.html>找出性能杀手</a></li>
+<li><a href=../../../guide/contribute.md.html>添加 native 模块</a></li>
+<li><a href=../../../guide/server-hot-update.md.html>服务端模块热更新</a></li>
+</ul>
+ </div></div></div>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse in" aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li class="active"><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  <div class=panel><div class=panel-heading role=tab id=headingOne><h4 class=panel-title><a data-toggle=collapse data-parent=#accordion href="#collapse_awesome" aria-controls="collapse_awesome"> 社区模块 </a></h4></div><div id="collapse_awesome" class="panel-collapse collapse " aria-labelledby=headingOne><div class=panel-body> <ul>
+<li><a href=../../../awesome/module/fib-session.md.html>fib-session</a></li>
+<li><a href=../../../awesome/module/fib-pool.md.html>fib-pool</a></li>
+<li><a href=../../../awesome/module/fib-orm.md.html>fib-orm</a></li>
+<li><a href=../../../awesome/module/fib-app.md.html>fib-app</a></li>
+<li><a href=../../../awesome/module/fib-kv.md.html>fib-kv</a></li>
+<li><a href=../../../awesome/module/fib-rpc.md.html>fib-rpc</a></li>
+<li><a href=../../../awesome/module/fib-qr.md.html>fib-qr</a></li>
+<li><a href=../../../awesome/module/fib-pug.md.html>fib-pug</a></li>
+<li><a href=../../../awesome/module/ejs.md.html>ejs</a></li>
+<li><a href=../../../awesome/module/juicer.md.html>Juicer</a></li>
+<li><a href=../../../awesome/module/highlight.js.md.html>highlight.js</a></li>
+<li><a href=../../../awesome/module/marked.md.html>marked</a></li>
+<li><a href=../../../awesome/module/node-cron.md.html>node-cron</a></li>
+<li><a href=../../../awesome/module/debug.md.html>debug</a></li>
+<li><a href=../../../awesome/module/benchmark.js.md.html>benchmark.js</a></li>
+<li><a href=../../../awesome/module/sinon.md.html>sinon</a></li>
+<li><a href=../../../awesome/module/node-mime.md.html>node-mime</a></li>
+<li><a href=../../../awesome/module/validatorjs.md.html>validatorjs</a></li>
+<li><a href=../../../awesome/module/superstruct.md.html>superstruct</a></li>
+<li><a href=../../../awesome/module/cluster-server.md.html>cluster-server</a></li>
+<li><a href=../../../awesome/module/synaptic.md.html>synaptic</a></li>
+<li><a href=../../../awesome/module/source-map.md.html>source-map</a></li>
+<li><a href=../../../awesome/module/json-format.md.html>json-format</a></li>
+<li><a href=../../../awesome/module/viz.js.md.html>viz.js</a></li>
+<li><a href=../../../awesome/module/nomnoml.md.html>nomnoml</a></li>
+<li><a href=../../../awesome/module/pegjs.md.html>pegjs</a></li>
+<li><a href=../../../awesome/module/uglify-js.md.html>uglify-js</a></li>
+<li><a href=../../../awesome/module/js-beautify.md.html>js-beautify</a></li>
+<li><a href=../../../awesome/module/chalk-animation.md.html>chalk-animation</a></li>
+<li><a href=../../../awesome/module/jsrsasign.md.html>jsrsasign</a></li>
+<li><a href=../../../awesome/module/crypto-js.md.html>crypto-js</a></li>
+<li><a href=../../../awesome/module/ascii-table.md.html>ascii-table</a></li>
+<li><a href=../../../awesome/module/logstream.md.html>logstream</a></li>
+<li><a href=../../../awesome/module/ci.md.html>ci</a></li>
+<li><a href=../../../awesome/module/fs-readdir-recursive.md.html>fs-readdir-recursive</a></li>
+<li><a href=../../../awesome/module/mkdirp.md.html>mkdirp</a></li>
+<li><a href=../../../awesome/module/rmdirr.md.html>rmdirr</a></li>
+<li><a href=../../../awesome/module/detect-port.md.html>detect-port</a></li>
+<li><a href=../../../awesome/module/bitcoinjs-lib.md.html>bitcoinjs-lib</a></li>
+<li><a href=../../../awesome/module/rakuten.md.html>Rakuten</a></li>
+</ul>
+ </div></div></div>  </div></div><div class=content><div class=social-share data-sites=weibo,twitter data-description=分享></div> <h1 id="对象-RedisHash">对象 RedisHash</h1>
+<p><a href=redis.md.html>Redis</a> 数据库客户端 Hash 对象，此对象为包含指定 key 的客户端，只有调用其方法才会操作数据库</p>
+<p>用以操作 <a href=redis.md.html>Redis</a> 的 Hash 对象，创建方法：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">var</span> db = <span class="hljs-built_in">require</span>(<span class="hljs-string">"db"</span>);
+<span class="hljs-keyword">var</span> rdb = <span class="hljs-keyword">new</span> db.openRedis(<span class="hljs-string">"redis-server"</span>);
+<span class="hljs-keyword">var</span> hash = rdb.getHash(<span class="hljs-string">"test"</span>);
+</code></pre>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="73pt" height="258pt"
+ viewBox="0.00 0.00 72.89 258.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 254)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-254 68.893,-254 68.893,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="3.615,-197.5 3.615,-249.5 61.278,-249.5 61.278,-197.5 3.615,-197.5"/>
+<text text-anchor="middle" x="32.4465" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="3.615,-229.5 61.278,-229.5 "/>
+<text text-anchor="start" x="11.615" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="11.615" y="-204.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- RedisHash -->
+<g id="me" class="node">
+<title>RedisHash</title>
+<g id="a_me"><a xlink:title="RedisHash">
+<polygon fill="#d3d3d3" stroke="#000000" points="0,-.5 0,-160.5 64.893,-160.5 64.893,-.5 0,-.5"/>
+<text text-anchor="middle" x="32.4465" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RedisHash</text>
+<polyline fill="none" stroke="#000000" points="0,-140.5 64.893,-140.5 "/>
+<text text-anchor="start" x="8" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">set()</text>
+<text text-anchor="start" x="8" y="-115.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setNX()</text>
+<text text-anchor="start" x="8" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">mset()</text>
+<text text-anchor="start" x="8" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">get()</text>
+<text text-anchor="start" x="8" y="-79.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">mget()</text>
+<text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">incr()</text>
+<text text-anchor="start" x="8" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getAll()</text>
+<text text-anchor="start" x="8" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">keys()</text>
+<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">len()</text>
+<text text-anchor="start" x="8" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">exists()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">del()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;RedisHash -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;RedisHash</title>
+<path fill="none" stroke="#000000" d="M32.4465,-187.045C32.4465,-178.8705 32.4465,-169.8841 32.4465,-160.7033"/>
+<polygon fill="#000000" stroke="#000000" points="28.9466,-187.2716 32.4465,-197.2716 35.9466,-187.2716 28.9466,-187.2716"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="成员函数">成员函数</h2>
+<h3 id="set">set</h3>
+<p><strong>将哈希表中的域 field 的值设为 value，如果域 field 已经存在于哈希表中，旧值将被覆盖</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>RedisHash.set(Buffer field,
+    Buffer value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>field: <a href=buffer.md.html>Buffer</a>, 指定要修改的 field</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要修改的数据</li>
+</ul>
+<hr>
+<h3 id="setNX">setNX</h3>
+<p><strong>将哈希表中的域 field 的值设置为 value ，当且仅当域 field 不存在。若域 field 已经存在，该操作无效</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>RedisHash.setNX(Buffer field,
+    Buffer value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>field: <a href=buffer.md.html>Buffer</a>, 指定要修改的 field</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要修改的数据</li>
+</ul>
+<hr>
+<h3 id="mset">mset</h3>
+<p><strong>同时将多个 field-value (域-值)对设置到哈希表中，此命令会覆盖哈希表中已存在的域</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>RedisHash.mset(<span class="hljs-built_in">Object</span> kvs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>kvs: Object, 指定要设置的 field/value 对象</li>
+</ul>
+<hr>
+<p><strong>同时将多个 field-value (域-值)对设置到哈希表中，此命令会覆盖哈希表中已存在的域</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>RedisHash.mset(...kvs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>kvs: ..., 指定要设置的 field/value 列表</li>
+</ul>
+<hr>
+<h3 id="get">get</h3>
+<p><strong>返回哈希表中给定域 field 的值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer RedisHash.get(Buffer field);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>field: <a href=buffer.md.html>Buffer</a>, 指定要查询的 field</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 给定域的值，当给定域不存在或是给定 key 不存在时，返回 null</li>
+</ul>
+<hr>
+<h3 id="mget">mget</h3>
+<p><strong>返回哈希表中，一个或多个给定域的值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray RedisHash.mget(<span class="hljs-built_in">Array</span> fields);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fields: Array, 指定要查询的域数组</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 一个包含所有给定域的值的列表</li>
+</ul>
+<hr>
+<p><strong>返回哈希表中，一个或多个给定域的值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray RedisHash.mget(...fields);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fields: ..., 指定要查询的域列表</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 一个包含所有给定域的值的列表</li>
+</ul>
+<hr>
+<h3 id="incr">incr</h3>
+<p><strong>将域所储存的值加上增量</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Long RedisHash.incr(Buffer field,
+    Long num = <span class="hljs-number">1</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>field: <a href=buffer.md.html>Buffer</a>, 指定要修改的域</li>
+<li>num: Long, 指定要加上的数值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Long, 加上 num 之后，域的值</li>
+</ul>
+<hr>
+<h3 id="getAll">getAll</h3>
+<p><strong>返回哈希表中，所有的域和值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray RedisHash.getAll();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 返回一个包含哈希表中所有域的列表</li>
+</ul>
+<hr>
+<h3 id="keys">keys</h3>
+<p><strong>返回哈希表中的所有域</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray RedisHash.keys();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 返回值里，紧跟每个域名(field name)之后是域的值(value)，所以返回值的长度是哈希表大小的两倍</li>
+</ul>
+<hr>
+<h3 id="len">len</h3>
+<p><strong>返回哈希表中域的数量</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer RedisHash.len();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回哈希表中域的数量</li>
+</ul>
+<hr>
+<h3 id="exists">exists</h3>
+<p><strong>查看哈希表中，给定域 field 是否存在</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> RedisHash.exists(Buffer field);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>field: <a href=buffer.md.html>Buffer</a>, 指定要查询的 field</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 如果哈希表含有给定域，返回 true，如果哈希表不含有给定域，或 key 不存在，返回 false</li>
+</ul>
+<hr>
+<h3 id="del">del</h3>
+<p><strong>删除哈希表中的一个或多个指定域，不存在的域将被忽略</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer RedisHash.del(<span class="hljs-built_in">Array</span> fields);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fields: Array, 指定要删除的域数组</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 被删除域的数量</li>
+</ul>
+<hr>
+<p><strong>删除哈希表中的一个或多个指定域，不存在的域将被忽略</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer RedisHash.del(...fields);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fields: ..., 指定要删除的域列表</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 被删除域的数量</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> RedisHash.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value RedisHash.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div><div class="sidebar hidden-sm hidden-xs hidden-md"><div id=toc></div></div></div></div><div class=footer><div class=container>&copy; Copyright 2018 fibjs.org | <a href=../../../../support.html>支持我们</a></div></div><a id=back-to-top href=# class="btn btn-default btn-lg back-to-top" role=button title="Click to return on the top page" data-toggle=tooltip data-placement=left><span class="glyphicon glyphicon-chevron-up"></span></a><script type=text/javascript src=https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js></script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>
