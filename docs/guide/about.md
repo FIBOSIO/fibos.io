@@ -1,153 +1,65 @@
-# fibjs 是什么？
-fibjs 是一个主要为 web 后端开发而设计的应用服务器开发框架，它建立在 Google v8 JavaScript 引擎基础上，并且选择了和传统的 callback 不同的并发解决方案。fibjs 利用 fiber 在框架层隔离了异步调用带来的业务复杂性，极大降低了开发难度，并减少因为用户空间频繁异步处理带来的性能问题。
+# FIBOS 是什么？
 
-由于历史原因，JavaScript 主要被用于浏览器的 UI 处理，UI 开发是典型的单线程事件驱动模式，因此 JavaScript 也形成了以异步处理为主要编程范式。
+FIBOS是一个结合Fibjs以及EOS的Javascript的运行平台，它使得EOS提供可编程性，并允许使用Javascript编写智能合约。
 
-随着 JavaScript 的成功，越来越多的人开始将 JavaScript 应用到其它的场景。与此同时，人们也越来越发现在很多场景下异步处理并不是最合适的选择。
+FIBOS平台的出现让第三代EOS智能合约编程变得简单。
 
-## 返璞归真，敏捷开发
-fibjs 在框架层使用 fiber 隔离了异步调用带来的业务复杂性，将 io 的异步处理封装为更加直观的同步调用，工程师只需要按照通常的同步业务逻辑编写代码，即可享有异步处理带来的巨大便利。
+## 为什么要创造FIBOS？
 
-以下这段代码摘自 mysql 模块的文档：
-```JavaScript
-conn.beginTransaction(err => {
-    if (err) {
-        throw err;
-    }
-    conn.query('INSERT INTO posts SET title=?', title,
-        (error, results, fields) => {
-            if (error) {
-                return conn.rollback(() => {
-                    throw error;
-                });
-            }
+### 1. 目前EOS的环境部署困难
 
-            var log = 'Post ' + results.insertId + ' added';
+EOS的编译环境依赖性强，编译过程时常遇到很多问题，对于普通一个开发者来说，大多数面对`CMake`的情况是束手无策的。
 
-            conn.query('INSERT INTO log SET data=?', log,
-                (error, results, fields) => {
-                    if (error) {
-                        return conn.rollback(() => {
-                            throw error;
-                        });
-                    }
-                    conn.commit((err) => {
-                        if (err) {
-                            return conn.rollback(() => {
-                                throw err;
-                            });
-                        }
-                        console.log('success!');
-                    });
-                });
-        });
-});
-```
-在 fibjs 中，完成同样的工作，代码如下：
-```JavaScript
-conn.trans(() => {
-    var result = conn.execute('INSERT INTO posts SET title=?', title);
-    var log = 'Post ' + results.insertId + ' added';
-    conn.execute('INSERT INTO log SET data=?', log);
-});
-console.log('success!');
-```
-如果你追求简洁，你甚至可以把代码写成这样：
-```JavaScript
-conn.trans(() => conn.execute('INSERT INTO log SET data=?',
-        'Post ' + conn.execute('INSERT INTO posts SET title=?', title).insertId +
-        ' added'));
-console.log('success!');
-```
-我们可以明显比较出两种不同的编程风格带来的差异。更少的代码会带来更少错误，随着代码的减少，代码的逻辑也更加清晰，无论是开发还是维护，都会从中获益。
+而FIBOS提供一套预编译开发环境，开发者可以快速实现部署，把更多的时间用在编写智能合约上。
 
-## 拥抱高能
-尽管我们可以很方便地通过扩充服务器来提高响应速度，但是性能仍然应该是选择一个开发框架的重要依据之一。随着 ES7 的推出，async 作为一种新的异步开发模式被引入 JavaScript。然而当我们享受 async 带来的同步风格时，也不得不面对它对性能的影响。
+### 2. 开发门槛高
 
-我们可以使用一段测试代码来比较不同的编程风格带来的性能差异：
-```JavaScript
-var count = 1000;
+编写EOS智能合约需要掌握C++语言，这对于一名开发者来说学习成本非常高，并且我们认为正确的写出编译合约的`CMAKELISTS.TXT`才是刚刚开始!(JUST Beginning)
 
-async function test_async(n) {
-    if (n == count)
-        return;
-    await test_async(n + 1);
-}
+而对于FIBOS来说，开发者可以使用Javascript脚本语言进行编写智能合约，而这门语言学习成本很低。
 
-function test_callback(n, cb) {
-    if (n == count)
-        return cb();
+对于一名开发者来说，如果一件事情简单容易，我们认为他们会更容易接受，并渴望了解FIBOS。
 
-    test_callback(n + 1, () => {
-        cb();
-    });
-}
+### 3. 测试套件原始
 
-function test_sync(n) {
-    if (n == count)
-        return;
-    test_sync(n + 1);
-}
+EOS的测试用例编写也必须使用C++，高难度的语言学习，高难度的编译，使得测试这件事在EOS上面变得复杂、困难。
 
-async function test() {
-    console.time("async");
-    await test_async(0);
-    console.timeEnd("async");
+FIBOS集成FibJs服务端开发平台，拥有成熟的测试套件，在FIBOS平台上编写的用例，开发者可以使用Javascript编写测试用例，这一切看起来非常的灵活、轻松!
 
-    console.time("callback");
-    test_callback(0, () => {
-        console.timeEnd("callback");
-    });
+### 4. EOS迭代周期长
 
-    console.time("sync");
-    test_sync(0);
-    console.timeEnd("sync");
-}
+一个EOS智能合约要想成功部署发布，需要经过编写、编译、部署、测试、调试、修复，漫长的等待过程。
 
-test();
-```
-在最新的 v8 v6.7.192 下，这段代码的运行结果如下：
-```sh
-async: 5.276ms
-callback: 0.117ms
-sync: 0.038ms
-```
-我们从测试结果可以明显知道，当项目中广泛应用 async 之后，服务器将花费大量时间用来处理 async 函数的调用和返回。我们在一些服务端应用的实际测试中也发现了这一点。而且这种性能的急剧下降，是完全不能接受的。
+FIBOS支持本地合约模式，随时修改随时测试，结合一些IDE工具可以做到一键研发测试。
 
-fibjs 由于采用 fiber，可以充分利用了 JavaScript 语言本身的特性，并且最大限度地发挥 v8 的优越性能。工程师可以很轻易地将服务器的性能发挥到极致。
+### 5. 开发生态原始
 
-## 灵活选择范式而不被绑架
-选择使用 fibjs 并不意味着你必须使用同步的开发风格，实际上 fibjs 支持你所见过的任何一种异步编程范式，并且可以灵活地在同步风格和异步风格之间切换。
+EOS使用C++参与编写研发，并不能做到NPM这样的生态环境，而FIBOS支持NPM包管理，与庞大的NPM生态紧密连接。
 
-无论是 callback 还是 async，都有一个致命的缺陷，那就是传染性。只要一个函数是 callback 或者 async，那么所有依赖它的其它函数都必须是 callback 或者 async。这在大规模软件开发中将带来巨大的开发成本。
+### 6. 部署发布合约成本高
 
-以一个简单的服务器开发场景为例。在项目初期，我们选择了内存作为 session 数据存储，此时，我们可以使用 sync 方式直接读取和存储数据，并基于此开发出完整业务。随着业务规模的发展，我们需要把 session 数据存储到 redis 或者 mongodb 里，此时，我们就需要把 session 相关的操作修改为 async 模式。
+EOS编写合约需要让C++代码编译到WASM，而WASM编译文件非常庞大，让发布部署运行合约成本非常高昂。
 
-理论上，我们可以依次修改每一个函数，让它们符合所依赖的函数的要求，但是这样就要求我们完全了解所有的模块并且有能力对其作出修改。这在多人协作开发时或者使用第三方模块时是完全不可能完成的。
+FIBOS编写的合约可以通过打包脚本，压缩文件极大的降低部署发布成本。
 
-因此，所有的通用模块，都需要同时提供 sync 和 async 接口，以均衡处理异步和性能之间的平衡。更多的普通开发者则会选择只提供 async 接口。从而引发性能灾难。
 
-在 fibjs 中，你可以很轻松的解决类似的问题，避免显式异步无节制地传染:
-```JavaScript
-var util = require('util');
+### 7. 合约不可审计
 
-function session_get(sid) {
-    return sdata;
-}
+EOS合约编译成WASM后，对审计阅读合约代码带来了极大的困难，开发者无法评估合约的安全性。
 
-async function async_session_get(sid) {
-    return sdata;
-}
+FIBOS的合约使用Javascript编写并且全部开源，方便社区审计，迅速形成共识。
 
-function callback_session_get(sid, cb) {
-    cb(null, sdata);
-}
+## 社区
 
-data = session_get(sid);
-data = util.sync(async_session_get)(sid);
-data = util.sync(callback_session_get)(sid);
-```
-fibjs 可以使用 util.sync 将 callback 或者 async 函数转变为 sync 函数，并且直接调用。通过这种方式，我们可以很方便地整合不同编程范式的模块，并且以最小的开发成本将其转变为 sync 范式，有效地避免范式传染带来的灾难。
+- website: https://fibos.io
+
+- telegram: https://t.me/FIBOSIO
+
+- twitter: https://twitter.com/fibos_io
+
+- medium: https://medium.com/@fibosio
+
+- issue: https://github.com/fibosio/fibos/issues
 
 ## 开始体验
 准备好开始一场愉快的开发经历了吗？那么，从安装开始吧。

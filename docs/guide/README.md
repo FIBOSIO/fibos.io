@@ -1,9 +1,8 @@
 # 开发指南
 
-* [fibjs 是什么？](about.md)
+* [FIBOS 是什么？](about.md)
 * [安装运行环境](install.md)
-* [hello, world](hello.md)
-* [美好生活从测试开始](test.md)
-* [找出性能杀手](profiler.md)
-* [添加 native 模块](contribute.md)
-* [服务端模块热更新](server-hot-update.md)
+* [启动一个FIBOS节点](startfibos.md)
+* [使用FIBOS.JS与FIBOS交互](fibosjs.md)
+* [开始在FIBOS上使用JS编写智能合约](startcontract.md)
+* [如何加入到TestNet网络](startcontract.md)
