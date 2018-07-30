@@ -1,4 +1,3 @@
-* [Table](ifs/Table.md)
 * [Buffer](ifs/Buffer.md)
 * [BufferedStream](ifs/BufferedStream.md)
 * [Chain](ifs/Chain.md)
@@ -62,6 +61,7 @@
 * [Stream](ifs/Stream.md)
 * [StringDecoder](ifs/StringDecoder.md)
 * [SubProcess](ifs/SubProcess.md)
+* [Table](ifs/Table.md)
 * [TcpServer](ifs/TcpServer.md)
 * [Timer](ifs/Timer.md)
 * [UrlObject](ifs/UrlObject.md)

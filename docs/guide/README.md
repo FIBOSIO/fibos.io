@@ -2,7 +2,7 @@
 
 * [FIBOS 是什么？](about.md)
 * [安装运行环境](install.md)
-* [启动一个FIBOS节点](startfibos.md)
-* [使用FIBOS.JS与FIBOS交互](fibosjs.md)
-* [开始在FIBOS上使用JS编写智能合约](startcontract.md)
-* [如何加入到TestNet网络](startcontract.md)
+* [搭建一个 FIBOS 开发环境](startfibos.md)
+* [使用 fibos.js 与 FIBOS 交互](fibosjs.md)
+* [体验 FIBOS 超棒的测试框架](test.md)
+* [如何加入到 TestNet 网络](jointestnet.md)
