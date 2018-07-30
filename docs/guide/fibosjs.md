@@ -1,27 +1,46 @@
 # 使用 fibos.js 与 FIBOS 交互
 
-`fibos.js` 是一个通用JavaScript Library，通过简单的编码使它成为一个 FIBOS 的 JavaScript Client,它可以与 FIBOS 以及 EOS 区块链进行交互。
+`fibos.js` 是一个通用JavaScript Library，通过简单的编码使它成为一个 FIBOS 的 JavaScript Client，它可以与 FIBOS 以及 EOS 区块链进行交互。
 
-阅读完本章你可以学会使用 `fibos.js` 库与 FIBOS交互，这里涉及 `npm` 的相关知识。
+阅读完本章你可以学会使用 `fibos.js` 库与 FIBOS交互。
 
 下面让我们先来看一个简单的例子吧!
 
-## 如何安装 `fibos.js` ？
-
-FIBOS 支持 `npm` 的包管理方式，你可以通过 `npm install` 安装。
-
-1. 新建工作目录
+本章节涉及到代码的目录结构:
 
 ```
-~$ mkdir fibos_client
-~$
+hello_fibos/
+├── fibos_client
+│   ├── client.js
+│   ├── hello
+│   │   ├── deploy.js
+│   │   ├── hello.abi
+│   │   └── hello.js
+│   └── package.json
+└── start_fibos
+    └── node.js
+```
+
+新建目录
+```
+mkdir hello_fibos/fibos_client/
+mkdir hello_fibos/fibos_client/hello/
+```
+
+## 如何安装 `fibos.js` ？
+
+FIBOS 支持包管理方式，你可以通过 `fibos --install fibos.js` 进行安装。
+
+1. 进入工作目录
+
+```
 ~$ cd fibos_client/
 ```
 2. 初始化环境
 
 
 ```
-fibos_client$ npm init
+fibos_client$ fibos --init
 ```
 
 输出 `package.json` 信息:
@@ -44,10 +63,55 @@ fibos_client$ npm init
 3. 安装 `fibos.js`
 
 ```
-fibos_client$ npm install fibos.js
+fibos_client$ fibos --install fibos.js
 ```
 
-目前为止已经安装好了 `fibos.js`，开始编码吧!
+输出:
+```
+├── babel-runtime@6.26.0
+├── base-x@3.0.4
+├── bigi@1.4.2
+├── binaryen@37.0.0
+├── bn.js@4.11.8
+├── browserify-aes@1.2.0
+├── bs58@4.0.1
+├── buffer-xor@1.0.3
+├── bytebuffer@5.0.1
+├── camel-case@3.0.0
+├── cipher-base@1.0.4
+├── core-js@2.5.7
+├── create-hash@1.2.0
+├── create-hmac@1.1.7
+├── ecurve@1.0.6
+├── encoding@0.1.12
+├── eosjs@15.0.6
+├── eosjs-api@6.3.2
+├── eosjs-ecc@4.0.2
+├── evp_bytestokey@1.0.3
+├── fcbuffer@2.2.0
+├── fibos.js@0.0.5
+├── hash-base@3.0.4
+├── iconv-lite@0.4.23
+├── ieee-float@0.6.0
+├── inherits@2.0.3
+├── is-stream@1.1.0
+├── isomorphic-fetch@2.2.1
+├── long@3.2.0
+├── lower-case@1.1.4
+├── md5.js@1.3.4
+├── no-case@2.3.2
+├── node-fetch@1.7.3
+├── randombytes@2.0.6
+├── regenerator-runtime@0.11.1
+├── ripemd160@2.0.2
+├── safe-buffer@5.1.2
+├── safer-buffer@2.1.2
+├── sha.js@2.4.11
+├── upper-case@1.1.3
+└── whatwg-fetch@2.0.4
+```
+
+成功安装 `fibos.js`，开始编码吧!
 
 ## 一个简单的获取区块信息的例子
 
@@ -62,13 +126,13 @@ var config = {
 	"producer-name": "eosio",
 	"public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
 	"private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
-	"http-server-address": "http://127.0.0.1:8888",
+	"httpEndpoint": "http://127.0.0.1:8888",
 };
 
 var fibos = FIBOS({
 	chainId: config["chainId"],
 	keyProvider: config["private-key"],
-	httpEndpoint: config["http-server-address"],
+	httpEndpoint: config["httpEndpoint"],
 	logger: {
 		log: null,
 		error: null
@@ -88,7 +152,7 @@ console.log(result);
 fibos$ fibos node.js
 ```
 
-3. 运行 `client.js` 获取第一个区块信息
+3. 再开启一个终端运行 `client.js` 获取第一个区块信息
 
 ```
 fibos_client$ fibos client.js
@@ -118,20 +182,30 @@ fibos_client$ fibos client.js
 
 ## 发布一个简单的 JS 合约
 
-1. 以下代码保存至工作目录 `code.js`
+合约文件说明:
 
 ```
-var FIBOS = require('fibos.js')
-var name = "eosio";
-var config = {
-    "chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
-    "producer-name": name,
-    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
-    "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
-    "http-server-address": "http://127.0.0.1:8888",
-};
+├── hello.abi 合约abi文件
+├── hello.js 合约代码文件
+├── deploy.js 加载、发布合约脚本文件
+├── call.js 调用合约接口脚本文件
 
-var abi = {
+```
+
+1. hello 合约代码
+
+以下代码保存至工作目录 `./hello/hello.js`
+
+```
+exports.hi = user => console.error('in contract:', user);
+```
+
+2. hello 合约 abi 文件
+
+以下代码保存至工作目录 `./hello/hello.abi`
+
+```
+{
     "version": "eosio::abi/1.0",
     "structs": [{
         "name": "player",
@@ -156,13 +230,29 @@ var abi = {
         "type": "hi",
         "ricardian_contract": ""
     }]
+}
+```
+
+3. 加载、发布合约脚本文件
+
+以下代码保存至工作目录 `deploy.js`
+
+```
+var FIBOS = require('fibos.js')
+var fs = require("fs");
+var config = {
+    "chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+    "producer-name": "eosio",
+    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
+    "httpEndpoint": "http://127.0.0.1:8888",
 };
 
 // new FIBOS client
 var fibos = FIBOS({
     chainId: config["chainId"],
     keyProvider: config["private-key"],
-    httpEndpoint: config["http-server-address"],
+    httpEndpoint: config["httpEndpoint"],
     logger: {
         log: null,
         error: null
@@ -170,24 +260,24 @@ var fibos = FIBOS({
 });
 
 //setcode
-var js_code = `exports.hi = user => console.error('in contract:', user);`;
-fibos.setcodeSync(name, 0, 0, fibos.compileCode(js_code));
+var contractName = "hello";
+var js_code = fs.readTextFile("./hello/hello.js");
+fibos.setcodeSync(contractName, 0, 0, fibos.compileCode(js_code));
 
 //getcode
-var js_code = `exports.hi = user => console.error('in contract:', user);`;
-var code = fibos.getCodeSync(name, true);
+var code = fibos.getCodeSync(contractName, true);
 
 console.log("code:", code);
 
-//setabt
-fibos.setabiSync(name, abi);
+//setabi
+var abi = JSON.parse(fs.readTextFile("./hello/hello.abi"));
+fibos.setabiSync(contractName, abi);
+```
 
+执行脚本:
 
-//call abi
-var ctx = fibos.contractSync(name);
-ctx.hiSync('hello FIBOS', {
-    authorization: name
-});
+```
+fibos deploy.js
 ```
 
 输出结果(片段):
@@ -201,6 +291,46 @@ ctx.hiSync('hello FIBOS', {
 ....
 ```
 
+4. 调用合约接口脚本文件
+
+以下代码保存至工作目录 `call.js`:
+
+```
+var FIBOS = require('fibos.js')
+var fs = require("fs");
+var config = {
+    "chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+    "producer-name": "eosio",
+    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
+    "httpEndpoint": "http://127.0.0.1:8888",
+};
+
+// new FIBOS client
+var fibos = FIBOS({
+    chainId: config["chainId"],
+    keyProvider: config["private-key"],
+    httpEndpoint: config["httpEndpoint"],
+    logger: {
+        log: null,
+        error: null
+    }
+});
+
+var contractName = "hello";
+
+//call abi
+var ctx = fibos.contractSync(contractName);
+ctx.hiSync('hello FIBOS', {
+    authorization: contractName
+});
+```
+
+执行脚本:
+
+```
+fibos call.js
+```
 
 ## 体验 FIBOS 超棒的 测试框架
 

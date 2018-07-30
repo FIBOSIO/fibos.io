@@ -61,6 +61,10 @@ FIBOS 的合约使用 JavaScript 编写并且全部开源，方便社区审计�
 
 - issue: https://github.com/fibosio/fibos/issues
 
+## 加入 FIBOS 讨论组
+
+![FIBOS 讨论组](./imgs/qr.png)
+
 ## 开始体验
 准备好开始一场愉快的开发经历了吗？那么，从安装开始吧。
 

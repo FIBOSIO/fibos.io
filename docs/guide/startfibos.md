@@ -7,6 +7,21 @@ FIBOS 支持自定义加载模块 `plugin`，一些默认配置说明：
 - HTTP 服务端口8888，提供 HTTP 服务，通过 RPC 进行交互
 - P2P 监听端口9876，与其他节点互联同步数据
 
+
+本章节涉及到代码的目录结构:
+
+```
+hello_fibos/
+└── start_fibos
+    └── node.js
+```
+
+新建目录
+```
+mkdir hello_fibos
+mkdir hello_fibos/start_fibos/
+```
+
 ## 快速搭建一个简单的 FIBOS 环境
 
 ### 环境配置脚本(node.js)
@@ -114,9 +129,12 @@ fibos$ fibos node.js
 2018-07-30T03:29:01.004 thread-1   producer_plugin.cpp:1194      produce_block        ] Produced block 00000002e091c956... #2 @ 2018-07-30T03:29:01.000 signed by eosio [trxs: 0, lib: 0, confirmed: 0]
 ```
 
+
+恭喜你已经成功运行一个 FIBOS 节点服务，现在你可以开始进行本地编码测试了，[使用 fibos.js 与 FIBOS 交互](fibosjs.md)，更多高级用法可以继续查看下面内容!
+
 ## 高级用法
 
-FIBOS 中 `Load`方法支持参数传递，下面详细的介绍。
+FIBOS 中 `load`方法支持参数传递，下面详细的介绍。
 
 
 1. 配置监听端口以及地址

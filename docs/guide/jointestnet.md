@@ -17,7 +17,6 @@ chainId : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 
 ```
 "p2p-listen-endpoint" : "0.0.0.0:9876"
-
 ```
 3. 区块数据同步的目标节点信息
 
@@ -235,3 +234,7 @@ ctx.voteproducerSync(config["producer-name"], "", ["producer-name"]);
 ```
 fibos vote_bp.js
 ```
+
+注意：投票结束后，排名必须在TOP 21前才可以被选为区块生产者 BP。
+
+恭喜你阅读完入门文档，你可以在 FIBOS 上开始更复杂的编程之旅了!

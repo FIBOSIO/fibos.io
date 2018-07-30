@@ -1,10 +1,10 @@
 # 安装运行环境
 
-阅读完本文你可以学会如何通过 `curl` 工具快速安装 FIBOS，也可以学会如何在 UNIX 系统下 编译 FIBOS 并安装。
+阅读完本文你可以学会如何通过 `curl` 工具快速安装 FIBOS，也可以学会如何在 UNIX 系统下编译 FIBOS 并安装。
 
 FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 
-对于快速入门，我们推荐使用快速安装的方式，对于高级用户可以查看本章编译 FIBOS。
+对于快速入门，我们推荐使用快速安装的方式，对于高级用户可以查看本章 UNIX 操作系统下编译。
 
 ## 快速安装
 
@@ -59,7 +59,30 @@ hello,FIBOS!
 >
 ```
 
+### FIBOS 常用命令
+
+1. `package.json` 配置初始化
+
+效果同 `npm init`
+
+```
+fibos --init
+```
+
+2. 安装包
+
+效果同 `npm install fibos.js`
+
+```
+fibos --install fibos.js
+```
+
+你已经成功安装 FIBOS，对 FIBOS 有了一定的了解，现在你可以查看下一章节开始 FIBOS 之旅，[搭建一个 FIBOS 开发环境](startfibos.md)!
+
+
 ## UNIX 操作系统下编译
+
+如果你需要自己编译 FIBOS，请查看下面的内容，阅读后可以了解如何在 UNIX 系统下编译 FIBOS。
 
 ### 准备编译环境
 
@@ -69,7 +92,6 @@ hello,FIBOS!
 工具：
 GCC
 CMAKE
-
 ```
 
 ### 执行编译
