@@ -86,7 +86,6 @@ fibos sync_data.js
 var fibos = require('fibos');
 var fs = require("fs");
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f", //
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key"
@@ -133,7 +132,6 @@ fibos.start();
 
 ```
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f", // 测试节点 chainID
 	"producer-name": "producer-name", // producer名称
 	"public-key": "producer public key", //producer 公钥
 	"private-key": "producer private key" //producer 私钥
@@ -154,7 +152,7 @@ fibos producer_node.js
 ```
 var FIBOS = require('fibos.js');
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f", //
+	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key"
@@ -206,7 +204,7 @@ Producer 可以为自己投票，请查看下面的示例代码，保存代码�
 ```
 var FIBOS = require('fibos.js');
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f", //
+	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key"
