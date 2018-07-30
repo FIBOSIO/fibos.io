@@ -1,119 +1,186 @@
-# 启动一个FIBOS节点
+# 搭建一个 FIBOS 开发环境
 
-## 一个简单的FIBOS节点
+阅读完本文你可以通过简单的编程，学会如何搭建一个简单的 FIBOS 开发环境，本文的测试代码使用 Mac OSX 的操作系统。
 
-### 节点配置脚本(node.js)
+FIBOS 支持自定义加载模块 `plugin`，一些默认配置说明：
+
+- HTTP 服务端口8888，提供 HTTP 服务，通过 RPC 进行交互
+- P2P 监听端口9876，与其他节点互联同步数据
+
+
+本章节涉及到代码的目录结构:
+
+```
+hello_fibos/
+└── start_fibos
+    └── node.js
+```
+
+新建目录
+```
+mkdir hello_fibos
+mkdir hello_fibos/start_fibos/
+```
+
+## 快速搭建一个简单的 FIBOS 环境
+
+### 环境配置脚本(node.js)
 
 ```
 var fibos = require('fibos');
 
-fibos.load("http"); //rpc http service
+fibos.load("http");
 fibos.load("chain");
 fibos.load("net");
 fibos.load("chain_api");
 fibos.load("history_api");
-
-fibos.start();
-```
-
-### 启动节点
-
-```
-fibos node.js
-
-```
-
-## 一个自定义的FIBOS节点
-
-### 自定义配置脚本(node.js)
-
-```
-var fibos = require('fibos');
-
-fibos.load("http"); //rpc http service
-fibos.load("chain");
-fibos.load("net");
-fibos.load("chain_api");
-fibos.load("history_api");
-
-fibos.start();
-```
-
-#### 1. 开启BlockProducer
-
-```
 fibos.load("producer", {
     'producer-name': 'eosio',
     'enable-stale-production': true
 });
+
+fibos.start();
 ```
 
-### 2. 更改HTTP Service 配置
+以上代码保存至工作目录 `node.js`:
 
 ```
-fibos.load("http",{
-	"http-server-address": "127.0.0.1:8888", //配置开启服务的网络接口以及端口
-	""
+~$ cd start_fibos/
+fibos$ vim node.js
+fibos$ ls
+node.js
+```
+
+运行 FIBOS 开发环境:
+
+```
+fibos node.js
+```
+
+运行结果日志:
+```
+fibos$ fibos node.js
+2018-07-30T03:28:59.907 thread-0   http_plugin.cpp:344           plugin_initialize    ] configured http to listen on 127.0.0.1:8888
+2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:271          plugin_initialize    ] initializing chain plugin
+2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:508          plugin_initialize    ] Starting up fresh blockchain with default genesis state.
+2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:2941           plugin_initialize    ] Initialize net plugin
+2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:2966           plugin_initialize    ] host: 0.0.0.0 port: 9876
+2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:3036           plugin_initialize    ] my node_id is 669c9ac5d547873f8d3a6bf1b84e23d2471823e41c1e1c0f36bfea81b83c9561
+2018-07-30T03:29:00.478 thread-1   http_plugin.cpp:401           plugin_startup       ] start listening for http requests
+2018-07-30T03:29:00.478 thread-1   controller.cpp:1252           startup              ] No head block in fork db, perhaps we need to replay
+2018-07-30T03:29:00.478 thread-1   controller.cpp:319            initialize_fork_db   ]  Initializing new blockchain with genesis state
+2018-07-30T03:29:00.512 thread-1   chain_plugin.cpp:596          plugin_startup       ] starting chain in read/write mode
+2018-07-30T03:29:00.512 thread-1   chain_plugin.cpp:600          plugin_startup       ] Blockchain started; head block is #1, genesis timestamp is 2018-06-01T12:00:00.000
+2018-07-30T03:29:00.512 thread-1   net_plugin.cpp:3049           plugin_startup       ] starting listener, max clients is 25
+2018-07-30T03:29:00.512 thread-1   chain_api_plugin.cpp:75       plugin_startup       ] starting chain_api_plugin
+2018-07-30T03:29:00.514 thread-1   history_api_plugin.cpp:38     plugin_startup       ] starting history_api_plugin
+2018-07-30T03:29:00.514 thread-1   producer_plugin.cpp:640       plugin_startup       ] producer plugin:  plugin_startup() begin
+2018-07-30T03:29:00.515 thread-1   producer_plugin.cpp:658       plugin_startup       ] Launching block production for 1 producers at 2018-07-30T03:29:00.515.
+2018-07-30T03:29:00.516 thread-1   producer_plugin.cpp:670       plugin_startup       ] producer plugin:  plugin_startup() end
+2018-07-30T03:29:01.004 thread-1   producer_plugin.cpp:1194      produce_block        ] Produced block 00000002e091c956... #2 @ 2018-07-30T03:29:01.000 signed by eosio [trxs: 0, lib: 0, confirmed: 0]
+```
+
+通过日志可以查看到环境脚本中加载的模块: http、chain、net已经成功加载,节点使用账户`eosio`出块。
+
+让我们简单分析一下启动过程：
+
+1. 开启了 HTTP 服务，监听端口8888
+
+```
+2018-07-30T03:28:59.907 thread-0   http_plugin.cpp:344           plugin_initialize    ] configured http to listen on 127.0.0.1:8888
+2018-07-30T03:29:00.478 thread-1   http_plugin.cpp:401           plugin_startup       ] start listening for http requests
+```
+
+2. 启动chain模块，使用默认创世配置（genesis），区块高度从#1开始
+
+```
+2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:271          plugin_initialize    ] initializing chain plugin
+2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:508          plugin_initialize    ] Starting up fresh blockchain with default genesis state.
+2018-07-30T03:29:00.512 thread-1   chain_plugin.cpp:596          plugin_startup       ] starting chain in read/write mode
+2018-07-30T03:29:00.512 thread-1   chain_plugin.cpp:600          plugin_startup       ] Blockchain started; head block is #1, genesis timestamp is 2018-06-01T12:00:00.000
+
+```
+
+3. P2P监听在默认9876端口
+
+节点ID是`669c9ac5d547873f8d3a6bf1b84e23d2471823e41c1e1c0f36bfea81b83c9561`
+
+```
+2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:2941           plugin_initialize    ] Initialize net plugin
+2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:2966           plugin_initialize    ] host: 0.0.0.0 port: 9876
+2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:3036           plugin_initialize    ] my node_id is 669c9ac5d547873f8d3a6bf1b84e23d2471823e41c1e1c0f36bfea81b83c9561
+2018-07-30T03:29:00.512 thread-1   net_plugin.cpp:3049           plugin_startup       ] starting listener, max clients is 25
+```
+
+4. 开启 history以及chain API模块
+
+```
+2018-07-30T03:29:00.512 thread-1   chain_api_plugin.cpp:75       plugin_startup       ] starting chain_api_plugin
+2018-07-30T03:29:00.514 thread-1   history_api_plugin.cpp:38     plugin_startup       ] starting history_api_plugin
+```
+
+5. 使用系统默认账户 `eosio` 	开启区块生产
+
+```
+2018-07-30T03:29:00.514 thread-1   producer_plugin.cpp:640       plugin_startup       ] producer plugin:  plugin_startup() begin
+2018-07-30T03:29:00.515 thread-1   producer_plugin.cpp:658       plugin_startup       ] Launching block production for 1 producers at 2018-07-30T03:29:00.515.
+2018-07-30T03:29:00.516 thread-1   producer_plugin.cpp:670       plugin_startup       ] producer plugin:  plugin_startup() end
+2018-07-30T03:29:01.004 thread-1   producer_plugin.cpp:1194      produce_block        ] Produced block 00000002e091c956... #2 @ 2018-07-30T03:29:01.000 signed by eosio [trxs: 0, lib: 0, confirmed: 0]
+```
+
+
+恭喜你已经成功运行一个 FIBOS 节点服务，现在你可以开始进行本地编码测试了，[使用 fibos.js 与 FIBOS 交互](fibosjs.md)，更多高级用法可以继续查看下面内容!
+
+## 高级用法
+
+FIBOS 中 `load`方法支持参数传递，下面详细的介绍。
+
+
+1. 配置监听端口以及地址
+
+(1) 开启 HTTP 服务对所有地址的8889端口监听
+(2) 开启 P2P 服务对所有地址的9877端口监听
+
+
+```
+fibos.load("http", {
+	"http-server-address": "0.0.0.0:8889"
+});
+
+fibos.load("net", {
+	"p2p-listen-endpoint": "0.0.0.0:9877"
 });
 
 ```
 
-### 3. 初始化创世区块
+2. 配置 FIBOS 配置以及数据目录
+
+查看当前的配置以及数据目录：
 
 ```
-fibos.load("chain",{
-	"genesis-json":"./genesis-json.json"
+//查看
+console.notice("config_dir:", fibos.config_dir);
+
+console.notice("data_dir:", fibos.data_dir);
+
+//配置（不存在默认创建）
+fibos.config_dir = "fibos_config_dir/";
+
+fibos.data_dir = "fibos_data_dir/";
+
+```
+
+3. 配置启动时重置 FIBOS 环境数据
+
+开发过程中如果需要重置环境数据，可以使用下面的配置:
+
+```
+fibos.load("chain", {
+	"delete-all-blocks": true
 });
-
 ```
 
-genesis-json.json例子:
+## 使用 fibos.js 与 FIBOS 交互
+现在你已经有了一个 FIBOS 开发环境，让我们了解一下 fibos.js 这个库，编写一个JavaScript Client，它可以通过 HTTP 协议与 FIBOS 进行交互，让我们开始学习吧!
 
-```
-{
-	"initial_timestamp": "2018-06-08T08:08:08.888",
-	"initial_key": "EOS7EarnUhcyYqmdnPon8rm7mBCTnBoot6o7fE2WzjvEX2TdggbL3",
-	"initial_configuration": {
-		"max_block_net_usage": 1048576,
-		"target_block_net_usage_pct": 1000,
-		"max_transaction_net_usage": 524288,
-		"base_per_transaction_net_usage": 12,
-		"net_usage_leeway": 500,
-		"context_free_discount_net_usage_num": 20,
-		"context_free_discount_net_usage_den": 100,
-		"max_block_cpu_usage": 200000,
-		"target_block_cpu_usage_pct": 1000,
-		"max_transaction_cpu_usage": 150000,
-		"min_transaction_cpu_usage": 100,
-		"max_transaction_lifetime": 3600,
-		"deferred_trx_expiration_window": 600,
-		"max_transaction_delay": 3888000,
-		"max_inline_action_size": 4096,
-		"max_inline_action_depth": 4,
-		"max_authority_depth": 6
-	}
-}
-```
-
-### 4. 控制台调试输出
-
-```
-fibos.load("chain",{
-	'contracts-console': true
-});
-
-```
-
-### 5. 指定数据区块的目录
-
-```
-fibos.load("chain",{
-	'blocks-dir': "./blocks-dir/"
-});
-
-```
-
-## 使用FIBOS.JS与FIBOS交互
-通过Fibjs与FIBOS.JS编写一个JS Client，它可以通过HTTP协议与FIBOS进行交互，让我们开始学习吧!
-
-👉 【[使用FIBOS.JS与FIBOS交互](fibosjs.md)】
+👉 【[使用 fibos.js 与 FIBOS 交互](fibosjs.md)】

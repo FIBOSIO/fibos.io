@@ -4,14 +4,7 @@ base32 编码与解码模块
 引用方式：
 
 ```JavaScript
-var encoding = require('encoding');
-var base32 = encoding.base32;
-```
-
-或者
-
-```JavaScript
-var base32 = require('base32');
+var fibos = require('fibos');
 ```
 
 ## 静态函数

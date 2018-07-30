@@ -1,22 +1,97 @@
 # 安装运行环境
 
-FIBOS支持常用的 UNIX 操作系统，比如 Mac OS X, Linux 和 FreeBSD。
+阅读完本文你可以学会如何通过 `curl` 工具快速安装 FIBOS，也可以学会如何在 UNIX 系统下编译 FIBOS 并安装。
 
-未来我们会即将开放Docker版本的安装以及一键快速便捷的安装，敬请期待。
+FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 
-## UNIX操作系统下编译
+对于快速入门，我们推荐使用快速安装的方式，对于高级用户可以查看本章 UNIX 操作系统下编译。
+
+## 快速安装
+
+```
+快速安装: curl -s http://fibio.io/download/installer.sh|sh
+```
+
+安装结束后 FIBOS 可执行文件在系统 `bin` 目录下，使用查看 FIBOS 版本：
+
+```
+~$ which fibos
+/usr/local/bin/fibos
+
+~$ fibos --version
+v0.26.0-dev
+```
+
+FIBOS 是一个可执行文件，它继承了 FIBJS 的 JavaScript CLI命令行控制台功能，直接执行 FIBOS 回车，进入命令行交互模式，如:
+
+```
+~$ fibos
+Welcome to fibjs 0.26.0-dev.
+Type ".help" for more information.
+> console.log("hello,FIBOS!")
+hello,FIBOS!
+> .info
+{
+  "fibjs": "0.26.0-dev",
+  "git": "v0.25.0-44-g2d182cd22",
+  "clang": "9.1",
+  "date": "Jul 26 2018 13:19:31",
+  "vender": {
+    "ev": "4.24",
+    "expat": "2.2.5",
+    "gd": "2.2.4",
+    "jpeg": "8.3",
+    "leveldb": "1.17",
+    "mongo": "0.7",
+    "pcre": "8.21",
+    "png": "1.5.4",
+    "mbedtls": "2.6.1",
+    "snappy": "1.1.2",
+    "sqlite": "3.23.0",
+    "tiff": "3.9.5",
+    "uuid": "1.6.2",
+    "v8": "6.8.275.14",
+    "v8-snapshot": true,
+    "zlib": "1.2.7",
+    "zmq": "3.1"
+  }
+}
+>
+```
+
+### FIBOS 常用命令
+
+1. `package.json` 配置初始化
+
+效果同 `npm init`
+
+```
+fibos --init
+```
+
+2. 安装包
+
+效果同 `npm install fibos.js`
+
+```
+fibos --install fibos.js
+```
+
+你已经成功安装 FIBOS，对 FIBOS 有了一定的了解，现在你可以查看下一章节开始 FIBOS 之旅，[搭建一个 FIBOS 开发环境](startfibos.md)!
+
+
+## UNIX 操作系统下编译
+
+如果你需要自己编译 FIBOS，请查看下面的内容，阅读后可以了解如何在 UNIX 系统下编译 FIBOS。
 
 ### 准备编译环境
+
 在 UNIX 下编译需要依赖以下工具以及源代码:
+
 ```
 工具：
 GCC
 CMAKE
-
-源码（submodule）:
-fibos
-fibjs
-eos
 ```
 
 ### 执行编译
@@ -24,22 +99,17 @@ FIBOS 项目地址: [http://git.fibos.io/fibos/fibos.git](http://git.fibos.io/fi
 
 在工作目录下执行以下命令:
 
-#### step1:(下载Fibos代码)
+#### step1:(下载 FIBOS 代码)
 
 ```sh
-root@fibos-testnet-1:~# git clone http://git.fibos.io/fibos/fibos.git
+~# git clone http://git.fibos.io/fibos/fibos.git
 Cloning into 'fibos'...
-
-
-root@fibos-testnet-1:~/fibos# git checkout dev
-Branch dev set up to track remote branch dev from origin.
-Switched to a new branch 'dev'
 ```
 
-#### step2:(初始化submodule工程)
+#### step2:(init submodule 工程)
 
 ```sh
-root@fibos-testnet-1:~/fibos# git submodule update --init --recursive
+~/fibos# git submodule update --init --recursive
 Submodule 'eos' (https://github.com/EOSIO/eos.git) registered for path 'eos'
 Submodule 'fibjs' (https://github.com/fibjs/fibjs.git) registered for path 'fibjs'
 ```
@@ -47,12 +117,12 @@ Submodule 'fibjs' (https://github.com/fibjs/fibjs.git) registered for path 'fibj
 #### step3:(执行编译)
 
 ```sh
-root@fibos-testnet-1:~/fibos/fibjs# cd ..
-root@fibos-testnet-1:~/fibos# chmod +x fibos_build
-root@fibos-testnet-1:~/fibos# ./fibos_build
+~/fibos/fibjs# cd ..
+~/fibos# chmod +x fibos_build
+~/fibos# ./fibos_build
 ```
 
-### step4:编程成功
+#### step4:编程成功
 
 ```sh
 _______ _________ ______   _______  _______
@@ -74,99 +144,10 @@ _______ _________ ______   _______  _______
  repository: https://github.com/fibosio
 
  //加入到bin目录
- root@fibos-testnet-1:~/fibos/# ./install.sh
+ ~/fibos/# ./install.sh
 ```
 
-## 编译常见错误Tips
+## 搭建一个 FIBOS 开发环境
+到现在为止，你已经有一个可以执行的 FIBOS，可以开始体验 FIBOS  开发的乐趣了，让我们一起来搭建一个 FIBOS 的开发环境。
 
-### Mac OSX环境下的情况
-
-#### case1:
-
-Mac Osx 环境安装boost时请注意Homebrew与MacPort的冲突，建议使用HomeBrew。
-
-#### case2:
-
-```
-llvm无法安装时，请使用brew安装。
-
-brew install llvm@4
-
-```
-
-### Ubuntu环境下的情况
-
-#### case1:
-```
-Ubuntu系统安装时候bash的执行断言错误，需要执行 sudo dpkg-reconfigure dash
-
-root@fibos-testnet-1:~/fibos# ./fibos_build
-sh: 33: Bad substitution
-sh: 43: Syntax error: "(" unexpected
-
-//Use dash as the default sytem shell？ => No
-root@fibos-testnet-1:~/fibos# sudo dpkg-reconfigure dash
-```
-
-#### case2:
-
-```
-执行编译过程会遇到很多未安装Lib(EOS 1.1.X 编译脚本未自动安装)
-
-	Checking for installed dependencies.
-
-	Package clang-4.0  NOT  found.
-	Package lldb-4.0  NOT  found.
-	Package libclang-4.0-dev  NOT  found.
-	Package cmake  NOT  found.
-	Package make found.
-	Package automake  NOT  found.
-	Package libbz2-dev  NOT  found.
-	Package libssl-dev  NOT  found.
-	Package libgmp3-dev  NOT  found.
-	Package autotools-dev found.
-	Package build-essential found.
-	Package libicu-dev  NOT  found.
-	Package python2.7-dev found.
-	Package python3-dev  NOT  found.
-	Package autoconf  NOT  found.
-	Package libtool  NOT  found.
-	Package curl found.
-	Package zlib1g-dev  NOT  found.
-	Package doxygen  NOT  found.
-	Package graphviz  NOT  found.
-	
-	提供2个方案解决:
-
-	(1)手动安装需要单独执行，根据提示处理即可:
-	root@fibos-testnet-1:~/fibos# apt-get install clang-4.0 lldb-4.0 libclang-4.0-dev cmake automake libbz2-dev libssl-dev libgmp3-dev libicu-dev python3-dev autoconf libtool zlib1g-dev doxygen graphviz
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-
-	(2)通过EOS的build解决依赖
-		下载EOS代码，执行./eosio_build.sh默认会安装依赖，解决掉依赖后即可进行FIBOS的编译。
-
-```
-
-#### csse3:
-
-```
-boost库问题undefined reference to `boost::iostreams::detail::zlib_base::~zlib_base()'
-
-apt-get install zlib1g-dev
-
-rm -rf ${HOME}/opt/boost*
-
-cd /path/to/eos
-
-rm -rf build/
-
-./fibos_build.sh
-
-```
-
-## 启动一个FIBOS节点
-到现在为止，你已经有一个可以执行的 FIBOS 版本，可以开始体验 FIBOS  开发的乐趣了。
-
-👉 【[启动一个FIBOS节点](startfibos.md)】
+👉 【[搭建一个 FIBOS 开发环境](startfibos.md)】
