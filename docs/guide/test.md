@@ -9,8 +9,8 @@ hello_fibos/
 ├── fibos_client
 │   ├── case.js
 │   ├── client.js
+│   ├── deploy.js
 │   ├── hello
-│   │   ├── deploy.js
 │   │   ├── hello.abi
 │   │   └── hello.js
 │   ├── package.json
@@ -79,7 +79,7 @@ coroutine.sleep(5000);
 
 ```
 
-3. 写一个新建 FIBOS 账户的测试用例
+### 写一个新建 FIBOS 账户的测试用例
 
 首先我们手动运行 FIBOS 节点服务，保证 HTTP 可以正常通信。
 
@@ -126,7 +126,7 @@ describe('new account FIBOS', () => {
     });
 
     it("get account", () => {
-        var c = fibos.getAccountSync(name);
+        var c = fibos.getAccountSync('hellofibos');
         assert.equal(c.account_name, "hellofibos");
     });
 });
@@ -144,16 +144,17 @@ require.main === module && test.run(console.DEBUG);
   √ 2 tests completed (13ms
 ```
 
-4. 写一个合约的测试用例
+### 写一个合约的测试用例
 
 上一章节介绍了写一个JS 合约，基于上面的文件结果，进行测试用例的编写：
 
 ```
-hello
-├── hello.abi 合约abi文件
-├── hello.js 合约代码文件
-├── deploy.js 加载、发布合约脚本文件
-├── call.js 调用合约接口脚本文件
+├── fibos_client
+│   ├── call.js 调用合约接口脚本文件
+│   ├── deploy.js 加载、发布合约脚本文件
+│   ├── hello
+│   │   ├── hello.abi 合约abi文件
+│   │   └── hello.js 合约代码文件
 
 ```
 
@@ -191,13 +192,13 @@ describe('new account FIBOS', () => {
     });
 
     it('get code', () => {
-        var js_code = fs.readTextFile("./hello.js");
+        var js_code = fs.readTextFile("./hello/hello.js");
         var code = fibos.getCodeSync(contractName, true);
         assert.equal(code.wast, fibos.compileCode(js_code).hex());
     });
 
     it('setabi', () => {
-        var abi = JSON.parse(fs.readTextFile("./hello.abi"));
+        var abi = JSON.parse(fs.readTextFile("./hello/hello.abi"));
         fibos.setabiSync(contractName, abi);
     });
 });

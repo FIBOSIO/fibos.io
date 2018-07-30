@@ -62,7 +62,7 @@ fibos.start();
 运行同步节点:
 
 ```
-fibos sync_data.js
+fibos sync_node.js
 ```
 
 ## 如何成为一个 FIBOS TestNet 的 BP节点
@@ -154,7 +154,7 @@ var config = {
 	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
-	"private-key": "producer private key"
+	"private-key": "producer private key",
 	"httpEndpoint": "bp network info",
 	"url": "http://producer-name.io"
 };
@@ -183,7 +183,7 @@ var config = {
 	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f", // TestNet节点chainID
 	"producer-name": "producer-name", //producer名称
 	"public-key": "producer public key", //producer公钥
-	"private-key": "producer private key" //producer私钥
+	"private-key": "producer private key", //producer私钥
 	"httpEndpoint": "bp network info", //BP 节点信息，如： http://127.0.0.1:8888
 	"url": "http://producer-name.io" //producer 官网信息
 };
@@ -206,7 +206,7 @@ var config = {
 	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
-	"private-key": "producer private key"
+	"private-key": "producer private key",
 	"httpEndpoint": "bp network info",
 	"url": "http://producer-name.io"
 };

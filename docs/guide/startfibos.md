@@ -42,11 +42,10 @@ fibos.load("producer", {
 fibos.start();
 ```
 
-新建开发环境目录`fibos`,以上代码保存至`node.js`:
+以上代码保存至工作目录 `node.js`:
 
 ```
-~$ mkdir fibos
-~$ cd fibos/
+~$ cd start_fibos/
 fibos$ vim node.js
 fibos$ ls
 node.js
@@ -140,7 +139,7 @@ FIBOS 中 `load`方法支持参数传递，下面详细的介绍。
 1. 配置监听端口以及地址
 
 (1) 开启 HTTP 服务对所有地址的8889端口监听
-(2) 开启 P2P 服务队所有地址的9877端口监听
+(2) 开启 P2P 服务对所有地址的9877端口监听
 
 
 ```

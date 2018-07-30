@@ -11,9 +11,10 @@
 ```
 hello_fibos/
 ├── fibos_client
+│   ├── call.js
 │   ├── client.js
+│   ├── deploy.js
 │   ├── hello
-│   │   ├── deploy.js
 │   │   ├── hello.abi
 │   │   └── hello.js
 │   └── package.json
@@ -43,22 +44,48 @@ FIBOS 支持包管理方式，你可以通过 `fibos --install fibos.js` 进行�
 fibos_client$ fibos --init
 ```
 
-输出 `package.json` 信息:
+如果没有特殊要求，一路回车，输出信息:
 
 ```
+Press ^C at any time to quit.
+
+name: (fibos_client)
+
+version: (1.0.0)
+
+description:
+
+repository:
+
+keywords:
+
+author:
+
+license: (ISC)
+
+About to write to $[f}:
+
 {
-  "name": "fibos_client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
-}
-```
 
+  "name": "fibos_client",
+
+  "version": "1.0.0",
+
+  "description": "",
+
+  "repository": "",
+
+  "keywords": "",
+
+  "author": "",
+
+  "license": "ISC"
+
+}
+
+Is this ok? (yes)
+
+```
 
 3. 安装 `fibos.js`
 
@@ -182,13 +209,15 @@ fibos_client$ fibos client.js
 
 ## 发布一个简单的 JS 合约
 
-合约文件说明:
+目录文件说明:
 
 ```
-├── hello.abi 合约abi文件
-├── hello.js 合约代码文件
-├── deploy.js 加载、发布合约脚本文件
-├── call.js 调用合约接口脚本文件
+├── fibos_client
+│   ├── call.js 调用合约接口脚本文件
+│   ├── deploy.js 加载、发布合约脚本文件
+│   ├── hello
+│   │   ├── hello.abi 合约abi文件
+│   │   └── hello.js 合约代码文件
 
 ```
 
@@ -259,8 +288,18 @@ var fibos = FIBOS({
     }
 });
 
-//setcode
 var contractName = "hello";
+
+//新建 hello 账户
+fibos.newaccountSync({
+  creator: 'eosio',
+  name: "hello",
+  owner: config["public-key"],
+  active: config["public-key"]
+});
+
+
+//setcode
 var js_code = fs.readTextFile("./hello/hello.js");
 fibos.setcodeSync(contractName, 0, 0, fibos.compileCode(js_code));
 
@@ -283,12 +322,12 @@ fibos deploy.js
 输出结果(片段):
 
 ```
-{
-  "account_name": "eosio",
-  "code_hash": "95025a3c9cf38043edc937bab543fe843b136d777464e5d34bd418df1acd7027",
-  "wast": "504b03042d00000008007065fe4c6a9400a2360000003900000008001400696e6465782e6a7301001000000000000000000000000000000000004bad28c82f2a29d6cbc854b055282d4e2d52b0b55348cecf2bcecf49d54b2d2aca2fd250cfcc0389941425269758a9eb8055695a0300504b010200001400000008007065fe4c6a9400a23600000039000000080000000000000001000000000000000000696e6465782e6a73504b0506000000000100010036000000700000000000"
-
-....
+code: {
+  "account_name": "hello",
+  "code_hash": "383a12daacaf124eea9afc529822d990853b5b99570401b8394534b746ea3977",
+  "wast": "504b03042d00000008002cadfe4c6a9400a2360000003900000008001400696e6465782e6a7301001000000000000000000000000000000000004bad28c82f2a29d6cbc854b055282d4e2d52b0b55348cecf2bcecf49d54b2d2aca2fd250cfcc0389941425269758a9eb8055695a0300504b010200001400000008002cadfe4c6a9400a23600000039000000080000000000000001000000000000000000696e6465782e6a73504b0506000000000100010036000000700000000000",
+  "wasm": ""
+}
 ```
 
 4. 调用合约接口脚本文件
@@ -321,7 +360,7 @@ var contractName = "hello";
 
 //call abi
 var ctx = fibos.contractSync(contractName);
-ctx.hiSync('hello FIBOS', {
+ctx.hiSync('hello', {
     authorization: contractName
 });
 ```
@@ -331,6 +370,12 @@ ctx.hiSync('hello FIBOS', {
 ```
 fibos call.js
 ```
+
+在 FIBOS 节点服务控制台输出 `trxs:1` :
+
+```
+2018-07-30T14:28:22.005 thread-1   producer_plugin.cpp:1196      produce_block        ] Produced block 00000e57c573a33b... #3671 @ 2018-07-30T14:28:22.000 signed by eosio [trxs: 1, lib: 3670, confirmed: 0]
+``
 
 ## 体验 FIBOS 超棒的 测试框架
 
