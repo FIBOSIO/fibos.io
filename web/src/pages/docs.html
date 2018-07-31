@@ -8,7 +8,7 @@
     </title>
 </head>
 
-<body>
+<body class="doc-container">
     <!-- include "../common/header.html" -->
     <div class="band">
         <div class="container">
@@ -37,20 +37,20 @@
         </ol>
     </div>
     <div class="page-body">
-        <div class="container">
-            <div class="sidebar hidden-xs">
+        <div class="container row">
+            <div class="sidebar hidden-xs col-lg-2">
                 <div class="panel-group" id="accordion" role="tablist">
                     <%for(var g in groups){%>
-                        <div class="panel">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h4 class="card-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<%-g%>" aria-controls="collapse_<%-g%>">
                                         <%-groups[g].title%>
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse_<%-g%>" class="panel-collapse collapse <%if(group==g){%>in<%}%>" aria-labelledby="headingOne">
-                                <div class="panel-body">
+                                <div class="card-body">
                                     <%-groups[g].toc%>
                                 </div>
                             </div>
@@ -59,12 +59,12 @@
                 </div>
             </div>
 
-            <div class="content">
-                <div class="social-share" data-sites='weibo,twitter' data-description="分享"></div>
+            <div class="content col-lg-8">
+                <!-- <div class="social-share" data-sites='weibo,twitter' data-description="分享"></div> -->
                 <%-doc%>
             </div>
 
-            <div class="sidebar hidden-sm hidden-xs hidden-md">
+            <div class="sidebar hidden-sm hidden-xs hidden-md col-lg-2">
                 <div id="toc"></div>
             </div>
         </div>
