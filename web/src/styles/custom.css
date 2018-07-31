@@ -360,9 +360,9 @@ pre div.line-numbers {
     padding: 35px 15px;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     .content {
-        width: 505px;
+        width: 768px;
         margin-left: 15px;
     }
     .home-tips {
@@ -373,11 +373,8 @@ pre div.line-numbers {
 }
 
 @media (min-width: 992px) {
-    .sidebar {
-        width: 250px;
-    }
     .content {
-        width: 675px;
+        width: 992px;
         margin-right: 0px;
     }
     .home-tips {
@@ -387,7 +384,7 @@ pre div.line-numbers {
 
 @media (min-width: 1200px) {
     .content {
-        width: 610px;
+        width: 1200px;
         margin-right: 15px;
     }
 }
@@ -397,7 +394,7 @@ pre div.line-numbers {
         background-size: 100% auto;
     }
     .container {
-        width: 1370px;
+        width: 1400px;
     }
     .content {
         width: 810px;
@@ -409,7 +406,7 @@ pre div.line-numbers {
         background-size: 100% auto;
     }
     .container {
-        width: 1570px;
+        width: 1600px;
     }
     .content {
         width: 1010px;
@@ -500,7 +497,7 @@ pre div.line-numbers {
         padding: 10px 0px;
     }
 }
- */
+
 .doc-container .container {
     width: 100%;
     max-width: 100%;
