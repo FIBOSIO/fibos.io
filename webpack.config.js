@@ -159,6 +159,7 @@ function build_docs() {
     } catch (e) {}
 
     var _tmpl = ejs.compile(fs.readFileSync(path.join(config.dist, 'docs.html')).toString());
+    var _readmeTmpl = ejs.compile(fs.readFileSync(path.join(config.dist, 'readme.html')).toString());
 
     function read_doc(p) {
         var md = fs.readFileSync(p).toString();
@@ -214,13 +215,23 @@ function build_docs() {
                 var doc = read_doc(file);
                 var r = /<h[1-9]?.*>(.*)<\/h[1-9]?>/.exec(doc);
                 var title = r ? r[1] : '';
+                var html
 
-                var html = _tmpl({
+                if (file.toLowerCase().includes('readme')) {
+                  html = _readmeTmpl({
                     title: title,
                     group: test_group(p),
                     groups: groups,
                     doc: doc
-                });
+                  });
+                } else {
+                  html = _tmpl({
+                    title: title,
+                    group: test_group(p),
+                    groups: groups,
+                    doc: doc
+                  });
+                }
 
                 var re = new RegExp('href=\"\/' + config.from + '/([^"> ]*)\"', 'g');
 
