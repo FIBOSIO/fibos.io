@@ -2,8 +2,7 @@
 
 阅读完本章后你可以通过脚本加入 FIBOS 的 TestNet 网络，你可以成为一个同步节点存在，也可以使用脚本注册申请成为BP，让我们开始吧！
 
-阅读完上面几章，你已经知道如何安装 FIBOS，并且 运行 FIBOS 阶段服务了，加入 FIBOS 的 TestNet 网络需要安装 FIBOS。
-
+阅读完上面几章，你已经知道如何安装 FIBOS，并且运行 FIBOS 节点服务了，加入 FIBOS 的 TestNet 网络需要安装 FIBOS。
 
 加入FIBOS TestNet 网络配置需要涉及几个关键信息：
 

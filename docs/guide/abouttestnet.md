@@ -1,6 +1,6 @@
 # FIBOS TestNet 是什么？
 
-FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方便开发者通过它进行测试验证，让我们更加详细的了解它吧。
+FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方便开发者通过它进行测试验证，让我们更加详细的了解它吧！
 
 ## TestNet 介绍
 
@@ -27,7 +27,7 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 
 编写一段基于 `fibos.js` 的客户端访问 FIBOS TestNet，保存下面的代码至 `test_client.js`。
 
-需要依赖 `fibos.js` 包，请查看上几章节学习如何安装 `fibos.js`。
+需要依赖 `fibos.js` 包，请查看上几章节学习如何安装 `fibos.js` [使用 fibos.js 与 FIBOS 交互](fibosjs.md)。
 
 ```
 var FIBOS = require("fibos.js");
