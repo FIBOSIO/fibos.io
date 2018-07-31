@@ -1,4 +1,5 @@
 import 'styles/index.less';
+import 'styles/fibos.scss';
 
 if ((!document.addEventListener)) {
     require('console-polyfill');
