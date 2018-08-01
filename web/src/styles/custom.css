@@ -2,14 +2,6 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-body {
-    font-family: Avenir, 'Segoe UI', Arial, 'Hiragino Sans GB', 冬青黑, 'Microsoft YaHei', 微软雅黑, SimSun, 宋体,
-        Helvetica, Tahoma, 'Arial sans-serif';
-    color: #333333;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
 a,
 a:hover,
 a:active,
@@ -603,4 +595,9 @@ section.links .social-media .qrcodeImg {
 
 section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
     display: block;
+}
+
+#navbarNav ul li {
+    font-size: 18px;
+    font-weight: 800;
 }
