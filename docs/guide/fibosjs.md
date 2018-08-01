@@ -377,7 +377,7 @@ fibos call.js
 2018-07-30T14:28:22.005 thread-1   producer_plugin.cpp:1196      produce_block        ] Produced block 00000e57c573a33b... #3671 @ 2018-07-30T14:28:22.000 signed by eosio [trxs: 1, lib: 3670, confirmed: 0]
 ``
 
-## 体验 FIBOS 超棒的 测试框架
+## 体验 FIBOS 超棒的测试框架
 
 这几章我们学会了如何搭建 FIBOS 的开发环境，也学会了如何使用 `fibos.js` 与 FIBOS 交互，那么让我们来试试 FIBOS 的测试框架吧!
 
