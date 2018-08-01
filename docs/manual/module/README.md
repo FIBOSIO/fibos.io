@@ -1,10 +1,10 @@
 # 基础模块
 * FIBOS
-  - [fibos](ifs/fibos.md) - 
+  - [fibos](ifs/fibos.md) - fibos 实例对象
 * Contract
-  - [action](ifs/action.md) - 
-  - [softfloat](ifs/softfloat.md) - 
-  - [trans](ifs/trans.md) - 
+  - [action](ifs/action.md) - action 对象
+  - [softfloat](ifs/softfloat.md) - 软浮点模块，用于解决由于硬件差异导致的相同浮点数计算结果不一致的问题。
+  - [trans](ifs/trans.md) - trans 模块
 * System
   - [console](ifs/console.md) - 控制台访问对象
   - [coroutine](ifs/coroutine.md) - 并发控制模块
