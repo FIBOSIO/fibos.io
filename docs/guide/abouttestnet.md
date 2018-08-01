@@ -6,8 +6,10 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 
 根 BP 连接信息: 
 
-- IP `103.80.170.107:8888`
-- chainID `cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f`
+```
+IP : "103.80.170.107:8888"
+chainID : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
+```
 
 支持 FIBOS TestNet 账户注册: http://103.80.170.107:8080
 
@@ -16,10 +18,12 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 ## TestNet BP 列表
 
 
-| BP Name  | BP IP  | BP port |
-|:-------------: |:---------------:| :-------------:|
-| lion      | 103.80.170.107 |         8888 |
-| vicky      | 45.121.142.171 |         8888 |
+| BP Name  | BP IP  | HTTP port | P2P port |
+|:-------------: |:---------------:| :-------------:| :-------------:|
+| gunlou      | 103.80.170.107 |         8888 | 9876 |
+| xuanwu      | 45.121.142.171 |         8888 | 9876 |
+
+
 
 ## 如何在 FIBOS TestNet 上进行测试？
 
