@@ -585,5 +585,22 @@ header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
 header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
 header section.secone a.btn-primary:not(:disabled):not(.disabled):active:focus {
     box-shadow: none;
-    color:  #ffffff;
+    color: #ffffff;
+}
+
+a.qrcodeContainer {
+    display: flex;
+}
+
+section.links .social-media .qrcodeImg {
+    display: none;
+    position: absolute;
+    top: -140px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
+    display: block;
 }
