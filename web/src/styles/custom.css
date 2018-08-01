@@ -92,7 +92,7 @@ tr:nth-child(2n) {
     margin-top: 4px;
 }
 
-.btn-primary,
+/*.btn-primary,*/
 .btn-default {
     padding: 14px 28px 13px 28px;
     font-size: 16px;
