@@ -43,11 +43,14 @@ fibos.load("http", {
 });
 
 fibos.load("net", {
-	"p2p-listen-endpoint" : "0.0.0.0:9876",
-	"p2p-peer-address" : "103.80.170.107:9876"
+	"p2p-listen-endpoint": "0.0.0.0:9876",
+	"p2p-peer-address": "103.80.170.107:9876"
 });
 
-fibos.load("chain");
+fibos.load("producer");
+fibos.load("chain", {
+	"delete-all-blocks": true
+});
 fibos.load("chain_api");
 fibos.load("wallet");
 fibos.load("wallet_api");
