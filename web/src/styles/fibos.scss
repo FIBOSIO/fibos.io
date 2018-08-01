@@ -1,32 +1,32 @@
-$primary: #1199DD;
-$green: #3BB97D;
-@import "./node_modules/bootstrap/scss/bootstrap.scss";
+$primary: #1199dd;
+$green: #3bb97d;
+@import './node_modules/bootstrap/scss/bootstrap.scss';
 
 body {
-    background: #fff ;
+    background: #fff;
     background-size: cover;
-    font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", 微软雅黑, sans-serif;
+    font-family: 'PingFang SC', 'Helvetica Neue', 'Hiragino Sans GB', 'Segoe UI', 'Microsoft YaHei', 微软雅黑,
+        sans-serif;
 }
 header.header {
     background: #fff url('../imgs/topflag.jpg') top center no-repeat;
     background-size: cover;
 }
 .btn-white {
-    margin-left:10px;
+    margin-left: 10px;
     background: #fff;
 }
 .title-sub {
     margin: 2rem auto 2.25rem auto !important;
-    background: #FFCC55 !important;
+    background: #ffcc55 !important;
     height: 0.5rem;
     width: 5rem !important;
-    
 }
-.navbar{
+.navbar {
     padding: 2em 1em;
     .navbar-brand {
         img {
-            height:60px;
+            height: 60px;
         }
     }
     .navbar-nav .nav-link {
@@ -35,18 +35,18 @@ header.header {
     }
 }
 .secone {
-    padding:100px 0 135px;
+    padding: 100px 0 135px;
     h1.slogan {
-        font-size:3.5rem;
+        font-size: 3.5rem;
         color: #fff;
         margin-bottom: 20px;
     }
     .desc {
-        color:#fff;
+        color: #fff;
         max-width: 800px;
         margin: 0 auto;
-        font-size:1.5rem;
-        text-align:left;
+        font-size: 1.5rem;
+        text-align: left;
         font-weight: 100;
     }
     .btn-join {
@@ -54,19 +54,18 @@ header.header {
         border-radius: 2px;
         margin-top: 60px;
     }
-    
 }
 section.video {
-    background: #fff url("../imgs/sec-video-bg.jpg") bottom center;
-    background-size:cover;
+    background: #fff url('../imgs/sec-video-bg.jpg') bottom center;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 115px 0 150px;
-    color:#fff;
+    color: #fff;
     .video-intro {
-        padding:30px 20px;
+        padding: 30px 20px;
         p {
             margin-top: 45px;
-            font-size:1.5rem;
+            font-size: 1.5rem;
             font-weight: 100;
             opacity: 0.8;
         }
@@ -76,8 +75,8 @@ section.video {
         }
     }
 }
-section.features{
-    color:#333;
+section.features {
+    color: #333;
     background: #fff;
     padding: 85px 0;
     .title {
@@ -87,8 +86,8 @@ section.features{
         padding: 0 2rem 1rem;
     }
     h3 {
-        color:$green;
-        margin:2rem 0;
+        color: $green;
+        margin: 2rem 0;
     }
     p {
         font-weight: 200;
@@ -96,8 +95,8 @@ section.features{
 }
 
 section.fo {
-    background: #fff url("../imgs/fo-token-bg.jpg") bottom center;
-    background-size:cover;
+    background: #fff url('../imgs/fo-token-bg.jpg') bottom center;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 115px 0;
     .title {
@@ -125,7 +124,7 @@ section.fo {
     }
 }
 section.timeline {
-    color:#333;
+    color: #333;
     background: #fff;
     padding: 85px 0 125px;
     .title {
@@ -137,13 +136,14 @@ section.timeline {
             margin-top: -30px;
             padding: 0;
         }
-        .process-bar ,.process-bar-right{
+        .process-bar,
+        .process-bar-right {
             float: left;
             border: 3px solid #ffa81c;
             width: 48%;
             margin-top: 24px;
         }
-        .process-bar-right{
+        .process-bar-right {
             margin-left: 4%;
         }
         .node-mark {
@@ -161,31 +161,31 @@ section.timeline {
         }
     }
     .content {
+        width: 285px;
         margin-top: 2rem;
-        .time{
-          font-size: 1.25rem;  
+        .time {
+            font-size: 1.25rem;
         }
         .title {
-            font-size: 1.5rem;  
+            font-size: 1.5rem;
             text-align: left;
             color: $green;
-            margin:1rem 0;
+            margin: 1rem 0;
         }
         ul {
             padding-left: 1rem;
             margin-top: 1.5rem;
         }
         li {
-            font-size:1.125rem;
+            font-size: 1.125rem;
             font-weight: 200;
             list-style-position: outside;
             line-height: 1.8;
         }
     }
-    
 }
 section.dapps {
-    color:#333;
+    color: #333;
     background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
     background-size: contain;
     padding: 135px 0 125px;
@@ -193,19 +193,19 @@ section.dapps {
         text-align: center;
     }
     .card {
-        border:none;
-        box-shadow: 0 5px 10px 0 rgba(51,51,51,0.10);
+        border: none;
+        box-shadow: 0 5px 10px 0 rgba(51, 51, 51, 0.1);
     }
     .card-title {
-        font-size:1.125rem;
+        font-size: 1.125rem;
     }
     .card-text {
         color: #999;
-        font-size:0.875rem;
+        font-size: 0.875rem;
     }
 }
 section.news {
-    color:#333;
+    color: #333;
     background: #fff url('../imgs/news-bg.png') top center no-repeat;
     background-size: contain;
     padding: 135px 0 115px;
@@ -213,27 +213,27 @@ section.news {
         text-align: center;
     }
     .topic {
-        border:0 none;
+        border: 0 none;
         .card-title {
-            font-size:1.125rem;
+            font-size: 1.125rem;
         }
         .card-text {
             color: #999;
-            font-size:0.875rem;
+            font-size: 0.875rem;
             font-weight: 200;
         }
     }
     .news-list {
-        padding:0 3rem;
+        padding: 0 3rem;
         .media {
             margin-bottom: 1.25rem;
         }
         .media-body {
-            font-size:0.875rem;
+            font-size: 0.875rem;
             color: #999;
             font-weight: 200;
             h5 {
-                font-size:1.125rem;
+                font-size: 1.125rem;
                 color: #333;
             }
         }
@@ -244,14 +244,14 @@ section.links {
     padding: 5.5rem;
     background: #939999;
     color: #fff;
-    font-size:0.875rem;
+    font-size: 0.875rem;
     font-weight: 100;
     h5 {
-        font-size:1.125rem;
+        font-size: 1.125rem;
         margin-bottom: 1.5rem;
     }
     h6 {
-        font-size:0.875rem;
+        font-size: 0.875rem;
         font-weight: 100;
     }
     ul {
@@ -271,14 +271,14 @@ section.links {
         }
         img {
             width: 32px;
-            height:32px;
+            height: 32px;
         }
     }
 }
 .copyright {
-    background: #2A3333;
+    background: #2a3333;
     padding: 2rem;
-    font-size:0.875rem;
+    font-size: 0.875rem;
     color: #fff;
     a {
         color: #fff;

@@ -2,14 +2,6 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-body {
-    font-family: Avenir, 'Segoe UI', Arial, 'Hiragino Sans GB', 冬青黑, 'Microsoft YaHei', 微软雅黑, SimSun, 宋体,
-        Helvetica, Tahoma, 'Arial sans-serif';
-    color: #333333;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
 a,
 a:hover,
 a:active,
@@ -92,7 +84,7 @@ tr:nth-child(2n) {
     margin-top: 4px;
 }
 
-.btn-primary,
+/*.btn-primary,*/
 .btn-default {
     padding: 14px 28px 13px 28px;
     font-size: 16px;
@@ -579,4 +571,33 @@ pre div.line-numbers {
 
 .doc-container > .page-body > .container .content {
     padding: 20px;
+}
+
+header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
+header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
+header section.secone a.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+    color: #ffffff;
+}
+
+a.qrcodeContainer {
+    display: flex;
+}
+
+section.links .social-media .qrcodeImg {
+    display: none;
+    position: absolute;
+    top: -140px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
+    display: block;
+}
+
+#navbarNav ul li {
+    font-size: 18px;
+    font-weight: 800;
 }
