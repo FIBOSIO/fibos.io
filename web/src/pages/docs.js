@@ -7,6 +7,7 @@ import './docs.css';
 //Executes your code when the DOM is ready.  Acts the same as $(document).ready().
 $(function () {
     var _toc = $("#toc");
+    console.log("_toc", _toc);
 
     //Calls the tocify method on your HTML div.
     _toc.tocify({

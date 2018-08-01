@@ -3,7 +3,8 @@ html {
 }
 
 body {
-    font-family: Avenir, 'Segoe UI', Arial, 'Hiragino Sans GB', 冬青黑, 'Microsoft YaHei', 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, 'Arial sans-serif';
+    font-family: Avenir, 'Segoe UI', Arial, 'Hiragino Sans GB', 冬青黑, 'Microsoft YaHei', 微软雅黑, SimSun, 宋体,
+        Helvetica, Tahoma, 'Arial sans-serif';
     color: #333333;
     font-size: 16px;
     line-height: 1.8;
@@ -115,99 +116,6 @@ tr:nth-child(2n) {
     background-color: #1199dd;
 }
 
-.navbar-default {
-    background-color: #ffffff;
-    border: none;
-    height: 95px;
-    padding-top: 10px;
-    margin-bottom: 0px;
-}
-
-.navbar-default .navbar-brand img {
-    display: inline-block;
-    margin-top: -20px;
-    max-width: 150px;
-}
-
-.navbar-default .navbar-brand {
-    color: #ffffff;
-    font-size: 28px;
-    padding-top: 30px;
-}
-
-.navbar-default .navbar-collapse {
-    border: none;
-}
-
-.navbar-default .navbar-nav li a {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #333333;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-    padding-bottom: 40px;
-    display: inline-block;
-    line-height: 14px;
-    padding: 10px 10px;
-}
-
-.navbar-default .navbar-right {
-    padding-top: 20px;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-nav li a:hover,
-.navbar-default .navbar-nav li a:focus {
-    color: #dddddd;
-}
-
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: transparent;
-}
-
-.jumbotron {
-    background-color: #373536;
-    background-size: 1400px auto;
-    background-position: center;
-    transform: translate3d(0px, 0px, 0px);
-    height: 620px;
-    padding-top: 210px;
-}
-
-.jumbotron h1 {
-    font-size: 48px;
-    line-height: 56px;
-    margin-bottom: 0px;
-    font-weight: 700;
-    color: #0088cc;
-}
-
-.jumbotron h2 {
-    font-size: 38px;
-    margin-bottom: 40px;
-    color: #ffffff;
-}
-
-.jumbotron .install {
-    margin-top: 60px;
-}
-
-.jumbotron .install span {
-    display: block;
-    margin: 20px 0px;
-    background-color: #000;
-    color: #fff;
-    padding: 6px 10px;
-    font-family: Menlo, Monaco, Consolas, Courier New, monospace;
-    font-size: 16px;
-    max-width: 600px;
-}
-
 .home-tips {
     position: relative;
     width: 100%;
@@ -246,9 +154,9 @@ tr:nth-child(2n) {
     margin: 0px;
 }
 
-.breadcrumb li+li:before {
+.breadcrumb li + li:before {
     padding: 0 0px 0 5px;
-    content: "/";
+    content: '/';
 }
 
 .back-to-top {
@@ -304,7 +212,6 @@ tr:nth-child(2n) {
 }
 
 .sidebar {
-    width: 200px;
     float: left;
 }
 
@@ -348,7 +255,6 @@ tr:nth-child(2n) {
     background-color: white;
 }
 
-
 /* The Table of Contents is composed of multiple nested unordered lists.  These styles remove the default styling of an unordered list because it is ugly. */
 
 .tocify ul,
@@ -359,13 +265,11 @@ tr:nth-child(2n) {
     padding: 0;
 }
 
-
 /* Top level header elements */
 
 .tocify-header {
     /*text-indent: 10px;*/
 }
-
 
 /* Top level subheader elements.  These are the first nested items underneath a header element. */
 
@@ -374,13 +278,11 @@ tr:nth-child(2n) {
     /*display: none;*/
 }
 
-
 /* Further indents second level subheader elements. */
 
 .tocify-subheader .tocify-subheader {
     text-indent: 20px;
 }
-
 
 /* Further indents third level subheader elements. You can continue this pattern if you have more nested elements. */
 
@@ -388,14 +290,12 @@ tr:nth-child(2n) {
     text-indent: 30px;
 }
 
-
 /* Twitter Bootstrap Override Style */
 
 .nav-list li a,
 .nav-list .nav-header {
     margin: 0px;
 }
-
 
 /* Twitter Bootstrap Override Style */
 
@@ -462,7 +362,7 @@ pre div.line-numbers {
 
 @media (min-width: 768px) {
     .content {
-        width: 505px;
+        width: 768px;
         margin-left: 15px;
     }
     .home-tips {
@@ -473,14 +373,8 @@ pre div.line-numbers {
 }
 
 @media (min-width: 992px) {
-    .navbar-default .navbar-nav li a {
-        font-size: 16px;
-    }
-    .sidebar {
-        width: 250px;
-    }
     .content {
-        width: 675px;
+        width: 992px;
         margin-right: 0px;
     }
     .home-tips {
@@ -490,7 +384,7 @@ pre div.line-numbers {
 
 @media (min-width: 1200px) {
     .content {
-        width: 610px;
+        width: 1200px;
         margin-right: 15px;
     }
 }
@@ -500,7 +394,7 @@ pre div.line-numbers {
         background-size: 100% auto;
     }
     .container {
-        width: 1370px;
+        width: 1400px;
     }
     .content {
         width: 810px;
@@ -512,14 +406,14 @@ pre div.line-numbers {
         background-size: 100% auto;
     }
     .container {
-        width: 1570px;
+        width: 1600px;
     }
     .content {
         width: 1010px;
     }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
     .navbar-default .container {
         padding-left: 15px;
         padding-right: 15px;
@@ -544,7 +438,7 @@ pre div.line-numbers {
     }
 }
 
-@media (max-width:479px) {
+@media (max-width: 479px) {
     body {
         font-size: 14px;
     }
@@ -585,14 +479,6 @@ pre div.line-numbers {
         font-size: 22px;
         line-height: 32px;
     }
-    .jumbotron {
-        height: 400px;
-        padding-top: 50px;
-        margin-bottom: 0px;
-    }
-    .jumbotron .install {
-        display: none;
-    }
     .page-body {
         background-color: transparent;
         border-top: 2px solid #f4f4f4;
@@ -610,4 +496,87 @@ pre div.line-numbers {
         font-size: 12px;
         padding: 10px 0px;
     }
+}
+
+.doc-container .container {
+    width: 100%;
+    max-width: 100%;
+    display: table;
+    padding: 0px 50px;
+}
+
+.doc-container > .page-body > .container .sidebar {
+    margin-bottom: 20px;
+}
+
+.doc-container > .page-body > .container .sidebar #toc .nav {
+    display: block;
+}
+
+.doc-container > .page-body > .container .sidebar #toc {
+    background-color: #ffffff;
+}
+
+.doc-container > .page-body > .container .card {
+    margin-bottom: 0;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-top: 5px;
+}
+
+.doc-container > .page-body > .container .card .card-header {
+    padding: 10px 15px 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 0;
+    background-color: #ffffff;
+}
+
+.doc-container > .page-body > .container .card .card-header .card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.doc-container > .page-body > .container .card .card-header .card-title > a {
+    display: block;
+    padding: 2px;
+    color: #666;
+    padding-left: 8px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.doc-container > .page-body > .container .card .card-body {
+    border-top: 1px solid #ddd;
+    padding: 15px 15px 15px 0px;
+    font-size: 14px;
+}
+
+.doc-container > .page-body > .container .card .card-body ul {
+    padding-left: 15px;
+    list-style: none;
+}
+
+.doc-container > .page-body > .container .card .card-body ul li {
+    border-left: 2px solid transparent;
+}
+
+.doc-container > .page-body > .container .card .card-body ul li a {
+    display: block;
+    padding: 2px;
+    color: #666;
+    padding-left: 8px;
+}
+
+.doc-container > .page-body > .container .card .card-body ul li a:hover {
+    background-color: #eee;
+    text-decoration: none;
+}
+
+.doc-container > .page-body > .container .content {
+    padding: 20px;
 }

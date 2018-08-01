@@ -1,24 +1,65 @@
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+<header class="header header-shrink header-inverse">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/index.html">
+                <span class="logo-default">
+                    <img src="/imgs/logo.png" alt="">
+                </span>
+            </a>
+
+            <!-- <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
+                <div class="hamburger hamburger--spin js-hamburger">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </button> -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="/index.html"><img src="/imgs/logo-dark.png"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/index.html">HOME</a></li>
-                <li><a href="/docs/guide/readme.md.html">GUIDE</a></li>
-                <li><a href="/docs/manual/module/readme.md.html">MODULE</a></li>
-                <li><a href="/docs/manual/object/readme.md.html">OBJECT</a></li>
-                <li><a href="/docs/awesome/readme.md.html">AWESOME</a></li>
-                <li><a href="/download/index.html">DOWNLOAD</a></li>
-            </ul>
-        </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index.html">首页</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/index.html#roadmap">路线图</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/index.html">开发社区</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            开发者文档
+                            <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/docs/guide/readme.md.html">开发指南</a>
+                            <a class="dropdown-item" href="/docs/manual/module/readme.md.html">基础模块</a>
+                            <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
+                            <a class="dropdown-item" href="/docs/awesome/readme.md.html">社区模块</a>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item ">
+                        <a class="nav-link" href="/docs/guide/readme.md.html">开发者文档</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#fibos-news">新闻</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ENG
+                            <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">简体中文</a>
+                            <a class="dropdown-item" href="#">ENGLISH</a>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
     </div>
-</div>
+</header>

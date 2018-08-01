@@ -41,7 +41,8 @@ function cssLoaders(options) {
 
     return {
         css: generateLoaders(['css']),
-        less: generateLoaders(['css', 'less'])
+        less: generateLoaders(['css', 'less']),
+        sass: generateLoaders(['css', 'sass']),
     }
 }
 
@@ -51,6 +52,7 @@ function styleLoaders(options) {
 
     for (var extension in loaders) {
         var loader = loaders[extension]
+        if (extension === 'sass') extension = 'scss'
         output.push({
             test: new RegExp('\\.' + extension + '$'),
             loader: loader
@@ -212,7 +214,6 @@ function build_docs() {
                 var doc = read_doc(file);
                 var r = /<h[1-9]?.*>(.*)<\/h[1-9]?>/.exec(doc);
                 var title = r ? r[1] : '';
-
                 var html = _tmpl({
                     title: title,
                     group: test_group(p),

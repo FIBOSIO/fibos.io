@@ -1,99 +1,472 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!-- include "../common/meta.html" -->
-    <title>JavaScript on Fiber</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FIBOS，开发者友好的区块链生态系统</title>
+    <!-- <link rel="stylesheet" href="fibos.scss"> -->
 </head>
 
 <body>
-    <!-- include "../common/header.html" -->
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron" style="background-image: url('./imgs/bg-1.jpg');">
+    <header class="header header-shrink header-inverse">
         <div class="container">
-            <h1>JavaScript on Fiber.</h1>
-            <h2>Fiber 上的 JavaScript</h2>
-            <p><a class="btn btn-primary" href="/docs/guide/about.md.html" role="button"> 快速入门 </a>&nbsp;
-                <a class="btn btn-default" target="_blank" href="https://github.com/fibjs" role="button"> GITHUB > </a></p>
-            <p class="install"><span>快速安装: curl -s http://fibjs.org/download/installer.sh|sh</span></p>
-        </div>
-    </div>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html">
+                    <span class="logo-default">
+                        <img src="/imgs/logo.png" alt="">
+                    </span>
+                </a>
 
-    <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="home-tips">
-                <div class="tips-left">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-tool"></use>
-                    </svg>
-                </div>
-                <div class="tips-right">
-                    <h2>快速开发</h2>
-                    <ul>
-                        <li>内置模块丰富，安装即用</li>
-                        <li>无需理解异步, 立即开发高性能 web 服务</li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">首页</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#roadmap">路线图</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="https://github.com/fibosio" target="_blank">开发社区</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/docs/guide/readme.md.html">开发者文档</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#fibos-news">新闻</a>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ENG
+                                <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">简体中文</a>
+                                <a class="dropdown-item" href="#">ENGLISH</a>
+                            </div>
+                        </li> -->
                     </ul>
                 </div>
-            </div>
-            <div class="home-tips">
-                <div class="tips-left">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-adjustments"></use>
-                    </svg>
-                </div>
-                <div class="tips-right">
-                    <h2>性能卓越</h2>
-                    <ul>
-                        <li>高性能的内置 web 服务器</li>
-                        <li>内核组件全部 c++ 实现</li>
-                        <li>内置多核支持</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="home-tips">
-                <div class="tips-left">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-chat"></use>
-                    </svg>
-                </div>
-                <div class="tips-right">
-                    <h2>社区友好</h2>
-                    <ul>
-                        <li>完全开源</li>
-                        <li>兼容 npm 模块管理</li>
-                    </ul>
-                </div>
-            </div>
+            </nav>
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-    <div class="page-body">
+        <!-- END container-->
+        <section class="secone">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="slogan">
+                            开发者友好的区块链生态系统
+                        </h1>
+                        <p class="desc">
+                            JavaScript 开发 + BANCOR 协议智能通证 + 开发者服务，FIBOS 平台实现了快速开发、快速部署和稳定且流动的通证体系，帮助开发者一步进入区块链时代。
+                        </p>
+                        <a href="https://github.com/fibosio" target="_blank" class="btn btn-lg btn-primary btn-join">
+                            加入开发社区
+                        </a>
+                        <a href="#exchange" class="btn btn-lg btn-white btn-join">
+                            兑换 FO 智能通证
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- END header -->
+
+    <section class="video">
         <div class="container">
-            <div class="home-os">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-osx"></use>
-                </svg>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-linux"></use>
-                </svg>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-windows8"></use>
-                </svg>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-shumeipai"></use>
-                </svg>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-socialfreebsddevil"></use>
-                </svg>
+            <div class="row">
+                <div class="col-lg-6">
+                    <video controls="controls" style="width: 510px" poster="/imgs/video.png">
+                        <source src="http://www.baidu.com/movie.mp4" type="video/mp4">
+                        <source src="http://www.baidu.com/movie.ogg" type="video/ogg"> Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="col-lg-6 video-intro">
+                    <h2>用 JavaScript 快速开发区块链</h2>
+                    <p>FIBOS 支持使用 JavaScript 开发区块链智能合约，解决了区块链环境部署困难、开发学习门槛高、测试工具原始、迭代周期长、开发生态原始、运行成本高、合约不可审计的问题。</p>
+                    <p>
+                        FIBOS = EOS + FIBJS，
+                        <a href="/docs/guide/readme.md.html">开始学习》</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 title">FIBOS 技术特性和服务优势</h2>
+                    <div class="title-sub"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-list">
+                    <h3>开发、部署速度超快</h3>
+                    <p>
+                        学习门槛低、环境部署门槛低；迭代速度快；无需编译；代码可读性强；兼容 npm 生态。相比其他基于 C++ 或其他语言的区块链开发工作，之前没有接触过区块链项目的开发者，通常可以在 1 小时之内实现第一个可用的区块链项目。
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-list">
+                    <h3>非常节省资源</h3>
+                    <p>
+                        节省存储 ram ，节省执行 ram ，节省 CPU 。经过测算，部署同等业务合约，使用 FIBOS 开发， ram 的占用是 EOS 的 10% ，帮助开发者以极低的投入快速进入区块链开发市场。
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-list">
+                    <h3>安全可控制</h3>
+                    <p>
+                        独立沙箱实现 global 级别隔离和虚拟文件系统，具备超时检测功能。经过 FIBJS 项目 6 年开发经验、以及 FIBOS 项目 6 个月的持续开发和测试， FIBOS 在开发和生产环境中均保持了安全与稳定，为开发者节约了大量时间。
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 feature-list">
+                    <h3>合约代码可审计</h3>
+                    <p>
+                        使用 JavaScript 作为开发语言，合约开源，任何人可以审计代码和逻辑，避免 WASM 合约经过编译后不可审计的问题。
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-list">
+                    <h3>稳定且流动的货币体系</h3>
+                    <p>
+                        基于并发展了 Bancor 协议的智能通证体系，实现通证发行、交易、兑换等功能。利用 FIBOS 方案内置的 FO 智能通证，开发者可以集中精力开发 DApp，而不用担心代币发行和交易逻辑。
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-list">
+                    <h3>一步到位全套解决方案</h3>
+                    <p>
+                        FIBOS 为开发者提供了开发工具、通证协议和开发者服务，开发者可利用 FIBOS 一步进入区块链开发和发布。此外，FIBOS 基金会还将运营开发者社区，直接为开发者提供咨询、培训和交流等后续服务。
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <a name="exchange" style="height: 0px"></a>
+    <section class="fo">
+        <div class="container">
+            <h3 class="title">
+                <img title="兑换 FO 智能通证" src="/imgs/buyfo.png" width="337" alt="兑换 FO 智能通证">
+            </h3>
+            <!-- <div class="row step">
+                <div class="col fo-step">
+                    <span class="big-mark">0.00</span>%
+                    <div>已发行 FO 智能代币</div>
+                </div>
+                <div class="col fo-step">
+                    <span class="big-mark">1,000,000</span>EOS
+                    <div>FO 智能代币发行目标</div>
+                </div>
+                <div class="col fo-step">
+                    <span class="big-mark">1</span>EOS
+                    <span class="equal">=</span>
+                    <span class="big-mark">1,000</span>FO
+                    <div>兑换单价</div>
+                </div>
+                <div class="col fo-step">
+                    <span class="big-mark">6</span>个月
+                    <div>锁仓期</div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-white btn-buy" style="padding: 0.85rem 6rem;">
+                        即将开放兑换
+                    </a>
+                    <!-- <a href="" class="btn btn-lg btn-white btn-buy">
+                        查看白皮书
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <a name="roadmap" style="height: 0px"></a>
+    <section class="timeline">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 title">FIBOS 路线图</h2>
+                    <div class="title-sub"></div>
+                </div>
 
-    <!-- include "../common/footer.html" -->
+            </div>
+            <div class="row timeline-box">
+                <div class="node col-sm-3">
+                    <div class="process-bar"></div>
+                    <!-- <div class="process-bar-right"></div> -->
+                    <div class="node-mark active"></div>
+                    <div class="content">
+                        <div class="time">
+                            Aug. 1, 2018
+                        </div>
+                        <div class="title">
+                            发布测试网
+                        </div>
+                        <!-- <ul>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="node col-sm-3">
+                    <!-- <div class="process-bar"></div> -->
+                    <div class="node-mark"></div>
+                    <div class="content">
+                        <div class="time">
+                            Aug. 28, 2018
+                        </div>
+                        <div class="title">
+                            主网上线
+                        </div>
+                        <!-- <ul>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="node col-sm-3">
+                    <!-- <div class="process-bar"></div> -->
+                    <div class="node-mark"></div>
+                    <div class="content">
+                        <div class="time">
+                            Sep. 15, 2018
+                        </div>
+                        <div class="title">
+                            发布 FO 智能钱包
+                        </div>
+                        <!-- <ul>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="node col-sm-3">
+                    <!-- <div class="process-bar"></div> -->
+                    <div class="node-mark"></div>
+                    <div class="content">
+                        <div class="time">
+                            Sep. 25, 2018
+                        </div>
+                        <div class="title">
+                            发布 DApp Store
+                        </div>
+                        <!-- <ul>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                            <li>测试网发布内容一</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="dapps">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 title">DApp 合作伙伴</h2>
+                    <div class="title-sub"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 dapp">
+                    <div class="card">
+                        <img class="card-img-top" src="/imgs/dapp1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">FO 智能钱包</h5>
+                            <p class="card-text">支持多种通证，可直接发布通证，内置 DApp Store 直接抵达用户</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 dapp">
+                    <div class="card">
+                        <img class="card-img-top" src="/imgs/dapp2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">虚位以待</h5>
+                            <!-- <p class="card-text">支持多币种，可直接发币，内置 DApp 市场直接抵达用户</p> -->
+                            <p class="card-text"><br/><br/></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 dapp">
+                    <div class="card">
+                        <img class="card-img-top" src="/imgs/dapp3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">虚位以待</h5>
+                            <!-- <p class="card-text">支持多币种，可直接发币，内置 DApp 市场直接抵达用户</p> -->
+                            <p class="card-text"><br/><br/></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 dapp">
+                    <div class="card">
+                        <img class="card-img-top" src="/imgs/dapp4.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">虚位以待</h5>
+                            <!-- <p class="card-text">支持多币种，可直接发币，内置 DApp 市场直接抵达用户</p> -->
+                            <p class="card-text"><br/><br/></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a name="fibos-news" style="height: 0px"></a>
+    <!-- <section class="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 title">FIBOS 新闻动态</h2>
+                    <div class="title-sub"></div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card topic">
+                        <img class="card-img-top" src="/imgs/news-cover.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">亚洲区块链中心和欧洲区块链中心合作正式启动</h5>
+                            <p class="card-text">欧亚区块链中心论坛也成功举办,深入探讨了欧洲和亚洲区块链发展趋势。 ... 执行长，研究开发以太坊的区块浏览器和数据平台的MatthewTan，CoinGecko ... 马来西亚的区块链产业也得到NEM国际组织基金会的推动，该基金会...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 news-list">
+                    <div class="media">
+                        <img class="mr-3" src="/imgs/news-cover1.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0">开发社区动态一条</h5>
+                            欧亚区块链中心论坛也成功举办,深入探讨了欧洲和亚洲区块链发展趋势。 ... 执行长，研究开发以太坊的区块浏览器和数据平台的MatthewTan，CoinGecko ... 马来西亚的区块链 ...
+                        </div>
+                    </div>
+                    <div class="media">
+                        <img class="mr-3" src="/imgs/news-cover2.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0">媒体对 FIBOS 的报道一条</h5>
+                            欧亚区块链中心论坛也成功举办,深入探讨了欧洲和亚洲区块链发展趋势。 ... 执行长，研究开发以太坊的区块浏览器和数据平台的MatthewTan，CoinGecko ... 马来西亚的区块链 ...
+                        </div>
+                    </div>
+                    <div class="media">
+                        <img class="mr-3" src="/imgs/news-cover3.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0">区块链技术动态一条</h5>
+                            欧亚区块链中心论坛也成功举办,深入探讨了欧洲和亚洲区块链发展趋势。 ... 执行长，研究开发以太坊的区块浏览器和数据平台的MatthewTan，CoinGecko ... 马来西亚的区块链 ...
+                        </div>
+                    </div>
+                    <div class="media">
+                        <img class="mr-3" src="/imgs/news-cover4.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0">FIBOS 项目进度一条</h5>
+                            欧亚区块链中心论坛也成功举办,深入探讨了欧洲和亚洲区块链发展趋势。 ... 执行长，研究开发以太坊的区块浏览器和数据平台的MatthewTan，CoinGecko ... 马来西亚的区块链 ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <footer>
+        <section class="links">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-lg-3">
+                        <h5>开发社区</h5>
+                        <p>
+                            学习门槛低、环境部署门槛低；迭代速度快；无需编译；代码可读性强；兼容 npm 生态。相比其他基于 C 或其他语言的区块链开发工作，之前没有接触过区块链项目的开发者，通常可以在1小时之内实现第一个可用的区块链项目
+                        </p>
+                    </div> -->
+                    <div class="col-lg-3">
+                        <h5>开发文档</h5>
+                        <ul>
+                            <li>
+                                <a href="/docs/guide/readme.md.html">开发指南</a>
+                            </li>
+                            <li>
+                                <a href="/docs/manual/module/readme.md.html">基础模块</a>
+                            </li>
+                            <li>
+                                <a href="/docs/manual/object/readme.md.html">内置对象</a>
+                            </li>
+                            <li>
+                                <a href="/docs/awesome/readme.md.html">社区模块</a>
+                            </li>
+                            <!-- <li>
+                                <a href="#">服务端模块热更新</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <!-- <div class="col-lg-2">
+                        <h5>关于 FIBOS</h5>
+                        <ul>
+                            <li>
+                                <a href="#">关于 FIBOS 项目</a>
+                            </li>
+                            <li>
+                                <a href="#">核心团队</a>
+                            </li>
+                            <li>
+                                <a href="#">媒体关系</a>
+                            </li>
+                            <li>
+                                <a href="#">下载 LOGO</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <div class="col-lg-4">
+                        <h5>联系我们</h5>
+                        <h6>开发者社区</h6>
+                        <ul class="social-media">
+                            <li>
+                                <a href="#">
+                                    <img src="/imgs/wechat.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/@fibosio" target="_blank">
+                                    <img src="/imgs/medium.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/fibos_io" target="_blank">
+                                    <img src="/imgs/twitter.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/FIBOSIO" target="_blank">
+                                    <img src="/imgs/telegram.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/FIBOSIO" target="_blank">
+                                    <img src="/imgs/github.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="copyright">
+            <div class="container">
+                <p class="text-center">
+                    © Copyright 2011 - 2018
+                    <a href="https://fibos.io" target="_blank">FIBOS.IO</a>
+                </p>
+            </div>
+        </section>
+    </footer>
 </body>
 
 </html>
