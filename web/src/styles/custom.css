@@ -580,3 +580,10 @@ pre div.line-numbers {
 .doc-container > .page-body > .container .content {
     padding: 20px;
 }
+
+header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
+header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
+header section.secone a.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+    color:  #ffffff;
+}
