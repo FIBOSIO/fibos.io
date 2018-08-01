@@ -9,7 +9,7 @@ FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 ## 快速安装
 
 ```
-快速安装: curl -s https://fibos.io/download/installer.sh|sh
+快速安装: curl -s https://fibos.io/download/installer.sh |sh
 ```
 
 安装结束后 FIBOS 可执行文件在系统 `bin` 目录下，使用查看 FIBOS 版本：
