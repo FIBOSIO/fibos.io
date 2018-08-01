@@ -379,6 +379,6 @@ fibos call.js
 
 ## 体验 FIBOS 超棒的 测试框架
 
-这几章我们学会了如何搭建 FIBOS 的开发环境，也学会了如何使用 `fibos.js` 与 FIBOS 交互，那么让我们来试试 FIBOS 的 测试框架吧!
+这几章我们学会了如何搭建 FIBOS 的开发环境，也学会了如何使用 `fibos.js` 与 FIBOS 交互，那么让我们来试试 FIBOS 的测试框架吧!
 
 👉 【[体验 FIBOS 超棒的测试框架](test.md)】

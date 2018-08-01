@@ -1,6 +1,6 @@
 # 如何加入到 TestNet 网络
 
-阅读完本章后你可以通过脚本加入 FIBOS 的 TestNet 网络，你可以成为一个同步节点存在，也可以使用脚本注册申请成为BP，让我们开始吧！
+阅读完本章后你可以通过脚本加入 FIBOS 的 TestNet 网络，你可以成为一个同步节点存在，也可以使用脚本注册申请成为 BP，让我们开始吧！
 
 阅读完上面几章，你已经知道如何安装 FIBOS，并且运行 FIBOS 节点服务了，加入 FIBOS 的 TestNet 网络需要安装 FIBOS。
 
@@ -19,7 +19,7 @@ chainId : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 ```
 3. 区块数据同步的目标节点信息
 
-目前 TestNet 节点信息，请查阅下面的节点列表, `103.80.170.107:9876` 是 网络根 BP 节点网络信息。
+目前 TestNet 节点信息，请查阅下面的节点列表, `103.80.170.107:9876` 是网络根 BP 节点网络信息。
 
 ```
 "p2p-peer-address" : "103.80.170.107:9876"
@@ -64,19 +64,19 @@ fibos.start();
 fibos sync_node.js
 ```
 
-## 如何成为一个 FIBOS TestNet 的 BP节点
+## 如何成为一个 FIBOS TestNet 的 BP 节点
 
 (* BP 区块生产者)
 
 如果节点需要申请注册成为 FIBOS TestNet 的 区块生产者，需要涉及到3个方面：
 
-- 配置Producer信息启动 FIBOS 节点服务
-- 使用Producer身份发起注册申请
-- 发起投票使得成为Producer
+- 配置 Producer 信息启动 FIBOS 节点服务
+- 使用 Producer 身份发起注册申请
+- 发起投票使得成为 Producer
 
 ### 配置Producer信息启动 FIBOS 节点服务
 
-只有投票数量达到一定的数量，FIBOS 节点才会真正的成为Producer，拥有生产区块的权限，其他情况仅仅作为同步区块数据的身份存在。
+只有投票数量达到一定的数量，FIBOS 节点才会真正的成为 Producer，拥有生产区块的权限，其他情况仅仅作为同步区块数据的身份存在。
 
 以下代码实现了配置一个 Producer，保存代码至 `producer_node.js`:
 
@@ -173,7 +173,7 @@ var ctx = fibos.contractSync("eosio");
 ctx.regproducerSync(config["producer-name"], config["public-key"], config["url"], 1);
 ```
 
-以上代码依赖 `fibos.js`库，如果你还不了解此，请查阅[使用 fibos.js 与 FIBOS 交互](fibosjs.md)
+以上代码依赖 `fibos.js` 库，如果你还不了解此，请查阅[使用 fibos.js 与 FIBOS 交互](fibosjs.md)
 
 配置说明：
 
@@ -195,7 +195,7 @@ var config = {
 fibos register_bp.js
 ```
 
-### 发起投票使得成为Producer
+### 发起投票使得成为 Producer
 
 Producer 可以为自己投票，请查看下面的示例代码，保存代码至 `vote_bp.js`
 
