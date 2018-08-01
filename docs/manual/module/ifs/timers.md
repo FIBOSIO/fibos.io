@@ -133,3 +133,21 @@ static timers.clearImmediate(Value t);
 调用参数:
 * t: Value, 指定要清除的定时器
 
+--------------------------
+### call
+**调用给定的函数，并在超时时间到期时中断函数运行**
+
+```JavaScript
+static Value timers.call(Function func,
+    Number timeout,
+    ...args);
+```
+
+调用参数:
+* func: Function, 指定要运行的函数
+* timeout: Number, 指定超时时间
+* args: ..., 额外的参数，传入到指定的 callback 内，可选。
+
+返回结果:
+* Value, 返回 func 的运行结果
+

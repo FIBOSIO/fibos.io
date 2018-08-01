@@ -1,6 +1,6 @@
 # FIBOS 是什么？
 
-FIBOS 是一个结合 FIBJS 以及 EOS 的 JavaScript 的运行平台，它使得EOS提供可编程性，并允许使用 JavaScript 编写智能合约。
+FIBOS 是一个结合 FIBJS 以及 EOS 的 JavaScript 的运行平台，它使得 EOS 提供可编程性，并允许使用 JavaScript 编写智能合约。
 
 FIBOS 平台的出现让第三代 EOS 智能合约编程变得简单、快捷!
 

@@ -1,4 +1,5 @@
 # 对象 Table
+multi index table 对象
 
 ## 继承关系
 ```dot
@@ -15,7 +16,7 @@ digraph {
 ## 成员属性
         
 ### name
-****
+**String, table 名**
 
 ```JavaScript
 readonly String Table.name;
@@ -23,7 +24,7 @@ readonly String Table.name;
 
 --------------------------
 ### code
-****
+**String, 指向合约发布者的名称**
 
 ```JavaScript
 readonly String Table.code;
@@ -31,7 +32,7 @@ readonly String Table.code;
 
 --------------------------
 ### scope
-****
+**String, table 中数据所属的 account_name**
 
 ```JavaScript
 readonly String Table.scope;
@@ -40,7 +41,7 @@ readonly String Table.scope;
 ## 成员函数
         
 ### emplace
-****
+**向 table 存入新数据**
 
 ```JavaScript
 Table.emplace(String payer,
@@ -48,30 +49,37 @@ Table.emplace(String payer,
 ```
 
 调用参数:
+* payer: String, 为此次操作付费的账户
+* val: Object, 将要存入到 table 的值
 
 --------------------------
 ### get
-****
+**获取索引值为 id 的数据**
 
 ```JavaScript
 Value Table.get(Value id);
 ```
 
 调用参数:
+* id: Value, 索引值
+
+返回结果:
+* Value, Table 中索引为 index 的数据
 
 --------------------------
 ### erase
-****
+**删除索引值为 id 的数据**
 
 ```JavaScript
 Table.erase(Value id);
 ```
 
 调用参数:
+* id: Value, 索引值
 
 --------------------------
 ### modify
-****
+**修改索引值为 id 的对应的数据**
 
 ```JavaScript
 Table.modify(Value id,
@@ -80,6 +88,9 @@ Table.modify(Value id,
 ```
 
 调用参数:
+* id: Value, 
+* payer: String, 为此次操作付费的账户
+* val: Object, 
 
 --------------------------
 ### toString

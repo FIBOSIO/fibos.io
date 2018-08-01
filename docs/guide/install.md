@@ -9,7 +9,7 @@ FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 ## 快速安装
 
 ```
-快速安装: curl -s http://testhome.fibos.io/download/installer.sh|sh
+快速安装: curl -s https://fibos.io/download/installer.sh|sh
 ```
 
 安装结束后 FIBOS 可执行文件在系统 `bin` 目录下，使用查看 FIBOS 版本：
@@ -22,7 +22,7 @@ FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 v0.26.0-dev
 ```
 
-FIBOS 是一个可执行文件，它继承了 FIBJS 的 JavaScript CLI命令行控制台功能，直接执行 FIBOS 回车，进入命令行交互模式，如:
+FIBOS 是一个可执行文件，它继承了 FIBJS 的 JavaScript CLI 命令行控制台功能，直接执行 FIBOS 回车，进入命令行交互模式，如:
 
 ```
 ~$ fibos

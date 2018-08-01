@@ -1,5 +1,5 @@
 # 内置对象
-* [Table](ifs/Table.md) - 
+* [Table](ifs/Table.md) - multi index table 对象
 * [Buffer](ifs/Buffer.md) - 二进制数据缓存对象，用于 io 读写的数据处理
 * [BufferedStream](ifs/BufferedStream.md) - 缓存读取对象
 * [Chain](ifs/Chain.md) - 消息处理器链处理对象

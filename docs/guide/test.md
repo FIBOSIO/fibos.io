@@ -1,4 +1,4 @@
-# 开始体验 FIBOS 超棒的 测试框架
+# 开始体验 FIBOS 超棒的测试框架
 
 阅读完本章你可以学会如何使用 FIBOS 的编写测试用例，下面介绍了几个例子。
 
@@ -146,14 +146,14 @@ require.main === module && test.run(console.DEBUG);
 
 ### 写一个合约的测试用例
 
-上一章节介绍了写一个JS 合约，基于上面的文件结果，进行测试用例的编写：
+上一章节介绍了写一个 JS 合约，基于上面的文件结果，进行测试用例的编写：
 
 ```
 ├── fibos_client
 │   ├── call.js 调用合约接口脚本文件
 │   ├── deploy.js 加载、发布合约脚本文件
 │   ├── hello
-│   │   ├── hello.abi 合约abi文件
+│   │   ├── hello.abi 合约 abi 文件
 │   │   └── hello.js 合约代码文件
 
 ```
