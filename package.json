@@ -37,7 +37,7 @@
     "mkdir": "0.0.2",
     "node-sass": "^4.9.2",
     "on-build-webpack": "^0.1.0",
-    "popper.js": "^1.14.3"
+    "popper.js": "^1.14.3",
     "recursive-readdir-sync": "^1.0.6",
     "sass-loader": "^4.1.1",
     "social-share.js": "^1.0.16",
