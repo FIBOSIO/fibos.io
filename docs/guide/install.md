@@ -82,70 +82,7 @@ fibos --install fibos.js
 
 ## UNIX 操作系统下编译
 
-如果你需要自己编译 FIBOS，请查看下面的内容，阅读后可以了解如何在 UNIX 系统下编译 FIBOS。
-
-### 准备编译环境
-
-在 UNIX 下编译需要依赖以下工具以及源代码:
-
-```
-工具：
-GCC
-CMAKE
-```
-
-### 执行编译
-FIBOS 项目地址: [http://git.fibos.io/fibos/fibos.git](http://git.fibos.io/fibos/fibos.git)
-
-在工作目录下执行以下命令:
-
-#### step1:(下载 FIBOS 代码)
-
-```sh
-~# git clone http://git.fibos.io/fibos/fibos.git
-Cloning into 'fibos'...
-```
-
-#### step2:(init submodule 工程)
-
-```sh
-~/fibos# git submodule update --init --recursive
-Submodule 'eos' (https://github.com/EOSIO/eos.git) registered for path 'eos'
-Submodule 'fibjs' (https://github.com/fibjs/fibjs.git) registered for path 'fibjs'
-```
-
-#### step3:(执行编译)
-
-```sh
-~/fibos/fibjs# cd ..
-~/fibos# chmod +x fibos_build
-~/fibos# ./fibos_build
-```
-
-#### step4:编程成功
-
-```sh
-_______ _________ ______   _______  _______
- (  ____ \\__   __/(  ___ \ (  ___  )(  ____ \
- | (    \/   ) (   | (   ) )| (   ) || (    \/
- | (__       | |   | (__/ / | |   | || (_____
- |  __)      | |   |  __ (  | |   | |(_____  )
- | (         | |   | (  \ \ | |   | |      ) |
- | (_     ___) (___| (___) )| (___) |/\____) |
- (__/     \_______/(______/ (_______)\_______)
-
- FIBOS has been successfully built.
-
- For more information:
-
- website: http://fibos.io
- twitter: https://twitter.com/fibos_io
- telegram: https://t.me/FIBOSIO
- repository: https://github.com/fibosio
-
- //加入到bin目录
- ~/fibos/# ./install.sh
-```
+FIBOS 暂时未开源，待开源后提供编译教程!
 
 ## 搭建一个 FIBOS 开发环境
 到现在为止，你已经有一个可以执行的 FIBOS，可以开始体验 FIBOS  开发的乐趣了，让我们一起来搭建一个 FIBOS 的开发环境。
