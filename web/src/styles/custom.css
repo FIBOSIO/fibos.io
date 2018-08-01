@@ -601,3 +601,7 @@ section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
     font-size: 18px;
     font-weight: 800;
 }
+
+.container  .navbar-dark .navbar-nav .nav-link {
+    color:  #ffffff;
+}
