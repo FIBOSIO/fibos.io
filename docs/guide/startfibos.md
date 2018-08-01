@@ -80,7 +80,7 @@ fibos$ fibos node.js
 2018-07-30T03:29:01.004 thread-1   producer_plugin.cpp:1194      produce_block        ] Produced block 00000002e091c956... #2 @ 2018-07-30T03:29:01.000 signed by eosio [trxs: 0, lib: 0, confirmed: 0]
 ```
 
-通过日志可以查看到环境脚本中加载的模块: http、chain、net已经成功加载,节点使用账户`eosio`出块。
+通过日志可以查看到环境脚本中加载的模块: http、chain、net 已经成功加载,节点使用账户 `eosio` 出块。
 
 让我们简单分析一下启动过程：
 
@@ -91,7 +91,7 @@ fibos$ fibos node.js
 2018-07-30T03:29:00.478 thread-1   http_plugin.cpp:401           plugin_startup       ] start listening for http requests
 ```
 
-2. 启动chain模块，使用默认创世配置（genesis），区块高度从#1开始
+2. 启动 chain 模块，使用默认创世配置（genesis），区块高度从#1开始
 
 ```
 2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:271          plugin_initialize    ] initializing chain plugin
@@ -101,7 +101,7 @@ fibos$ fibos node.js
 
 ```
 
-3. P2P监听在默认9876端口
+3. P2P 监听在默认9876端口
 
 节点ID是`669c9ac5d547873f8d3a6bf1b84e23d2471823e41c1e1c0f36bfea81b83c9561`
 
@@ -112,14 +112,14 @@ fibos$ fibos node.js
 2018-07-30T03:29:00.512 thread-1   net_plugin.cpp:3049           plugin_startup       ] starting listener, max clients is 25
 ```
 
-4. 开启 history以及chain API模块
+4. 开启 history 以及 chain API 模块
 
 ```
 2018-07-30T03:29:00.512 thread-1   chain_api_plugin.cpp:75       plugin_startup       ] starting chain_api_plugin
 2018-07-30T03:29:00.514 thread-1   history_api_plugin.cpp:38     plugin_startup       ] starting history_api_plugin
 ```
 
-5. 使用系统默认账户 `eosio` 	开启区块生产
+5. 使用系统默认账户 `eosio` 开启区块生产
 
 ```
 2018-07-30T03:29:00.514 thread-1   producer_plugin.cpp:640       plugin_startup       ] producer plugin:  plugin_startup() begin
@@ -133,12 +133,13 @@ fibos$ fibos node.js
 
 ## 高级用法
 
-FIBOS 中 `load`方法支持参数传递，下面详细的介绍。
+FIBOS 中 `load` 方法支持参数传递，下面详细的介绍。
 
 
 1. 配置监听端口以及地址
 
 (1) 开启 HTTP 服务对所有地址的8889端口监听
+
 (2) 开启 P2P 服务对所有地址的9877端口监听
 
 

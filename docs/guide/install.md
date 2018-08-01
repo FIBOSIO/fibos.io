@@ -22,7 +22,7 @@ FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 v0.26.0-dev
 ```
 
-FIBOS 是一个可执行文件，它继承了 FIBJS 的 JavaScript CLI命令行控制台功能，直接执行 FIBOS 回车，进入命令行交互模式，如:
+FIBOS 是一个可执行文件，它继承了 FIBJS 的 JavaScript CLI 命令行控制台功能，直接执行 FIBOS 回车，进入命令行交互模式，如:
 
 ```
 ~$ fibos
