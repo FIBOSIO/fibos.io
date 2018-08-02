@@ -612,6 +612,10 @@ section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
 }
 
 #navbarNav ul li {
-  font-size: 18px;
-  font-weight: 800;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.container  .navbar-dark .navbar-nav .nav-link {
+    color:  #ffffff;
 }
