@@ -13,7 +13,7 @@ header.header {
     background-size: cover;
 }
 .btn-white {
-    // margin-left: 10px;
+    margin-left: 10px;
     background: #fff;
 }
 .title-sub {
@@ -53,9 +53,6 @@ header.header {
         padding: 0.85rem 2.5rem;
         border-radius: 2px;
         margin-top: 60px;
-        width: 16rem;
-        margin-left: 5px;
-        margin-right: 5px;
     }
 }
 section.video {
@@ -64,16 +61,8 @@ section.video {
     background-repeat: no-repeat;
     padding: 115px 0 150px;
     color: #fff;
-    .card-img-top {
-        display: block;
-        max-width: 510px;
-        margin: 0 auto;
-    }
     .video-intro {
         padding: 30px 20px;
-        @media (max-width: 992px) {
-            text-align: center;
-        }
         p {
             margin-top: 45px;
             font-size: 1.5rem;
@@ -128,11 +117,10 @@ section.fo {
         font-family: 'Open Sans';
     }
     .btn-buy {
-        margin: 10px 5px 0;
+        margin-top: 10px;
         border-radius: 0;
         padding: 0.85rem 2.5rem;
         border: 1px solid $primary;
-        width: 16rem;
     }
 }
 section.timeline {
@@ -174,7 +162,6 @@ section.timeline {
     }
     .content {
         width: 285px;
-        max-width: 100%;
         margin-top: 2rem;
         .time {
             font-size: 1.25rem;
@@ -208,7 +195,6 @@ section.dapps {
     .card {
         border: none;
         box-shadow: 0 5px 10px 0 rgba(51, 51, 51, 0.1);
-        height: 100%;
     }
     .card-title {
         font-size: 1.125rem;
@@ -282,7 +268,6 @@ section.links {
         li {
             float: left;
             margin-right: 1.5rem;
-            margin-top: 1.5rem;
         }
         img {
             width: 32px;

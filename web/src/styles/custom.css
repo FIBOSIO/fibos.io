@@ -1,617 +1,603 @@
 html {
-  -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 a,
 a:hover,
 a:active,
 a:focus {
-  color: #0088cc;
+    color: #0088cc;
 }
 
 .dot a,
 .dot a:hover,
 .dot a:active,
 .dot a:focus {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .dot {
-  text-align: center;
-  overflow-x: auto;
+    text-align: center;
+    overflow-x: auto;
 }
 
 ul {
-  padding-left: 30px;
+    padding-left: 30px;
 }
 
 td,
 th {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
 }
 
 tr:nth-child(2n) {
-  background-color: #f6f8fa;
+    background-color: #f6f8fa;
 }
 
 .footer {
-  color: #dddddd;
-  background-color: #2f2933;
-  font-size: 14px;
-  padding: 40px 0px;
-  text-align: center;
+    color: #dddddd;
+    background-color: #2f2933;
+    font-size: 14px;
+    padding: 40px 0px;
+    text-align: center;
 }
 
 .icon {
-  /* 通过设置 font-size 来改变图标大小 */
-  width: 1em;
-  height: 1em;
-  /* 图标和文字相邻时，垂直对齐 */
-  vertical-align: -0.15em;
-  /* 通过设置 color 来改变 SVG 的颜色/fill */
-  fill: currentColor;
-  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+    /* 通过设置 font-size 来改变图标大小 */
+    width: 1em;
+    height: 1em;
+    /* 图标和文字相邻时，垂直对齐 */
+    vertical-align: -0.15em;
+    /* 通过设置 color 来改变 SVG 的颜色/fill */
+    fill: currentColor;
+    /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
              normalize.css 中也包含这行 */
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .sidebar-module {
-  padding: 15px;
-  margin: 0 -15px 15px;
+    padding: 15px;
+    margin: 0 -15px 15px;
 }
 
 .band {
-  background-color: #0088cc;
-  padding-top: 20px;
-  padding-bottom: 20px;
+    background-color: #0088cc;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .band .group {
-  font-size: 32px;
-  line-height: 44px;
-  font-weight: 600;
-  color: #ffffff;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 .gravatar {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  border-radius: 3px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  margin-top: 4px;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 4px;
 }
 
 /*.btn-primary,*/
-
 .btn-default {
-  padding: 14px 28px 13px 28px;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #ffffff;
+    padding: 14px 28px 13px 28px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
 .btn-primary {
-  background-color: #0088cc;
-  border-color: #0099cf;
+    background-color: #0088cc;
+    border-color: #0099cf;
 }
 
 .btn-default {
-  background: transparent;
-  border-color: #ffffff;
+    background: transparent;
+    border-color: #ffffff;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #1199dd;
+    background-color: #1199dd;
 }
 
 .home-tips {
-  position: relative;
-  width: 100%;
-  float: left;
-  padding-right: 15px;
-  padding-left: 15px;
+    position: relative;
+    width: 100%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .home-tips .tips-left {
-  float: left;
-  width: 25%;
-  font-size: 40px;
-  color: #0088cc;
-  text-align: right;
-  padding: 5px 15px;
+    float: left;
+    width: 25%;
+    font-size: 40px;
+    color: #0088cc;
+    text-align: right;
+    padding: 5px 15px;
 }
 
 .home-tips .tips-right {
-  float: right;
-  width: 75%;
+    float: right;
+    width: 75%;
 }
 
 .home-os {
-  padding: 20px;
-  text-align: center;
-  font-size: 60px;
-  color: #999999;
+    padding: 20px;
+    text-align: center;
+    font-size: 60px;
+    color: #999999;
 }
 
 .breadcrumb {
-  background-color: transparent;
-  list-style: none;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 20px 0px;
-  margin: 0px;
+    background-color: transparent;
+    list-style: none;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 20px 0px;
+    margin: 0px;
 }
 
-.breadcrumb li+li:before {
-  padding: 0 0px 0 5px;
-  content: '/';
+.breadcrumb li + li:before {
+    padding: 0 0px 0 5px;
+    content: '/';
 }
 
 .back-to-top {
-  cursor: pointer;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 50%;
-  border-width: 0px;
-  display: none;
-  color: #ddd;
-  background-color: #eee;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    border-width: 0px;
+    display: none;
+    color: #ddd;
+    background-color: #eee;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
 }
 
 .page-body {
-  background-color: #f4f4f4;
-  padding: 20px 0px;
+    background-color: #f4f4f4;
+    padding: 20px 0px;
 }
 
 .content {
-  float: left;
-  position: relative;
-  min-height: 1px;
-  padding: 0px 20px;
-  width: 100%;
-  background-color: #ffffff;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding: 0px 20px;
+    width: 100%;
+    background-color: #ffffff;
 }
 
 .content h1 {
-  padding-bottom: 8px;
-  border-bottom: 2px dotted #eee;
+    padding-bottom: 8px;
+    border-bottom: 2px dotted #eee;
 }
 
 .content h2 {
-  padding: 8px;
-  background-color: #f3f3f3;
-  border-left: 4px solid #0088cc;
+    padding: 8px;
+    background-color: #f3f3f3;
+    border-left: 4px solid #0088cc;
 }
 
 .content svg a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .content svg #a_me a {
-  cursor: auto;
+    cursor: auto;
 }
 
 .content img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .sidebar {
-  float: left;
+    float: left;
 }
 
 .sidebar .search {
-  border-width: 0px 0px 1px 0px;
-  border-color: #ddd;
-  border-radius: 0px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+    border-width: 0px 0px 1px 0px;
+    border-color: #ddd;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .sidebar .panel a:focus,
 .sidebar .panel a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .sidebar .panel-body {
-  padding-left: 0px;
-  font-size: 14px;
+    padding-left: 0px;
+    font-size: 14px;
 }
 
 .sidebar .panel-body a:hover {
-  background-color: #eeeeee;
+    background-color: #eeeeee;
 }
 
 .sidebar ul {
-  padding-left: 15px;
-  list-style: none;
+    padding-left: 15px;
+    list-style: none;
 }
 
 .tocify {
-  /*max-height: 100%;*/
-  overflow: auto;
-  top: 0px;
-  display: inline-block;
-  width: 250px;
+    /*max-height: 100%;*/
+    overflow: auto;
+    top: 0px;
+    display: inline-block;
+    width: 250px;
 }
 
 .fixed_tocify {
-  position: fixed;
-  background-color: white;
+    position: fixed;
+    background-color: white;
 }
 
 /* The Table of Contents is composed of multiple nested unordered lists.  These styles remove the default styling of an unordered list because it is ugly. */
 
 .tocify ul,
 .tocify li {
-  list-style: none;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Top level header elements */
 
 .tocify-header {
-  /*text-indent: 10px;*/
+    /*text-indent: 10px;*/
 }
 
 /* Top level subheader elements.  These are the first nested items underneath a header element. */
 
 .tocify-subheader {
-  text-indent: 10px;
-  /*display: none;*/
+    text-indent: 10px;
+    /*display: none;*/
 }
 
 /* Further indents second level subheader elements. */
 
 .tocify-subheader .tocify-subheader {
-  text-indent: 20px;
+    text-indent: 20px;
 }
 
 /* Further indents third level subheader elements. You can continue this pattern if you have more nested elements. */
 
 .tocify-subheader .tocify-subheader .tocify-subheader {
-  text-indent: 30px;
+    text-indent: 30px;
 }
 
 /* Twitter Bootstrap Override Style */
 
 .nav-list li a,
 .nav-list .nav-header {
-  margin: 0px;
+    margin: 0px;
 }
 
 /* Twitter Bootstrap Override Style */
 
 .sidebar .panel a,
 .nav-list li a {
-  display: block;
-  padding: 2px;
-  color: #666666;
-  padding-left: 8px;
+    display: block;
+    padding: 2px;
+    color: #666666;
+    padding-left: 8px;
 }
 
 .sidebar .panel li,
 .nav-list li {
-  border-left: 2px solid transparent;
+    border-left: 2px solid transparent;
 }
 
 .panel li.active,
 .nav-list li.active {
-  border-color: #0088cc;
-  background-color: #eee;
+    border-color: #0088cc;
+    background-color: #eee;
 }
 
 pre {
-  padding: 0px;
-  background-color: #f6f8fa;
+    padding: 0px;
+    background-color: #f6f8fa;
 }
 
 code {
-  color: #000000;
-  background-color: #e8eaec;
+    color: #000000;
+    background-color: #e8eaec;
 }
 
 pre code {
-  display: block;
-  margin: 0;
-  padding: 6px;
-  tab-size: 4;
-  overflow-x: auto;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  margin-left: 30px;
-  border-left: 1px solid #ccc;
-  font-size: 13px;
-  background-color: transparent;
+    display: block;
+    margin: 0;
+    padding: 6px;
+    tab-size: 4;
+    overflow-x: auto;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    margin-left: 30px;
+    border-left: 1px solid #ccc;
+    font-size: 13px;
+    background-color: transparent;
 }
 
 pre div.line-numbers {
-  position: absolute;
-  margin-left: -35px;
-  width: 30px;
-  padding-right: 7px;
-  text-align: right;
-  color: #bbb;
-  user-select: none;
+    position: absolute;
+    margin-left: -35px;
+    width: 30px;
+    padding-right: 7px;
+    text-align: right;
+    color: #bbb;
+    user-select: none;
 }
 
 .support-content {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 35px 15px;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 35px 15px;
 }
 
 @media (min-width: 768px) {
-  .content {
-    width: 768px;
-  }
-  .home-tips {
-    width: 50%;
-    height: 150px;
-    margin-bottom: 20px;
-  }
+    .content {
+        width: 768px;
+        margin-left: 15px;
+    }
+    .home-tips {
+        width: 50%;
+        height: 150px;
+        margin-bottom: 20px;
+    }
 }
 
 @media (min-width: 992px) {
-  .content {
-    width: 992px;
-    margin-right: 0px;
-  }
-  .home-tips {
-    width: 33.333333%;
-  }
+    .content {
+        width: 992px;
+        margin-right: 0px;
+    }
+    .home-tips {
+        width: 33.333333%;
+    }
 }
 
 @media (min-width: 1200px) {
-  .content {
-    width: 1200px;
-    margin-right: 15px;
-  }
+    .content {
+        width: 1200px;
+        margin-right: 15px;
+    }
 }
 
 @media (min-width: 1400px) {
-  .jumbotron {
-    background-size: 100% auto;
-  }
-  .container {
-    width: 1400px;
-  }
-  .content {
-    width: 810px;
-  }
+    .jumbotron {
+        background-size: 100% auto;
+    }
+    .container {
+        width: 1400px;
+    }
+    .content {
+        width: 810px;
+    }
 }
 
 @media (min-width: 1600px) {
-  .jumbotron {
-    background-size: 100% auto;
-  }
-  .container {
-    width: 1600px;
-  }
-  .content {
-    width: 1010px;
-  }
+    .jumbotron {
+        background-size: 100% auto;
+    }
+    .container {
+        width: 1600px;
+    }
+    .content {
+        width: 1010px;
+    }
 }
 
 @media (max-width: 767px) {
-  .navbar-default .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .navbar-default .navbar-toggle {
-    margin-top: 25px;
-  }
-  .navbar-default .navbar-right {
-    padding-top: 0px;
-    background: #ffffff;
-  }
-  .navbar-default .navbar-nav li a {
-    padding: 20px;
-    display: block;
-  }
-  .navbar-default .navbar-right li a:hover,
-  .navbar-default .navbar-right li a:focus {
-    background: #333333;
-  }
-  .jumbotron .install span {
-    font-size: 12px;
-  }
+    .navbar-default .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-default .navbar-toggle {
+        margin-top: 25px;
+    }
+    .navbar-default .navbar-right {
+        padding-top: 0px;
+        background: #ffffff;
+    }
+    .navbar-default .navbar-nav li a {
+        padding: 20px;
+        display: block;
+    }
+    .navbar-default .navbar-right li a:hover,
+    .navbar-default .navbar-right li a:focus {
+        background: #333333;
+    }
+    .jumbotron .install span {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 479px) {
-  body {
-    font-size: 14px;
-  }
-  h1 {
-    font-size: 29px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  pre code {
-    font-size: 11px;
-  }
-  .social-share {
-    zoom: 80%;
-  }
-  .navbar-default {
-    height: 65px;
-  }
-  .navbar-default .navbar-brand img {
-    margin-top: -15px;
-    width: 120px;
-  }
-  .navbar-default .navbar-brand {
-    font-size: 20px;
-    padding-top: 20px;
-  }
-  .navbar-default .navbar-toggle {
-    margin-top: 10px;
-  }
-  .band {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .band .group {
-    font-size: 22px;
-    line-height: 32px;
-  }
-  .page-body {
-    background-color: transparent;
-    border-top: 2px solid #f4f4f4;
-    padding-top: 10px;
-  }
-  .home-os {
-    font-size: 40px;
-    padding: 0px;
-  }
-  .content {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .breadcrumb {
-    font-size: 12px;
-    padding: 10px 0px;
-  }
-}
-
-@media (max-width: 992px) {
-  .hidden-xssss {
-    display: none !important;
-  }
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 29px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    pre code {
+        font-size: 11px;
+    }
+    .social-share {
+        zoom: 80%;
+    }
+    .navbar-default {
+        height: 65px;
+    }
+    .navbar-default .navbar-brand img {
+        margin-top: -15px;
+        width: 120px;
+    }
+    .navbar-default .navbar-brand {
+        font-size: 20px;
+        padding-top: 20px;
+    }
+    .navbar-default .navbar-toggle {
+        margin-top: 10px;
+    }
+    .band {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .band .group {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .page-body {
+        background-color: transparent;
+        border-top: 2px solid #f4f4f4;
+        padding-top: 10px;
+    }
+    .home-os {
+        font-size: 40px;
+        padding: 0px;
+    }
+    .content {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .breadcrumb {
+        font-size: 12px;
+        padding: 10px 0px;
+    }
 }
 
 .doc-container .container {
-  width: 100%;
-  max-width: 100%;
-  /* display: table; */
-  /* padding: 0px 50px; */
+    width: 100%;
+    max-width: 100%;
+    display: table;
+    padding: 0px 50px;
 }
 
-.doc-container>.page-body>.container .sidebar {
-  margin-bottom: 20px;
+.doc-container > .page-body > .container .sidebar {
+    margin-bottom: 20px;
 }
 
-.doc-container>.page-body>.container .sidebar #toc .nav {
-  display: block;
+.doc-container > .page-body > .container .sidebar #toc .nav {
+    display: block;
 }
 
-.doc-container>.page-body>.container .sidebar #toc {
-  background-color: #ffffff;
-  max-width: 100%;
+.doc-container > .page-body > .container .sidebar #toc {
+    background-color: #ffffff;
 }
 
-.doc-container>.page-body>.container .card {
-  margin-bottom: 0;
-  border-radius: 4px;
-  background-color: #fff;
-  border: 1px solid transparent;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-top: 5px;
+.doc-container > .page-body > .container .card {
+    margin-bottom: 0;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-top: 5px;
 }
 
-.doc-container>.page-body>.container .card .card-header {
-  padding: 10px 15px 10px 15px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom: 0;
-  background-color: #ffffff;
+.doc-container > .page-body > .container .card .card-header {
+    padding: 10px 15px 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 0;
+    background-color: #ffffff;
 }
 
-.doc-container>.page-body>.container .card .card-header .card-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 16px;
+.doc-container > .page-body > .container .card .card-header .card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
 }
 
-.doc-container>.page-body>.container .card .card-header .card-title>a {
-  display: block;
-  padding: 2px;
-  color: #666;
-  padding-left: 8px;
-  outline: none;
-  text-decoration: none;
-  cursor: pointer;
+.doc-container > .page-body > .container .card .card-header .card-title > a {
+    display: block;
+    padding: 2px;
+    color: #666;
+    padding-left: 8px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.doc-container>.page-body>.container .card .card-body {
-  border-top: 1px solid #ddd;
-  padding: 15px 15px 15px 0px;
-  font-size: 14px;
+.doc-container > .page-body > .container .card .card-body {
+    border-top: 1px solid #ddd;
+    padding: 15px 15px 15px 0px;
+    font-size: 14px;
 }
 
-.doc-container>.page-body>.container .card .card-body li.active {
-  background: #eeeeee;
-  border-color: #08c;
-  border-left: 2px solid;
+.doc-container > .page-body > .container .card .card-body ul {
+    padding-left: 15px;
+    list-style: none;
 }
 
-.doc-container>.page-body>.container .card .card-body ul {
-  padding-left: 15px;
-  list-style: none;
+.doc-container > .page-body > .container .card .card-body ul li {
+    border-left: 2px solid transparent;
 }
 
-.doc-container>.page-body>.container .card .card-body ul li {
-  border-left: 2px solid transparent;
+.doc-container > .page-body > .container .card .card-body ul li a {
+    display: block;
+    padding: 2px;
+    color: #666;
+    padding-left: 8px;
 }
 
-.doc-container>.page-body>.container .card .card-body ul li a {
-  display: block;
-  padding: 2px;
-  color: #666;
-  padding-left: 8px;
+.doc-container > .page-body > .container .card .card-body ul li a:hover {
+    background-color: #eee;
+    text-decoration: none;
 }
 
-.doc-container>.page-body>.container .card .card-body ul li a:hover {
-  background-color: #eee;
-  text-decoration: none;
-}
-
-.doc-container>.page-body>.container .content {
-  padding: 20px;
-  margin-left: 15px;
+.doc-container > .page-body > .container .content {
+    padding: 20px;
 }
 
 header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
 header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
 header section.secone a.btn-primary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: none;
-  color: #ffffff;
+    box-shadow: none;
+    color: #ffffff;
 }
 
 a.qrcodeContainer {
-  display: flex;
+    display: flex;
 }
 
 section.links .social-media .qrcodeImg {
-  display: none;
-  position: absolute;
-  top: -140px;
-  left: 10px;
-  width: 200px;
-  height: 200px;
+    display: none;
+    position: absolute;
+    top: -140px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
-  display: block;
+    display: block;
 }
 
 #navbarNav ul li {
-  font-size: 18px;
-  font-weight: 800;
+    font-size: 18px;
+    font-weight: 800;
 }
