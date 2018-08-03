@@ -167,18 +167,27 @@ tr:nth-child(2n) {
   height: 40px;
 }
 
+nav.navbar {
+  padding: 0.5rem 0.5rem;
+}
+
 .page-body {
   background-color: #f4f4f4;
   padding: 20px 0px;
+}
+
+.page-body .container.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .content {
   float: left;
   position: relative;
   min-height: 1px;
-  padding: 0px 20px;
+  padding: 0px 15px;
   width: 100%;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .content h1 {
@@ -236,11 +245,10 @@ tr:nth-child(2n) {
 }
 
 .tocify {
-  /*max-height: 100%;*/
   overflow: auto;
   top: 0px;
   display: inline-block;
-  width: 250px;
+  width: 233px;
 }
 
 .fixed_tocify {
@@ -292,6 +300,11 @@ tr:nth-child(2n) {
 
 /* Twitter Bootstrap Override Style */
 
+.sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .sidebar .panel a,
 .nav-list li a {
   display: block;
@@ -299,6 +312,7 @@ tr:nth-child(2n) {
   color: #666666;
   padding-left: 8px;
 }
+
 
 .sidebar .panel li,
 .nav-list li {
@@ -516,12 +530,19 @@ pre div.line-numbers {
   max-width: 100%;
 }
 
+.doc-container>.page-body>.container .sidebar #toc .tocify-item a {
+  color: #666;
+}
+
 .doc-container>.page-body>.container .card {
   margin-bottom: 0;
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid transparent;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.doc-container>.page-body>.container .card:not(:first-child) {
   margin-top: 5px;
 }
 
@@ -583,8 +604,30 @@ pre div.line-numbers {
 }
 
 .doc-container>.page-body>.container .content {
+  /* padding: 20px; */
+  margin-right: 0;
+}
+
+.doc-container>.page-body>.container .content .content-container {
   padding: 20px;
-  margin-left: 15px;
+  background: #fff;
+}
+
+.doc-container>.page-body>.container .content p {
+  line-height: 1.8;
+}
+
+.doc-container>.page-body>.container .content h1 {
+  line-height: 1.1;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.doc-container>.page-body>.container .content h2 {
+  line-height: 1.1;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 header section.secone a.btn.btn-lg.btn-primary.btn-join:focus,
