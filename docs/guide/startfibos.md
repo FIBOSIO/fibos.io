@@ -2,8 +2,6 @@
 
 阅读完本文你可以通过简单的编程，学会如何搭建一个简单的 FIBOS 开发环境，本文的测试代码使用 Mac OSX 的操作系统。
 
-入门文档所有的示例代码地址: `https://github.com/FIBOSIO/samples`
-
 FIBOS 支持自定义加载模块 `plugin`，一些默认配置说明：
 
 - HTTP 服务端口8888，提供 HTTP 服务，通过 RPC 进行交互
