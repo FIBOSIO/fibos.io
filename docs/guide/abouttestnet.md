@@ -7,7 +7,7 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 根 BP 连接信息: 
 
 ```
-IP : "103.80.170.107"
+IP : "103.80.170.107:8888"
 chainID : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 ```
 
@@ -20,8 +20,10 @@ chainID : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 
 | BP Name  | BP IP  | HTTP port | P2P port |
 |:-------------: |:---------------:| :-------------:| :-------------:|
-| gulou      | 103.80.170.107 |         8888 | 9876 |
+| gunlou      | 103.80.170.107 |         8888 | 9876 |
 | xuanwu      | 45.121.142.171 |         8888 | 9876 |
+
+
 
 ## 如何在 FIBOS TestNet 上进行测试？
 
@@ -68,76 +70,6 @@ console.log(result);
   "ref_block_prefix": 2517196066
 }
 ```
-
-### TestNet 更多例子
-
-按照上面的注册地址获得一个 FIBOS 账户，然后进行操作，保存下面的代码到 `test_getBalance.js`:
-
-```
-var FIBOS = require('fibos.js');
-
-var config = {
-  chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f', // 32 byte (64 char) hex string
-  keyProvider: '注册时的私钥', // WIF string or array of keys..
-  httpEndpoint: 'http://103.80.170.107:8888',
-  logger: {
-    log: null,
-    error: null
-  }
-}
-
-var fibos = FIBOS(config);
-var result = fibos.getTableRowsSync(true, "eosio.token", "注册时账户名称", "accounts")
-console.log(result);
-```
-
-运行脚本:
-
-```
-fibos test_getBalance.js
-```
-
-输出结果:
-
-```
-{
-  "rows": [
-    {
-      "balance": "xxxxx FO"
-    }
-  ],
-  "more": false
-}
-```
-
-让我们完成一次转账吧，保存下面的代码到 `test_tranfer.js`:
-
-```
-var FIBOS = require('fibos.js');
-
-var config = {
-  chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f', // 32 byte (64 char) hex string
-  keyProvider: '5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3', // WIF string or array of keys..
-  httpEndpoint: 'http://103.80.170.107:8888',
-  logger: {
-    log: null,
-    error: null
-  }
-}
-
-var fibos = FIBOS(config);
-
-var ctx = fibos.contractSync("eosio.token");
-var result = ctx.transferSync("eosio", "gulou", '1000000.0000 FO', 'transfer');
-console.log(result);
-```
-
-运行脚本:
-
-```
-fibos test_tranfer.js
-```
-
 
 ## 如何加入到 FIBOS TestNet?
 
