@@ -225,7 +225,7 @@ var fibos = FIBOS({
 
 var ctx = fibos.contractSync("eosio");
 
-ctx.voteproducerSync(config["producer-name"], "", ["producer-name"]);
+ctx.voteproducerSync(config["producer-name"], "", config["producer-name"]);
 
 ```
 
