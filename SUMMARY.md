@@ -1,5 +1,3 @@
-# 开发指南
-
 * [FIBOS 是什么？](about.md)
 * [安装运行环境](install.md)
 * [搭建一个 FIBOS 开发环境](startfibos.md)
