@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
 web/dist/download/index.html
-web/dist/dist
+web/dist

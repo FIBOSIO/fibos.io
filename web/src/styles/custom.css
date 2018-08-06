@@ -321,7 +321,7 @@ nav.navbar {
 
 .panel li.active,
 .nav-list li.active {
-  border-color: #0088cc;
+  border-left-color: #0088cc;
   background-color: #eee;
 }
 
@@ -530,6 +530,10 @@ pre div.line-numbers {
   max-width: 100%;
 }
 
+.doc-container>.page-body>.container .sidebar #toc .tocify-item {
+  line-height: 25px;
+}
+
 .doc-container>.page-body>.container .sidebar #toc .tocify-item a {
   color: #666;
 }
@@ -589,6 +593,7 @@ pre div.line-numbers {
 
 .doc-container>.page-body>.container .card .card-body ul li {
   border-left: 2px solid transparent;
+  line-height: 25px;
 }
 
 .doc-container>.page-body>.container .card .card-body ul li a {
@@ -611,22 +616,30 @@ pre div.line-numbers {
 .doc-container>.page-body>.container .content .content-container {
   padding: 20px;
   background: #fff;
+  color: #333;
 }
 
 .doc-container>.page-body>.container .content p {
   line-height: 1.8;
+  color: #333;
 }
 
 .doc-container>.page-body>.container .content h1 {
   line-height: 1.1;
   font-size: 36px;
   font-weight: 500;
+  color: #333;
 }
 
 .doc-container>.page-body>.container .content h2 {
   line-height: 1.1;
   font-size: 30px;
   font-weight: 500;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.doc-container>.page-body>.container .content table {
   margin-bottom: 20px;
 }
 
@@ -657,6 +670,10 @@ section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
 #navbarNav ul li {
     font-size: 18px;
     font-weight: 800;
+}
+
+.container  .navbar-dark {
+  padding: 0;
 }
 
 .container  .navbar-dark .navbar-nav .nav-link {
