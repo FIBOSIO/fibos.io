@@ -1,4 +1,4 @@
-# 开发指南
+## FIBOS 官方教程
 
 * [FIBOS 是什么？](about.md)
 * [安装运行环境](install.md)

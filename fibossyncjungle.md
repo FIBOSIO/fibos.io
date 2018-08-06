@@ -1,10 +1,19 @@
 # 一分钟加入 EOS TestNet
 
-上一章节已经给大家讲解了如何加入到 FIBOS TestNet 网络，本章节将教会大家如何使用 FIBOS 快速的加入到 EOS 的[测试网络](http://jungle.cryptolions.io/#home)，以及如何进行一次成功的转账操作。
+上一章节已经给大家讲解了如何加入到 FIBOS TestNet 网络，本章节将教会大家如何使用 FIBOS 快速的加入到 EOS 的 [测试网络](http://jungle.cryptolions.io/#home) ，以及如何进行一次成功的转账操作。
 
 ## 如何加入 EOS TestNet 网络
+本章节涉及到代码的目录结构:
 
-使用 FIBOS 加入 EOS TestNet 网络同步区块数据，十分便捷。将下面代码保存至 `sync_eos.js`:
+```
+hello_fibos/
+└── start_fibos
+    ├── sync_eos.js
+    ├── transfer_test.js
+
+```
+
+使用 FIBOS 加入 EOS TestNet 网络同步区块数据，十分便捷。将下面代码保存至工作目录 `sync_eos.js`:
 
 ```
 var fibos = require('fibos');
@@ -35,9 +44,9 @@ fibos.load("wallet_api");
 fibos.start();
 ```
 
-上述代码中，`fibos.config_dir`和`fibos.data_dir`的路径配置在`sync_eos.js`同级目录，你可以指向任意位置，`p2p-peer-address`是一个可变值，你可以去 EOS TestNet 网络上获取其它节点的信息替换本文中的配置。
+上述代码中，`fibos.config_dir` 和 `fibos.data_dir` 的路径配置在 `sync_eos.js` 同级目录，你可以指向任意位置，`p2p-peer-address` 是一个可变值，你可以去 EOS TestNet 网络上获取其它节点的信息替换本文中的配置。
 
-`genesis.json`文件中内容如下:
+`genesis.json` 文件中内容如下:
 
 ```
 {
@@ -75,9 +84,9 @@ fibos sync_eos.js
 
 ## 发起一次成功的转账
 
-想要在 EOS TestNet 上进行转账操作，首先我们需要注册一个账号，前往 [jugle](http://jungle.cryptolions.io/#account)进行注册。按照要求填写即可完成注册，没有 EOS 地址的同学可以去[这里](https://meet.one/generate.html)生成公私钥。注册成功后在网站上点击`Faucet`输入你的账户名可以得到一万个 EOS 。
+想要在 EOS TestNet 上进行转账操作，首先我们需要注册一个账号，前往 [jugle](http://jungle.cryptolions.io/#account) 进行注册。按照要求填写即可完成注册，没有 EOS 地址的同学可以去 [这里](https://meet.one/generate.html) 生成公私钥。注册成功后在网站上点击 `Faucet` 输入你的账户名可以得到一万个 EOS 。
 
-下面的代码是一个转账的示例，保存代码到工作目录`transfer_test.js`
+下面的代码是一个转账的示例，保存代码到工作目录 `transfer_test.js`
 
 ```
 var test = require('test');
@@ -108,7 +117,7 @@ test.run(console.DEBUG);
 process.exit();
 ```
 
-你只需要在`keyProvider`配置上你的私钥，在`transferSync`方法中配置你的账户名，转账目标账户名(在 EOS 测试网中存在)，转账数额(小于等于你持有的 EOS 数量)和转账备注这些信息，保存并执行转账：
+你只需要在 `keyProvider` 配置上你的私钥，在 `transferSync` 方法中配置你的账户名，转账目标账户名(在 EOS 测试网中存在)，转账数额(小于等于你持有的 EOS 数量)和转账备注这些信息，保存并执行转账：
 
 ```
 fibos transfer_test.js
