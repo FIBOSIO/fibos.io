@@ -5,3 +5,4 @@
 * [体验 FIBOS 超棒的测试框架](test.md)
 * [FIBOS TestNet 是什么？](abouttestnet.md)
 * [如何加入到 FIBOS TestNet?](jointestnet.md)
+* [一分钟加入 EOS 测试网络](fibossyncjungle.md)
