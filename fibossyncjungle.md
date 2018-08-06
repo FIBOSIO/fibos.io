@@ -6,11 +6,14 @@
 本章节涉及到代码的目录结构:
 
 ```
-hello_fibos/
-└── start_fibos
+fibos_eos
     ├── sync_eos.js
     ├── transfer_test.js
 
+```
+新建目录：
+```
+mkdir fibos_eos
 ```
 
 使用 FIBOS 加入 EOS TestNet 网络同步区块数据，十分便捷。将下面代码保存至工作目录 `sync_eos.js`:
