@@ -311,8 +311,8 @@ nav.navbar {
   padding: 2px;
   color: #666666;
   padding-left: 8px;
+  padding-right: 8px;
 }
-
 
 .sidebar .panel li,
 .nav-list li {
@@ -504,7 +504,7 @@ pre div.line-numbers {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1080px) {
   .hidden-xssss {
     display: none !important;
   }
@@ -528,6 +528,17 @@ pre div.line-numbers {
 .doc-container>.page-body>.container .sidebar #toc {
   background-color: #ffffff;
   max-width: 100%;
+  width: 100%;
+}
+
+.doc-container>.page-body>.container .sidebar #toc.fixed_tocify {
+  width: 250px;
+}
+
+@media (max-width: 1080px) {
+  .doc-container>.page-body>.container .sidebar #toc {
+    width: 200px;
+  }
 }
 
 .doc-container>.page-body>.container .sidebar #toc .tocify-item {
@@ -668,14 +679,14 @@ section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
 }
 
 #navbarNav ul li {
-    font-size: 18px;
-    font-weight: 800;
+  font-size: 18px;
+  font-weight: 800;
 }
 
-.container  .navbar-dark {
+.container .navbar-dark {
   padding: 0;
 }
 
-.container  .navbar-dark .navbar-nav .nav-link {
-    color:  #ffffff;
+.container .navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
 }

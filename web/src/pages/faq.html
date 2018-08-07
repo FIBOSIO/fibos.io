@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include "../common/meta.html" -->
+    <title>
+        <%-title%> - FIBOS，开发者友好的区块链生态系统
+    </title>
+</head>
+
+<body class="doc-container">
+    <!-- include "../common/header.html" -->
+    <div class="band">
+        <div class="container">
+            <span class="group">
+                <!-- <%=groups[group].etitle%> -->
+                    FAQ
+            </span>
+            <!-- <div class="search">
+                <input type="text" class="searchbox" placeholder="Search">
+            </div> -->
+        </div>
+    </div>
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/faq.html">FAQ</a>
+            </li>
+            <!-- <li>
+                <%=groups[group].title%>
+            </li>
+            <li class="active">
+                <%=title%>
+            </li> -->
+        </ol>
+    </div>
+    <div class="page-body">
+        <div class="container row">
+            <div class="sidebar hidden-xs col-lg-2">
+                <div class="panel-group" id="accordion" role="tablist">
+                    <%for(var i = 0; i < category.length; i++) {%>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h4 class="card-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="/faq_<%-category[i].id%>" aria-controls="collapse_<%-g%>">
+                                        <%-category[i].title%>
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    <%}%>
+                </div>
+            </div>
+            <div class="content col-lg-8">
+                <div class="content-container">
+                    <%-doc%>
+                    <div class="qa-container"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <!-- include "../common/footer.html" -->
+</body>
+
+</html>

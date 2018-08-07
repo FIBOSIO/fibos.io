@@ -3,6 +3,9 @@
 
 <head>
     <!-- include "../common/meta.html" -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -36,16 +39,11 @@
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#fibos-news">新闻</a>
                         </li> -->
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                ENG
-                                <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">
+                                FAQ
                             </a>
-                            <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">简体中文</a>
-                                <a class="dropdown-item" href="#">ENGLISH</a>
-                            </div>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -78,7 +76,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <img class="card-img-top" src="/imgs/fibos.png" alt="">
+                    <!-- <img class="card-img-top" src="/imgs/fibos.png" alt=""> -->
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <%for(var i in urls){%>
+                                <div class="item active">
+                                    <img src="/imgs/fibos.png" class="card-img-top">
+                                </div>
+                                <div class="item">
+                                    <img src="/imgs/bg-1.jpg" class="card-img-top">
+                                </div>
+                                <div class="item">
+                                    <img src="<%-i%>" alt="" class="card-img-top">
+                                </div>
+                                <%}%>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col-lg-6 video-intro">
                     <h2>用 JavaScript 快速开发区块链</h2>
@@ -450,12 +464,15 @@
         <section class="copyright">
             <div class="container">
                 <p class="text-center">
-                    © Copyright 2011 - 2018
-                    <a href="https://fibos.io" target="_blank">FIBOS.IO</a>
+                    © Copyright 2017 - 2018
+                    <a href="https://fibos.io" target="_blank">FIBOS.IO</a> All Rights Reserved
                 </p>
             </div>
         </section>
     </footer>
+    <script>
+        $('.carousel').carousel();
+    </script>
 </body>
 
 </html>
