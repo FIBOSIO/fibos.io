@@ -6,6 +6,9 @@
     <title>
         <%-title%> - FIBOS，开发者友好的区块链生态系统
     </title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body class="doc-container">
@@ -38,23 +41,88 @@
         <div class="container row">
             <div class="sidebar hidden-xs col-lg-2">
                 <div class="panel-group" id="accordion" role="tablist">
-                    <%for(var i = 0; i < category.length; i++) {%>
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h4 class="card-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="/faq_<%-category[i].id%>" aria-controls="collapse_<%-g%>">
-                                        <%-category[i].title%>
-                                    </a>
-                                </h4>
-                            </div>
+                    <!-- <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="/faq_<%-category[i].id%>" aria-controls="collapse_<%-g%>">
+                                    <%-category[i].title%>
+                                </a>
+                            </h4>
                         </div>
-                    <%}%>
+                    </div> -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
+                                    目录1
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
+                                    目录2
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
+                                    目录3
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="content col-lg-8">
-                <div class="content-container">
-                    <%-doc%>
-                    <div class="qa-container"></div>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                            点击我进行展开，再次点击我进行折叠。第 1 部分
+                                        </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            点击我进行展开，再次点击我进行折叠。第 2 部分
+                                        </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                            点击我进行展开，再次点击我进行折叠。第 3 部分
+                                        </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -508,6 +508,17 @@ pre div.line-numbers {
   .hidden-xssss {
     display: none !important;
   }
+  .col-md-10 {
+    flex: 0 0 83.333%;
+    max-width: 83.333%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-md-10 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
 }
 
 .doc-container .container {
