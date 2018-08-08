@@ -77,7 +77,7 @@ fibos.start();
 }
 ```
 
-我们也可以从 [EOS 测试网配置文件](https://github.com/CryptoLions/EOS-Jungle-Testnet/blob/aa499583d5e7f19799d93ab569e29b39741d1bb4/genesis.json) 获取上文中的 `genesis.json`，如果你想要同步 EOS 主网的区块数据，那就去  [EOS 主网配置文件](https://github.com/EOS-Mainnet/eos/blob/mainnet-1.1.3/mainnet-genesis.json) 获取 `genesis.json`。
+我们也可以从 [EOS-Jungle-Testnet](https://github.com/CryptoLions/EOS-Jungle-Testnet/blob/aa499583d5e7f19799d93ab569e29b39741d1bb4/genesis.json) 获取上文中的 `genesis.json`，如果你想要同步 EOS 主网的区块数据，那就去  [EOS-mainnet](https://github.com/EOS-Mainnet/eos/blob/mainnet-1.1.3/mainnet-genesis.json) 获取 `genesis.json`。
 
 运行代码即可同步 EOS TestNet 区块数据：
 
