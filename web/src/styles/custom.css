@@ -252,6 +252,7 @@ nav.navbar {
   overflow: auto;
   top: 0px;
   display: inline-block;
+  /* width: 100%; */
 }
 
 .fixed_tocify {
@@ -539,6 +540,7 @@ pre div.line-numbers {
 
 .doc-container>.page-body>.container .sidebar #toc {
   background-color: #ffffff;
+  width: 100%;
 }
 
 .doc-container>.page-body>.container .sidebar #toc .nav {

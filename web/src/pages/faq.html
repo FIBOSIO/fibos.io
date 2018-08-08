@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     {{/each}}
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header" role="tab" id="headingOne">
                             <h4 class="card-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
@@ -72,7 +72,7 @@
                                 </a>
                             </h4>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-10">
@@ -84,10 +84,11 @@
                                 {{question}}
                             </h2>
                         </div>
-
+                        {{if description}}
                         <div class="faq-desc">
                             {{description}}
                         </div>
+                        {{/if}}
 
                         <div id="collapse{{id}}" class="collapse" aria-labelledby="heading{{id}}" data-parent="#accordion">
                             <div class="faq-body">
@@ -96,7 +97,7 @@
                         </div>
                     </div>
                     {{/each}}
-                    <div class="faq">
+                    <!-- <div class="faq">
                         <div class="faq-header" id="headingOne">
                             <h2 class="h2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题
@@ -129,7 +130,7 @@
                                 答案答案
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>

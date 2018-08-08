@@ -22,7 +22,7 @@
     <header class="header header-shrink header-inverse">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <span class="logo-default">
                         <img src="/imgs/logo.png" alt="">
                     </span>
@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">首页</a>
+                            <a class="nav-link" href="/">首页</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="#roadmap">路线图</a>
@@ -50,7 +50,7 @@
                             <a class="nav-link" href="#fibos-news">新闻</a>
                         </li> -->
                         <!-- <li class="nav-item">
-                            <a class="nav-link" href="faq.html">
+                            <a class="nav-link" href="faq">
                                 FAQ
                             </a>
                         </li> -->
@@ -89,7 +89,7 @@
                     <!-- <img class="card-img-top" src="/imgs/fibos.png" alt=""> -->
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
+                            <!-- <div class="item active">
                                 <img src="/imgs/fibos.png" class="card-img-top">
                             </div>
                             <div class="item">
@@ -97,7 +97,7 @@
                             </div>
                             <div class="item">
                                 <img src="/imgs/dapp1.jpg" class="card-img-top">
-                            </div>
+                            </div> -->
 
                             {{#each urls}}
                             <div class="item">
@@ -485,7 +485,9 @@
         </section>
     </footer>
     <script>
-        $('.carousel').carousel();
+        $('.carousel').carousel({
+            interval: 450
+        });
     </script>
     <script>
         document.body.addEventListener('touchstart', function() {});
