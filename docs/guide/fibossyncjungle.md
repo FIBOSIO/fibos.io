@@ -1,6 +1,6 @@
 # 一分钟加入 EOS TestNet
 
-上一章节已经给大家讲解了如何加入到 FIBOS TestNet 网络，本章节将教会大家如何使用 FIBOS 快速的加入到 EOS 的 [测试网络](http://jungle.cryptolions.io/#home)，以及如何进行一次成功的转账操作。
+上一章节已经给大家讲解了如何加入到 FIBOS TestNet 网络，本章节将教会大家如何使用 FIBOS 快速的加入到 EOS 的 [测试网络](http://jungle.cryptolions.io/#home) ，以及如何进行一次成功的转账操作。
 
 ## 如何加入 EOS TestNet 网络
 本章节涉及到代码的目录结构:
