@@ -190,6 +190,10 @@ nav.navbar {
   /* background-color: #ffffff; */
 }
 
+.content p {
+  margin-bottom: 10px;
+}
+
 .content h1 {
   padding-bottom: 8px;
   border-bottom: 2px dotted #eee;
@@ -524,6 +528,7 @@ pre div.line-numbers {
 .doc-container .container {
   width: 100%;
   max-width: 100%;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
   /* display: table; */
   /* padding: 0px 50px; */
 }
@@ -543,7 +548,7 @@ pre div.line-numbers {
 }
 
 .doc-container>.page-body>.container .sidebar #toc.fixed_tocify {
-  width: 250px;
+  width: 200px;
 }
 
 @media (max-width: 1080px) {

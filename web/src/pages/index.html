@@ -3,8 +3,8 @@
 
 <head>
     <!-- include "../common/meta.html" -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
@@ -39,11 +39,11 @@
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#fibos-news">新闻</a>
                         </li> -->
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="faq.html">
                                 FAQ
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>
@@ -88,6 +88,12 @@
                             <div class="item">
                                 <img src="/imgs/dapp1.jpg" class="card-img-top">
                             </div>
+
+                            {{#each urls}}
+                            <div class="item">
+                                <img src="{{url}}" class=card-img-top>
+                            </div>
+                            {{/each}}
                         </div>
                     </div>
 
@@ -153,7 +159,7 @@
         </div>
         </div>
     </section>
-    <a name="exchange" style="height: 0px"></a>
+    <a name="exchange" style="height: 0"></a>
     <section class="fo">
         <div class="container">
             <h3 class="title">
@@ -392,7 +398,7 @@
                             学习门槛低、环境部署门槛低；迭代速度快；无需编译；代码可读性强；兼容 npm 生态。相比其他基于 C 或其他语言的区块链开发工作，之前没有接触过区块链项目的开发者，通常可以在1小时之内实现第一个可用的区块链项目
                         </p>
                     </div> -->
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-4">
                         <h5>开发文档</h5>
                         <ul>
                             <li>
@@ -429,7 +435,7 @@
                             </li>
                         </ul>
                     </div> -->
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-8">
                         <h5>联系我们</h5>
                         <h6>开发者社区</h6>
                         <ul class="social-media">
@@ -462,7 +468,7 @@
         <section class="copyright">
             <div class="container">
                 <p class="text-center">
-                    © Copyright 2017 - 2018
+                    Copyright © 2017 - 2018
                     <a href="https://fibos.io" target="_blank">FIBOS.IO</a> All Rights Reserved
                 </p>
             </div>
@@ -470,6 +476,9 @@
     </footer>
     <script>
         $('.carousel').carousel();
+    </script>
+    <script>
+        document.body.addEventListener('touchstart', function() {});
     </script>
 </body>
 
