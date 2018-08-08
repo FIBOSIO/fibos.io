@@ -1,8 +1,8 @@
 # 三行代码，让 FIBOS 支持 mongoDB 富查询 
 
-在业务中我们经常会有查询历史的场景，比如：某个账户的历史转账记录。 但是考虑到性能的问题，在 EOS 中使用自身查询历史数据并不不是个很好的方案，另外 EOS 的 history API 模块部分功能迭代快，甚至即将废弃。
+在业务中我们经常会有查询历史数据的场景，比如：某个账户的历史转账记录，但是考虑到性能的问题，在 EOS 中使用自身查询历史数据并不是个很好的方案，另外 EOS 的 history API 模块部分功能迭代快，甚至即将废弃。
 
-EOS 本身提供了mongoDB 的插件，FIBOS 也支持这个插件。该模块实现原理是将区块的数据同步至 mongoDB。这使得 mongoDB 成为中心化数据存储，所以我们建议将区块链的业务和 mongoDB 的查询业务分离。
+EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿用了这个特性。该模块实现原理是将区块的数据同步至 mongoDB。这使得 mongoDB 成为中心化数据存储，所以我们建议将区块链的业务和 mongoDB 的查询业务分离。
 
 阅读完本篇文章，你可以学会如何利用 FIBOS 内置的 mongo_db 模块将数据同步至 mongoDB，并使用 mongoDB 查询 FIBOS 的区块数据。
 
@@ -22,7 +22,7 @@ EOS 本身提供了mongoDB 的插件，FIBOS 也支持这个插件。该模块�
         └── node.js
     ```
    
-- 依赖：fibos.js
+- 依赖：fibos.js 如何安装请参考[使用 fibos.js 与 FIBOS 交互](fibosjs.md)
 
 - 本章节示例代码地址：https://github.com/FIBOSIO/samples
 
@@ -224,7 +224,7 @@ result:  {
 
 ## 进阶，利用 mongoDB 查询 TestNet 数据
 
-如果你对加入 TestNet 网络的步骤还不熟悉，请参考 [如何加入到 TestNet 网络](https://fibos.io/docs/guide/jointestnet.md.html)。
+如果你对加入 TestNet 网络的步骤还不熟悉，请参考 [如何加入到 TestNet 网络](abouttestnet.md)。
 
 #### 启动 FIBOS 环境，加入 TestNet 网络
 
