@@ -8,11 +8,7 @@ EOS 本身提供了mongoDB 的插件，FIBOS 也支持这个插件。该模块�
 
 - 本文测试环境：
 
-  系统：macOS High Sierra
-
-  CPU：2.6 GHz
-
-  内存：8 GB 
+  系统：macOS
 
 - 本章涉及到的文件列表：
 
@@ -25,6 +21,8 @@ EOS 本身提供了mongoDB 的插件，FIBOS 也支持这个插件。该模块�
         ├── client.js
         └── node.js
     ```
+   
+- 依赖：fibos.js
 
 - 本章节示例代码地址：https://github.com/FIBOSIO/samples
 
