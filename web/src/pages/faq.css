@@ -1,0 +1,37 @@
+@import '~social-share.js/dist/css/share.min.css';
+.social-share {
+  float: right;
+  margin-top: 22px;
+}
+
+.faq {
+  background: #fff;
+  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.faq:not(:first-child) {
+  margin-top: 15px;
+}
+
+.faq .faq-header h2 {
+  width: 100%;
+  text-align: left;
+  font-size: 26px;
+  font-weight: 500;
+  color: #333;
+  border-bottom: 2px dotted #eee;
+  padding: .375rem .75rem;
+  cursor: pointer;
+}
+
+.faq .faq-desc {
+  padding: 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.faq .faq-body {
+  padding: 20px;
+}
+
+</style>

@@ -252,11 +252,11 @@ nav.navbar {
   overflow: auto;
   top: 0px;
   display: inline-block;
-  width: 233px;
 }
 
 .fixed_tocify {
   position: fixed;
+  display: inline-block;
   background-color: white;
 }
 
@@ -537,24 +537,12 @@ pre div.line-numbers {
   margin-bottom: 20px;
 }
 
-.doc-container>.page-body>.container .sidebar #toc .nav {
-  display: block;
-}
-
 .doc-container>.page-body>.container .sidebar #toc {
   background-color: #ffffff;
-  max-width: 100%;
-  width: 100%;
 }
 
-.doc-container>.page-body>.container .sidebar #toc.fixed_tocify {
-  width: 200px;
-}
-
-@media (max-width: 1080px) {
-  .doc-container>.page-body>.container .sidebar #toc {
-    width: 200px;
-  }
+.doc-container>.page-body>.container .sidebar #toc .nav {
+  display: block;
 }
 
 .doc-container>.page-body>.container .sidebar #toc .tocify-item {
@@ -563,6 +551,14 @@ pre div.line-numbers {
 
 .doc-container>.page-body>.container .sidebar #toc .tocify-item a {
   color: #666;
+}
+
+@media (min-width: 1080px) {
+  .doc-container>.page-body>.container .sidebar #toc.fixed_tocify {
+    flex: 0 0 16.666667%;
+    position: fixed;
+    width: auto;
+  }
 }
 
 .doc-container>.page-body>.container .card {
@@ -620,7 +616,8 @@ pre div.line-numbers {
 
 .doc-container>.page-body>.container .card .card-body ul li {
   border-left: 2px solid transparent;
-  line-height: 25px;
+  line-height: 20px;
+  padding-bottom: 5px;
 }
 
 .doc-container>.page-body>.container .card .card-body ul li a {
