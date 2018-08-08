@@ -2,7 +2,7 @@
 
 在业务中我们经常会有查询历史数据的场景，比如：某个账户的历史转账记录，但是考虑到性能的问题，在 EOS 中使用自身查询历史数据并不是个很好的方案，另外 EOS 的 history API 模块部分功能迭代快，甚至即将废弃。
 
-EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿用了这个特性。该模块实现原理是将区块的数据同步至 mongoDB。这使得 mongoDB 成为中心化数据存储，所以我们建议将区块链的业务和 mongoDB 的查询业务分离。
+EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿用了这个特性。该模块实现原理是将区块的数据同步至 mongoDB。这使得此方式让 mongoDB 成为了中心化数据存储，畅想一下一个 FIBOS 的浏览器，在设计上我们可以让 FIBOS 节点服务和基于 mongoDB 的查询业务分离，让性能大大的提高。
 
 阅读完本篇文章，你可以学会如何利用 FIBOS 内置的 mongo_db 模块将数据同步至 mongoDB，并使用 mongoDB 查询 FIBOS 的区块数据。
 
@@ -28,7 +28,7 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
 
 ## 本地快速体验
 
-我们在本地启动一个 FIBOS 私有链，创建账户并在 mongoDB 中进行查询。
+我们在本地启动一个 FIBOS 节点服务，创建账户并在 mongoDB 中进行查询。
 
 #### 启动 mongod 服务
 
