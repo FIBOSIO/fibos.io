@@ -1,4 +1,4 @@
-# 一分钟加入 EOS TestNet
+# 一分钟用 FIBOS 搭建 EOS 测试网节点
 
 上一章节已经给大家讲解了如何加入到 FIBOS TestNet 网络，本章节将教会大家如何使用 FIBOS 快速的加入到 EOS 的 [测试网络](http://jungle.cryptolions.io/#home) ，以及如何进行一次成功的转账操作。
 
@@ -76,6 +76,8 @@ fibos.start();
   }
 }
 ```
+
+我们也可以从 [EOS-Jungle-Testnet](https://github.com/CryptoLions/EOS-Jungle-Testnet/blob/aa499583d5e7f19799d93ab569e29b39741d1bb4/genesis.json) 获取上文中的 `genesis.json`，如果你想要同步 EOS 主网的区块数据，那就去  [EOS-mainnet](https://github.com/EOS-Mainnet/eos/blob/mainnet-1.1.3/mainnet-genesis.json) 获取 `genesis.json`。
 
 运行代码即可同步 EOS TestNet 区块数据：
 

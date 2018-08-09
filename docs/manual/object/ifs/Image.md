@@ -157,7 +157,7 @@ Integer Image.colorAllocate(Integer color);
 ```
 
 调用参数:
-* color: Integer, 组合颜色值，可由 [gd.color](../../module/ifs/gd.md#color), gb.rgb, [gd.rgba](../../module/ifs/gd.md#rgba) 等函数生成
+* color: Integer, 组合颜色值，可由 [gd.color](../../module/ifs/gd.md#color), [gb.rgb](../../module/ifs/gd.md#rgb), [gd.rgba](../../module/ifs/gd.md#rgba) 等函数生成
 
 返回结果:
 * Integer, 返回颜色号，不成功返回 -1
