@@ -6,6 +6,12 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
 
 阅读完本篇文章，你可以学会如何利用 FIBOS 内置的 mongo_db 模块将数据同步至 mongoDB，并使用 mongoDB 查询 FIBOS 的区块数据。
 
+
+
+赶紧安装新版 FIBOS 试试吧！[安装运行环境](./install.md)
+
+
+
 - 本文测试环境：
 
   系统：macOS
@@ -21,10 +27,12 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
         ├── client.js
         └── node.js
     ```
-   
+
 - 依赖：fibos.js 如何安装请参考[使用 fibos.js 与 FIBOS 交互](./fibosjs.md)
 
 - 本章节示例代码地址：https://github.com/FIBOSIO/samples
+
+
 
 ## 本地快速体验
 
@@ -221,6 +229,8 @@ result:  {
 会发现账户数据多了一条刚才创建的 hellomongodb 数据。进行到这步，恭喜你，你已经学会了如何将 FIBOS 网络中的区块数据同步至 mongoDB 并使用 mongo 客户端进行查询！
 
 下面，我们将启动一个新的节点同步 TestNet 网络，并将其数据同步至 mongoDB，并利用 mongoDB 的语法查询我们发起的交易。
+
+
 
 ## 进阶，利用 mongoDB 查询 TestNet 数据
 
