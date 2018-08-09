@@ -536,6 +536,7 @@ pre div.line-numbers {
 
 .doc-container>.page-body>.container .sidebar #toc .tocify-item a {
   color: #666;
+  word-break: break-all;
 }
 
 .doc-container>.page-body>.container .card {
