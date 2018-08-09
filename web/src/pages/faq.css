@@ -21,6 +21,12 @@ a:focus {
   overflow-x: auto;
 }
 
+.faq .faq-body img {
+  max-width: 100% !important;
+  display: block;
+  height: auto;
+}
+
 ul {
   padding-left: 30px;
 }

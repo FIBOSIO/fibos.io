@@ -50,7 +50,7 @@ WebSocket ws.Socket;
 ## 静态函数
         
 ### upgrade
-**创建一个 websocket 协议处理器，从 [http](./http.md) 接收 upgrade 请求并握手，生成 [WebSocket](../../object/ifs/WebSocket.md) 对象**
+**创建一个 websocket 协议处理器，从 [http](http.md) 接收 upgrade 请求并握手，生成 [WebSocket](../../object/ifs/WebSocket.md) 对象**
 
 ```JavaScript
 static Handler ws.upgrade(Function accept);

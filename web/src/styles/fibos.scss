@@ -40,9 +40,27 @@ header.header {
   }
 }
 
-#navbarNav {
-  transform: translateY(15px);
+.navbar-toggler.index-navbar-toggler {
+  transform: translateY(0.5rem);
 }
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    transform: translateY(0.1rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .dropdown-menu {
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 0;
+    a {
+      color: #fff;
+      padding-left: 32px;
+    }
+  }
+}
+
 
 // @media (min-width: 992px) {
 //   #navbarNav {
@@ -85,7 +103,7 @@ header.header {
     margin-right: 5px;
     font-weight: bold;
     border: 0;
-    line-height: 30px;
+    line-height: 33px;
     height: 60px;
   }
 }
