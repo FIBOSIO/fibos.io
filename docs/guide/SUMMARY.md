@@ -6,3 +6,4 @@
 * [FIBOS TestNet 是什么？](abouttestnet.md)
 * [如何加入到 FIBOS TestNet?](jointestnet.md)
 * [一分钟加入 EOS 测试网络](fibossyncjungle.md)
+* [fibos.js API 基础篇](fibosapibasics.md)
