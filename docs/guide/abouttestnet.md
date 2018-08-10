@@ -25,6 +25,8 @@ chainID : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 
 ## 如何在 FIBOS TestNet 上进行测试？
 
+(tips：FIBOS TestNet 数据会定期重置)
+
 在 FIBOS TestNet 上测试需要拥有一个测试账号，请按照上述内容进行注册，你会获得一个账户的公钥和私钥。
 
 编写一段基于 `fibos.js` 的客户端访问 FIBOS TestNet，保存下面的代码至 `test_client.js`。
