@@ -6,7 +6,7 @@
 
 ### 相似与相异
 
-fibos.js 与 eosjs 相比并没有增加新的方法,你可以通过访问 [eosjs project page](https://github.com/EOSIO/eosjs) 页面获取完整的文档。与 eosjs 不同的是在 fibos.js 中,你无须去理会那些可怕异步函数,使用同步函数便可以完成那些相同的操作。
+fibos.js 与 eosjs 相比并没有增加新的方法。与 eosjs 不同的是在 fibos.js 中,你无须去理会那些可怕异步函数,使用同步函数便可以完成那些相同的操作。
 
 例:
 
@@ -20,7 +20,7 @@ console.log(fibos.getInfoSync());
 
 ### 环境搭建
 
-使用 FIBOS 客户端API之前，需要搭建好开发环境，具体搭建过程，参见[安装FIBOS运行环境](https://fibos.io/docs/guide/install.md.html)。
+使用 FIBOS 客户端 API 之前，需要搭建好开发环境，具体搭建过程，参见[安装FIBOS运行环境](install.md)。
 
 配置好运行环境后，下面就让我们开始愉快地使用 API 吧！
 
@@ -54,7 +54,7 @@ var fibos = FIBOSJS(config);
 fibos test
 ```
 
-### 七大常用API
+### 七大常用 API
 
 ##### 1.获取区块信息
 
@@ -111,7 +111,7 @@ fibos.contractSync("eosio.token").transferSync("your account name", "transfer to
 console.log(fibos)
 ```
 
-这一行代码来查看完整的 fibos.js 的API
+这一行代码来查看完整的 fibos.js 的 API
 
 
 
