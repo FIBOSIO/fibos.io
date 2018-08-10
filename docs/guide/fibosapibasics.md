@@ -29,7 +29,7 @@ console.log(fibos.getInfoSync());
 - 安装 fibos.js 库
 
 ```
-fibos install fibos.js
+fibos --install fibos.js
 ```
 
 - 通过 fibos.js 来体验 FIBOS 和 EOS
@@ -80,8 +80,8 @@ fibos.getInfoSync().last_irreversible_block_num;
 fibos.newaccountSync({
     creator: 'eosio',
     name: "hellofibos",
-    owner: config["public-key"],
-    active: config["public-key"]
+    owner: ["public-key"],
+    active: ["public-key"]
 });
 ```
 
