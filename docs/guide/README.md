@@ -11,3 +11,5 @@
 * [三行代码，让 FIBOS 支持 mongoDB 富查询](fibosmongodb.md)
 * [由浅入深理解 FIBOS 权限系统](fibosauth.md)
 * [fibos.js API 基础篇](fibosapibasics.md)
+* [如何在 FIBOS 上一键发布传统通证](fiboscreateusualtoken.md)
+
