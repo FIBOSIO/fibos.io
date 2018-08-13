@@ -1,20 +1,21 @@
 # 如何在 FIBOS 上一键发行传统通证
 
-相比于在 EOS 上发币的复杂性和高成本，在 FIBOS 上发行通证只需要两步：
+相比于在 EOS 上发行通证的复杂性和高成本，在 FIBOS 上发行通证只需要两步:
+
 1.创建账号
 
 2.发行通证
 
-在 FIBOS 上发行通证需要使用 FIBOS 账号，并确保账号中拥有4 KB 以上的内存，并抵押1.0000 FO 以上的 CPU 和 NET 。
+ 在 FIBOS 上发行通证需要使用 FIBOS 账号，并确保账号中拥有4 KB 以上的内存，并抵押1.0000 FO 以上的 CPU 和 NET 。
 
 下文将以 FIBOS 测试网为例，在上面发行一款名为 `ORIO` 的通证。学完之后，你也可以像我一样发行一款属于自己的通证啦！
 
 ## 1.创建账号
 
-在 [FIBOS TestNet](http://103.80.170.107:8080/) 上创建一个账号非常简单，只需要输入你的公钥和你想要取的名字，点击 `开始申请` 就可以生成一个属于你自己的 FIBOS 账号啦，本文创建一个叫 `fibostest` 的账号用作示范，下面让我们来看下刚刚创建的这个账号的信息。
+在 [FIBOS TestNet](http://103.80.170.107:8080/) 上创建一个账号非常简单，只需要输入你的公钥和你想要取的名字，点击 `开始申请` 就可以生成一个属于你自己的 FIBOS 账号啦，本文创建一个叫 `fibostest111` 的账号用作示范，下面让我们来看下刚刚创建的这个账号的信息。
 
 ```
-"account_name": "fibostest",
+"account_name": "fibostest111",
   "head_block_num": 185566,
   "head_block_time": "2018-08-11T01:37:38.500",
   "privileged": false,
@@ -68,33 +69,33 @@
     }
   ],
   "total_resources": {
-    "owner": "fibostest",
+    "owner": "fibostest111",
     "net_weight": "50.0000 FO",
     "cpu_weight": "50.0000 FO",
     "ram_bytes": 4073
   },
 ```
 
-可以看到账户名叫 `fibostest`  ,拥有 4073 bytes 的 RAM，并抵押了价值 50.0000 FO 的 CPU 和 NET 资源，该账号的 `owner` 和  `active`  权限都属于 `fibostest` , 其  `threshold(阈值)` 和  `weight(权重)`  都为1 。想要了解更多关于 FIBOS 中的账号和权限的关系，请参考 [由浅入深理解 FIBOS 权限系统](fibosauth.md) 一文。
+可以看到账户名叫 `fibostest111`  ,拥有 4073 bytes 的 RAM，并抵押了价值 50.0000 FO 的 CPU 和 NET 资源，该账号的 `owner` 和  `active`  权限都属于 `fibostest111` , 其  `threshold(阈值)` 和  `weight(权重)`  都为1 。想要了解更多关于 FIBOS 中的账号和权限的关系，请参考 [由浅入深理解 FIBOS 权限系统](fibosauth.md) 一文。
 
-## 2.发币
+## 2.发行通证
 
-经过简单的创建账号之后，我们就可以发币啦，保存以下代码到 `create_token.js` :
+经过简单的创建账号之后，我们就可以发行通证啦，保存以下代码到 `create_token.js` :
 
 ```
 var FIBOSJS = require('fibos.js')
 
 config = {
-	chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f', 
-	keyProvider: ['private key'], 
-	httpEndpoint: 'http://103.80.170.107:8888',
-	expireInSeconds: 60,
-	broadcast: true,
-	verbose: false, 
-	sign: true
+  chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f', 
+  keyProvider: ['private key'], 
+  httpEndpoint: 'http://103.80.170.107:8888',
+  expireInSeconds: 60,
+  broadcast: true,
+  verbose: false, 
+  sign: true
 }
 var fibos_client = FIBOSJS(config);
-console.log(fibos_client.create("fibostest","100000.0000 ORIO"));
+console.log(fibos_client.create("fibostest111","10000000.0000 ORIO"));
 ```
 
 执行代码 :
@@ -115,7 +116,7 @@ fibos create_token.js
           "recv_sequence": 37,
           "auth_sequence": [
             [
-              "doggod11",
+              "fibostest111",
               1
             ]
           ],
@@ -127,12 +128,12 @@ fibos create_token.js
           "name": "create",
           "authorization": [
             {
-              "actor": "fibostest",
+              "actor": "fibostest111",
               "permission": "active"
             }
           ],
           "data": {
-            "issuer": "fibostest",
+            "issuer": "fibostest111",
             "maximum_supply": "10000000.0000 ORIO"
           },
           "hex_data": "0000002124ca184d00e87648170000000457540000000000"
@@ -147,13 +148,13 @@ fibos create_token.js
     ],
 ```
 
-从打印的日志中，我们可以看到, `issuer` 为 `fibostest` 的账户发行了一款名为 `ORIO` 的通证，它的 `maximum_supply` 为10000000.0000。到此，我们就已经成功在 FIBOS TestNet 上发了一款属于自己的币啦！@_@ 是不是很简单？你只需要在上述代码中  `keyProvider` 填上你的私钥，在 `create()` 方法中填你的账号名和你想要发行的币名和最大发行量，再执行下 `fibos create_token.js` ，就能成功发币啦。心动不如行动，赶紧来试试吧！注意哦， `maximum_supply`  小数点后一定要四位小数，币名长度小于或等于7位。
+从打印的日志中，我们可以看到, `issuer` 为 `fibostest111` 的账户发行了一款名为 `ORIO` 的通证，它的 `maximum_supply` 为10000000.0000。到此，我们就已经成功在 FIBOS TestNet 上发了一款属于自己的通证啦！@_@ 是不是很简单？你只需要在上述代码中  `keyProvider` 填上你的私钥，在 `create()` 方法中填你的账号名和你想要发行的通证名和最大发行量，再执行下 `fibos create_token.js` ，就能成功发行通证啦。心动不如行动，赶紧来试试吧！注意哦， `maximum_supply`  数值类型为 `Uint64` ，通证名取值为 `A-Z` 且长度不能超过7位。
 
 ### 让我们来试试转账吧
 
-下面让我们用刚刚发行的  `ORIO` 币来进行一次转账测试，调用 FIBJS API 中提供的 `transfer("form","to","amounts","remark")` 接口 给 `eosio` 这个账号转 100.0000 个`ORIO`币， API 使用方法可参考 [fibos.js](https://github.com/FIBOSIO/fibos.js) 。
+下面让我们用刚刚发行的  `ORIO` 通证来进行一次转账测试，调用 FIBJS API 中提供的 `transfer("form","to","amounts","memo")` 接口 给 `eosio` 这个账号转 100.0000 个 `ORIO` 通证， API 使用方法可参考 [fibos.js](https://github.com/FIBOSIO/fibos.js) 。
 
-转账成功之后，调用 `getTableRowsSync("true, "eosio.token", "fibostest", "accounts") ` 接口查看看 `fibostest`  账号的余额：
+转账成功之后，调用 `getTableRowsSync("true, "eosio.token", "fibostest111", "accounts") ` 接口查看看 `fibostest111`  账号的余额：
 
 ```
 "rows": [
