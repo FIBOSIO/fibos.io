@@ -8,3 +8,4 @@
 * [一分钟加入 EOS 测试网络](fibossyncjungle.md)
 * [三行代码，让 FIBOS 支持 mongoDB 富查询](fibosmongodb.md)
 * [由浅入深理解 FIBOS 权限系统](fibosauth.md)
+* [fibos.js API 基础篇](fibosapibasics.md)
