@@ -95,7 +95,7 @@ config = {
   sign: true
 }
 var fibos_client = FIBOSJS(config);
-console.log(fibos_client.create("fibostest111","10000000.0000 ORIO"));
+console.log(fibos_client.create("fibostest111","100000000.0000 ORIO"));
 ```
 
 执行代码 :
@@ -134,7 +134,7 @@ fibos create_token.js
           ],
           "data": {
             "issuer": "fibostest111",
-            "maximum_supply": "10000000.0000 ORIO"
+            "maximum_supply": "100000000.0000 ORIO"
           },
           "hex_data": "0000002124ca184d00e87648170000000457540000000000"
         },
@@ -148,7 +148,50 @@ fibos create_token.js
     ],
 ```
 
-从打印的日志中，我们可以看到, `issuer` 为 `fibostest111` 的账户发行了一款名为 `ORIO` 的通证，它的 `maximum_supply` 为10000000.0000。到此，我们就已经成功在 FIBOS TestNet 上发了一款属于自己的通证啦！@_@ 是不是很简单？你只需要在上述代码中  `keyProvider` 填上你的私钥，在 `create()` 方法中填你的账号名和你想要发行的通证名和最大发行量，再执行下 `fibos create_token.js` ，就能成功发行通证啦。心动不如行动，赶紧来试试吧！注意哦， `maximum_supply`  数值类型为 `Uint64` ，通证名取值为 `A-Z` 且长度不能超过7位。
+从打印的日志中，我们可以看到, `issuer` 为 `fibostest111` 的账户发行了一款名为 `ORIO` 的通证，它的 `maximum_supply` 为100000000.0000。到此，我们就已经成功在 FIBOS TestNet 上发了一款属于自己的通证啦！@_@ 是不是很简单？你只需要在上述代码中  `keyProvider` 填上你的私钥，在 `create()` 方法中填你的账号名和你想要发行的通证名和最大发行量，再执行下 `fibos create_token.js` ，就能成功发行通证啦。心动不如行动，赶紧来试试吧！注意哦， `maximum_supply`  数值类型为 `Uint64` ，通证名取值为 `A-Z` 且长度不能超过7位。
+
+### 发点儿钱
+
+我们给 `fibostest111` 增发一些刚刚发行的 `ORIO` 通证，保存代码到 `issue.js` :
+
+```
+var FIBOSJS = require('fibos.js')
+
+config = {
+  chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f', 
+  keyProvider: ['private key'], 
+  httpEndpoint: 'http://103.80.170.107:8888',
+  expireInSeconds: 60,
+  broadcast: true,
+  verbose: false, // API activity
+  sign: true
+}
+var fibos_client = FIBOSJS(config);
+console.log(fibos_client.issueSync("fibostest111", "10000000.0000 ORIO", "issue"));
+```
+
+执行代码 `fibos issue.js` ,截取部分打印信息如下:
+
+```
+"act": {
+          "account": "eosio.token",
+          "name": "issue",
+          "authorization": [
+            {
+              "actor": "fibostest111",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "to": "fibostest111",
+            "quantity": "10000000.0000 ORIO",
+            "memo": "issue"
+          },
+          "hex_data": "d0ffeffff7fffbff00e1f505000000000441444300000000026868"
+        },
+```
+
+通过日志我们可以看到， `fibostest111` 这个账号上有了10000000.0000 ORIO 。
 
 ### 让我们来试试转账吧
 
