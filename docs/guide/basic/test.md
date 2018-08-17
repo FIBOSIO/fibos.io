@@ -1,26 +1,39 @@
 # 开始体验 FIBOS 超棒的测试框架
 
-阅读完本章你可以学会如何使用 FIBOS 的编写测试用例，下面介绍了几个例子。
+不写自动测试用例的程序员不是一个好的测试工程师。我们鼓励所有的项目在启动最初，就建立完整的自动化测试用例。随着项目的发展，前期的投入会得到数百倍的回报。
 
-本章涉及到的文件列表:
+阅读完本章你可以学会如何使用 FIBOS 的编写测试用例。
 
-```
-hello_fibos/
-├── fibos_client
-│   ├── case.js
-│   ├── client.js
-│   ├── deploy.js
-│   ├── hello
-│   │   ├── hello.abi
-│   │   └── hello.js
-│   ├── package.json
-│   ├── sample_test.js
-│   └── test_contract.js
-└── start_fibos
-    └── node.js
-```
+- 本文运行环境：
+
+  系统：macOS
+
+- 本章涉及到文章列表：
+
+  ```
+  fibos_client/
+  ├── call.js
+  ├── deploy.js
+  ├── hello
+  │   ├── hello.abi
+  │   └── hello.js
+  ├── initClient.js
+  └── test
+      ├── case.js
+      ├── sample_test.js
+      └── test_contract.js
+  ```
+
+- 本章示例代码地址：https://github.com/FIBOSIO/samples
 
 ## 一个简单的测试用例
+
+创建测试用例文件夹：
+
+```
+mkdir test
+cd test
+```
 
 以下代码保存至工作目录 `sample_test.js`:
 
@@ -60,33 +73,13 @@ fibos sample_test.js
 
 ## 开始编写 FIBOS 业务场景测试用例
 
-测试用例是模拟真实 API 操作，因此为了保证业务独立性，下面的用例在用例中需要启动了一个 FIBOS 作为测试，你可以使用2种方式进行用例的测试：
-
-1. 手动运行 FIBOS 的节点服务
-
-```
-fibos node.js
-```
-
-2. 集成在测试用例中
-
-使用 FIBOS 子进程的方式将 FIBOS 节点服务集成在用例中，如下面示例:
-
-```
-console.warn("启动FIBOS eosio");
-var subProcess = process.start("fibos", ["node.js"]);
-coroutine.sleep(5000);
-
-```
+同样的，以下代码保证本地的 FIBOS 节点服务正在运行。
 
 ### 写一个新建 FIBOS 账户的测试用例
 
-首先我们手动运行 FIBOS 节点服务，保证 HTTP 可以正常通信。
-
-
 以下代码保存至工作目录 `case.js`:
 
-```JavaScript
+```javascript
 var test = require('test');
 test.setup();
 
@@ -141,7 +134,7 @@ require.main === module && test.run(console.DEBUG);
     √ new account
     √ get account
 
-  √ 2 tests completed (13ms
+  √ 2 tests completed (13ms)
 ```
 
 ### 写一个合约的测试用例
@@ -152,10 +145,10 @@ require.main === module && test.run(console.DEBUG);
 ├── fibos_client
 │   ├── call.js 调用合约接口脚本文件
 │   ├── deploy.js 加载、发布合约脚本文件
+│   ├── initClient.js FIBOS连接文件
 │   ├── hello
-│   │   ├── hello.abi 合约 abi 文件
+│   │   ├── hello.abi 合约abi文件
 │   │   └── hello.js 合约代码文件
-
 ```
 
 以下代码保存至工作目录 `test_contract.js`:
@@ -192,13 +185,13 @@ describe('new account FIBOS', () => {
     });
 
     it('get code', () => {
-        var js_code = fs.readTextFile("./hello/hello.js");
+        var js_code = fs.readTextFile("../hello/hello.js");
         var code = fibos.getCodeSync(contractName, true);
         assert.equal(code.wast, fibos.compileCode(js_code).hex());
     });
 
     it('setabi', () => {
-        var abi = JSON.parse(fs.readTextFile("./hello/hello.abi"));
+        var abi = JSON.parse(fs.readTextFile("../hello/hello.abi"));
         fibos.setabiSync(contractName, abi);
     });
 });
@@ -206,8 +199,8 @@ describe('new account FIBOS', () => {
 require.main === module && test.run(console.DEBUG);
 ```
 
-## 如何加入到 FIBOS TestNet?
+## 接下来该做什么？
 
-到现在你已经了解了基于 FIBOS 的整个开发过程，FIBOS 提供了一套 TestNet 环境，让我们先了解下它是什么？它可以做什么？
+到现在你已经了解了基于 FIBOS 的整个开发过程，但是目前的知识不足以保证我们开发一款合格的 DAPP，接下来让我们看看开发一款 DAPP 还需要储备哪些知识。
 
-👉 [FIBOS TestNet 是什么？](abouttestnet.md)
+👉 [快速入门 FIBOS 权限系统](./basic/fibosauth.md)
