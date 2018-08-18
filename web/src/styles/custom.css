@@ -683,7 +683,7 @@ a.qrcodeContainer {
 section.links .social-media .qrcodeImg {
   display: none;
   position: absolute;
-  top: -140px;
+  top: -160px;
   left: 10px;
   width: 200px;
   height: 200px;
@@ -691,6 +691,10 @@ section.links .social-media .qrcodeImg {
 
 section.links .social-media a.qrcodeContainer:hover .qrcodeImg {
   display: block;
+}
+
+.doc-container #navbarNav {
+  transform: translateY(0.1rem);
 }
 
 #navbarNav ul li {

@@ -27,6 +27,12 @@ a:focus {
   height: auto;
 }
 
+.faq .faq-body iframe {
+  max-width: 100% !important;
+  display: block;
+  height: auto;
+}
+
 ul {
   padding-left: 30px;
 }
@@ -83,28 +89,41 @@ pre div.line-numbers {
 }
 
 .faq:not(:first-child) {
-  margin-top: 15px;
+  margin-top: 5px;
+}
+
+.faq .faq-header {
+  padding: 7px 18px;
 }
 
 .faq .faq-header h2 {
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
   width: 100%;
   text-align: left;
-  font-size: 26px;
+  font-size: 16px;
   font-weight: 500;
   color: #333;
-  border-bottom: 2px dotted #eee;
   padding: .375rem .75rem;
   cursor: pointer;
+  line-height: 1.8;
+  margin-bottom: 0;
+  font-weight: 600;
 }
 
 .faq .faq-desc {
-  padding: 20px;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  font-weight: 400;
+  padding: 13px 30px;
   line-height: 1.8;
   color: #333;
+  border-top: 2px dotted #eee;
 }
 
 .faq .faq-body {
-  padding: 20px;
+  border-top: 2px dotted #eee;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  padding: 13px 30px;
+  line-height: 1.5;
 }
 
 @media (max-width: 479px) {
@@ -184,6 +203,37 @@ pre div.line-numbers {
   }
 }
 
+html,
+body {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .doc-container {
+    min-height: 100%;
+  }
+  .doc-container>.inside-container {
+    padding-bottom: 385px;
+    min-height: 100%;
+  }
+  footer {
+    margin-top: -385px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc-container {
+    min-height: 100%;
+  }
+  .doc-container>.inside-container {
+    padding-bottom: 242px;
+    min-height: 100%;
+  }
+  footer {
+    margin-top: -242px;
+  }
+}
+
 .doc-container .container {
   width: 100%;
   max-width: 100%;
@@ -192,36 +242,40 @@ pre div.line-numbers {
   /* padding: 0px 50px; */
 }
 
-.doc-container>.page-body>.container .sidebar {
+.doc-container #navbarNav {
+  transform: translateY(0.1rem);
+}
+
+.doc-container>.inside-container>.page-body .sidebar {
   margin-bottom: 20px;
 }
 
-.doc-container>.page-body>.container .sidebar #toc {
+.doc-container>.inside-container>.page-body .sidebar #toc {
   background-color: #ffffff;
   /* max-width: 100%; */
 }
 
-.doc-container>.page-body>.container .sidebar #toc .nav {
+.doc-container>.inside-container>.page-body .sidebar #toc .nav {
   display: block;
 }
 
-.doc-container>.page-body>.container .sidebar #toc .tocify-item {
+.doc-container>.inside-container>.page-body .sidebar #toc .tocify-item {
   line-height: 25px;
 }
 
-.doc-container>.page-body>.container .sidebar #toc .tocify-item a {
+.doc-container>.inside-container>.page-body .sidebar #toc .tocify-item a {
   color: #666;
 }
 
 @media (min-width: 1080px) {
-  .doc-container>.page-body>.container .sidebar #toc.fixed_tocify {
+  .doc-container>.inside-container>.page-body .sidebar #toc.fixed_tocify {
     flex: 0 0 16.666667%;
     position: fixed;
     width: auto;
   }
 }
 
-.doc-container>.page-body>.container .card {
+.doc-container>.inside-container>.page-body .card {
   margin-bottom: 0;
   border-radius: 4px;
   background-color: #fff;
@@ -229,93 +283,98 @@ pre div.line-numbers {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.doc-container>.page-body>.container .card:not(:first-child) {
+.doc-container>.inside-container>.page-body .card:not(:first-child) {
   margin-top: 5px;
 }
 
-.doc-container>.page-body>.container .card .card-header {
-  padding: 10px 15px 10px 15px;
+.doc-container>.inside-container>.page-body .card .card-header {
+  padding: 10px 15px 10px 22px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom: 0;
-  background-color: #ffffff;
+  background-color: #fff;
+  height: 50px;
 }
 
-.doc-container>.page-body>.container .card .card-header .card-title {
+.doc-container>.inside-container>.page-body .card .card-header .card-title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
 }
 
-.doc-container>.page-body>.container .card .card-header .card-title>a {
+.doc-container>.inside-container>.page-body .card .card-header .card-title>a {
   display: block;
   padding: 2px;
-  color: #666;
+  color: #333;
+  font-size: 16px;
   padding-left: 8px;
   outline: none;
   text-decoration: none;
   cursor: pointer;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  height: 30px;
+  line-height: 30px;
 }
 
-.doc-container>.page-body>.container .card .card-body {
+.doc-container>.inside-container>.page-body .card .card-body {
   border-top: 1px solid #ddd;
   padding: 15px 15px 15px 0px;
   font-size: 14px;
 }
 
-.doc-container>.page-body>.container .card .card-body li.active {
+.doc-container>.inside-container>.page-body .card .card-body li.active {
   background: #eeeeee;
   border-color: #08c;
   border-left: 2px solid;
 }
 
-.doc-container>.page-body>.container .card .card-body ul {
+.doc-container>.inside-container>.page-body .card .card-body ul {
   padding-left: 15px;
   list-style: none;
 }
 
-.doc-container>.page-body>.container .card .card-body ul li {
+.doc-container>.inside-container>.page-body .card .card-body ul li {
   border-left: 2px solid transparent;
   line-height: 20px;
   padding-bottom: 5px;
 }
 
-.doc-container>.page-body>.container .card .card-body ul li a {
+.doc-container>.inside-container>.page-body .card .card-body ul li a {
   display: block;
   padding: 2px;
   color: #666;
   padding-left: 8px;
 }
 
-.doc-container>.page-body>.container .card .card-body ul li a:hover {
+.doc-container>.inside-container>.page-body .card .card-body ul li a:hover {
   background-color: #eee;
   text-decoration: none;
 }
 
-.doc-container>.page-body>.container .content {
+.doc-container>.inside-container>.page-body .content {
   /* padding: 20px; */
   margin-right: 0;
 }
 
-.doc-container>.page-body>.container .content .content-container {
+.doc-container>.inside-container>.page-body .content .content-container {
   padding: 20px;
   background: #fff;
   color: #333;
 }
 
-.doc-container>.page-body>.container .content p {
+.doc-container>.inside-container>.page-body .content p {
   line-height: 1.8;
   color: #333;
 }
 
-.doc-container>.page-body>.container .content h1 {
+.doc-container>.inside-container>.page-body .content h1 {
   line-height: 1.1;
   font-size: 36px;
   font-weight: 500;
   color: #333;
 }
 
-.doc-container>.page-body>.container .content h2 {
+.doc-container>.inside-container>.page-body .content h2 {
   line-height: 1.1;
   font-size: 30px;
   font-weight: 500;
@@ -323,6 +382,6 @@ pre div.line-numbers {
   color: #333;
 }
 
-.doc-container>.page-body>.container .content table {
+.doc-container>.inside-container>.page-body .content table {
   margin-bottom: 20px;
 }

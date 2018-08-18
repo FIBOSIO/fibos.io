@@ -4,8 +4,8 @@
 <head>
     <!-- include "../common/meta.html" -->
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="js/bootstrap3.min.js"></script>
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -184,7 +184,7 @@
     <section class="fo">
         <div class="container">
             <h3 class="title">
-                <img title="兑换 FO 智能通证" src="/imgs/buyfo.png" width="337" alt="兑换 FO 智能通证">
+                <img title="兑换 FO 智能通证" src="/imgs/buyfo.png" width="337" alt="兑换 FO 智能通证" style="max-width: 100%;">
             </h3>
             <!-- <div class="row step">
                 <div class="col fo-step">
@@ -229,9 +229,9 @@
 
             </div>
             <div class="row timeline-box">
-                <div class="node col-sm-3">
-                    <div class="process-bar"></div>
-                    <!-- <div class="process-bar-right"></div> -->
+                <div class="node col-sm-3 col-12">
+                    <div class="process-bar active"></div>
+                    <div class="process-bar-right"></div>
                     <div class="node-mark active"></div>
                     <div class="content">
                         <div class="time">
@@ -249,10 +249,11 @@
                         </ul> -->
                     </div>
                 </div>
-                <div class="node col-sm-3">
-                    <!-- <div class="process-bar"></div> -->
+                <div class="node col-sm-3 col-12">
+                    <div class="process-bar"></div>
+                    <div class="process-bar-right"></div>
                     <div class="node-mark"></div>
-                    <div class="content">
+                    <div class="content xs-right">
                         <div class="time">
                             Aug. 28, 2018
                         </div>
@@ -268,8 +269,9 @@
                         </ul> -->
                     </div>
                 </div>
-                <div class="node col-sm-3">
-                    <!-- <div class="process-bar"></div> -->
+                <div class="node col-sm-3 col-12">
+                    <div class="process-bar"></div>
+                    <div class="process-bar-right"></div>
                     <div class="node-mark"></div>
                     <div class="content">
                         <div class="time">
@@ -287,10 +289,11 @@
                         </ul> -->
                     </div>
                 </div>
-                <div class="node col-sm-3">
-                    <!-- <div class="process-bar"></div> -->
+                <div class="node col-sm-3 col-12">
+                    <div class="process-bar"></div>
+                    <div class="process-bar-right"></div>
                     <div class="node-mark"></div>
-                    <div class="content">
+                    <div class="content xs-right">
                         <div class="time">
                             Sep. 25, 2018
                         </div>
@@ -310,6 +313,99 @@
         </div>
         </div>
     </section>
+    <section class="raise">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 title">全球节点征集</h2>
+                    <div class="title-sub"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <script charset="UTF-8" defer>
+                        (function(h) {
+                            function n(a) {
+                                return null === a ? null : a.scrollHeight > a.clientHeight ? a : n(a.parentNode)
+                            }
+
+                            function t(b) {
+                                if (b.data) {
+                                    var f = JSON.parse(b.data);
+                                    !f.height || p || q || (d.style.height = +f.height + "px");
+                                    if (f.getter) {
+                                        b = {};
+                                        var f = [].concat(f.getter),
+                                            k, h = f.length,
+                                            m, c, g, e;
+                                        for (k = 0; k < h; k++) {
+                                            m = k;
+                                            c = f[k] || {};
+                                            c.n && (m = c.n);
+                                            g = null;
+                                            try {
+                                                switch (c.t) {
+                                                    case "window":
+                                                        e = window;
+                                                        break;
+                                                    case "scrollParent":
+                                                        e = n(a) || window;
+                                                        break;
+                                                    default:
+                                                        e = a
+                                                }
+                                                if (c.e)
+                                                    if ("rect" === c.v) {
+                                                        g = {};
+                                                        var l = e.getBoundingClientRect();
+                                                        g = {
+                                                            top: l.top,
+                                                            left: l.left,
+                                                            width: l.width,
+                                                            height: l.height
+                                                        }
+                                                    } else g = e[c.v].apply(e, [].concat(c.e)) || !0;
+                                                else c.s ? (e[c.v] = c.s, g = !0) : g = e[c.v] || !1
+                                            } catch (u) {}
+                                            b[m] = g
+                                        }
+                                        b.innerState = !p && !q;
+                                        a.contentWindow.postMessage(JSON.stringify({
+                                            queryRes: b
+                                        }), "*")
+                                    }
+                                }
+                            }
+                            for (var r = h.document, b = r.documentElement; b.childNodes.length && 1 == b.lastChild.nodeType;) b = b.lastChild;
+                            var d = b.parentNode,
+                                a = r.createElement("iframe");
+                            d.style.overflowY = "auto";
+                            d.style.overflowX = "hidden";
+                            var p = d.style.height && "auto" !== d.style.height,
+                                q = "absolute" === d.style.position || window.getComputedStyle && "absolute" === window.getComputedStyle(d, null).getPropertyValue("position") || d.currentStyle && "absolute" === d.currentStyle.position;
+                            h.addEventListener && h.addEventListener("message", t, !1);
+                            a.src = "http://cn.mikecrm.com/MfQM71h";
+                            a.id = "mkinMfQM71h";
+                            a.onload = function() {
+                                a.contentWindow.postMessage(JSON.stringify({
+                                    cif: 1
+                                }), "*")
+                            };
+                            a.frameBorder = 0;
+                            a.scrolling = "no";
+                            a.style.display = "block";
+                            a.style.minWidth = "100%";
+                            a.style.width = "100px";
+                            a.style.height = "100%";
+                            a.style.border = "none";
+                            a.style.overflow = "auto";
+                            d.insertBefore(a, b);
+                        })(window);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="dapps">
         <div class="container">
             <div class="row">
@@ -317,41 +413,46 @@
                     <h2 class="h1 title">DApp 合作伙伴</h2>
                     <div class="title-sub"></div>
                 </div>
-                <div class="col-lg-3 col-md-6 dapp">
+                <div class="dapp">
                     <div class="card">
-                        <img class="card-img-top" src="/imgs/dapp1.jpg" alt="Card image cap">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp1.jpg" alt="">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">FO 智能钱包</h5>
                             <p class="card-text">支持多种通证，可直接发布通证，内置 DApp Store 直接抵达用户</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 dapp">
+                <div class="dapp">
                     <div class="card">
-                        <img class="card-img-top" src="/imgs/dapp2.jpg" alt="Card image cap">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp2.jpg" alt="">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">虚位以待</h5>
-                            <!-- <p class="card-text">支持多币种，可直接发币，内置 DApp 市场直接抵达用户</p> -->
                             <p class="card-text"><br/><br/></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 dapp">
+                <div class="dapp">
                     <div class="card">
-                        <img class="card-img-top" src="/imgs/dapp3.jpg" alt="Card image cap">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp3.jpg" alt="">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">虚位以待</h5>
-                            <!-- <p class="card-text">支持多币种，可直接发币，内置 DApp 市场直接抵达用户</p> -->
                             <p class="card-text"><br/><br/></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 dapp">
+                <div class="dapp">
                     <div class="card">
-                        <img class="card-img-top" src="/imgs/dapp4.jpg" alt="Card image cap">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp4.jpg" alt="">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">虚位以待</h5>
-                            <!-- <p class="card-text">支持多币种，可直接发币，内置 DApp 市场直接抵达用户</p> -->
                             <p class="card-text"><br/><br/></p>
                         </div>
                     </div>
@@ -359,7 +460,45 @@
             </div>
         </div>
     </section>
-    <a name="fibos-news" style="height: 0px"></a>
+    <section class="cooperation">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 title">战略合作伙伴</h2>
+                    <div class="title-sub"></div>
+                </div>
+                <div class="dapp">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="dapp">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="dapp">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="dapp">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="/imgs/dapp4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a name="fibos-news" style="height: 0"></a>
     <!-- <section class="news">
         <div class="container">
             <div class="row">
@@ -458,7 +597,6 @@
                     </div> -->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-8">
                         <h5>联系我们</h5>
-                        <h6>开发者社区</h6>
                         <ul class="social-media">
                             <li>
                                 <a class="qrcodeContainer" href="javascript:void(0)">
@@ -497,7 +635,7 @@
     </footer>
     <script>
         $('.carousel').carousel({
-            interval: 2000
+            interval: 2100
         });
     </script>
     <script>

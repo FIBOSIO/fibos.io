@@ -20,10 +20,9 @@ header.header {
   margin: 2rem auto 2.5rem auto !important;
   background: rgb(247, 205, 118) !important;
   height: 0.5rem;
-  width: 5rem !important;
-  @media (max-width: 768px) {
-    display: none;
-  }
+  width: 5rem !important; // @media (max-width: 768px) {
+  //   display: none;
+  // }
 }
 
 .navbar {
@@ -46,7 +45,7 @@ header.header {
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
-    transform: translateY(0.1rem);
+    transform: translateY(0.5rem);
   }
 }
 
@@ -60,7 +59,6 @@ header.header {
     }
   }
 }
-
 
 // @media (min-width: 992px) {
 //   #navbarNav {
@@ -79,12 +77,46 @@ header.header {
 //     }
 //   }
 // }
+.img-responsive,
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+  display: block;
+  max-width: 100%;
+  height: auto
+}
+
+.img-rounded {
+  border-radius: 6px
+}
+
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  transition: all ease-in 0.2s
+}
+
+.img-circle {
+  border-radius: 50%
+}
+
 .secone {
   padding: 100px 0 135px;
   h1.slogan {
     font-size: 3.5rem;
     color: #fff;
     margin-bottom: 20px;
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
   }
   .desc {
     color: #fff;
@@ -202,27 +234,34 @@ section.timeline {
     text-align: center;
   }
   .timeline-box {
-    border-top: 6px solid #ddd;
+    position: relative; // border-top: 6px solid #ddd;
     .node {
       margin-top: -30px;
       padding: 0;
     }
-    .process-bar,
-    .process-bar-right {
+    .process-bar {
       float: left;
-      border: 3px solid rgb(247, 205, 118);
-      width: 48%;
+      border: 3px solid #ddd;
+      // width: 47%;
+      width: calc(50% - 12.5px);
       margin-top: 24px;
-      @media (max-width: 768px) {
-        display: none;
+      &.active {
+        border-color: rgb(247, 205, 118);
       }
     }
     .process-bar-right {
-      margin-left: 4%;
-      @media (max-width: 768px) {
-        display: none;
+      float: right;
+      border: 3px solid #ddd;
+      // width: 46.5%;
+      width: calc(50% - 12.5px);
+      margin-top: 24px;
+      &.active {
+        border-color: rgb(247, 205, 118);
       }
     }
+    // .process-bar-right {
+    //   margin-left: 6%;
+    // }
     .node-mark {
       display: block;
       width: 25px;
@@ -235,8 +274,53 @@ section.timeline {
       &.active {
         border: 8px solid rgb(247, 205, 118);
       }
-      @media (max-width: 768px) {
-        display: none;
+    }
+    @media (max-width: 574px) {
+      .node {
+        height: 230px;
+      }
+      .process-bar {
+        height: 100%;
+        border-left: 3px solid #ddd;
+        border-right: 3px solid #ddd;
+        width: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 48%;
+        margin-top: 0;
+        &.active {
+          border-left: 3px solid rgb(247, 205, 118);
+          border-right: 3px solid rgb(247, 205, 118);
+        }
+      }
+      .process-bar-right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        margin-top: 0;
+        width: 0;
+        height: 48%;
+      }
+      .node-mark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -24px;
+      }
+      .content {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+      }
+      .xs-right {
+        left: 50%;
       }
     }
   }
@@ -272,7 +356,106 @@ section.timeline {
   }
 }
 
+section.raise {
+  padding: 135px 0 125px;
+  background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
+  background-size: contain;
+  .container {
+    // height: 700px !important;
+    overflow: inherit !important;
+  }
+  iframe {
+    body.cn.mac.sld_cn.inframe {
+      background: #fff;
+    }
+  }
+  .row {
+    padding: 0 2rem;
+  }
+  .title {
+    text-align: center;
+  }
+  form {
+    width: 100%;
+    label {
+      margin-top: 0.5rem;
+    }
+    button {
+      border: 1px solid rgb(70, 151, 215);
+      color: rgb(70, 151, 215);
+      margin-top: 1.5rem;
+    }
+  }
+}
+
 section.dapps {
+  color: #333;
+  // background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
+  // background-size: contain;
+  padding: 135px 0 125px;
+  .title {
+    text-align: center;
+  }
+  .card {
+    border: none;
+    box-shadow: 0 5px 10px 0 rgba(51, 51, 51, 0.1);
+    height: 100%;
+    border-radius: 0.6rem;
+    img {
+      border-top-left-radius: 0.6rem;
+      border-top-right-radius: 0.6rem;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .card-body {
+    // height: 115px;
+    height: auto;
+  }
+  .card-title {
+    font-size: 1.125rem;
+  }
+  .card-text {
+    color: #999;
+    font-size: 0.875rem;
+  }
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    .dapp {
+      .card-img-top {
+        height: 0;
+        padding-bottom: 69%;
+        background-size: 100%;
+      }
+    }
+    @media (min-width: 992px) {
+      .dapp {
+        display: inline-block;
+        width: 25%;
+        padding: 0 15px;
+      }
+    }
+    @media (max-width: 992px) {
+      .dapp {
+        display: inline-block;
+        width: 50%;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+    }
+    @media (max-width: 768px) {
+      .dapp {
+        display: inline-block;
+        width: 100%;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+section.cooperation {
   color: #333;
   background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
   background-size: contain;
@@ -288,6 +471,10 @@ section.dapps {
     img {
       border-top-left-radius: 0.6rem;
       border-top-right-radius: 0.6rem;
+      border-bottom-left-radius: 0.6rem;
+      border-bottom-right-radius: 0.6rem;
+      width: 100%;
+      height: auto;
     }
   }
   .card-body {
@@ -299,6 +486,40 @@ section.dapps {
   .card-text {
     color: #999;
     font-size: 0.875rem;
+  }
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    .dapp {
+      .card-img-top {
+        height: 0;
+        padding-bottom: 69%;
+        background-size: 100%;
+      }
+    }
+    @media (min-width: 992px) {
+      .dapp {
+        display: inline-block;
+        width: 25%;
+        padding: 0 15px;
+      }
+    }
+    @media (max-width: 992px) {
+      .dapp {
+        display: inline-block;
+        width: 50%;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+    }
+    @media (max-width: 768px) {
+      .dapp {
+        display: inline-block;
+        width: 100%;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+    }
   }
 }
 
@@ -377,6 +598,15 @@ section.links {
       height: 32px;
     }
   }
+  @media (max-width: 768px) {
+    .social-media li {
+      margin-right: 0.5rem;
+    }
+    .social-media img {
+      width: 28px;
+      height: 28px;
+    }
+  }
 }
 
 .copyright {
@@ -396,6 +626,7 @@ section.links {
 .carousel-inner>.item>a>img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .carousel {

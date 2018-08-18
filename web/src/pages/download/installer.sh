@@ -20,8 +20,17 @@ case ${HOST_OS} in
 	FreeBSD) HOST_OS="freebsd";;
 esac
 
-VERSION=`curl -s http://fibjs.org/dist/version.txt`
+if  [ ! -d "/usr/local/bin" ];then
+sudo mkdir /usr/local/bin
+sudo chmod 755 /usr/local/bin
+export PATH=$PATH:/usr/local/bin
+echo "export PATH=$PATH:/usr/local/bin" >>  ~/.bashrc
+source ~/.bashrc
+echo "======================================================"
+echo 'if you will run fibos, please exec `source ~/.bashrc`'
+echo "======================================================"
+fi
 
-curl http://fibjs.org/dist/${VERSION}/installer-${VERSION}-${HOST_OS}-${HOST_ARCH}.sh >> installer.sh
+curl https://fibos.io/installs/installer-${HOST_OS}.sh >> installer.sh
 sh installer.sh
 rm installer.sh
