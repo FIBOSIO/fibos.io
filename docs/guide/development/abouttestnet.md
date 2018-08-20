@@ -31,7 +31,7 @@ chainID : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 
 编写一段基于 `fibos.js` 的客户端访问 FIBOS TestNet，保存下面的代码至 `test_client.js`。
 
-需要依赖 `fibos.js` 包，请查看上几章节学习如何安装 `fibos.js` [使用 fibos.js 与 FIBOS 交互](fibosjs.md)。
+需要依赖 `fibos.js` 包，请查看上几章节学习如何安装 `fibos.js` [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md)。
 
 ```
 var FIBOS = require("fibos.js");

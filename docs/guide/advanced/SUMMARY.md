@@ -1,2 +1,1 @@
 - [由浅入深理解 FIBOS 权限系统](./fibosauth.md)
-- [FIBOS 数据持久化的开发实践](./fibosdb.md)

@@ -198,9 +198,3 @@ describe('new account FIBOS', () => {
 
 require.main === module && test.run(console.DEBUG);
 ```
-
-## 接下来该做什么？
-
-到现在你已经了解了基于 FIBOS 的整个开发过程，但是目前的知识不足以保证我们开发一款合格的 DAPP，接下来让我们看看开发一款 DAPP 还需要储备哪些知识。
-
-👉 [快速入门 FIBOS 权限系统](./basic/fibosauth.md)
