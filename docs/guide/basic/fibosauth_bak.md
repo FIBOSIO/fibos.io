@@ -1,30 +1,23 @@
-# 由浅入深理解 FIBOS 权限系统
+# 
 
-阅读本章节之后大家将理解 FIBOS 的权限系统，能够在实际业务开发中合理的配置、管理账户权限。
+# 快速入门 FIBOS 权限系统
 
-FIBOS 的权限沿用了 EOS 的账户权限设计，本文由浅入深的讲解账户权限在 FIBOS 中的具体应用，文章内容可以帮助大家理解下面几个问题：
+阅读本章节之后大家将理解 FIBOS 的权限系统，能够在实际业务开发中合理配置、管理账户权限。
+
+FIBOS 的权限沿用了 EOS 的账户权限设计，本文将快速的带领大家了解 FIBOS 中的权限问题，请在阅读文章之前思考以下几个问题：
 
 1. FIBOS 中的账户以及权限是什么？
-
 2. FIBOS 中的账户与权限的关系是什么？
-
 3. 如何在 FIBOS 中配置账户权限？
-
 4. FIBOS 中的账户权限如何应用到合约中？
 
+本文将带领你一一解答。
 
-本章内容示例开发环境： Mac OSX
+- 本文运行环境：
 
-示例代码：https://github.com/FIBOSIO/samples
+  系统：macOS
 
-本文涉及到相关知识：
-
-- fibos.js 的使用 
-- 安装 FIBOS
-- 编写 JavaScript 合约
-
-大家可以通过 FIBOS 官方网站学习：https://fibos.io
-
+- 本章示例代码地址：https://github.com/FIBOSIO/samples
 
 ## FIBOS 中的账户以及权限是什么？
 
@@ -52,43 +45,20 @@ FIBOS 的账户可以拥有资源以及关联合约，拥有资源可以理解�
 
 我们先简单理解下 这些权限的作用范围：
 
-- owner 拥有超级权限，代表着账户的归属者，因为拥有此权限者可以用于操作其他权限配置，该权限常用事务中（转账、合约 action 等）一般不会使用
+- owner 拥有超级权限，代表着账户的归属者，因为拥有此权限者可以用于操作其他权限配置，该权限在常用事务中（转账、合约 action 等）一般不会使用
+
 - active 常用业务的权限，比如：转账、投票等
+
 - publish 非系统权限，暂时未应用
 
-	
+
 ## FIBOS 中的账户与权限的关系是什么？
 
 到目前大家已经对 FIBOS 的账户以及权限有了一个大致的了解，下面我们结合示例代码深入的讲解 FIBOS 的账户和权限的关系，开始动手吧！
 
 ### 创建一个 FIBOS 账户
 
-使用 `fibos.js` 和 FIBOS 节点服务创建一个账户，让我们先启动一个 FIBOS 节点服务，保存代码至工作目录 `node.js`：
-
-```
-var fibos = require('fibos');
-
-fibos.load("http");
-fibos.load("net");
-fibos.load("producer", {
-	'producer-name': 'eosio',
-	'enable-stale-production': true
-});
-
-fibos.load("chain", {
-	"delete-all-blocks": true
-});
-fibos.load("chain_api");
-fibos.load("wallet");
-fibos.load("wallet_api");
-
-fibos.start();
-```
-
-运行节点服务:
-```
-fibos node.js
-```
+在学习之前请保证 FIBOS 本地节点服务正常运行。
 
 使用 `fibos.js` 作为客户端向 FIBOS 节点服务提交一个创建用户的请求，保存下面的代码到工作目录 `test_account.js`:
 
@@ -192,18 +162,7 @@ fibos test_account.js
 
 ### 从代码以及结果分析账户与权限
 
-简单分析一下执行的脚本：
-
-```
-fibos.newaccountSync({
-	creator: 'eosio',
-	name: name,
-	owner: pubkey,
-	active: pubkey
-});
-```
-
-这段脚本可以看到我们把 owner、active 权限的控制权限给了公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR`,也就说此公钥对应的私钥拥有者，有 owner、active 的权限。
+我们重点关注 `permissions` 键值，可以看到  owner、active 权限的控制权限给了公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR`，也就说此公钥对应的私钥拥有者，有 owner、active 的权限。
 
 让我们再来分析一下输出结果：
 
@@ -217,43 +176,6 @@ fibos.newaccountSync({
 
 (关于 RAM、CPU、NET 等资源文章，我们也会陆续发布，请大家及时关注)
 
-```
-"permissions": [
-{
-  "perm_name": "active",
-  "parent": "owner",
-  "required_auth": {
-    "threshold": 1,
-    "keys": [
-      {
-        "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
-        "weight": 1
-      }
-    ],
-    "accounts": [],
-    "waits": []
-  }
-},
-{
-  "perm_name": "owner",
-  "parent": "",
-  "required_auth": {
-    "threshold": 1,
-    "keys": [
-      {
-        "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
-        "weight": 1
-      }
-    ],
-    "accounts": [],
-    "waits": []
-  }
-}
- ]
-```
-
-这段输出结果可以看到 owner、active 权限控制者确实是公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR` 的拥有者。
-
 ### 理解 weight 和 threshold 的含义
 
 了解了上面这些其实并没有深入理解权限的核心，其中还有一些知识需要去理解，比如返回值中 `weight`  和 `threshold` 的含义，我们用一张图表来解释这个问题：
@@ -261,27 +183,26 @@ fibos.newaccountSync({
 - weight 权重
 - threshold 阈值
 
-| 权限名称  | 所属公钥  | 权重 | 阈值 |
-|:-------------: |:---------------:| :-------------:| :-------------:|
-| owner      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
-| active      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
+| 权限名称 |                       所属公钥                        | 权重 | 阈值 |
+| :------: | :---------------------------------------------------: | :--: | :--: |
+|  owner   |                                                       |      |  1   |
+|          | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |  1   |  -   |
+|  active  |                                                       |      |  1   |
+|          | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |  1   |  -   |
 
 如表所示，如果要获得 owner 权限授权，拥有者的权重必须大于等于 owner 所对应的阈值，上面的示例 owner 的阈值是1，而所属公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR` 的权重是1，所以这个所属公钥就可以直接获取 owner 进行操作。
 
-active 权限同上面的解释,我们把这种只有一个所属公钥的账户理解为单签账户。
+active 权限同上面的解释，我们把这种只有一个所属公钥的账户理解为单签账户。
 
 那么让我们来看看多签账户，再看下面的图表：
 
-| 权限名称  | 所属公钥  | 权重 | 阈值 |
-|:-------------: |:---------------:| :-------------:| :-------------:|
-| owner      |  |          |  2|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
-|       | EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |         1 | - |
-| active      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
-
+| 权限名称 |                       所属公钥                        | 权重 | 阈值 |
+| :------: | :---------------------------------------------------: | :--: | :--: |
+|  owner   |                                                       |      |  2   |
+|          | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |  1   |  -   |
+|          | EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |  1   |  -   |
+|  active  |                                                       |      |  1   |
+|          | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |  1   |  -   |
 
 大家应该可以理解上面的图表了，要想获得 owner 权限，必须2个所属公钥同时授权才可以获得，对于这方面的多签内容不在本章说明，我们会以多签的技术专题发布讲解。
 
@@ -352,11 +273,13 @@ console.notice(c);
 ```
 
 执行脚本:
+
 ```
 fibos test_power.js
 ```
 
 输出结果:
+
 ```
 {
   "account_name": "hellofibos",
@@ -424,13 +347,12 @@ fibos test_power.js
 
 那么让我们来看看多签账户，再看下面的图表：
 
-| 权限名称  | 所属公钥  | 权重 | 阈值 |
-|:-------------: |:---------------:| :-------------:| :-------------:|
-| owner      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
-| active      |  |          |  1|
-|       | EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |         1 | - |
-
+| 权限名称 |                       所属公钥                        | 权重 | 阈值 |
+| :------: | :---------------------------------------------------: | :--: | :--: |
+|  owner   |                                                       |      |  1   |
+|          | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |  1   |  -   |
+|  active  |                                                       |      |  1   |
+|          | EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |  1   |  -   |
 
 如表所示，owner 和 active 所属的公钥是不一样的，所以2种权限分别掌握在2个人手中。
 
@@ -502,10 +424,10 @@ fibos.setcodeSync(name, 0, 0, fibos.compileCode(js_code));
 ```
 
 运行脚本：
+
 ```
 fibos test_code.js
 ```
-
 
 执行结束后，我们使用 hellocode 账户发布了一个合约，合约提供一个 hi 方法，该方法仅仅打印输出了 action 这个对象，那么我们开始尝试调用合约。
 
@@ -543,11 +465,13 @@ console.error(r.processed.action_traces[0].console);
 ```
 
 执行脚本:
+
 ```
 fibos test_call.js
 ```
 
 输出:
+
 ```
 {
   "is_account": [Function],
@@ -664,7 +588,6 @@ false
 根据结果，代表 hellocode 账户 拥有 hellocode 的active 权限，但是并不拥有 eosio 这个账户的 active 权限。
 
 大家可以尝试升级合约使用 `require_auth` 替换 `has_auth`, `require_auth` 执行如果不是预期结果会执行退出合约。
-
 
 到目前为止，整篇内容全部讲解完毕，大家可以思考一下文章开头的几个问题是否都已经理解和解决了！
 

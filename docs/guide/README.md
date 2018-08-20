@@ -19,5 +19,3 @@
 # 其他支持
 - [一分钟加入 EOS 测试网络](./community/fibossyncjungle.md)
 - [三行代码，让 FIBOS 支持 mangoDB 富查询](./community/fibosmongodb.md)
-
-  

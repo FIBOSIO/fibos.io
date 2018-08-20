@@ -9,3 +9,5 @@
 - [FIBOS 数据持久化的开发实践](./advanced/fibosdb.md)
 - [一分钟加入 EOS 测试网络](./community/fibossyncjungle.md)
 - [三行代码，让 FIBOS 支持 mangoDB 富查询](./community/fibosmongodb.md)
+- [fibos.js API 基础篇](fibosapibasics.md)
+

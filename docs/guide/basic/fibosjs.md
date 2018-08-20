@@ -69,7 +69,7 @@ Is this ok? (yes)
 3. 安装 `fibos.js`
 
 ```
-fibos_client$ fibos --install fibos.js
+fibos_client$ fibos --install fibos.js@0.0.5
 ```
 
 如果没有报错说明安装 `fibos.js` 成功，开始编码吧！

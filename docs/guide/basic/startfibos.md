@@ -58,32 +58,66 @@ node.js
 fibos node.js
 ```
 
-运行结果日志:
+运行结果日志（节选）:
 ```
 fibos$ fibos node.js
-2018-07-30T03:28:59.907 thread-0   http_plugin.cpp:344           plugin_initialize    ] configured http to listen on 127.0.0.1:8888
-2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:271          plugin_initialize    ] initializing chain plugin
-2018-07-30T03:28:59.907 thread-0   chain_plugin.cpp:508          plugin_initialize    ] Starting up fresh blockchain with default genesis state.
-2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:2941           plugin_initialize    ] Initialize net plugin
-2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:2966           plugin_initialize    ] host: 0.0.0.0 port: 9876
-2018-07-30T03:29:00.466 thread-0   net_plugin.cpp:3036           plugin_initialize    ] my node_id is 669c9ac5d547873f8d3a6bf1b84e23d2471823e41c1e1c0f36bfea81b83c9561
-2018-07-30T03:29:00.478 thread-1   http_plugin.cpp:401           plugin_startup       ] start listening for http requests
-2018-07-30T03:29:00.478 thread-1   controller.cpp:1252           startup              ] No head block in fork db, perhaps we need to replay
-2018-07-30T03:29:00.478 thread-1   controller.cpp:319            initialize_fork_db   ]  Initializing new blockchain with genesis state
-2018-07-30T03:29:00.512 thread-1   chain_plugin.cpp:596          plugin_startup       ] starting chain in read/write mode
-2018-07-30T03:29:00.512 thread-1   chain_plugin.cpp:600          plugin_startup       ] Blockchain started; head block is #1, genesis timestamp is 2018-06-01T12:00:00.000
-2018-07-30T03:29:00.512 thread-1   net_plugin.cpp:3049           plugin_startup       ] starting listener, max clients is 25
-2018-07-30T03:29:00.512 thread-1   chain_api_plugin.cpp:75       plugin_startup       ] starting chain_api_plugin
-2018-07-30T03:29:00.514 thread-1   history_api_plugin.cpp:38     plugin_startup       ] starting history_api_plugin
-2018-07-30T03:29:00.514 thread-1   producer_plugin.cpp:640       plugin_startup       ] producer plugin:  plugin_startup() begin
-2018-07-30T03:29:00.515 thread-1   producer_plugin.cpp:658       plugin_startup       ] Launching block production for 1 producers at 2018-07-30T03:29:00.515.
-2018-07-30T03:29:00.516 thread-1   producer_plugin.cpp:670       plugin_startup       ] producer plugin:  plugin_startup() end
+……
 2018-07-30T03:29:01.004 thread-1   producer_plugin.cpp:1194      produce_block        ] Produced block 00000002e091c956... #2 @ 2018-07-30T03:29:01.000 signed by eosio [trxs: 0, lib: 0, confirmed: 0]
 ```
 
 如果你看到了以上的消息，说明运行成功，`eosio` 已经开始区块生产。
 
 恭喜你已经成功运行一个 FIBOS 节点服务，现在你可以开始进行本地编码测试了，[使用 fibos.js 与 FIBOS 交互](fibosjs.md)，更多高级用法可以继续查看下面内容!
+
+## 高级用法
+
+FIBOS 中 `load` 方法支持参数传递，下面详细的介绍。
+
+1. 修改 FIBOS 监听端口以及地址
+
+(1) 开启 HTTP 服务对所有地址的8889端口监听
+
+(2) 开启 P2P 服务对所有地址的9877端口监听
+
+```
+fibos.load("http", {
+	"http-server-address": "0.0.0.0:8889"
+});
+
+fibos.load("net", {
+	"p2p-listen-endpoint": "0.0.0.0:9877"
+});
+
+```
+
+(tips: FIBOS 默认 HTTP 端口8888，P2P 端口监听9876)
+
+1. 修改 FIBOS 配置以及数据目录
+
+查看当前的配置以及数据目录：
+
+```
+//查看
+console.notice("config_dir:", fibos.config_dir);
+
+console.notice("data_dir:", fibos.data_dir);
+
+//配置（不存在默认创建）
+fibos.config_dir = "fibos_config_dir/";
+
+fibos.data_dir = "fibos_data_dir/";
+
+```
+
+1. 设置 FIBOS 服务启动时重置环境数据
+
+开发过程中如果需要重置环境数据，可以使用下面的配置:
+
+```
+fibos.load("chain", {
+	"delete-all-blocks": true
+});
+```
 
 ## 使用 fibos.js 与 FIBOS 交互
 现在你已经有了一个 FIBOS 开发环境，让我们了解一下 fibos.js 这个库，编写一个JavaScript Client，它可以通过 HTTP 协议与 FIBOS 进行交互，让我们开始学习吧!
