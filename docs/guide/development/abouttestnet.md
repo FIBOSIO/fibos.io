@@ -70,7 +70,7 @@ function initClient(_keyProvider) {
 module.exports = initClient;
 ```
 
-以下代码保存至工作目录 `test_client.js`：
+以下代码保存至工作目录 `client.js`：
 
 ```
 var FIBOS = require("./initClient.js");
@@ -109,7 +109,7 @@ console.log(result);
 
 现在我们查询自己拥有的账户信息。
 
-以下代码保存至工作目录`test_getBalance.js`：
+以下代码保存至工作目录`getBalance.js`：
 
 注：请读者自行替换 "注册时的私钥"和"注册时账户名称"为自己注册时的信息。
 
@@ -124,7 +124,7 @@ console.log(result);
 运行脚本:
 
 ```
-fibos test_getBalance.js
+fibos getBalance.js
 ```
 
 输出结果:
@@ -142,7 +142,7 @@ fibos test_getBalance.js
 
 让我们完成一次转账吧。
 
-以下代码保存至工作目录 `test_tranfer.js`:
+以下代码保存至工作目录 `tranfer.js`:
 
 ```
 var FIBOS = require('./initClient.js');
@@ -157,7 +157,7 @@ console.log(result);
 运行脚本:
 
 ```
-fibos test_tranfer.js
+fibos tranfer.js
 ```
 
 
