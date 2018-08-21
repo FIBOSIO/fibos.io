@@ -12,18 +12,31 @@ FIBOS 的权限沿用了 EOS 的账户权限设计，本文由浅入深的讲解
 
 4. FIBOS 中的账户权限如何应用到合约中？
 
+- 本文运行环境
 
-本章内容示例开发环境： Mac OSX
+  Mac OSX
 
-示例代码：https://github.com/FIBOSIO/samples
+- 本章涉及到文章列表：
 
-本文涉及到相关知识：
+  ```
+  auth
+  ├── account.js
+  ├── call.js
+  ├── call2.js
+  ├── code.js
+  ├── node.js
+  ├── power.js
+  └── updatecode.js
+  ```
 
-- fibos.js 的使用 
-- 安装 FIBOS
-- 编写 JavaScript 合约
+- 示例代码：https://github.com/FIBOSIO/samples
 
-大家可以通过 FIBOS 官方网站学习：https://fibos.io
+- 本文涉及到相关知识：
+  - fibos.js 的使用 
+  - 安装 FIBOS
+  - 编写 JavaScript 合约
+
+以上内容请读者自行阅读“基础入门”模块。
 
 
 ## FIBOS 中的账户以及权限是什么？
@@ -56,44 +69,33 @@ FIBOS 的账户可以拥有资源以及关联合约，拥有资源可以理解�
 - active 常用业务的权限，比如：转账、投票等
 - publish 非系统权限，暂时未应用
 
-	
 ## FIBOS 中的账户与权限的关系是什么？
 
 到目前大家已经对 FIBOS 的账户以及权限有了一个大致的了解，下面我们结合示例代码深入的讲解 FIBOS 的账户和权限的关系，开始动手吧！
 
 ### 创建一个 FIBOS 账户
 
-使用 `fibos.js` 和 FIBOS 节点服务创建一个账户，让我们先启动一个 FIBOS 节点服务，保存代码至工作目录 `node.js`：
+运行本地节点服务：
 
-```
-var fibos = require('fibos');
+注：代码请查阅之前章节或从Github下载源码。
 
-fibos.load("http");
-fibos.load("net");
-fibos.load("producer", {
-	'producer-name': 'eosio',
-	'enable-stale-production': true
-});
-
-fibos.load("chain", {
-	"delete-all-blocks": true
-});
-fibos.load("chain_api");
-fibos.load("wallet");
-fibos.load("wallet_api");
-
-fibos.start();
-```
-
-运行节点服务:
 ```
 fibos node.js
 ```
 
-使用 `fibos.js` 作为客户端向 FIBOS 节点服务提交一个创建用户的请求，保存下面的代码到工作目录 `test_account.js`:
+使用 `fibos.js` 作为客户端向 FIBOS 节点服务提交一个创建用户的请求。
+
+保存下面的代码到工作目录 `account.js`:
 
 ```
 var FIBOS = require('fibos.js');
+
+var config = {
+  "public-key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+  "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
+  "contractName": "hello",
+  "name": "hellofibos"
+};
 
 var fibos = FIBOS({
   chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f',
@@ -106,7 +108,7 @@ var fibos = FIBOS({
 });
 
 //账户 hellofibos 的公私钥对
-let pubkey = "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR";
+let pubkey = "FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR";
 let prikey = '5KMx2vJR1L2rsrKuND4N6YM1gu26jwUjn5ZLorBeWnK15DfraQW';
 
 var name = 'hellofibos';
@@ -124,7 +126,7 @@ console.notice(c);
 运行脚本:
 
 ```
-fibos test_account.js
+fibos account.js
 ```
 
 输出结果:
@@ -132,11 +134,11 @@ fibos test_account.js
 ```
 {
   "account_name": "hellofibos",
-  "head_block_num": 3856,
-  "head_block_time": "2018-08-09T06:26:29.000",
+  "head_block_num": 10,
+  "head_block_time": "2018-08-21T09:58:50.500",
   "privileged": false,
   "last_code_update": "1970-01-01T00:00:00.000",
-  "created": "2018-08-09T06:26:29.500",
+  "created": "2018-08-21T09:58:51.000",
   "ram_quota": -1,
   "net_weight": -1,
   "cpu_weight": -1,
@@ -159,7 +161,7 @@ fibos test_account.js
         "threshold": 1,
         "keys": [
           {
-            "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
+            "key": "FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
             "weight": 1
           }
         ],
@@ -174,7 +176,7 @@ fibos test_account.js
         "threshold": 1,
         "keys": [
           {
-            "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
+            "key": "FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
             "weight": 1
           }
         ],
@@ -190,20 +192,24 @@ fibos test_account.js
 }
 ```
 
+请读者重点关注 `permissions` 字段。
+
+这段输出结果可以看到 owner、active 权限控制者确实是公钥 `FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR` 的拥有者。
+
 ### 从代码以及结果分析账户与权限
 
 简单分析一下执行的脚本：
 
 ```
 fibos.newaccountSync({
-	creator: 'eosio',
-	name: name,
-	owner: pubkey,
-	active: pubkey
+    creator: 'eosio',
+    name: name,
+    owner: pubkey,
+    active: pubkey
 });
 ```
 
-这段脚本可以看到我们把 owner、active 权限的控制权限给了公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR`,也就说此公钥对应的私钥拥有者，有 owner、active 的权限。
+这段脚本可以看到我们把 owner、active 权限的控制权限给了公钥 `FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR`，也就说此公钥对应的私钥拥有者，有 owner、active 的权限。
 
 让我们再来分析一下输出结果：
 
@@ -217,43 +223,6 @@ fibos.newaccountSync({
 
 (关于 RAM、CPU、NET 等资源文章，我们也会陆续发布，请大家及时关注)
 
-```
-"permissions": [
-{
-  "perm_name": "active",
-  "parent": "owner",
-  "required_auth": {
-    "threshold": 1,
-    "keys": [
-      {
-        "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
-        "weight": 1
-      }
-    ],
-    "accounts": [],
-    "waits": []
-  }
-},
-{
-  "perm_name": "owner",
-  "parent": "",
-  "required_auth": {
-    "threshold": 1,
-    "keys": [
-      {
-        "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
-        "weight": 1
-      }
-    ],
-    "accounts": [],
-    "waits": []
-  }
-}
- ]
-```
-
-这段输出结果可以看到 owner、active 权限控制者确实是公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR` 的拥有者。
-
 ### 理解 weight 和 threshold 的含义
 
 了解了上面这些其实并没有深入理解权限的核心，其中还有一些知识需要去理解，比如返回值中 `weight`  和 `threshold` 的含义，我们用一张图表来解释这个问题：
@@ -264,11 +233,11 @@ fibos.newaccountSync({
 | 权限名称  | 所属公钥  | 权重 | 阈值 |
 |:-------------: |:---------------:| :-------------:| :-------------:|
 | owner      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
+|       | FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
 | active      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
+|       | FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
 
-如表所示，如果要获得 owner 权限授权，拥有者的权重必须大于等于 owner 所对应的阈值，上面的示例 owner 的阈值是1，而所属公钥 `EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR` 的权重是1，所以这个所属公钥就可以直接获取 owner 进行操作。
+如表所示，如果要获得 owner 权限授权，拥有者的权重必须大于等于 owner 所对应的阈值，上面的示例 owner 的阈值是1，而所属公钥 `FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV` 的权重是1，所以这个所属公钥就可以直接获取 owner 进行操作。
 
 active 权限同上面的解释,我们把这种只有一个所属公钥的账户理解为单签账户。
 
@@ -277,27 +246,27 @@ active 权限同上面的解释,我们把这种只有一个所属公钥的账户
 | 权限名称  | 所属公钥  | 权重 | 阈值 |
 |:-------------: |:---------------:| :-------------:| :-------------:|
 | owner      |  |          |  2|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
-|       | EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |         1 | - |
+|       | FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
+|       | FO5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |         1 | - |
 | active      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
+|       | FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
 
 
 大家应该可以理解上面的图表了，要想获得 owner 权限，必须2个所属公钥同时授权才可以获得，对于这方面的多签内容不在本章说明，我们会以多签的技术专题发布讲解。
 
 ## 如何在 FIBOS 中配置账户权限？
 
-我们来尝试更改一下账户 hellofibos 的 active 权限，保存代码至工作目录 `test_power.js`:
+我们来尝试更改一下账户 hellofibos 的 active 权限，保存代码至工作目录 `power.js`:
 
 ```
 var FIBOS = require('fibos.js');
 
 //账户 hellofibos 的公私钥对
-let pubkey = "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR";
+let pubkey = "FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR";
 let prikey = '5KMx2vJR1L2rsrKuND4N6YM1gu26jwUjn5ZLorBeWnK15DfraQW';
 
 //账户 hellofibos2 的公私钥对
-let pubkey2 = "EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D";
+let pubkey2 = "FO5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D";
 let prikey2 = '5JhJaiRmvpR8MmvrxGFYGoC7tG9icYkooLFUdVMDJ5cAsLTbsob';
 
 var name = 'hellofibos';
@@ -341,7 +310,7 @@ ctx.updateauthSync({
   auth: {
     threshold: 1,
     keys: [{
-      key: "EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D",
+      key: "FO5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D",
       weight: 1
     }]
   }
@@ -353,18 +322,18 @@ console.notice(c);
 
 执行脚本:
 ```
-fibos test_power.js
+fibos power.js
 ```
 
 输出结果:
 ```
 {
   "account_name": "hellofibos",
-  "head_block_num": 524,
-  "head_block_time": "2018-08-09T09:55:56.000",
+  "head_block_num": 66,
+  "head_block_time": "2018-08-21T09:59:18.500",
   "privileged": false,
   "last_code_update": "1970-01-01T00:00:00.000",
-  "created": "2018-08-09T09:51:38.500",
+  "created": "2018-08-21T09:58:51.000",
   "ram_quota": -1,
   "net_weight": -1,
   "cpu_weight": -1,
@@ -387,7 +356,7 @@ fibos test_power.js
         "threshold": 1,
         "keys": [
           {
-            "key": "EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D",
+            "key": "FO5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D",
             "weight": 1
           }
         ],
@@ -402,7 +371,7 @@ fibos test_power.js
         "threshold": 1,
         "keys": [
           {
-            "key": "EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
+            "key": "FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR",
             "weight": 1
           }
         ],
@@ -418,7 +387,7 @@ fibos test_power.js
 }
 ```
 
-简单分析一下脚本，脚本新建了账户 hellofibos2，我们把 hellofibos 的 active 权限转移给了公钥 `EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D`。
+简单分析一下脚本，脚本新建了账户 hellofibos2，我们把 hellofibos 的 active 权限转移给了公钥 `FO5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D`。
 
 做一张权限表格更加清楚的理解：
 
@@ -427,9 +396,9 @@ fibos test_power.js
 | 权限名称  | 所属公钥  | 权重 | 阈值 |
 |:-------------: |:---------------:| :-------------:| :-------------:|
 | owner      |  |          |  1|
-|       | EOS5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
+|       | FO5dZut9MG9ZdqrT1WYdPkp1Txxi6JLRYEgYCtAUDWH6ymNqdJpR |         1 | - |
 | active      |  |          |  1|
-|       | EOS5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |         1 | - |
+|       | FO5UFAzxUsbjQCijL5LtS6TaTtkJgPJACZ8qwDpXyLaW3sE9Ed2D |         1 | - |
 
 
 如表所示，owner 和 active 所属的公钥是不一样的，所以2种权限分别掌握在2个人手中。
@@ -438,7 +407,7 @@ fibos test_power.js
 
 一般的事务中会有转账、合约的action等操作，这些都会涉及到账户权限的知识，学习到这里，大家应该对账户与权限已经有一定了解，FIBOS 提供使用 JavaScript 编写合约，那么如何在 FIBOS 的合约中控制权限呢？下面会通过示例来为大家演示。
 
-让我们先来实现一个简单的合约，保存代码至工作目录 `test_code.js`:
+让我们先来实现一个简单的合约，保存代码至工作目录 `code.js`:
 
 ```
 var FIBOS = require('fibos.js');
@@ -454,7 +423,7 @@ var fibos = FIBOS({
 });
 
 //合约所属账户 hellocode 的公私钥对
-let pubkey = "EOS5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
+let pubkey = "FO5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
 let prikey = '5KMg9oUf5caX9yku7zQQwKZQLukRW7dMHaST8njpBf22puUvjea';
 
 //创建合约账户
@@ -503,7 +472,7 @@ fibos.setcodeSync(name, 0, 0, fibos.compileCode(js_code));
 
 运行脚本：
 ```
-fibos test_code.js
+fibos code.js
 ```
 
 
@@ -513,13 +482,13 @@ action 对象对于权限控制非常重要，请继续阅读。
 
 ### 解读合约内 action 对象
 
-让我们写一个调用合约脚本，查看 action 对象是一个什么？保存代码至工作目录 `test_call.js`:
+让我们写一个调用合约脚本，查看 action 对象是一个什么？保存代码至工作目录 `call.js`:
 
 ```
 var FIBOS = require('fibos.js');
 
 //合约所属账户 hellocode 的公私钥对
-let pubkey = "EOS5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
+let pubkey = "FO5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
 let prikey = '5KMg9oUf5caX9yku7zQQwKZQLukRW7dMHaST8njpBf22puUvjea';
 
 var name = 'hellocode';
@@ -544,7 +513,7 @@ console.error(r.processed.action_traces[0].console);
 
 执行脚本:
 ```
-fibos test_call.js
+fibos call.js
 ```
 
 输出:
@@ -558,7 +527,7 @@ fibos test_call.js
   "name": "hi",
   "account": "hellocode",
   "receiver": "hellocode",
-  "publication_time": 1533814906500000,
+  "publication_time": 1534845804000000,
   "authorization": [
     {
       "actor": "hellocode",
@@ -580,13 +549,13 @@ fibos test_call.js
 
 ### 让我们来试试 action 的权限控制
 
-首先我们先来更新一下合约，保存代码 `test_updatecode.js`:
+首先我们先来更新一下合约，保存代码 `updatecode.js`:
 
 ```
 var FIBOS = require('fibos.js');
 
 //合约所属账户 hellocode 的公私钥对
-let pubkey = "EOS5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
+let pubkey = "FO5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
 let prikey = '5KMg9oUf5caX9yku7zQQwKZQLukRW7dMHaST8njpBf22puUvjea';
 var name = 'hellocode';
 
@@ -607,18 +576,18 @@ fibos.setcodeSync(name, 0, 0, fibos.compileCode(js_code));
 运行脚本:
 
 ```
-fibos test_updatecode.js
+fibos updatecode.js
 ```
 
 这段脚本的含义是判断调用者是否拥有对参数 v 这个用户的 active 权限，让我们写一个脚本开始测试一下吧！
 
-保存以下代码到工作目录 `test_call2.js`:
+保存以下代码到工作目录 `call2.js`:
 
 ```
 var FIBOS = require('fibos.js');
 
 //合约所属账户 hellocode 的公私钥对
-let pubkey = "EOS5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
+let pubkey = "FO5L9g2mnC4zZMZWDR8VBksz3exFmXV4kwfj65oYeKdqRPc2oPFW";
 let prikey = '5KMg9oUf5caX9yku7zQQwKZQLukRW7dMHaST8njpBf22puUvjea';
 var name = 'hellocode';
 
@@ -651,7 +620,7 @@ console.error(r.processed.action_traces[0].console);
 执行脚本:
 
 ```
-fibos test_call2.js
+fibos call2.js
 ```
 
 输出结果:

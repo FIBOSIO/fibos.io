@@ -69,7 +69,7 @@ Is this ok? (yes)
 3. 安装 `fibos.js`
 
 ```
-fibos_client$ fibos --install fibos.js@0.0.5
+fibos_client$ fibos --install fibos.js
 ```
 
 如果没有报错说明安装 `fibos.js` 成功，开始编码吧！
@@ -98,7 +98,7 @@ mkdir hello_fibos/fibos_client/hello/
 
 1. hello 合约代码
 
-在这里我们通过 JavaScript 编写了合约的行为，调用成功后，它将在命令行输出合约的名称。
+在下面我们通过 JavaScript 来编写合约的功能，在这个合约调用成功后，将在命令行输出传入参数的名称。
 
 以下代码保存至工作目录 `./hello/hello.js`
 
@@ -108,7 +108,7 @@ exports.hi = user => console.error('in contract:', user);
 
 2. hello 合约 abi 文件
 
-下面定义了一份 ABI 文件，对于 JavaScript 合约而言，ABI 定义了 action 行为和数据储存的的表等基础信息。
+下面定义了一份 abi 文件，对于合约而言，abi 定义了 action 行为和数据储存的的表等基础信息。对于 abi 更详细的解读，我们将在后续的文章中给出。
 
 以下代码保存至工作目录 `./hello/hello.abi`
 
@@ -145,6 +145,8 @@ exports.hi = user => console.error('in contract:', user);
 
 这段代码用于连接本地 FIBOS 节点，请保证本地的 FIBOS 节点服务正在运行，如果还不知道如何搭建自己的 FIBOS 服务，请参阅[搭建一个 FIBOS 开发环境](./startfibos.md)。
 
+以下代码保存至工作目录 `initClient.js`
+
 ```js
 var FIBOS = require("fibos.js");
 
@@ -171,7 +173,7 @@ module.exports = initClient;
 var FIBOS = require('./initClient.js')
 var fs = require("fs");
 var config = {
-    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "public-key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
     "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
     "contractName": "hello"
 };
@@ -224,7 +226,7 @@ code: {
 ```js
 var FIBOS = require('./initClient.js')
 var config = {
-    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "public-key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
     "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
     "contractName": "hello"
 };
@@ -245,7 +247,7 @@ let i = ctx.hiSync('hello', {
 fibos call.js
 ```
 
-在 FIBOS 节点服务控制台输出 `trxs:1` :
+在 FIBOS 节点服务控制台输出 `trxs:1`，说明调用成功 :
 
 ```
 2018-07-30T14:28:22.005 thread-1   producer_plugin.cpp:1196      produce_block        ] Produced block 00000e57c573a33b... #3671 @ 2018-07-30T14:28:22.000 signed by eosio [trxs: 1, lib: 3670, confirmed: 0]

@@ -19,7 +19,7 @@ FIBOS 支持常用的 UNIX 操作系统，比如 Mac OSX, Linux 和 FreeBSD。
 /usr/local/bin/fibos
 
 ~$ fibos --version
-v0.26.0-dev
+v0.27.0-dev
 ```
 
 FIBOS 是一个可执行文件，它继承了 FIBJS 的 JavaScript CLI 命令行控制台功能，直接执行 FIBOS 回车，进入命令行交互模式，如:
@@ -32,10 +32,10 @@ Type ".help" for more information.
 hello,FIBOS!
 > .info
 {
-  "fibjs": "0.26.0-dev",
-  "git": "v0.25.0-44-g2d182cd22",
+  "fibjs": "0.27.0-dev",
+  "git": "v0.26.0-4-gb2bc253c4",
   "clang": "9.1",
-  "date": "Jul 26 2018 13:19:31",
+  "date": "Aug 19 2018 17:40:51",
   "vender": {
     "ev": "4.24",
     "expat": "2.2.5",

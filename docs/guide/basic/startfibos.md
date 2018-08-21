@@ -39,6 +39,8 @@ fibos.load("producer", {
     'producer-name': 'eosio',
     'enable-stale-production': true
 });
+fibos.config_dir = "fibos_config_dir/";
+fibos.data_dir = "fibos_data_dir/";
 
 fibos.start();
 ```
@@ -92,7 +94,7 @@ fibos.load("net", {
 
 (tips: FIBOS 默认 HTTP 端口8888，P2P 端口监听9876)
 
-1. 修改 FIBOS 配置以及数据目录
+2. 修改 FIBOS 配置以及数据目录
 
 查看当前的配置以及数据目录：
 
@@ -109,7 +111,7 @@ fibos.data_dir = "fibos_data_dir/";
 
 ```
 
-1. 设置 FIBOS 服务启动时重置环境数据
+3. 设置 FIBOS 服务启动时重置环境数据
 
 开发过程中如果需要重置环境数据，可以使用下面的配置:
 

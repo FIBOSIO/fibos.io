@@ -2,7 +2,7 @@
 
 不写自动测试用例的程序员不是一个好的测试工程师。我们鼓励所有的项目在启动最初，就建立完整的自动化测试用例。随着项目的发展，前期的投入会得到数百倍的回报。
 
-阅读完本章你可以学会如何使用 FIBOS 的编写测试用例。
+阅读完本章你可以学会 FIBOS 的测试用例的编写。
 
 - 本文运行环境：
 
@@ -44,12 +44,12 @@ test.setup();
 describe('a sample case', () => {
     var name;
 
-    before(()=>{
+    before(() => {
         name = "FIBOS";
     });
 
     it('check name', () => {
-        assert.equal(name,"FIBOS");
+        assert.equal(name, "FIBOS");
     });
 });
 
@@ -73,7 +73,7 @@ fibos sample_test.js
 
 ## 开始编写 FIBOS 业务场景测试用例
 
-同样的，以下代码保证本地的 FIBOS 节点服务正在运行。
+依然，以下代码保证本地的 FIBOS 节点服务正在运行。
 
 ### 写一个新建 FIBOS 账户的测试用例
 
@@ -84,11 +84,10 @@ var test = require('test');
 test.setup();
 
 var FIBOS = require('fibos.js')
-var name = "eosio";
 var config = {
     "chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
-    "producer-name": name,
-    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "producer-name": "eosio",
+    "public-key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
     "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
     "httpEndpoint": "http://127.0.0.1:8888",
 };
@@ -139,17 +138,7 @@ require.main === module && test.run(console.DEBUG);
 
 ### 写一个合约的测试用例
 
-上一章节介绍了写一个 JS 合约，基于上面的文件结果，进行测试用例的编写：
-
-```
-├── fibos_client
-│   ├── call.js 调用合约接口脚本文件
-│   ├── deploy.js 加载、发布合约脚本文件
-│   ├── initClient.js FIBOS连接文件
-│   ├── hello
-│   │   ├── hello.abi 合约abi文件
-│   │   └── hello.js 合约代码文件
-```
+还记得我们之间的那个 JavaScript 合约吗，接下来我们针对 hello 的合约编写测试用例：
 
 以下代码保存至工作目录 `test_contract.js`:
 
@@ -163,13 +152,13 @@ var fs = require("fs");
 var config = {
     "chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
     "producer-name": "eosio",
-    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "public-key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
     "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
     "httpEndpoint": "http://127.0.0.1:8888",
 };
 
 
-describe('new account FIBOS', () => {
+describe('contract test', () => {
     var fibos;
 
     before(() => {
@@ -185,9 +174,8 @@ describe('new account FIBOS', () => {
     });
 
     it('get code', () => {
-        var js_code = fs.readTextFile("../hello/hello.js");
         var code = fibos.getCodeSync(contractName, true);
-        assert.equal(code.wast, fibos.compileCode(js_code).hex());
+        assert.notEqual(code.code_hash, "0000000000000000000000000000000000000000000000000000000000000000");
     });
 
     it('setabi', () => {
@@ -198,3 +186,16 @@ describe('new account FIBOS', () => {
 
 require.main === module && test.run(console.DEBUG);
 ```
+
+输出结果：
+
+```
+  contract test
+    √ get code
+    √ setabi (405ms)
+
+  √ 2 tests completed (420ms)
+```
+
+
+
