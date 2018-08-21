@@ -8,7 +8,7 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
 
 
 
-赶紧安装新版 FIBOS 试试吧！[安装运行环境](./install.md)
+赶紧安装新版 FIBOS 试试吧！[安装运行环境](../basic/install.md)
 
 
 
@@ -28,7 +28,7 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
         └── node.js
     ```
 
-- 依赖：fibos.js 如何安装请参考[使用 fibos.js 与 FIBOS 交互](./fibosjs.md)
+- 依赖：fibos.js 如何安装请参考[使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md)
 
 - 本章节示例代码地址：https://github.com/FIBOSIO/samples
 
@@ -64,7 +64,7 @@ fibos$ mongod
 
 #### 启动 FIBOS 环境
 
-如果你还未安装 FIBOS，请参考 [安装运行环境](./install.md)。
+如果你还未安装 FIBOS，请参考 [安装运行环境](../basic/install.md)。
 
 想要将数据同步至 mongoDB ，仅需在入门教程中的代码加入一段 `fibos.load("mongo_db")` ，将 mongo_db 这个模块载入 FIBOS。只需要三行代码，FIBOS 便会将区块数据自动同步至 mongoDB，非常方便。
 
@@ -159,7 +159,7 @@ var FIBOS = require('fibos.js');
 var config = {
     "chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
     "producer-name": "eosio",
-    "public-key": "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "public-key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
     "private-key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
     "httpEndpoint": "http://127.0.0.1:8888",
 };
@@ -234,7 +234,7 @@ result:  {
 
 ## 进阶，利用 mongoDB 查询 TestNet 数据
 
-如果你对加入 TestNet 网络的步骤还不熟悉，请参考 [如何加入到 TestNet 网络](./abouttestnet.md)。
+如果你对加入 TestNet 网络的步骤还不熟悉，请参考 [如何加入到 TestNet 网络](../development/abouttestnet.md)。
 
 #### 启动 FIBOS 环境，加入 TestNet 网络
 
@@ -451,7 +451,7 @@ result {
 		"delay_sec" : 0
 	},
 	"signing_keys" : {
-		"0" : "EOS8R5TLhkDNDeV8XNWaSKeu2Q2knV4S2MJMbPcUz9vKfF84yrfdW"
+		"0" : "FO8R5TLhkDNDeV8XNWaSKeu2Q2knV4S2MJMbPcUz9vKfF84yrfdW"
 	},
 	"actions" : [
 		{
