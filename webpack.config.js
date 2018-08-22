@@ -104,18 +104,36 @@ marked.Renderer.prototype.heading = function(text, level, raw) {
 };
 
 function build_docs() {
-  console.log();
-
   var config = {
     from: 'docs',
     dist: 'web/dist',
     to: 'docs',
     groups: {
-      guide: {
-        etitle: 'Guide',
-        title: '开发指南',
-        path: 'guide'
+      basic: {
+        etitle: 'Basic',
+        title: '基础入门',
+        path: 'guide/basic'
       },
+      development: {
+        etitle: 'Development',
+        title: '业务开发',
+        path: 'guide/development'
+      },
+      advanced: {
+        etitle: 'Advanced',
+        title: '深入理解',
+        path: 'guide/advanced'
+      },
+      community: {
+        etitle: 'Community',
+        title: '其他支持',
+        path: 'guide/community'
+      },
+      // guide: {
+      //   etitle: 'Guide',
+      //   title: '开发指南',
+      //   path: 'guide'
+      // },
       module: {
         etitle: 'Module',
         title: '基础模块',
@@ -125,7 +143,12 @@ function build_docs() {
         etitle: 'Object',
         title: '内置对象',
         path: 'manual/object'
-      }
+      },
+      // awesome: {
+      //   etitle: 'Awesome',
+      //   title: '社区文档',
+      //   path: 'awesome'
+      // },
     }
   };
 

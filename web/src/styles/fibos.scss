@@ -166,10 +166,16 @@ section.video {
       font-size: 1.5rem;
       font-weight: 400;
       opacity: 0.8;
+      @media (max-width: 992px) {
+        font-size: 1rem;
+      }
     }
     a {
       color: #fff;
       opacity: 0.8;
+      @media (max-width: 992px) {
+        font-size: 1rem;
+      }
     }
   }
 }
@@ -190,6 +196,7 @@ section.features {
   }
   p {
     font-weight: 400;
+    word-break: break-all;
   }
 }
 
@@ -241,8 +248,7 @@ section.timeline {
     }
     .process-bar {
       float: left;
-      border: 3px solid #ddd;
-      // width: 47%;
+      border: 3px solid #ddd; // width: 47%;
       width: calc(50% - 12.5px);
       margin-top: 24px;
       &.active {
@@ -251,15 +257,13 @@ section.timeline {
     }
     .process-bar-right {
       float: right;
-      border: 3px solid #ddd;
-      // width: 46.5%;
+      border: 3px solid #ddd; // width: 46.5%;
       width: calc(50% - 12.5px);
       margin-top: 24px;
       &.active {
         border-color: rgb(247, 205, 118);
       }
-    }
-    // .process-bar-right {
+    } // .process-bar-right {
     //   margin-left: 6%;
     // }
     .node-mark {
@@ -390,8 +394,8 @@ section.raise {
 
 section.dapps {
   color: #333;
-  // background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
-  // background-size: contain;
+  background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
+  background-size: contain;
   padding: 135px 0 125px;
   .title {
     text-align: center;
@@ -456,9 +460,8 @@ section.dapps {
 }
 
 section.cooperation {
-  color: #333;
-  background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
-  background-size: contain;
+  color: #333; // background: #f6f6f6 url('../imgs/dapp-bg.png') top center no-repeat;
+  // background-size: contain;
   padding: 135px 0 125px;
   .title {
     text-align: center;

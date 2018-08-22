@@ -13,7 +13,6 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
@@ -27,15 +26,6 @@
                             <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
                         </span>
                     </a>
-
-                    <!-- <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
-                                <div class="hamburger hamburger--spin js-hamburger">
-                                    <div class="hamburger-box">
-                                        <div class="hamburger-inner"></div>
-                                    </div>
-                                </div>
-                            </button> -->
-
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -48,6 +38,17 @@
                             <li class="nav-item ">
                                 <a class="nav-link" onclick="javascript:window.location.href = '/#roadmap'" style="cursor: pointer;">路线图</a>
                             </li>
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    开发社区
+                                    <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发者文档</a>
+                                    <a class="dropdown-item" href="https://github.com/fibosio">Github</a>
+                                    <a class="dropdown-item" href="faq">FAQ</a>
+                                </div>
+                            </li> -->
                             <li class="nav-item ">
                                 <a class="nav-link" href="https://github.com/fibosio" target="_blank">开发社区</a>
                             </li>
@@ -57,10 +58,9 @@
                                     <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
                                 </a>
                                 <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/docs/guide/readme.md.html">开发指南</a>
+                                    <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发指南</a>
                                     <a class="dropdown-item" href="/docs/manual/module/readme.md.html">基础模块</a>
                                     <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
-                                    <!-- <a class="dropdown-item" href="/docs/awesome/readme.md.html">社区模块</a> -->
                                 </div>
                             </li>
                             <li class="nav-item ">
@@ -114,7 +114,6 @@
             </ol>
         </div>
         <div class="page-body">
-                <iframe height=498 width=510 src='http://player.youku.com/embed/XMzc4MDA2NjY3Mg==' frameborder=0 allowfullscreen></iframe>
             <div class="container row">
                 <div class="sidebar hidden-xs col-lg-2">
                     <div class="panel-group" id="accordion" role="tablist">
@@ -163,7 +162,6 @@
                                 {{description}}
                             </div>
                             {{/if}}
-
                             <div id="collapse{{id}}" class="collapse" aria-labelledby="heading{{id}}" data-parent="#accordion">
                                 <div class="faq-body">
                                     {{{answer}}}
@@ -171,39 +169,6 @@
                             </div>
                         </div>
                         {{/each}}
-                        <div class="faq">
-                            <div class="faq-header" id="headingOne">
-                                <h2 class="h2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题
-                                </h2>
-                            </div>
-
-                            <div class="faq-desc">
-                                描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述 描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
-                            </div>
-
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="faq-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="faq">
-                            <div class="faq-header" id="headingTwo">
-                                <h2 class="h2" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                    问题问题
-                                </h2>
-                            </div>
-
-                            <div class="faq-desc">
-                                描述描述
-                            </div>
-
-                            <div id="collapse2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="faq-body">
-                                    <iframe height=498 width=510 src='http://player.youku.com/embed/XMzc4MDA2NjY3Mg==' frameborder=0 allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

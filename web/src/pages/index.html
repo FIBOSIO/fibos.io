@@ -49,12 +49,22 @@
                                 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
                             </a>
                             <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/docs/guide/readme.md.html">开发指南</a>
+                                <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发指南</a>
                                 <a class="dropdown-item" href="/docs/manual/module/readme.md.html">基础模块</a>
                                 <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
-                                <!-- <a class="dropdown-item" href="/docs/awesome/readme.md.html">社区模块</a> -->
                             </div>
                         </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                开发社区
+                                <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发者文档</a>
+                                <a class="dropdown-item" href="https://github.com/fibosio">Github</a>
+                                <a class="dropdown-item" href="/faq">FAQ</a>
+                            </div>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="faq">
                                 FAQ
@@ -124,7 +134,7 @@
                     <p>FIBOS 支持使用 JavaScript 开发区块链智能合约，解决了区块链环境部署困难、开发学习门槛高、测试工具原始、迭代周期长、开发生态原始、运行成本高、合约不可审计的问题。</p>
                     <p>
                         FIBOS = EOS + FIBJS，
-                        <a href="/docs/guide/readme.md.html">开始学习 > ></a>
+                        <a href="/docs/guide/basic/about.md.html">开始学习 > ></a>
                     </p>
                 </div>
             </div>
@@ -313,7 +323,7 @@
         </div>
         </div>
     </section>
-    <section class="raise">
+    <!-- <section class="raise">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -323,89 +333,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <script charset="UTF-8" defer>
-                        (function(h) {
-                            function n(a) {
-                                return null === a ? null : a.scrollHeight > a.clientHeight ? a : n(a.parentNode)
-                            }
-
-                            function t(b) {
-                                if (b.data) {
-                                    var f = JSON.parse(b.data);
-                                    !f.height || p || q || (d.style.height = +f.height + "px");
-                                    if (f.getter) {
-                                        b = {};
-                                        var f = [].concat(f.getter),
-                                            k, h = f.length,
-                                            m, c, g, e;
-                                        for (k = 0; k < h; k++) {
-                                            m = k;
-                                            c = f[k] || {};
-                                            c.n && (m = c.n);
-                                            g = null;
-                                            try {
-                                                switch (c.t) {
-                                                    case "window":
-                                                        e = window;
-                                                        break;
-                                                    case "scrollParent":
-                                                        e = n(a) || window;
-                                                        break;
-                                                    default:
-                                                        e = a
-                                                }
-                                                if (c.e)
-                                                    if ("rect" === c.v) {
-                                                        g = {};
-                                                        var l = e.getBoundingClientRect();
-                                                        g = {
-                                                            top: l.top,
-                                                            left: l.left,
-                                                            width: l.width,
-                                                            height: l.height
-                                                        }
-                                                    } else g = e[c.v].apply(e, [].concat(c.e)) || !0;
-                                                else c.s ? (e[c.v] = c.s, g = !0) : g = e[c.v] || !1
-                                            } catch (u) {}
-                                            b[m] = g
-                                        }
-                                        b.innerState = !p && !q;
-                                        a.contentWindow.postMessage(JSON.stringify({
-                                            queryRes: b
-                                        }), "*")
-                                    }
-                                }
-                            }
-                            for (var r = h.document, b = r.documentElement; b.childNodes.length && 1 == b.lastChild.nodeType;) b = b.lastChild;
-                            var d = b.parentNode,
-                                a = r.createElement("iframe");
-                            d.style.overflowY = "auto";
-                            d.style.overflowX = "hidden";
-                            var p = d.style.height && "auto" !== d.style.height,
-                                q = "absolute" === d.style.position || window.getComputedStyle && "absolute" === window.getComputedStyle(d, null).getPropertyValue("position") || d.currentStyle && "absolute" === d.currentStyle.position;
-                            h.addEventListener && h.addEventListener("message", t, !1);
-                            a.src = "http://cn.mikecrm.com/MfQM71h";
-                            a.id = "mkinMfQM71h";
-                            a.onload = function() {
-                                a.contentWindow.postMessage(JSON.stringify({
-                                    cif: 1
-                                }), "*")
-                            };
-                            a.frameBorder = 0;
-                            a.scrolling = "no";
-                            a.style.display = "block";
-                            a.style.minWidth = "100%";
-                            a.style.width = "100px";
-                            a.style.height = "100%";
-                            a.style.border = "none";
-                            a.style.overflow = "auto";
-                            d.insertBefore(a, b);
-                        })(window);
-                    </script>
+                    <script charset="UTF-8" defer>(function(h){function n(a){return null===a?null:a.scrollHeight>a.clientHeight?a:n(a.parentNode)}function t(b){if(b.data){var f=JSON.parse(b.data);!f.height||p||q||(d.style.height=+f.height+"px");if(f.getter){b={};var f=[].concat(f.getter),k,h=f.length,m,c,g,e;for(k=0;k<h;k++){m=k;c=f[k]||{};c.n&&(m=c.n);g=null;try{switch(c.t){case "window":e=window;break;case "scrollParent":e=n(a)||window;break;default:e=a}if(c.e)if("rect"===c.v){g={};var l=e.getBoundingClientRect();g={top:l.top,left:l.left,width:l.width,height:l.height}}else g=e[c.v].apply(e,[].concat(c.e))||!0;else c.s?(e[c.v]=c.s,g=!0):g=e[c.v]||!1}catch(u){}b[m]=g}b.innerState=!p&&!q;a.contentWindow.postMessage(JSON.stringify({queryRes:b}),"*")}}}for(var r=h.document,b=r.documentElement;b.childNodes.length&&1==b.lastChild.nodeType;)b=b.lastChild;var d=b.parentNode,a=r.createElement("iframe");d.style.overflowY="auto";d.style.overflowX="hidden";var p=d.style.height&&"auto"!==d.style.height,q="absolute"===d.style.position||window.getComputedStyle&&"absolute"===window.getComputedStyle(d,null).getPropertyValue("position")||d.currentStyle&&"absolute"===d.currentStyle.position;h.addEventListener&&h.addEventListener("message",t,!1);a.src="http://cn.mikecrm.com/1OmHH9f";a.id="mkin1OmHH9f";a.onload=function(){a.contentWindow.postMessage(JSON.stringify({cif:1}),"*")};a.frameBorder=0;a.scrolling="no";a.style.display="block";a.style.minWidth="100%";a.style.width="100px";a.style.height="100%";a.style.border="none";a.style.overflow="auto";d.insertBefore(a,b)})(window);</script>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="dapps">
         <div class="container">
             <div class="row">
@@ -470,28 +402,36 @@
                 <div class="dapp">
                     <div class="card">
                         <div class="card-img-top">
-                            <img src="/imgs/dapp1.jpg" alt="">
+                            <a href="https://imeos.one/" target="_blank">
+                                <img src="/imgs/cooperation1.png" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="dapp">
                     <div class="card">
                         <div class="card-img-top">
-                            <img src="/imgs/dapp2.jpg" alt="">
+                            <a href="https://www.slowmist.com/" target="_blank">
+                                <img src="/imgs/cooperation2.png" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="dapp">
                     <div class="card">
                         <div class="card-img-top">
-                            <img src="/imgs/dapp3.jpg" alt="">
+                            <a href="http://newgenesiscap.com" target="_blank">
+                                <img src="/imgs/cooperation3.png" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="dapp">
                     <div class="card">
                         <div class="card-img-top">
-                            <img src="/imgs/dapp4.jpg" alt="">
+                            <a href="https://www.helloeos.com.cn/" target="_blank">
+                                <img src="/imgs/cooperation4.png" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -562,7 +502,7 @@
                         <h5>开发文档</h5>
                         <ul>
                             <li>
-                                <a href="/docs/guide/readme.md.html">开发指南</a>
+                                <a href="/docs/guide/basic/about.md.html">开发指南</a>
                             </li>
                             <li>
                                 <a href="/docs/manual/module/readme.md.html">基础模块</a>
@@ -628,7 +568,7 @@
             <div class="container">
                 <p class="text-center">
                     Copyright © 2017 - 2018
-                    <a href="https://fibos.io" target="_blank">FIBOS.IO</a> All Rights Reserved
+                    <a href="https://fibos.io" target="_blank">FIBOS.IO</a><br/> All Rights Reserved
                 </p>
             </div>
         </section>

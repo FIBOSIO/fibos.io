@@ -25,6 +25,19 @@ chainId : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
 "p2p-peer-address" : "103.80.170.107:9876"
 ```
 
+- 本章涉及到文章列表：
+
+```
+testNet
+└── join
+    ├── producer_node.js
+    ├── register_bp.js
+    ├── sync_node.js
+    └── vote_bp.js
+```
+
+- 本章示例代码地址：https://github.com/FIBOSIO/samples
+
 ## 如何成为一个 FIBOS 同步节点
 
 如果节点仅仅作为同步 FIBOS 区块数据，非常简单。以下代码保存至 `sync_node.js`:
@@ -239,4 +252,3 @@ fibos vote_bp.js
 
 注意：投票结束后，排名必须在TOP 21前才可以被选为区块生产者 BP。
 
-恭喜你阅读完入门文档，你可以在 FIBOS 上开始更复杂的编程之旅了!

@@ -553,6 +553,7 @@ pre div.line-numbers {
 
 .doc-container>.page-body>.container .sidebar #toc .tocify-item a {
   color: #666;
+  word-break: break-all;
 }
 
 @media (min-width: 1080px) {

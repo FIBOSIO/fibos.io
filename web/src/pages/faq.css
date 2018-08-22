@@ -30,7 +30,6 @@ a:focus {
 .faq .faq-body iframe {
   max-width: 100% !important;
   display: block;
-  height: auto;
 }
 
 ul {
