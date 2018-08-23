@@ -891,3 +891,113 @@ section.links {
   overflow: hidden;
   transition: height .35s ease;
 }
+
+#tele {
+  background: #dcdcdc;
+  position: fixed;
+  height: 500px;
+  width: 350px;
+  right: 0;
+  top: 100px;
+  transition: all 0.2s ease;
+}
+
+#tele.tele-collapse {
+  transform: translateX(100%);
+}
+
+#tele .collapse-btn {
+  position: absolute;
+  // left: -42px;
+  // top: 10px;
+  transform: translateX(-100%);
+  cursor: pointer;
+  background: #fff;
+}
+
+#tele .collapse-btn img {
+  width: 42px;
+  height: 42px;
+}
+
+#tele .wrap {
+  overflow: hidden;
+  height: calc(100% - 45px);
+}
+
+#tele .wrap .messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  list-style: none;
+  padding-left: 0;
+  padding: 0 20px 20px 20px;
+}
+
+#tele .head {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  z-index: 10;
+  background: #ffffff;
+}
+
+#tele .head .left,
+#tele .head .right {
+  position: absolute;
+  top: 5px;
+}
+
+#tele .head .left img,
+#tele .head .right img {
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  display: block;
+}
+
+#tele .head .left {
+  left: 10px;
+}
+
+#tele .head .right {
+  right: 10px;
+}
+
+#tele .head .mid {
+  height: 45px;
+  text-align: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#tele .head .mid p {
+  margin: 0;
+}
+
+#tele .head .mid .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#tele .head .mid .member-count {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+#tele .message {
+  margin: 10px 0;
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 0.5rem 0.5rem;
+  font-size: 14px;
+}
+
+#tele .message .name {
+  position: relative;
+  margin: 0;
+}
+
+#tele .message .tele-message-content {
+  word-break: break-all;
+}
