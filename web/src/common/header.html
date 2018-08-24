@@ -1,20 +1,11 @@
 <header class="header header-shrink header-inverse">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-header">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">
                 <span class="logo-default">
-                    <img src="/imgs/logo.png" alt="">
+                    <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
                 </span>
             </a>
-
-            <!-- <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
-                <div class="hamburger hamburger--spin js-hamburger">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-            </button> -->
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,10 +13,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">首页</a>
+                        <a class="nav-link" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">首页</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="/#roadmap">路线图</a>
+                        <a class="nav-link" onclick="javascript:window.location.href = '/#roadmap'" style="cursor: pointer;">路线图</a>
                     </li>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +26,7 @@
                         <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发者文档</a>
                             <a class="dropdown-item" href="https://github.com/fibosio">Github</a>
-                            <a class="dropdown-item" href="/faq">FAQ</a>
+                            <a class="dropdown-item" href="faq">FAQ</a>
                         </div>
                     </li> -->
                     <li class="nav-item ">
@@ -52,25 +43,28 @@
                             <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
                         </div>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/faq" target="_blank">FAQ</a>
-                    </li> -->
-                    <!-- <li class="nav-item ">
-                        <a class="nav-link" href="/docs/guide/readme.md.html">开发者文档</a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html#fibos-news">新闻</a>
+                        <a class="nav-link" href="/news">新闻</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ENG
-                            <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                        </a>
-                        <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">简体中文</a>
-                            <a class="dropdown-item" href="#">ENGLISH</a>
-                        </div>
-                    </li> -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/faq">FAQ</a>
+                    </li>
+                    <!-- <li class="nav-item ">
+                                <a class="nav-link" href="/docs/guide/readme.md.html">开发者文档</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/index.html#fibos-news">新闻</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ENG
+                                    <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">简体中文</a>
+                                    <a class="dropdown-item" href="#">ENGLISH</a>
+                                </div>
+                            </li> -->
                 </ul>
             </div>
         </nav>

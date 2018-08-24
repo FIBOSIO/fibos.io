@@ -167,14 +167,14 @@ section.video {
       font-weight: 400;
       opacity: 0.8;
       @media (max-width: 992px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
     a {
       color: #fff;
       opacity: 0.8;
       @media (max-width: 992px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -623,6 +623,11 @@ section.links {
   p {
     margin-bottom: 0;
   }
+  @media (max-width: 574px) {
+    .text-span {
+      display: block;
+    }
+  }
 }
 
 .carousel-inner>.item>img,
@@ -893,36 +898,32 @@ section.links {
 }
 
 #tele {
-  background: #dcdcdc;
   position: fixed;
-  height: 500px;
-  width: 350px;
+  width: 300px;
+  height: 600px;
   right: 0;
-  top: 100px;
+  top: 60px;
+}
+
+#tele .bg {
+  width: 300px;
+  height: 600px;
   transition: all 0.2s ease;
+  background: url('/imgs/iphonex.png');
+  background-size: 100% 100%;
 }
 
-#tele.tele-collapse {
+#tele.tele-collapse .bg {
   transform: translateX(100%);
-}
-
-#tele .collapse-btn {
-  position: absolute;
-  // left: -42px;
-  // top: 10px;
-  transform: translateX(-100%);
-  cursor: pointer;
-  background: #fff;
-}
-
-#tele .collapse-btn img {
-  width: 42px;
-  height: 42px;
 }
 
 #tele .wrap {
   overflow: hidden;
-  height: calc(100% - 45px);
+  height: 470px;
+  position: absolute;
+  top: 80px;
+  width: 260px;
+  left: 22px;
 }
 
 #tele .wrap .messages {
@@ -931,64 +932,13 @@ section.links {
   overflow-y: scroll;
   list-style: none;
   padding-left: 0;
-  padding: 0 20px 20px 20px;
-}
-
-#tele .head {
-  position: relative;
-  height: 45px;
-  width: 100%;
-  z-index: 10;
-  background: #ffffff;
-}
-
-#tele .head .left,
-#tele .head .right {
-  position: absolute;
-  top: 5px;
-}
-
-#tele .head .left img,
-#tele .head .right img {
-  width: 35px;
-  height: 35px;
-  border-radius: 20px;
-  display: block;
-}
-
-#tele .head .left {
-  left: 10px;
-}
-
-#tele .head .right {
-  right: 10px;
-}
-
-#tele .head .mid {
-  height: 45px;
-  text-align: center;
-  margin: 0 auto;
-  height: 100%;
-}
-
-#tele .head .mid p {
-  margin: 0;
-}
-
-#tele .head .mid .title {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-#tele .head .mid .member-count {
-  font-size: 12px;
-  color: #b0b0b0;
+  padding: 10px 10px 0 10px;
 }
 
 #tele .message {
   margin: 10px 0;
-  background: #fff;
-  padding: 0.2rem;
+  background: #F1F1F1;
+  padding: 0.4rem;
   border-radius: 0.5rem 0.5rem;
   font-size: 14px;
 }
@@ -996,8 +946,48 @@ section.links {
 #tele .message .name {
   position: relative;
   margin: 0;
+  color: #6386E7;
+}
+
+#tele .message .name.admin {
+  color: #EB7B6F;
 }
 
 #tele .message .tele-message-content {
   word-break: break-all;
+  color: #282828;
+  display: inline-block;
+  width: 190px;
+}
+
+#tele .message .tele-message-content img {
+  max-width: 100%;
+}
+
+#tele .message .tele-message-time {
+  display: inline-block;
+  color: #A6A6A6;
+  font-size: 12px;
+  width: 20px;
+  font-style: italic;
+}
+
+#tele .toggle-btn {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  top: 680px;
+  right: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 574px) {
+  #tele .toggle-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 30px;
+    top: 90%;
+    cursor: pointer;
+  }
 }

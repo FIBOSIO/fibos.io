@@ -3,7 +3,7 @@
 
 <head>
     <!-- include "../common/meta.html" -->
-    <link rel="stylesheet" href="css/new.css">
+    <link rel="stylesheet" href="css/news.css">
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -18,75 +18,7 @@
 
 <body class="doc-container">
     <div class="inside-container">
-        <header class="header header-shrink header-inverse">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark navbar-header">
-                    <a class="navbar-brand" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">
-                        <span class="logo-default">
-                            <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
-                        </span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">首页</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" onclick="javascript:window.location.href = '/#roadmap'" style="cursor: pointer;">路线图</a>
-                            </li>
-                            <!-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    开发社区
-                                    <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                                </a>
-                                <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发者文档</a>
-                                    <a class="dropdown-item" href="https://github.com/fibosio">Github</a>
-                                    <a class="dropdown-item" href="faq">FAQ</a>
-                                </div>
-                            </li> -->
-                            <li class="nav-item ">
-                                <a class="nav-link" href="https://github.com/fibosio" target="_blank">开发社区</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    开发者文档
-                                    <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                                </a>
-                                <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发指南</a>
-                                    <a class="dropdown-item" href="/docs/manual/module/readme.md.html">基础模块</a>
-                                    <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="/faq">FAQ</a>
-                            </li>
-                            <!-- <li class="nav-item ">
-                                        <a class="nav-link" href="/docs/guide/readme.md.html">开发者文档</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/index.html#fibos-news">新闻</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            ENG
-                                            <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                                        </a>
-                                        <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">简体中文</a>
-                                            <a class="dropdown-item" href="#">ENGLISH</a>
-                                        </div>
-                                    </li> -->
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        <!-- include "../common/header.html" -->
         <div class="band">
             <div class="container">
                 <span class="group">
@@ -104,31 +36,47 @@
                     <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c">首页</a>
                 </li>
                 <li>
-                    <a onclick="javascript:window.location.href = '/faq'" style="cursor: pointer;color: #08c">&nbsp;新闻中心</a>
+                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c">&nbsp;新闻中心</a>
                 </li>
             </ol>
         </div>
         <div class=page-body>
             <div class="container row">
-                <div class="col-lg-9 col-md-9 news-content-container">
-                    111
+                <div class="col-lg-9 col-md-9 news-list-container">
+                    {{#each news}}
+                    <div class="new-item">
+                        <h3><a href="/details?id={{id}}">{{ title }}</a></h3>
+                        <p class="info">发布时间: {{date}} 作者: {{author}}</p>
+                        <p class="desc">{{describe}}</p>
+                        <a href="/details?id={{id}}" class="link">查看详情</a>
+                    </div>
+                    {{/each}}
+                    <!--
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item {{#if first}}disabled{{/if}}">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                {{#each pages}}
+                                <li class="page-item"><a class="page-link" href="/news?page={{@key}}">{{@key}}</a></li>
+                                {{/each}}
+                                <li class="page-item {{#if last}}disabled{{/if}}">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    -->
                 </div>
                 <div class="col-lg-3 col-md-3 news-rec-container">
                     <h5>新闻推荐</h5>
                     <div class="rec-wrap">
                         <ul class="rec-list">
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
+                            {{#each recommends}}
+                            <a class="rec-item" href="/details?id={{id}}">·{{title}}</a> {{/each}}
                         </ul>
                     </div>
                 </div>

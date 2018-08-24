@@ -23,94 +23,88 @@ var browser = {
   language: (navigator.browserLanguage || navigator.language).toLowerCase()
 };
 
-if (!browser.versions.mobile) {
-  Vue.component('Head', {
-    template: `
-    <div class="head">
-      <div class="left">
-        <img src="/imgs/tele-logo.png" alt="">
-      </div>
-      <div class="mid">
-        <p class="title">
-        FIBOS开发
-        </p>
-        <p class="member-count">994members</p>
-      </div>
-      <div class="right">
-        <img src="/imgs/tele-logo.png" alt="">
-      </div>
-    </div>
-    `
-  });
-
-  Vue.component('Message', {
-    template: `
+Vue.component('Message', {
+  template: `
     <div class="message">
-      <p :class="['name', message.admin ? 'admin': '']">
-        {{message.name}}
+      <p :class="['name']">
+        {{message.from.name}}
       </p>
-      <div class="tele-message-content">
-        {{message.content}}
+      <div class="tele-message-content-wrapper">
+        <div class="tele-message-content">
+          {{message.text}}
+        </div>
+        <div class="tele-message-time">
+          <span>{{message.date}}</span>
+        </div>
       </div>
     </div>
     `,
-    props: ['message']
-  });
+  props: ['message']
+});
 
-  Vue.component('App', {
-    template: `
-    <div id="tele" :class="collapse ? 'tele-collapse' : ''">
-      <div class="collapse-btn" @click="toggleCollapse">
-        <img src="/imgs/left-circle.png" alt="" v-if="collapse">
-        <img src="/imgs/right-circle.png" alt="" v-else>
+Vue.component('App', {
+  template: `
+      <div id="tele" :class="collapse ? 'tele-collapse' : ''">
+        <div class="bg">
+          <div class="wrap">
+            <ul class="messages" ref="messages">
+              <li class="message-container" v-for="message in messages" :key="message.id">
+                <Message :message="message"></Message>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img :src="imgSrc" alt="" class="toggle-btn" @click="toggleCollapseOrLink" />
       </div>
-      <Head></Head>
-      <div class="wrap">
-        <ul class="messages" ref="messages">
-          <li class="message-container" v-for="(message, index) in messages" :key="index">
-            <Message :message="message"></Message>
-          </li>
-        </ul>
-      </div>
-    </div>
     `,
-    data() {
-      return {
-        collapse: true,
-        messages: []
-      };
-    },
-    created() {
-      // this.initWebsocket();
-      // setInterval(() => {
-      //   this.pushMessage({ name: 1, content: `1111${this.messages.length}`, admin: false })
-      // }, 3000)
-    },
-    methods: {
-      toggleCollapse() {
-        this.collapse = !this.collapse;
-      },
-      pushMessage(message) {
-        this.messages.push(message);
-        let e = this.$refs.messages;
-        scroll = e.scrollHeight - e.scrollTop;
-        if (scroll >= 450 && scroll <= 600) {
-          this.$nextTick(function() {
-            e.scrollTop = e.scrollHeight;
-          });
-        }
-      },
-      initWebsocket() {
-        this.socket = new WebSocket();
-        this.socket.onmessage = function(e) {
-          console.log(e.data);
-        };
-      }
+  data() {
+    return {
+      collapse: browser.versions.mobile,
+      messages: []
+    };
+  },
+  created() {
+    if (!browser.versions.mobile) {
+      this.initWebsocket();
     }
-  });
+  },
+  methods: {
+    toggleCollapseOrLink() {
+      if (browser.versions.mobile) {
+        window.open('https://t.me/FIBOSIO');
+        return;
+      }
+      this.collapse = !this.collapse;
+    },
+    pushMessage(message) {
+      this.messages.push(message);
+      let e = this.$refs.messages;
+      scroll = e.scrollHeight - e.scrollTop;
+      if (scroll >= 450 && scroll <= 600) {
+        this.$nextTick(function() {
+          e.scrollTop = e.scrollHeight;
+        });
+      }
+    },
+    initWebsocket() {
+      this.socket = new WebSocket('ws://localhost:8080/1.0/push');
+      // this.socket = new WebSocket('ws://192.168.1.102:8080/1.0/push');
+      this.socket.onmessage = e => {
+        var d = JSON.parse(e.data);
+        this.pushMessage(d.data.message);
+      };
+    }
+  },
+  computed: {
+    imgSrc() {
+      return this.collapse
+        ? '/imgs/toggle-collapse.png'
+        : '/imgs/toggle-open.png';
+    }
+  }
+});
 
-  new Vue({
-    el: '#tele-app-wrapper',
-    template: `<App />`
-  });
-}
+new Vue({
+  el: '#tele-app-wrapper',
+  template: `<App />`
+});
