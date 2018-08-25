@@ -591,6 +591,7 @@ $(function () {
                     $('#Built_in_Objects1').html($.i18n.prop('Built_in_Objects1'));
                     $('#Doc').html($.i18n.prop('Doc'));
                     $('#ContactUs').html($.i18n.prop('ContactUs'));
+                    $('#News').html($.i18n.prop('News'));
                 }
             });
         }

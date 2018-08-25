@@ -181,6 +181,7 @@ $(function () {
         $('#StrategicPartners').html($.i18n.prop('StrategicPartners'));
         $('#Buy').html($.i18n.prop('Buy'));
         $('#Pass').html($.i18n.prop('Pass'));
+        $('#News').html($.i18n.prop('News'));
       }
     });
   }
