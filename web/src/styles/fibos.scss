@@ -899,15 +899,15 @@ section.links {
 
 #tele {
   position: fixed;
-  width: 300px;
-  height: 600px;
+  width: 280px;
+  height: 560px;
   right: 0;
-  top: 60px;
+  top: 150px;
 }
 
 #tele .bg {
-  width: 300px;
-  height: 600px;
+  width: 280px;
+  height: 560px;
   transition: all 0.2s ease;
   background: url('/imgs/iphonex.png');
   background-size: 100% 100%;
@@ -919,10 +919,10 @@ section.links {
 
 #tele .wrap {
   overflow: hidden;
-  height: 470px;
+  height: 440px;
   position: absolute;
   top: 80px;
-  width: 260px;
+  width: 240px;
   left: 22px;
 }
 
@@ -957,7 +957,7 @@ section.links {
   word-break: break-all;
   color: #282828;
   display: inline-block;
-  width: 190px;
+  width: 170px;
 }
 
 #tele .message .tele-message-content img {
@@ -974,9 +974,9 @@ section.links {
 
 #tele .toggle-btn {
   position: fixed;
-  width: 80px;
-  height: 80px;
-  top: 680px;
+  width: 60px;
+  height: 60px;
+  top: 720px;
   right: 30px;
   cursor: pointer;
 }

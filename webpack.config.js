@@ -143,7 +143,7 @@ function build_docs() {
         etitle: 'Object',
         title: '内置对象',
         path: 'manual/object'
-      },
+      }
       // awesome: {
       //   etitle: 'Awesome',
       //   title: '社区文档',
@@ -365,6 +365,12 @@ var webpack_config = {
     //     to: path.resolve('./web/dist/i18n')
     //   }
     // ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve('./web/src/js/lib'),
+        to: path.resolve('./web/dist/js/lib')
+      }
+    ]),
     new WebpackOnBuildPlugin(() => {
       build_docs();
       relative();
