@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="keywords" content="EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript">
     <link rel="icon" type="image/png" href="/imgs/favicon.ico" />
@@ -13,14 +14,14 @@
     </title>
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="doc-container">
@@ -28,10 +29,10 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark navbar-header">
                 <a class="navbar-brand" href="/">
-                            <span class="logo-default">
-                                <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
-                            </span>
-                        </a>
+                    <span class="logo-default">
+                        <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
+                    </span>
+                </a>
 
                 <!-- <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
                             <div class="hamburger hamburger--spin js-hamburger">
@@ -41,17 +42,18 @@
                             </div>
                         </button> -->
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse doc-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">首页</a>
+                            <a class="nav-link" onclick="javascript:window.location.href = '/'" style="cursor: pointer;" id="Home">首页</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" onclick="javascript:window.location.href = '/#roadmap'" style="cursor: pointer;">路线图</a>
+                            <a class="nav-link" onclick="javascript:window.location.href = '/#roadmap'" style="cursor: pointer;" id="Roadmap">路线图</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,21 +67,31 @@
                             </div>
                         </li> -->
                         <li class="nav-item ">
-                            <a class="nav-link" href="https://github.com/fibosio" target="_blank">开发社区</a>
+                            <a class="nav-link" href="https://github.com/fibosio" target="_blank" id="DEV_Community">开发社区</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a id="Documentation" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 开发者文档
                                 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
                             </a>
                             <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发指南</a>
-                                <a class="dropdown-item" href="/docs/manual/module/readme.md.html">基础模块</a>
-                                <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
+                                <a class="dropdown-item" href="/docs/guide/basic/about.md.html" id="DEV_Guides">开发指南</a>
+                                <a class="dropdown-item" href="/docs/manual/module/readme.md.html" id="Basic_Modules">基础模块</a>
+                                <a class="dropdown-item" href="/docs/manual/object/readme.md.html" id="Built_in_Objects">内置对象</a>
                             </div>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="/faq" target="_blank">FAQ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id='Language' class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu box-shadow-v2 language" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="" id="language-zh">中文</a>
+                                <a class="dropdown-item" href="" id="language-en">English</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -90,7 +102,7 @@
         <div class="container">
             <span class="group">
                 <!-- <%=groups[group].etitle%> -->
-                    <%=groups[group].title%>
+                <%=groups[group].title%>
             </span>
             <!-- <div class="search">
                 <input type="text" class="searchbox" placeholder="Search">
@@ -100,10 +112,10 @@
     <div class="container">
         <ol class="breadcrumb">
             <li>
-                <a href="/">首页</a>
+                <a href="/" id="ToHome">首页</a>
             </li>
             <li>
-                <a href="/docs/guide/basic/about.md.html">&nbsp;开发者文档</a>
+                <a href="/docs/guide/basic/about.md.html" id = "DevDoc">&nbsp;开发者文档</a>
             </li>
             <li>
                 <a href="<%=groups[group].url%>">
@@ -154,7 +166,7 @@
 
     <!-- include "../common/footer.html" -->
     <script>
-        document.body.addEventListener('touchstart', function() {});
+        document.body.addEventListener('touchstart', function () { });
     </script>
 </body>
 

@@ -359,6 +359,12 @@ var webpack_config = {
         to: path.resolve('./web/dist/imgs')
       }
     ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve('./web/src/i18n'),
+        to: path.resolve('./web/dist/i18n')
+      }
+    ]),
     new WebpackOnBuildPlugin(() => {
       build_docs();
       relative();
