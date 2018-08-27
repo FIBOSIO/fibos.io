@@ -592,6 +592,7 @@ $(function () {
                     $('#Doc').html($.i18n.prop('Doc'));
                     $('#ContactUs').html($.i18n.prop('ContactUs'));
                     $('#News').html($.i18n.prop('News'));
+                    $('#Download').html($.i18n.prop('Download'));
                 }
             });
         }

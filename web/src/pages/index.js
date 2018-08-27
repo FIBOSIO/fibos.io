@@ -7,7 +7,7 @@ import buyfo from '../imgs/buyfo.png'
 import buyfo_en from '../imgs/buyfo-en.png'
 
 var browser = {
-  versions: (function() {
+  versions: (function () {
     var u = navigator.userAgent,
       app = navigator.appVersion;
     return {
@@ -86,7 +86,7 @@ Vue.component('App', {
       let e = this.$refs.messages;
       scroll = e.scrollHeight - e.scrollTop;
       if (scroll >= 450 && scroll <= 600) {
-        this.$nextTick(function() {
+        this.$nextTick(function () {
           e.scrollTop = e.scrollHeight;
         });
       }
@@ -182,20 +182,38 @@ $(function () {
         $('#Buy').html($.i18n.prop('Buy'));
         $('#Pass').html($.i18n.prop('Pass'));
         $('#News').html($.i18n.prop('News'));
+        $('#Download').html($.i18n.prop('Download'));
+        var FastHeight = window.document.getElementById('Fast').scrollHeight;
+        var StableHeight = window.document.getElementById('Stable').scrollHeight;
+        if (language === 'zh') {
+          $("#QuickDevDesc").css("font-size", "1.5rem")
+          $("#GetStart").css("font-size", "1.5rem")
+          $("#QuickDev").css("font-size", "2rem")
+        } else {
+          $("#QuickDevDesc").css("font-size", "1.2rem")
+          $("#QuickDev").css("font-size", "1.6rem")
+          $("#GetStart").css("font-size", "1.2rem")
+        }
+        $("#LessRes").css("height", FastHeight)
+        $("#Security").css("height", FastHeight)
+        $("#Auditable").css("height", StableHeight)
       }
     });
   }
 
   function setCookie(language) {
     window.document.cookie = ("lang" + "=" + language + ";");
-   
   }
 
   $('#language-zh').click(function () {
     changeLanguage('zh');
+  
+
   })
 
   $('#language-en').click(function () {
+
     changeLanguage('en');
+   
   })
 })

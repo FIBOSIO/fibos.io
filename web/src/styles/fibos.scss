@@ -213,7 +213,7 @@ section.features {
     text-align: center;
   }
   .feature-list {
-    padding: 0 2rem 1rem;
+    padding: 0 1.8rem 1rem;
   }
   h3 {
     color: $green;
@@ -250,7 +250,7 @@ section.fo {
   .btn-buy {
     margin: 10px 5px 0;
     border-radius: 0;
-    padding: 0.85rem 2.5rem;
+    padding: 0.85rem 2rem;
     border: 1px solid $primary;
     border-radius: 2px;
     width: 16rem;
@@ -655,6 +655,11 @@ section.links {
   }
 }
 
+.descattra{
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .carousel-inner>.item>img,
 .carousel-inner>.item>a>img {
   display: block;
@@ -1014,5 +1019,20 @@ section.links {
     right: 30px;
     top: 90%;
     cursor: pointer;
+  }
+}
+
+.line{
+  line-height: 63px;
+  font-size: 2.2rem;
+  @media (max-width: 574px) {
+    font-size: 1.2rem;
+    line-height: 50px;
+  }
+}
+
+.foimg{
+  @media (max-width: 574px) {
+    height: 50px;
   }
 }
