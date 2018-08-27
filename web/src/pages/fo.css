@@ -166,7 +166,7 @@ body {
   background: #fff;
 }
 
-.page-body .container.row .news-content-container h3 {
+.page-body .container.row .news-content-container h3.content-title {
   text-align: center;
   font-weight: bold;
   margin-bottom: 20px;

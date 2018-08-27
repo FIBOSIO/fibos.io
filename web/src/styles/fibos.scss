@@ -899,8 +899,6 @@ section.links {
 
 #tele {
   position: fixed;
-  width: 280px;
-  height: 560px;
   right: 0;
   top: 150px;
 }
@@ -915,6 +913,10 @@ section.links {
 
 #tele.tele-collapse .bg {
   transform: translateX(100%);
+}
+
+#tele.tele-collapse .hide {
+  display: none;
 }
 
 #tele .wrap {
@@ -987,7 +989,7 @@ section.links {
     width: 50px;
     height: 50px;
     right: 30px;
-    top: 90%;
+    top: 90vh;
     cursor: pointer;
   }
 }

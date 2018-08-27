@@ -45,7 +45,7 @@ Vue.component('Message', {
 Vue.component('App', {
   template: `
       <div id="tele" :class="collapse ? 'tele-collapse' : ''">
-        <div class="bg">
+        <div :class="isMobile ? 'hide' : 'bg'">
           <div class="wrap">
             <ul class="messages" ref="messages">
               <li class="message-container" v-for="message in messages" :key="message.id">
@@ -60,7 +60,8 @@ Vue.component('App', {
   data() {
     return {
       collapse: browser.versions.mobile,
-      messages: []
+      messages: [],
+      isMobile: browser.versions.mobile
     };
   },
   created() {
@@ -80,15 +81,17 @@ Vue.component('App', {
       this.messages.push(message);
       let e = this.$refs.messages;
       scroll = e.scrollHeight - e.scrollTop;
-      if (scroll >= 450 && scroll <= 600) {
+      if (scroll >= 440 && scroll <= 600) {
         this.$nextTick(function() {
           e.scrollTop = e.scrollHeight;
         });
       }
     },
     initWebsocket() {
-      this.socket = new WebSocket('ws://115.47.142.152/1.0/push');
-      // this.socket = new WebSocket('ws://192.168.1.102:8080/1.0/push');
+      // this.socket = new WebSocket('ws://115.47.142.152:8080/1.0/push');
+      this.socket = new WebSocket(
+        `ws://${window.location.hostname}:8080/1.0/push`
+      );
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
         this.pushMessage(d.data.message);
