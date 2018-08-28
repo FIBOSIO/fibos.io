@@ -1,7 +1,16 @@
+# FIBOS 主网上线
+
+UTC 时间 2018 年 8 月 28 日 0 时，FIBOS 主网上线成功。新加坡、首尔、东京、加拿大、弗吉尼亚五大节点接入成功，均已成功出块。
+
+FIBOS 发行合约总数 100 亿，其中开发团队10%，机构预留 20%，社区基金 20%，开放兑换 50%。
+
+主网上线以后引起了强烈反响，那么如何加入 FIBOS 兑换 FO 呢？本文将带你详细了解兑换流程。
+
 # FO 兑换教程
-> 为了满足开发者能够在 FIBOS 主网上线后便可创建 FIBOS 账号，FIBOS 团队提供给开发者完整的开发文档。
->
-> 学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解,请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 
+
+为了满足开发者能够在 FIBOS 主网上线后便可创建 FIBOS 账号，FIBOS 团队提供给开发者完整的开发文档。
+
+学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
 
 ### 生成一个 FIBOS 公私钥
 
@@ -35,7 +44,7 @@ POST
 | account | yes  | String | FIBOS 账户名 |
 | pubkey  | yes  | String | FO 公钥      |
 
-> 注意:FIBOS 账户 数字必须是1-5，字母a-z(小写)，长度必须为12位
+> 注意:FIBOS 账户数字必须是1-5，字母a-z(小写)，长度必须为12位
 
 **实例:**
 
@@ -85,7 +94,7 @@ console.log(rep);
 
   使用 fibos.js 客户端 调用 eosio.token 合约发起一笔转账操作
 
-  	**实例:**
+  **实例**
 
 ```
   var FIBOS = require("fibos.js");
@@ -115,7 +124,7 @@ console.log(rep);
 
   **实例说明:**
 
-  实例操作中,配置好EOS MainNet 和 EOS RPC 地址 和 EOS 私钥后,便初始化了一个 eos 客户端,通过调用`transferSync`方法,传入四个参数:
+  实例操作中,配置好EOS MainNet 和 EOS RPC 地址 和 EOS 私钥后,便初始化了一个 eos 客户端,通过调用 `transferSync` 方法,传入四个参数:
 
 | 参数       | 含义                      |
 | ---------- | ------------------------- |
@@ -135,7 +144,7 @@ fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "ac
 
   **方法说明:**
 
-  使用 `getTableRowsSync` 方法查询用户eosio.token 合约中的数据
+  使用  `getTableRowsSync`  方法查询用户eosio.token 合约中的数据
 
   **实例:**
 
@@ -163,7 +172,7 @@ fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "ac
 
   **实例说明:**
 
-  配置了 FIBOS 主网的chainId 和 Http 服务地址后,便初始化了一个 fibos 客户端,调用 `getTableRowsSync`方法,查询账户的资产信息。
+  配置了 FIBOS 主网的 chainId 和 Http 服务地址后,便初始化了一个 FIBOS 客户端,调用 `getTableRowsSync`方法，查询账户的资产信息。
 
 
 
@@ -178,7 +187,7 @@ let result = ctx.exchangeSync(owner, quantity, tosymbol,memo);
 
 **方法说明:**
 
- 使用`exchangeSync()`方法,在 FIBOS 使用 Bancor 进行通证之间兑换
+ 使用 `exchangeSync()` 方法,在 FIBOS 使用 Bancor 进行通证之间兑换
 
 **实例:**
 
