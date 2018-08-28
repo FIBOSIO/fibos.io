@@ -1088,6 +1088,11 @@ position: absolute;
   cursor: pointer;
 }
 
+#tele .message .tele-message-list{
+  list-style: none;
+  padding-left: 0;
+}
+
 @media (max-width: 574px) {
   #tele .toggle-btn {
     position: fixed;

@@ -35,8 +35,12 @@ Vue.component('Message', {
         {{message.from.name}}
       </p>
       <div class="tele-message-content-wrapper">
-        <div class="tele-message-content">
-          {{message.text}}
+        <div class="tele-message-content" >
+          <ul class="tele-message-list">
+            <li v-for="format in message.messagelist">
+              {{format}}
+            </li>
+          </ul>
         </div>
         <div class="tele-message-time">
           <span>{{message.date}}</span>
@@ -98,8 +102,15 @@ Vue.component('App', {
       }
       this.collapse = !this.collapse;
     },
-    pushMessage(message) {
-      this.messages.push(message);
+    pushMessage(messages) {
+      let latestMassage = this.messages.concat(messages)
+      this.messages = latestMassage.map(function(ele){
+        if(ele.text){
+          var messagelist = ele.text.split("/n");
+          ele.messagelist = messagelist;
+          return ele
+        }
+      });
       let e = this.$refs.messages;
       scroll = e.scrollHeight - e.scrollTop;
       if (scroll >= 440 && scroll <= 600) {
@@ -116,12 +127,12 @@ Vue.component('App', {
       var protocol = window.location.protocol
       var host = window.location.host
 
-      this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
-  //this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
+      //this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
+  this.socket = new WebSocket('ws://192.168.1.102:9090/1.0/push');
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
-        if (d.data && d.data.message) {
-          this.pushMessage(d.data.message);
+        if (d.data && d.data.messages) {
+          this.pushMessage(d.data.messages);
         }
         if (d.data && d.data.members) {
           this.pushMembers(d.data.members);
