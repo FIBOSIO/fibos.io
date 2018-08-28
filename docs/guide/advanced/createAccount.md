@@ -73,6 +73,9 @@ console.log(rep);
 
 # FIBOS 主网地址列表
 
+P2P默认端口：9870
+RPC默认端口：8870
+
 ```
 RPC地址列表:
 	se-rpc.fibos.io
