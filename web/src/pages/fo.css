@@ -166,9 +166,10 @@ body {
   background: #fff;
 }
 
-.page-body .container.row .news-content-container h3 {
+.page-body .container.row .news-content-container h3.content-title {
   text-align: center;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .page-body .container.row .news-content-container .info {
@@ -213,6 +214,4 @@ body {
   padding-left: 10px;
 }
 
-.page-body .container.row .news-rec-container {
-  
-}
+.page-body .container.row .news-rec-container {}

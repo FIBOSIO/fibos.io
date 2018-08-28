@@ -33,46 +33,21 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li>
-                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a>
+                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a >
                 </li>
                 <li>
-                    <a onclick="javascript:window.location.href = '/faq'" style="cursor: pointer;color: #08c" id="News2" >&nbsp;新闻中心</a>
-                </li>
-                {{#if name}}
-                <li class="active">
-                    &nbsp;{{name}}
-                </li>
-                {{/if}}
-                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c" id="News3">&nbsp;新闻中心</a>
+                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c" id="News2">&nbsp;新闻中心</a >
                 </li>
             </ol>
         </div>
         <div class=page-body>
             <div class="container row">
-                <div class="col-lg-9 col-md-9 news-content-container">
-                    <h3>标题标题标题标题标题</h3>
-                    <p class="info">发布时间: 19940121 作者: xieyuh</p>
-                    <div class="news-content">
-                        <p>
-                            文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
-                        </p>
-                        <p>
-                            文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
-                        </p>
-                        <p>
-                            文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
-                        </p>
-                        <p>
-                            文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
-                        </p>
-                    </div>
                 <div class="col-lg-9 col-md-9 news-list-container">
                     {{#each news}}
                     <div class="new-item">
-                        <h3><a href="/details?id={{id}}">{{ title }}</a></h3>
-                        <p class="info">发布时间: {{date}} 作者: {{author}}</p>
-                        <p class="desc">{{describe}}</p>
-                        <a href="/details?id={{id}}" class="link">查看详情</a>
+                        <h4><a href="/details?id={{id}}">{{ title }}</a ></h4>
+                        <p class="info">发布时间: {{date}} 作者: {{author}}</p >
+                        <!-- <p class="desc">{{describe}}</p > -->
                     </div>
                     {{/each}}
                     <!--
@@ -81,38 +56,26 @@
                                 <li class="page-item {{#if first}}disabled{{/if}}">
                                     <a class="page-link" href="#" aria-label="Previous">
                                       <span aria-hidden="true">&laquo;</span>
-                                    </a>
+                                    </a >
                                 </li>
                                 {{#each pages}}
-                                <li class="page-item"><a class="page-link" href="/news?page={{@key}}">{{@key}}</a></li>
+                                <li class="page-item"><a class="page-link" href="/news?page={{@key}}">{{@key}}</a ></li>
                                 {{/each}}
                                 <li class="page-item {{#if last}}disabled{{/if}}">
                                     <a class="page-link" href="#" aria-label="Next">
                                       <span aria-hidden="true">&raquo;</span>
-                                    </a>
+                                    </a >
                                 </li>
                             </ul>
                         </nav>
                     -->
                 </div>
                 <div class="col-lg-3 col-md-3 news-rec-container">
-                    <h5>新闻推荐</h5>
+                    <h5 id="NewsRec">新闻推荐</h5>
                     <div class="rec-wrap">
                         <ul class="rec-list">
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
-                            <li class="rec-item">
-                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                            </li>
                             {{#each recommends}}
-                            <a class="rec-item" href="/details?id={{id}}">·{{title}}</a> {{/each}}
+                            <a class="rec-item" href="/details?id={{id}}">·{{title}}</a > {{/each}}
                         </ul>
                     </div>
                 </div>
@@ -120,9 +83,6 @@
         </div>
     </div>
     <!-- include "../common/footer.html" -->
-    <script>
-        document.body.addEventListener('touchstart', function () { });
-    </script>
 </body>
 
 </html>

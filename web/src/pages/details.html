@@ -19,54 +19,9 @@
 <body class="doc-container">
     <div class="inside-container">
         <!-- include "../common/header.html" -->
-        <!-- <header class="header header-shrink header-inverse">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark navbar-header">
-                    <a class="navbar-brand" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">
-                        <span class="logo-default">
-                            <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
-                        </span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" onclick="javascript:window.location.href = '/'" style="cursor: pointer;">首页</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" onclick="javascript:window.location.href = '/#roadmap'" style="cursor: pointer;">路线图</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="https://github.com/fibosio" target="_blank">开发社区</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    开发者文档
-                                    <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                                </a>
-                                <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/docs/guide/basic/about.md.html">开发指南</a>
-                                    <a class="dropdown-item" href="/docs/manual/module/readme.md.html">基础模块</a>
-                                    <a class="dropdown-item" href="/docs/manual/object/readme.md.html">内置对象</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/news">新闻</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="/faq">FAQ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header> -->
         <div class="band">
             <div class="container">
-                <span class="group">
+                <span class="group" id="News1">
                     <!-- <%=groups[group].etitle%> -->
                     新闻中心
                 </span>
@@ -78,10 +33,10 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li>
-                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c">首页</a>
+                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a>
                 </li>
                 <li>
-                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c">&nbsp;新闻中心</a>
+                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c" id="News2">&nbsp;新闻中心</a>
                 </li>
                 <li class="active detail-breadcrumb">
                     &nbsp; {{details.title}}
@@ -98,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 news-rec-container">
-                    <h5>新闻推荐</h5>
+                    <h5 id="NewsRec">新闻推荐</h5>
                     <div class="rec-wrap">
                         <ul class="rec-list">
                             {{#each recommends}}

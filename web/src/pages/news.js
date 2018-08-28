@@ -1025,17 +1025,17 @@ $(function () {
             $('#Built_in_Objects').html($.i18n.prop('Built_in_Objects'));
             $('#Language').html($.i18n.prop('Language'));
             $('#ToHome').html($.i18n.prop('ToHome'));
-            $('#DevDoc').html($.i18n.prop('DevDoc'));
-            $('#DEV_Guides1').html($.i18n.prop('DEV_Guides1'));
-            $('#Basic_Modules').html($.i18n.prop('Basic_Modules1'));
-            $('#Built_in_Objects1').html($.i18n.prop('Built_in_Objects1'));
-            $('#Doc').html($.i18n.prop('Doc'));
             $('#ContactUs').html($.i18n.prop('ContactUs'));
             $('#News').html($.i18n.prop('News'));
             $('#Download').html($.i18n.prop('Download'));
             $('#News1').html($.i18n.prop('News1'));
             $('#News2').html($.i18n.prop('News2'));
-            $('#News3').html($.i18n.prop('News3'));
+            $('#DEV_Guides1').html($.i18n.prop('DEV_Guides1'));
+            $('#Basic_Modules1').html($.i18n.prop('Basic_Modules1'));
+            $('#Built_in_Objects1').html($.i18n.prop('Built_in_Objects1'));
+            $('#Doc').html($.i18n.prop('Doc'));
+            $('#NewsRec').html($.i18n.prop('NewsRec'));
+            
         }
       });
     }

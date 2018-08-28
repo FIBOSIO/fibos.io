@@ -929,31 +929,33 @@ section.links {
 
 #tele {
   position: fixed;
-  width: 300px;
-  height: 600px;
-  right: 0;
-  top: 60px;
+  right: 12px;
+  top: 150px;
 }
 
 #tele .bg {
-  width: 300px;
-  height: 600px;
+  width: 335px;
+  height: 400px;
   transition: all 0.2s ease;
-  background: url('/imgs/iphonex.png');
+  background: rgba(255,255,255,0.98);
   background-size: 100% 100%;
+  border-radius: 12px;
 }
 
 #tele.tele-collapse .bg {
   transform: translateX(100%);
 }
 
+#tele.tele-collapse .hide {
+  display: none;
+}
+
 #tele .wrap {
   overflow: hidden;
-  height: 470px;
+  height: 310px;
   position: absolute;
-  top: 80px;
-  width: 260px;
-  left: 22px;
+  top: 50px;
+  width: 335px;
 }
 
 #tele .wrap .messages {
@@ -987,12 +989,68 @@ section.links {
   word-break: break-all;
   color: #282828;
   display: inline-block;
-  width: 190px;
+  width: 260px;
 }
 
 #tele .message .tele-message-content img {
   max-width: 100%;
 }
+
+#tele .top{
+  text-align: center;
+  height: 50px;
+  background: #FFFFFF;
+box-shadow: 0 2px 25px 0 rgba(0,0,0,0.10);
+border-radius: 12px 12px 0 0;
+position: relative;
+}
+
+#tele .top-title{
+  font-size: 16px;
+  padding-top: 6px;
+}
+
+#tele .top img{
+  position: absolute;
+  height: 48px;
+  right: 8px;
+  top: 1px;
+}
+#tele .bottom{
+  text-align: center;
+  height: 40px;
+  background: #FFFFFF;
+box-shadow: 0 -1px 0 0 #DDDDDD;
+bottom: 0;
+width: 100%;
+border-radius: 0 0 12px 12px;
+position: absolute;
+}
+
+#tele .bottom-title{
+  padding-top: 12px;
+  font-size: 12px;
+  color: #1199DD;
+  position: relative;
+  margin-left: 40px;
+}
+
+#tele .bottom-img{
+  position: absolute;
+  height: 24px;
+  top: 8px;
+  left: 75px;
+}
+
+
+
+
+
+#tele .top-member{
+  font-size: 11px;
+  color: #999999;
+}
+
 
 #tele .message .tele-message-time {
   display: inline-block;
@@ -1004,10 +1062,10 @@ section.links {
 
 #tele .toggle-btn {
   position: fixed;
-  width: 80px;
-  height: 80px;
-  top: 680px;
-  right: 30px;
+  width: 60px;
+  height: 60px;
+  top: 570px;
+  right: 50px;
   cursor: pointer;
 }
 
@@ -1017,7 +1075,7 @@ section.links {
     width: 50px;
     height: 50px;
     right: 30px;
-    top: 90%;
+    top: 90vh;
     cursor: pointer;
   }
 }

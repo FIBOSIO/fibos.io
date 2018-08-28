@@ -2,9 +2,9 @@
 <header class="header header-shrink header-inverse">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-header">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" onclick="javascript:window.location.href = '/'">
                 <span class="logo-default">
-                    <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px)">
+                    <img src="/imgs/logo.png" alt="" style="transform: translateY(-10px);cursor: pointer;">
                 </span>
             </a>
 
@@ -49,18 +49,18 @@
                         <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/docs/guide/basic/about.md.html" id="Documentation">开发者文档</a>
                             <a class="dropdown-item" href="https://github.com/fibosio" target="_blank">Github</a>
-                            <a class="dropdown-item" href="faq">FAQ</a>
+                            <a class="dropdown-item" href="/faq">FAQ</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/news" id="News">新闻</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/news" id="BBS">BBS</a>
+                        <a class="nav-link" href="http://bbs.fibos.io" id="BBS" target="_blank">BBS</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="/news" id = "Download">下载</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown">
                         <a id='Language' class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>

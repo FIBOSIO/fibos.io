@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/faq.css">
     <script>
         var _hmt = _hmt || [];
-        (function () {
+        (function() {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
             var s = document.getElementsByTagName("script")[0];
@@ -33,10 +33,10 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li>
-                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a>
+                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a >
                 </li>
                 <li>
-                    <a onclick="javascript:window.location.href = '/faq'" style="cursor: pointer;color: #08c">&nbsp;FAQ</a>
+                    <a onclick="javascript:window.location.href = '/faq'" style="cursor: pointer;color: #08c">&nbsp;FAQ</a >
                 </li>
                 {{#if name}}
                 <li class="active">
@@ -53,10 +53,9 @@
                         <div class="card">
                             <div class="card-header" role="tab" id="headingOne">
                                 <h4 class="card-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="/faq?id={{id}}" onclick="javascript: window.location.href = '/faq?id={{id}}'"
-                                        aria-controls="">
+                                    <a data-toggle="collapse" data-parent="#accordion" href=" " onclick="javascript: window.location.href = '/faq?id={{id}}'" aria-controls="">
                                         {{name}}
-                                    </a>
+                                    </a >
                                 </h4>
                             </div>
                         </div>
@@ -66,7 +65,7 @@
                                 <h4 class="card-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
                                         目录2
-                                    </a>
+                                    </a >
                                 </h4>
                             </div>
                         </div>
@@ -75,7 +74,7 @@
                                 <h4 class="card-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
                                         目录3
-                                    </a>
+                                    </a >
                                 </h4>
                             </div>
                         </div> -->
