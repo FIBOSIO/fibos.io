@@ -43,7 +43,7 @@ POST
 ```
 var http = require('http');
 var httpClient = new http.Client();
-var httpServerHost = "";
+var httpServerHost = "http://tunnel.fibos.io/1.0/app/token/create";
 var account = "xxx"  你的 FIBOS 账户名
 var pubkey = "xxx" 你的 FIBOS 公钥
 var rep = httpClient.post(httpServerHost, {
@@ -77,6 +77,7 @@ P2P默认端口：9870
 RPC默认端口：8870
 
 ```
+chainID： 6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a
 RPC地址列表:
 	se-rpc.fibos.io
 	sl-rpc.fibos.io

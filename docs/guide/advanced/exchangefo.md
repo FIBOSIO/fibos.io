@@ -10,6 +10,8 @@ FO 通证的基础情况如下：
 
 【通证分配】开发团队 10 %，机构预留 20 %，社区基金 20 %，开放兑换 50 %；
 
+【保留通证】合计 50 亿。在填充完相应保留通证准备金后，该部分通证才能解锁。解锁后的通证才能进行兑换、抵押以及买卖RAM等操作；
+
 【起始换算】1 EOS = 1000 FO；
 
 【初始 CW 】11%。 CW 值会根据项目发展情况自动调整（包含但不限于节点发工资、销毁RAM手续费以及域名拍卖费用）。
@@ -59,7 +61,7 @@ POST
 ```
 var http = require('http');
 var httpClient = new http.Client();
-var httpServerHost = "";
+var httpServerHost = "http://tunnel.fibos.io/1.0/app/token/create";
 var account = "xxx"  你的 FIBOS 账户名
 var pubkey = "xxx" 你的 FIBOS 公钥
 var rep = httpClient.post(httpServerHost, {
@@ -156,10 +158,12 @@ fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "ac
 
   **实例:**
 
+ `FIBOS MainNet 主网RPC地址` 见 [FIBOS 账号注册教程](createAccount.md)。
+
   ```
   var FIBOS = require("fibos.js");
   var config = {
-      chainId:"FIBOS MainNet 主网chainId",
+      chainId:"6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a”,
       priKey:"",
       httpEndpoint:"FIBOS MainNet 主网RPC地址",
       verbose: false,
@@ -199,12 +203,14 @@ let result = ctx.exchangeSync(owner, quantity, tosymbol,memo);
 
 **实例:**
 
+其中 `FIBOS MainNet 主网RPC地址` 见 [FIBOS 账号注册教程](createAccount.md)。
+
 ```
 var FIBOS = require("fibos.js");
   var config = {
-      chainId:"FIBOS MainNet 主网chainId",
+      chainId:"6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
       priKey:"你的 FIBOS 私钥",
-      httpEndpoint:"FIBOS MainNet 主网RPC地址",
+      httpEndpoint:"FIBOS MainNet 主网RPC地址", 
       verbose: false,
   }
   var fibos_client = FIBOS({
