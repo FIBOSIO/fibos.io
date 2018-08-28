@@ -58,7 +58,7 @@ Vue.component('App', {
       collapse: browser.versions.mobile,
       messages: [],
       isMobile: browser.versions.mobile,
-      members:0
+      members: 0
     };
   },
   created() {
@@ -68,8 +68,8 @@ Vue.component('App', {
   },
   methods: {
     toggleCollapseOrLink() {
-        window.open('https://t.me/FIBOSIO');
-        return;
+      window.open('https://t.me/FIBOSIO');
+      return;
     },
     pushMessage(message) {
       this.messages.push(message);
@@ -91,13 +91,13 @@ Vue.component('App', {
       );
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
-        if(d.data && d.data.message){
+        if (d.data && d.data.message) {
           this.pushMessage(d.data.message);
         }
-        if(d.data && d.data.members){
+        if (d.data && d.data.members) {
           this.pushMembers(d.data.members);
         }
-    };
+      };
     }
   },
   computed: {
@@ -183,6 +183,8 @@ $(function () {
         $('#Pass').html($.i18n.prop('Pass'));
         $('#News').html($.i18n.prop('News'));
         $('#Download').html($.i18n.prop('Download'));
+        $('#Total').html($.i18n.prop('Total'));
+        $('#Rate').html($.i18n.prop('Rate'));
         var FastHeight = window.document.getElementById('Fast').scrollHeight;
         var StableHeight = window.document.getElementById('Stable').scrollHeight;
         if (language === 'zh') {
@@ -219,6 +221,8 @@ $(function () {
 
   })
 })
+
+
 
 $(document).ready(() => {
   function hack() {
@@ -341,7 +345,7 @@ $(document).ready(() => {
 
   var protocol = window.location.protocol
 
-  const eosHttpEndPoint = protocol+ '//se-rpc.fibos.io:8870';
+  const eosHttpEndPoint = protocol + '//se-rpc.fibos.io:8870';
   const eosChainId =
     '038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca';
 
@@ -373,56 +377,48 @@ $(document).ready(() => {
     decimal: '.'
   };
 
-  var myCountUp = new CountUp('myTargetElement', 0, 0, 4, 2.5, options);
-
-  if (!myCountUp.error) {
-    myCountUp.start();
-  } else {
-    console.error(myCountUp.error);
-  }
-
   eosjs_ecc.randomKey().then(pr => {
     const pb = eosjs_ecc.privateToPublic(pr)
-  
-    EosClient(pr)
-     .getTableRows(true, 'eosio.token', 'eosio', 'stats')
-     .then(data => {
-      const { rows } = data
-      console.log('rows', rows)
-      if (!!rows && rows instanceof Array) {
-       rows.forEach((item, index) => {
-        if (!!item && item.supply && item.supply.indexOf('FO') >= 0) {
-         const {
-          connector_weight,
-          reserve_connector_balance,
-          connector_balance,
-          reserve_supply,
-          supply
-         } = item
-         const supply_numStr = supply.split(' FO')[0]
-         let supply_numPre = 0
-         if (!!supply_numStr && supply_numStr.split('.').length >= 2) {
-          supply_numPre = supply_numStr.split('.')[1].length
-         }
-         const b_supply = new BigNumber(supply_numStr)
-         const b_reserve_supply = new BigNumber(reserve_supply.split(' FO')[0])
-         const b_cw = new BigNumber(connector_weight)
-         const b_balances = new BigNumber(connector_balance.split(' EOS')[0]).plus(
-          new BigNumber(reserve_connector_balance.split(' EOS')[0])
-         )
-  
-         const price = b_balances
-          .div(b_cw.times(b_reserve_supply.plus(b_supply)))
-          .toFixed(supply_numPre, 8)
-         console.log('price', price)
-  
-         myCountUp.update(price)
-        }
-       })
-      }
-     })
-     .catch(error => {
-      console.log('error', error)
-     })
-   })
+    function getLatestPrice() {
+      EosClient(pr)
+        .getTableRows(true, 'eosio.token', 'eosio', 'stats')
+        .then(data => {
+          const { rows } = data
+          if (!!rows && rows instanceof Array) {
+            rows.forEach((item, index) => {
+              if (!!item && item.supply && item.supply.indexOf('FO') >= 0) {
+                const {
+                  connector_weight,
+                  reserve_connector_balance,
+                  connector_balance,
+                  reserve_supply,
+                  supply
+                } = item
+                const supply_numStr = supply.split(' FO')[0]
+                let supply_numPre = 0
+                if (!!supply_numStr && supply_numStr.split('.').length >= 2) {
+                  supply_numPre = supply_numStr.split('.')[1].length
+                }
+                const b_supply = new BigNumber(supply_numStr)
+                const b_reserve_supply = new BigNumber(reserve_supply.split(' FO')[0])
+                const b_cw = new BigNumber(connector_weight)
+                const b_balances = new BigNumber(connector_balance.split(' EOS')[0]).plus(
+                  new BigNumber(reserve_connector_balance.split(' EOS')[0])
+                )
+
+                const price = b_balances
+                  .div(b_cw.times(b_reserve_supply.plus(b_supply)))
+                  .toFixed(supply_numPre, 8)
+
+                $('#myTargetElement').text(new BigNumber(1).div(price).toFixed(4, 1))
+              }
+            })
+          }
+        })
+        .catch(error => {
+        })
+    }
+    setInterval(getLatestPrice, 20000);
+    getLatestPrice();
+  })
 });
