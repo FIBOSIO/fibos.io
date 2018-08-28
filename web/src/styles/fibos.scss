@@ -225,6 +225,20 @@ section.features {
   }
 }
 
+.fr{
+  float: right;
+  @media (max-width: 557px) {
+    float: none;
+  }
+}
+
+.fl{
+  float: left;
+  @media (max-width: 557px) {
+    float: none;
+  }
+}
+
 section.fo {
   background: #fff url('../imgs/fo-token-bg.jpg') bottom center;
   background-size: cover;
@@ -237,10 +251,15 @@ section.fo {
     margin: 3rem 0;
   }
   .fo-step {
-    text-align: center;
     font-size: 1.2rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
   }
+
+  .fo-step-text{
+    text-align: center;
+  }
+
   .big-mark {
     font-size: 2.5rem;
     color: $green;

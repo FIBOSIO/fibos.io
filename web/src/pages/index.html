@@ -16,10 +16,6 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <script src="js/lib/countUp.min.js"></script>
-    <script src="js/lib/eosjs-ecc.min.js"></script>
-    <script src="js/lib/eos.min.js"></script>
-    <script src="js/lib/bignumber.min.js"></script>
 </head>
 
 <body>
@@ -201,42 +197,44 @@
             <h3 class="title">
                 <div class="row">
                     <div class="col-4 text-right line col-lg-5" id="Buy">兑换</div>
-                    <div ><img class = "foimg" id="buyfoImg" src="/imgs/fologo.png" alt="兑换 FO 智能通证" height="63"></div>
+                    <div class="col-lg-2 col-3"><img class="foimg" id="buyfoImg" src="/imgs/fologo.png" alt="兑换 FO 智能通证"
+                            height="63"></div>
                     <div class="col-5 text-left line col-lg-5" id="Pass">智能通行证</div>
                 </div>
             </h3>
-            <!-- <div class="row step">
+            <div class="row step">
+                <!-- <div class="col fo-step-pc">
+                </div> -->
                 <div class="col fo-step">
-                    <span class="big-mark">0.00</span>%
-                    <div>已发行 FO 智能通证</div>
+                    <div class="fr">
+                        <span class="big-mark">10,000,000,000</span>&nbsp;FO
+                        <div class="fo-step-text">FO 智能通证总发行量</div>
+                    </div>
                 </div>
                 <div class="col fo-step">
-                    <span class="big-mark">1,000,000</span>EOS
-                    <div>FO 智能通证发行目标</div>
+                    <div class="fl">
+                        <span class="big-mark">1</span>&nbsp;EOS
+                        <span class="equal">=</span>
+                        <span class="big-mark" id="myTargetElement">1,000</span>&nbsp;FO
+                        <div class="fo-step-text">当前预计兑换行情</div>
+                    </div>
                 </div>
-                <div class="col fo-step">
-                    <span class="big-mark">1</span>EOS
-                    <span class="equal">=</span>
-                    <span class="big-mark">1,000</span>FO
-                    <div>兑换单价</div>
+                <!-- <div class="col fo-step-pc">
+                </div> -->
+                <!-- <div class="col fo-step">
+                </div> -->
+            </div>
+            <!-- <div class="row">
+                <div class="col-6 text-center">
                 </div>
-                <div class="col fo-step">
-                    <span class="big-mark">6</span>个月
-                    <div>锁仓期</div>
+                <div class="col-6 text-center">
                 </div>
             </div> -->
             <div class="row">
                 <div class="col-12 text-center">
-                    <a id="btn-bancor-download" href="/fo.html"
-                        class="btn btn-lg btn-white btn-buy" style="background-color: #19d;color: white">
-                        FO 兑换教程 
+                    <a id="btn-bancor-download" href="/docs/guide/advanced/exchangefo.md.html" class="btn btn-lg btn-white btn-buy" style="background-color: #19d;color: white">
+                        FO 兑换教程
                     </a>
-                    <!-- <a href="/fo.html" class="btn btn-lg btn-white btn-buy">
-                        即将开放兑换
-                    </a> -->
-                    <!-- <a href="/fo.html" class="btn btn-lg btn-white btn-buy disabled" id="Will">
-                        即将开放兑换
-                    </a> -->
                 </div>
             </div>
         </div>
@@ -578,14 +576,20 @@
             <div class="container">
                 <p class="text-center">
                     Copyright © 2018
-                    <a href="https://fibos.io" target="_blank">FIBOS</a>&nbsp;<span class="text-span">FOUNDATION LTD All Rights Reserved</span>
-                     
+                    <a href="https://fibos.io" target="_blank">FIBOS</a>&nbsp;<span class="text-span">FOUNDATION LTD All
+                        Rights Reserved</span>
+
                 </p>
             </div>
         </section>
     </footer>
     <div id="tele-app-wrapper"></div>
     <div id="myTargetElement" style="display: none;"></div>
+    <script src="js/bootstrap3.min.js"></script>
+    <script src="js/lib/countUp.min.js"></script>
+    <script src="js/lib/eosjs-ecc.min.js"></script>
+    <script src="js/lib/eos.min.js"></script>
+    <script src="js/lib/bignumber.min.js"></script>
     <script>
         $('.carousel').carousel({
             interval: 2100

@@ -339,7 +339,9 @@ $(document).ready(() => {
 
   hack();
 
-  const eosHttpEndPoint = 'http://193.93.219.219:8888';
+  var protocol = window.location.protocol
+
+  const eosHttpEndPoint = protocol+ '//se-rpc.fibos.io:8870';
   const eosChainId =
     '038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca';
 
@@ -380,61 +382,47 @@ $(document).ready(() => {
   }
 
   eosjs_ecc.randomKey().then(pr => {
-    const pb = eosjs_ecc.privateToPublic(pr);
-
+    const pb = eosjs_ecc.privateToPublic(pr)
+  
     EosClient(pr)
-      .getTableRows(true, 'eosio.token', 'gulou', 'stat')
-      .then(data => {
-        const row = [
-          {
-            supply: '0.0000 FO',
-            max_supply: '100000000000.0000 FO',
-            issuer: 'eosio',
-            max_exchange: '10000000000.0000 FO',
-            connector_weight: '0.14999999999999999',
-            connector_balances: '90000.0000 EOS',
-            reserve_supply: '30000.0000 FO',
-            reserve_balances: '90000.0000 EOS',
-            buy_fee_rate: '0.00000000000000000',
-            sell_fee_rate: '0.00000000000000000',
-            can_issue: 1
-          }
-        ];
-
-        row.forEach((item, index) => {
-          if (!!item && item.supply && item.supply.indexOf('FO') >= 0) {
-            const {
-              connector_weight,
-              connector_balances,
-              reserve_supply,
-              supply
-            } = item;
-            const supply_numStr = supply.split(' FO')[0];
-            let supply_numPre = 0;
-            if (!!supply_numStr && supply_numStr.split('.').length >= 2) {
-              supply_numPre = supply_numStr.split('.')[1].length;
-            }
-            const b_supply = new BigNumber(supply_numStr);
-            const b_reserve_supply = new BigNumber(
-              reserve_supply.split(' FO')[0]
-            );
-            const b_cw = new BigNumber(connector_weight);
-            const b_balances = new BigNumber(
-              connector_balances.split(' EOS')[0]
-            );
-
-            const price = b_balances
-              .div(b_cw.times(b_reserve_supply.plus(b_supply)))
-              .toFixed(supply_numPre, 4);
-            console.log('price', price);
-
-            myCountUp.update(price);
-          }
-        });
-        console.log('data', data);
-      })
-      .catch(error => {
-        console.log('error', error);
-      });
-  });
+     .getTableRows(true, 'eosio.token', 'eosio', 'stats')
+     .then(data => {
+      const { rows } = data
+      console.log('rows', rows)
+      if (!!rows && rows instanceof Array) {
+       rows.forEach((item, index) => {
+        if (!!item && item.supply && item.supply.indexOf('FO') >= 0) {
+         const {
+          connector_weight,
+          reserve_connector_balance,
+          connector_balance,
+          reserve_supply,
+          supply
+         } = item
+         const supply_numStr = supply.split(' FO')[0]
+         let supply_numPre = 0
+         if (!!supply_numStr && supply_numStr.split('.').length >= 2) {
+          supply_numPre = supply_numStr.split('.')[1].length
+         }
+         const b_supply = new BigNumber(supply_numStr)
+         const b_reserve_supply = new BigNumber(reserve_supply.split(' FO')[0])
+         const b_cw = new BigNumber(connector_weight)
+         const b_balances = new BigNumber(connector_balance.split(' EOS')[0]).plus(
+          new BigNumber(reserve_connector_balance.split(' EOS')[0])
+         )
+  
+         const price = b_balances
+          .div(b_cw.times(b_reserve_supply.plus(b_supply)))
+          .toFixed(supply_numPre, 8)
+         console.log('price', price)
+  
+         myCountUp.update(price)
+        }
+       })
+      }
+     })
+     .catch(error => {
+      console.log('error', error)
+     })
+   })
 });
