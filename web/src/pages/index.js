@@ -50,6 +50,30 @@ Vue.component('Message', {
 Vue.component('App', {
   template: `
       <div id="tele" :class="collapse ? 'tele-collapse' : ''">
+      <div :class="isMobile ? 'hide' : 'bg'">
+      <div class="top">
+      <div class = "top-title">
+      FIBOS 开发 电报群
+      </div>
+      <div class="top-member">{{members}} members</div>
+      <img src="/imgs/blacklogo.png"/>
+      </div>
+          <div class="wrap">
+            <ul class="messages" ref="messages">
+              <li class="message-container" v-for="message in messages" :key="message.id">
+                <Message :message="message"></Message>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom">
+          <div class="bottom-title">
+          加入电报群和大神一期聊技术
+          </div>
+          <img src="/imgs/toggle-collapse.png" class="bottom-img"/>
+          </div>
+
+        </div>
+
         <img :src="imgSrc" alt="" class="toggle-btn" @click="toggleCollapseOrLink" />
       </div>
     `,
@@ -62,14 +86,17 @@ Vue.component('App', {
     };
   },
   created() {
-    // if (!browser.versions.mobile) {
-    //   this.initWebsocket();
-    // }
+    if (!browser.versions.mobile) {
+      this.initWebsocket();
+    }
   },
   methods: {
     toggleCollapseOrLink() {
-      window.open('https://t.me/FIBOSIO');
-      return;
+      if (browser.versions.mobile) {
+        window.open('https://t.me/FIBOSIO');
+        return;
+      }
+      this.collapse = !this.collapse;
     },
     pushMessage(message) {
       this.messages.push(message);
@@ -85,10 +112,12 @@ Vue.component('App', {
       this.members = data;
     },
     initWebsocket() {
-      //  this.socket = new WebSocket('ws://115.47.142.152:8080/1.0/push');
-      this.socket = new WebSocket(
-        `wss://${window.location.hostname}:8080/1.0/push`
-      );
+      
+      var protocol = window.location.protocol
+      var host = window.location.host
+
+      this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
+  //this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
         if (d.data && d.data.message) {
