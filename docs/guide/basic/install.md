@@ -87,7 +87,7 @@ FIBOS 暂时未开源，待开源后提供编译教程!
 
 
 
-## 搭建一个 FIBOS 开发环境
+## 运行自己的 FIBOS 节点
 
 到目前为止，我们已经拥有一个可执行的 FIBOS，想必你已经想大显身手编写 JavaScript 合约了。别急，接下来，我们将带领大家搭建一个简单的 FIBOS 开发环境。
 之后的教程都基于此环境，请认真阅读，且保证在后续的学习中此节点正常运行。
@@ -176,8 +176,9 @@ FIBOS 中 `load` 方法支持参数传递，下面详细的介绍。
 
    ```
    // 查看 FIBOS 配置以及数据目录
+   console.notice("config_dir:", fibos.config_dir);
    console.notice("data_dir:", fibos.data_dir);
-  
+    
    // 修改 FIBOS 配置以及数据目录
    fibos.config_dir = "fibos_config_dir/";
    fibos.data_dir = "fibos_data_dir/";
