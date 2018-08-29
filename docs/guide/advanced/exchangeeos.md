@@ -89,7 +89,7 @@ console.log(result);
     **调用方法:**
 
   ```
-  //初始化一个 fibos_client 客户端
+  //初始化一个 fibso_client 客户端
   fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "accounts");
   ```
 
