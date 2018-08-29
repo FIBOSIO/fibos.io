@@ -1,5 +1,3 @@
-# FIBOS 主网上线
-
 上文已经教会了大家如何加入 FIBOS 兑换 FO，本文将教会大家大家如何将 FIBOS 链上的 FO 兑换成 EOS 链上的 EOS！
 
 # EOS 兑换教程
