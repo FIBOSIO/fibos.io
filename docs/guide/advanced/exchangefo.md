@@ -100,16 +100,16 @@ console.log(rep);
 
   #### 发起转账操作
 
-  FIBOS 部分主网 RPC 地址列表如下
+  FIBOS 主网部分 RPC 地址如下所示:
 
-  | 位置     | RPC 地址             |
-  | -------- | -------------------- |
-  | 首尔     | sl-rpc.fibos.io:8870 |
-  | 伦敦     | ln-rpc.fibos.io:8870 |
-  | 新加坡   | se-rpc.fibos.io:8870 |
-  | 东京     | to-rpc.fibos.io:8870 |
-  | 加拿大   | ca-rpc.fibos.io:8870 |
-  | 弗吉尼亚 | va-rpc.fibos.io:8870 |
+  | 位置     | RPC 地址                    |
+  | -------- | --------------------------- |
+  | 新加坡   | http://se-rpc.fibos.io:8870 |
+  | 首尔     | http://sl-rpc.fibos.io:8870 |
+  | 东京     | http://to-rpc.fibos.io:8870 |
+  | 加拿大   | http://ca-rpc.fibos.io:8870 |
+  | 伦敦     | http://ln-rpc.fibos.io:8870 |
+  | 弗吉尼亚 | http://va-rpc.fibos.io:8870 |
 
   **调用方法:**
 
@@ -127,7 +127,7 @@ console.log(rep);
 ```
 var FIBOS = require("fibos.js");
 var config = {
-    chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+    chainId: "EOS MainNet 主网chainId",
     priKey: "你的 EOS 私钥",
     httpEndpoint: "EOS MainNet 主网RPC地址",
     verbose: false,
@@ -183,7 +183,7 @@ var FIBOS = require("fibos.js");
 var config = {
     chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
     priKey: "",
-    httpEndpoint: "ca-rpc.fibos.io:8870",
+    httpEndpoint: "http://ca-rpc.fibos.io:8870",
     verbose: false,
 }
 var fibos_client = FIBOS({
@@ -228,7 +228,7 @@ var FIBOS = require("fibos.js");
 var config = {
     chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
     priKey: "你的 FIBOS 私钥",
-    httpEndpoint: "ca-rpc.fibos.io:8870",
+    httpEndpoint: "http://ca-rpc.fibos.io:8870",
     verbose: false,
 }
 var fibos_client = FIBOS({
