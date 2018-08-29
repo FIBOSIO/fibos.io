@@ -6,3 +6,5 @@
 
 - [FO 兑换教程](./exchangefo.md)
 
+- [EOS 兑换教程](./exchangeeos.md)
+
