@@ -2,9 +2,17 @@
 
 UTC 时间 2018 年 8 月 28 日 0 时，FIBOS 主网上线成功。新加坡、首尔、东京、加拿大、弗吉尼亚五大节点接入成功，均已成功出块。
 
-FIBOS 发行通证总数 100 亿，其中开发团队10%，机构预留 20%，社区基金 20%，开放兑换 50%。
-
 主网上线以后引起了强烈反响，那么如何加入 FIBOS 兑换 FO 呢？本文将带你详细了解兑换流程。
+
+FO 通证的基础情况如下：
+
+【通证规划】合计 100 亿，开放兑换 50 %，保留通证 50 %（开发团队 10 %，机构预留 20 %，社区基金20 %）。
+
+【保留通证】合计 50 亿，不可流通，兑换。在填充完相应保留通证准备金后，相应部分的通证才能解锁。解锁后的通证才能进行兑换、抵押以及买卖RAM等操作。
+
+【起始换算】1 EOS = 1000 FO
+
+【初始 CW 】11%， CW 值会根据项目发展情况自动调整（包含但不限于节点发工资、销毁RAM手续费以及域名拍卖费用）。
 
 # FO 兑换教程
 
@@ -28,7 +36,7 @@ var pubkey = FIBOS.modules.ecc.privateToPublic(prikey); //公钥
 **请求 URL:**
 
 ```
-暂未公布
+http://tunnel.fibos.io/1.0/app/token/create
 ```
 
 **请求方式:**
@@ -51,14 +59,14 @@ POST
 ```
 var http = require('http');
 var httpClient = new http.Client();
-var httpServerHost = "";
-var account = "xxx"  你的 FIBOS 账户名
-var pubkey = "xxx" 你的 FIBOS 公钥
+var httpServerHost = "http://tunnel.fibos.io/1.0/app/token/create";
+var account = "xxx";  //你的 FIBOS 账户名
+var pubkey = "xxx"; //你的 FIBOS 公钥
 var rep = httpClient.post(httpServerHost, {
-			json: {
-					account: account,
-					pubkey: pubkey
-			}
+    json: {
+        account: account,
+        pubkey: pubkey
+    }
 }).json()
 console.log(rep);
 ```
@@ -87,7 +95,7 @@ console.log(rep);
 
   ```
   let ctx = client.contractSync("eosio.token");
-  let result = ctx.transferSync(eosaccount, "账号暂未公布", value, memo);
+  let result = ctx.transferSync(eosaccount, "fiboscouncil", value, memo);
   ```
 
   **方法说明:**
@@ -97,29 +105,29 @@ console.log(rep);
   **实例**
 
 ```
-  var FIBOS = require("fibos.js");
-  var config = {
-      chainId:"EOS MainNet 主网chainId",
-      priKey:"你的 EOS 私钥",
-      httpEndpoint:"EOS MainNet 主网RPC地址",
-      verbose: false,
-  }
-  var eos_client = FIBOS({
-          chainId: config.chainId,
-          keyProvider: config.priKey,
-          httpEndpoint: config.httpEndpoint,
-          verbose: false,
-          logger: {
-              log: null,
-              error: null
-          }
-  })
-  let eosaccount = "" // 你的 EOS 账户名
-  let value = "1.0000"+" EOS"; //兑换 EOS 数量
-  let ctx = eos_client.contractSync("eosio.token");
-  let memo = "fibosmainnet"; //填入你的fibso 账号
-  let result = ctx.transferSync(eosaccount, "账号暂未公布", value, memo);
-  console.log(result);
+var FIBOS = require("fibos.js");
+var config = {
+    chainId: "EOS MainNet 主网chainId",
+    priKey: "你的 EOS 私钥",
+    httpEndpoint: "EOS MainNet 主网RPC地址",
+    verbose: false,
+}
+var eos_client = FIBOS({
+    chainId: config.chainId,
+    keyProvider: config.priKey,
+    httpEndpoint: config.httpEndpoint,
+    verbose: false,
+    logger: {
+        log: null,
+        error: null
+    }
+})
+let eosaccount = "" // 你的 EOS 账户名
+let value = "1.0000" + " EOS"; //兑换 EOS 数量
+let ctx = eos_client.contractSync("eosio.token");
+let memo = "fibosmainnet"; //填入你的fibso 账号
+let result = ctx.transferSync(eosaccount, "fiboscouncil", value, memo);
+console.log(result);
 ```
 
   **实例说明:**
@@ -148,26 +156,28 @@ fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "ac
 
   **实例:**
 
+ `FIBOS MainNet 主网RPC地址` 见 [FIBOS 账号注册教程](createAccount.md)。
+
   ```
-  var FIBOS = require("fibos.js");
-  var config = {
-      chainId:"FIBOS MainNet 主网chainId",
-      priKey:"",
-      httpEndpoint:"FIBOS MainNet 主网RPC地址",
-      verbose: false,
-  }
-  var fibos_client = FIBOS({
-  		chainId: config.chainId,
-  		keyProvider: config.priKey,
-  		httpEndpoint: config.httpEndpoint,
-  		verbose: false,
-  		logger: {
-  			log: null,
-  			error: null
-  		}
-  })
-  var rs = fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "accounts");
-  console.log(rs);
+var FIBOS = require("fibos.js");
+var config = {
+    chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+    priKey: "",
+    httpEndpoint: "FIBOS MainNet 主网RPC地址",
+    verbose: false,
+}
+var fibos_client = FIBOS({
+    chainId: config.chainId,
+    keyProvider: config.priKey,
+    httpEndpoint: config.httpEndpoint,
+    verbose: false,
+    logger: {
+        log: null,
+        error: null
+    }
+})
+var rs = fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "accounts");
+console.log(rs);
   ```
 
   **实例说明:**
@@ -182,7 +192,7 @@ fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "ac
 
 ```
 let ctx = client.contractSync("eosio.token");
-let result = ctx.exchangeSync(owner, quantity, tosymbol,memo);
+let result = ctx.exchangeSync(owner, quantity, tosymbol, memo);
 ```
 
 **方法说明:**
@@ -191,28 +201,30 @@ let result = ctx.exchangeSync(owner, quantity, tosymbol,memo);
 
 **实例:**
 
+其中 `FIBOS MainNet 主网RPC地址` 见 [FIBOS 账号注册教程](createAccount.md)。
+
 ```
 var FIBOS = require("fibos.js");
-  var config = {
-      chainId:"FIBOS MainNet 主网chainId",
-      priKey:"你的 FIBOS 私钥",
-      httpEndpoint:"FIBOS MainNet 主网RPC地址",
-      verbose: false,
-  }
-  var fibos_client = FIBOS({
-  		chainId: config.chainId,
-  		keyProvider: config.priKey,
-  		httpEndpoint: config.httpEndpoint,
-  		verbose: false,
-  		logger: {
-  			log: null,
-  			error: null
-  		}
-  })
-  
+var config = {
+    chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+    priKey: "你的 FIBOS 私钥",
+    httpEndpoint: "FIBOS MainNet 主网RPC地址",
+    verbose: false,
+}
+var fibos_client = FIBOS({
+    chainId: config.chainId,
+    keyProvider: config.priKey,
+    httpEndpoint: config.httpEndpoint,
+    verbose: false,
+    logger: {
+        log: null,
+        error: null
+    }
+})
+
 let ctx = fibos_client.contractSync("eosio.token");
-var result = ctx.exchangeSync("你的 FIBOS 账户名"，`10.0000 EOS@eosio`, `0.0000 FO@eosio`, `exchange EOS to FO`, {
-authorization: "你的FIBOS账户名"
+var result = ctx.exchangeSync("你的 FIBOS 账户名", `10.0000 EOS@eosio`, `0.0000 FO@eosio`, `exchange EOS to FO`, {
+    authorization: "你的FIBOS账户名"
 });
 console.log(result);
 ```
