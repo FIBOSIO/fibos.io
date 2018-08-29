@@ -38,11 +38,9 @@ Vue.component('Message', {
       </p>
       <div class="tele-message-content-wrapper">
         <div class="tele-message-content" >
-        <ul class="tele-message-list">
-        <li v-for="format in message.messagelist">
-        {{ format }}
-        </li>
-        </ul>
+        <div v-for="content in message.messagelist" :class="!content ? 'textdiv' : ''">
+        {{content}}
+        </div>
         </div>
         <div class="tele-message-time">
           <span>{{message.date}}</span>
@@ -104,33 +102,48 @@ Vue.component('App', {
       }
       this.collapse = !this.collapse;
     },
-    pushMessage(messages) {
-      let latestMassage = this.messages.concat(messages)
-      this.messages = latestMassage.map(function (ele) {
-        if (ele.text) {
-          
-          var messagelist = ele.text.split('↵');
-         
-          ele.messagelist = messagelist;
-          alert("messagelist:"+messagelist)
-          return ele
-        }
-      });
+    pushMessage(messages, isHistory) {
       // let latestMassage = this.messages.concat(messages)
       // this.messages = latestMassage.map(function (ele) {
       //   if (ele.text) {
-      //     var message = ele.text.replace(/\r|\n|↵/g,'<br/>');
-      //     ele.message = message;
+
+      //     var messagelist = ele.text.split('↵');
+
+      //     // ele.messagelist = messagelist;
+      //     alert("messagelist:"+messagelist.length)
       //     return ele
       //   }
       // });
-      // let e = this.$refs.messages;
-      // scroll = e.scrollHeight - e.scrollTop;
-      // if (scroll >= 440 && scroll <= 600) {
-      //   this.$nextTick(function () {
-      //     e.scrollTop = e.scrollHeight;
-      //   });
-      // }
+      let latestMassage;
+      if (isHistory) {
+        latestMassage = messages.concat(this.messages);
+      } else {
+        latestMassage = this.messages.concat(messages)
+      }
+      this.messages = latestMassage.map(function (ele) {
+        if (ele.text) {
+          var escapetext = escape(ele.text)
+          var escapetextlist = escapetext.split("%0A")
+          var messagelist = escapetextlist.map(function (ele) {
+            return unescape(ele);
+          })
+          ele.messagelist = messagelist;
+          return ele
+        }
+      });
+
+      let e = this.$refs.messages;
+      scroll = e.scrollHeight - e.scrollTop;
+      if (isHistory) {
+        this.$nextTick(function () {
+          e.scrollTop = e.scrollHeight;
+        });
+      }
+      if (scroll >= 300 && scroll <= 600) {
+        this.$nextTick(function () {
+          e.scrollTop = e.scrollHeight;
+        });
+      }
 
     },
     pushMembers(data) {
@@ -141,18 +154,30 @@ Vue.component('App', {
       var protocol = window.location.protocol
       var host = window.location.host
 
+      // var message = [{
+      //   text:"sadasd↵↵1111",
+      //   id:1,
+      //   name
+      // }]
+      // this.pushMessage(message);
+
       //this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
-      this.socket = new WebSocket('ws://192.168.1.102:9090/1.0/push');
+      this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
+
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
         if (d.data && d.data.messages) {
-          this.pushMessage(d.data.messages);
-          $('ul.messages').scrollTop($('ul.messages')[0].scrollHeight)
+          this.pushMessage(d.data.messages, d.data.isHistory);
+          // if ($('ul.messages')[0].scrollHeight = $('ul.messages').scrollTop() + $(".wrap").height()) {
+          //   $('ul.messages').scrollTop($('ul.messages')[0].scrollHeight)
+          // }
         }
         if (d.data && d.data.members) {
           this.pushMembers(d.data.members);
         }
       };
+
+
     }
   },
   computed: {
