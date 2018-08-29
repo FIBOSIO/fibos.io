@@ -70,10 +70,12 @@ Vue.component('App', {
             </ul>
           </div>
           <div class="bottom">
-          <div class="bottom-title">
+            <div class="bottom-title">
+           <a @click="toTed">
           加入电报群和大神一起聊技术
-          </div>
-          <img src="/imgs/toggle-collapse.png" class="bottom-img"/>
+            </a>
+            </div>
+            <img src="/imgs/toggle-collapse.png" class="bottom-img" @click="toTed"/>
           </div>
 
         </div>
@@ -101,6 +103,9 @@ Vue.component('App', {
         return;
       }
       this.collapse = !this.collapse;
+    },
+    toTed(){
+      window.open('/t.html');
     },
     pushMessage(messages, isHistory) {
       // let latestMassage = this.messages.concat(messages)
@@ -161,8 +166,9 @@ Vue.component('App', {
       // }]
       // this.pushMessage(message);
 
-      //this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
-      this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
+      this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
+      //this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
+      //this.socket = new WebSocket('ws://fibos.io/1.0/push');
 
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);

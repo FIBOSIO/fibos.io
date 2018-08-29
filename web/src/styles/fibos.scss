@@ -1046,12 +1046,20 @@ border-radius: 0 0 12px 12px;
 position: absolute;
 }
 
+#tele .bottom img{
+  cursor: pointer;
+}
+
 #tele .bottom-title{
   padding-top: 12px;
   font-size: 12px;
   color: #1199DD;
   position: relative;
   margin-left: 40px;
+}
+
+#tele .bottom-title a{
+  cursor: pointer
 }
 
 #tele .bottom-img{
