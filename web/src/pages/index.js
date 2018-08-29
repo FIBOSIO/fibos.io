@@ -71,7 +71,7 @@ Vue.component('App', {
           </div>
           <div class="bottom">
           <div class="bottom-title">
-          加入电报群和大神一期聊技术
+          加入电报群和大神一起聊技术
           </div>
           <img src="/imgs/toggle-collapse.png" class="bottom-img"/>
           </div>
