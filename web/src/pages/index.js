@@ -28,6 +28,8 @@ var browser = {
   language: (navigator.browserLanguage || navigator.language).toLowerCase()
 };
 
+
+
 Vue.component('Message', {
   template: `
     <div class="message">
@@ -36,11 +38,11 @@ Vue.component('Message', {
       </p>
       <div class="tele-message-content-wrapper">
         <div class="tele-message-content" >
-          <ul class="tele-message-list">
-            <li v-for="format in message.messagelist">
-              {{format}}
-            </li>
-          </ul>
+        <ul class="tele-message-list">
+        <li v-for="format in message.messagelist">
+        {{ format }}
+        </li>
+        </ul>
         </div>
         <div class="tele-message-time">
           <span>{{message.date}}</span>
@@ -104,35 +106,48 @@ Vue.component('App', {
     },
     pushMessage(messages) {
       let latestMassage = this.messages.concat(messages)
-      this.messages = latestMassage.map(function(ele){
-        if(ele.text){
-          var messagelist = ele.text.split("/n");
+      this.messages = latestMassage.map(function (ele) {
+        if (ele.text) {
+          
+          var messagelist = ele.text.split('↵');
+         
           ele.messagelist = messagelist;
+          alert("messagelist:"+messagelist)
           return ele
         }
       });
-      let e = this.$refs.messages;
-      scroll = e.scrollHeight - e.scrollTop;
-      if (scroll >= 440 && scroll <= 600) {
-        this.$nextTick(function () {
-          e.scrollTop = e.scrollHeight;
-        });
-      }
+      // let latestMassage = this.messages.concat(messages)
+      // this.messages = latestMassage.map(function (ele) {
+      //   if (ele.text) {
+      //     var message = ele.text.replace(/\r|\n|↵/g,'<br/>');
+      //     ele.message = message;
+      //     return ele
+      //   }
+      // });
+      // let e = this.$refs.messages;
+      // scroll = e.scrollHeight - e.scrollTop;
+      // if (scroll >= 440 && scroll <= 600) {
+      //   this.$nextTick(function () {
+      //     e.scrollTop = e.scrollHeight;
+      //   });
+      // }
+
     },
     pushMembers(data) {
       this.members = data;
     },
     initWebsocket() {
-      
+
       var protocol = window.location.protocol
       var host = window.location.host
 
       //this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
-  this.socket = new WebSocket('ws://192.168.1.102:9090/1.0/push');
+      this.socket = new WebSocket('ws://192.168.1.102:9090/1.0/push');
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
         if (d.data && d.data.messages) {
           this.pushMessage(d.data.messages);
+          $('ul.messages').scrollTop($('ul.messages')[0].scrollHeight)
         }
         if (d.data && d.data.members) {
           this.pushMembers(d.data.members);
