@@ -38,7 +38,7 @@ POST
 
 > 注意:
 >
-> 1).FIBOS 账户数字必须是1-5，字母a-z(小写)，长度必须为12位
+> 1).FIBOS 账户数字必须是1-5，字母a-z(小写)，长度必须为12位，且不要为纯数字。
 >
 > 2).FO 公钥名称必须为 FO 开头例如 FO8b21gQczLmdpmYeaLAj7ErmDCwswaUzkZH3zBTz9QEibK79pVE
 
