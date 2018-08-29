@@ -84,6 +84,8 @@ fibos sync_node.js
 
 (* BP 区块生产者)
 
+> 重要提示：使用 Producer 身份发起注册申请，最好 producer key 不要和 active key 一样！
+
 如果节点需要申请注册成为 FIBOS TestNet 的 区块生产者，需要涉及到3个方面：
 
 - 配置 Producer 信息启动 FIBOS 节点服务

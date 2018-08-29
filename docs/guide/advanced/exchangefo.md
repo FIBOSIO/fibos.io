@@ -87,9 +87,29 @@ console.log(rep);
 
 ### 跨链转账和兑换
 
+- 重要提示：为防止出现转账失败的情况：
+
+- - 请勿直接通过交易所转账（建议使用EOS钱包转账），通过交易所转账时，一旦遇到memo填写错误的情况，则资产将会丢失且无法找回！
+
+  - 请再三确认memo的填写是否正确（memo请填写“您在FIBOS已注册成功的账户名”），一旦填错，可能会导致资产丢失：
+
+  - - 如果因您填写的memo账户不存在，导致资产丢失，则系统查到后，会将这笔资产转回您的打款账户；
+    - 如果您填写的memo错误，但正好是其他人的FIBOS账户，那么很抱歉，这笔资产将无法转回您的账户。
+
 * 使用 FIBOS 客户端
 
   #### 发起转账操作
+
+  FIBOS 主网部分 RPC 地址如下所示:
+
+  | 位置     | RPC 地址                    |
+  | -------- | --------------------------- |
+  | 新加坡   | http://se-rpc.fibos.io:8870 |
+  | 首尔     | http://sl-rpc.fibos.io:8870 |
+  | 东京     | http://to-rpc.fibos.io:8870 |
+  | 加拿大   | http://ca-rpc.fibos.io:8870 |
+  | 伦敦     | http://ln-rpc.fibos.io:8870 |
+  | 弗吉尼亚 | http://va-rpc.fibos.io:8870 |
 
   **调用方法:**
 
@@ -163,7 +183,7 @@ var FIBOS = require("fibos.js");
 var config = {
     chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
     priKey: "",
-    httpEndpoint: "FIBOS MainNet 主网RPC地址",
+    httpEndpoint: "http://ca-rpc.fibos.io:8870",
     verbose: false,
 }
 var fibos_client = FIBOS({
@@ -208,7 +228,7 @@ var FIBOS = require("fibos.js");
 var config = {
     chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
     priKey: "你的 FIBOS 私钥",
-    httpEndpoint: "FIBOS MainNet 主网RPC地址",
+    httpEndpoint: "http://ca-rpc.fibos.io:8870",
     verbose: false,
 }
 var fibos_client = FIBOS({
