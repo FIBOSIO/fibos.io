@@ -1,8 +1,6 @@
-上文已经教会了大家如何加入 FIBOS 兑换 FO，本文将教会大家大家如何将 FIBOS 链上的 FO 兑换成 EOS 链上的 EOS！
+上文已经教会了大家如何加入 FIBOS 兑换 FO，本文将教会大家如何将 FIBOS 链上的 FO 兑换成 EOS 链上的 EOS！
 
 # EOS 兑换教程
-
-为了满足开发者能够在 FIBOS 主网上线后便可创建 FIBOS 账号，FIBOS 团队提供给开发者完整的开发文档。
 
 学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
 
@@ -19,7 +17,7 @@ FIBOS 主网部分 RPC 地址如下所示:
 | 伦敦     | http://ln-rpc.fibos.io:8870 |
 | 弗吉尼亚 | http://va-rpc.fibos.io:8870 |
 
-调用方法:**
+**调用方法:**
 
 ```
 let ctx = client.contractSync("eosio.token");
@@ -31,8 +29,6 @@ let result = ctx.exchangeSync(owner, quantity, tosymbol, memo);
  使用 `exchangeSync()` 方法,在 FIBOS 上使用 Bancor 进行 FO 与 EOS 通证之间兑换
 
 **实例:**
-
-其中 `FIBOS MainNet 主网RPC地址` 见 [FIBOS 账号注册教程](createAccount.md)。
 
 ```
 var FIBOS = require("fibos.js");
@@ -180,7 +176,3 @@ console.log(result);
 | memo       | 备注 /填入你 FIBOS 账号名 |
 
 
-
-
-
-#### 
