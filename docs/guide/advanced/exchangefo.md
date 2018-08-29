@@ -102,14 +102,14 @@ console.log(rep);
 
   FIBOS 主网部分 RPC 地址如下所示:
 
-  | 位置     | RPC 地址                    |
-  | -------- | --------------------------- |
-  | 新加坡   | http://se-rpc.fibos.io:8870 |
-  | 首尔     | http://sl-rpc.fibos.io:8870 |
-  | 东京     | http://to-rpc.fibos.io:8870 |
-  | 加拿大   | http://ca-rpc.fibos.io:8870 |
-  | 伦敦     | http://ln-rpc.fibos.io:8870 |
-  | 弗吉尼亚 | http://va-rpc.fibos.io:8870 |
+| 位置     | RPC 地址                    |
+| -------- | --------------------------- |
+| 新加坡   | http://se-rpc.fibos.io:8870 |
+| 首尔     | http://sl-rpc.fibos.io:8870 |
+| 东京     | http://to-rpc.fibos.io:8870 |
+| 加拿大   | http://ca-rpc.fibos.io:8870 |
+| 伦敦     | http://ln-rpc.fibos.io:8870 |
+| 弗吉尼亚 | http://va-rpc.fibos.io:8870 |
 
   **调用方法:**
 
