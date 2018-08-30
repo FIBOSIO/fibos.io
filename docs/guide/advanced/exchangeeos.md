@@ -173,6 +173,6 @@ console.log(result);
 | eosaccount   | 转出方                   |
 | fiboscouncil | 指定转入方               |
 | value        | 数量:1.0000 EOS          |
-| memo         | 备注:填入你 FIBOS 账号名 |
+| memo         | 备注:填入你 EOS 账号名 |
 
 
