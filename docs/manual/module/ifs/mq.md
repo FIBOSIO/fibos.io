@@ -12,7 +12,7 @@ Message mq.Message;
 
 --------------------------
 ### HttpHandler
-**创建一个 [http](./http.md) 协议处理器对象，参见 [HttpHandler](../../object/ifs/HttpHandler.md)**
+**创建一个 [http](http.md) 协议处理器对象，参见 [HttpHandler](../../object/ifs/HttpHandler.md)**
 
 ```JavaScript
 HttpHandler mq.HttpHandler;
