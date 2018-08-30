@@ -949,7 +949,7 @@ section.links {
 #tele {
   position: fixed;
   right: 12px;
-  top: 150px;
+  bottom: 120px;
 }
 
 #tele .bg {
@@ -959,6 +959,7 @@ section.links {
   background: rgba(255,255,255,0.98);
   background-size: 100% 100%;
   border-radius: 12px;
+  box-shadow: 0 2px 25px 0 rgba(0,0,0,.2);
 }
 
 #tele.tele-collapse .bg {
@@ -1091,9 +1092,11 @@ position: absolute;
   position: fixed;
   width: 60px;
   height: 60px;
-  top: 570px;
+  bottom: 30px;
   right: 50px;
   cursor: pointer;
+  box-shadow: 0 2px 25px 0 rgba(0,0,0,.2);
+  border-radius: 50%;
 }
 
 #tele .message .tele-message-list{
@@ -1113,7 +1116,7 @@ position: absolute;
     width: 50px;
     height: 50px;
     right: 30px;
-    top: 90vh;
+    bottom: 30px;
     cursor: pointer;
   }
 }
