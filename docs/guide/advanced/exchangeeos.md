@@ -146,7 +146,7 @@ var config = {
     httpEndpoint: "http://ca-rpc.fibos.io:8870",
     verbose: false,
 }
-var eos_client = FIBOS({
+var fibos_client = FIBOS({
     chainId: config.chainId,
     keyProvider: config.priKey,
     httpEndpoint: config.httpEndpoint,
@@ -158,8 +158,8 @@ var eos_client = FIBOS({
 })
 let eosaccount = "" // 你的 FIBOS 账户名
 let value = "1.0000" + " EOS"; //转账 EOS 数量
-let ctx = eos_client.contractSync("eosio.token");
-let memo = "eoseoseoseos"; //填入你的eos 账号
+let ctx = fibos_client.contractSync("eosio.token");
+let memo = "eoseoseoseos"; //填入你的 EOS 账号
 let result = ctx.transferSync(eosaccount, "fiboscouncil", value, memo);
 console.log(result);
 ```
@@ -168,11 +168,11 @@ console.log(result);
 
   实例操作中,配置好FIBOS MainNet 和 FIBOS RPC 地址 和 FIBOS 私钥后,便初始化了一个 fibos 客户端,通过调用 `transferSync` 方法,传入四个参数:
 
-| 参数       | 含义                      |
-| ---------- | ------------------------- |
-| eosaccount | 转出方                    |
-| xxxx       | 转入方                    |
-| value      | 数量:1.0000 EOS           |
-| memo       | 备注 /填入你 FIBOS 账号名 |
+| 参数         | 含义              |
+| ------------ | ----------------- |
+| eosaccount   | 转出方            |
+| fiboscouncil | 固定值            |
+| value        | 数量:1.0000 EOS   |
+| memo         | 填入你的 EOS 账号 |
 
 
