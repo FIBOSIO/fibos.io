@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include "../common/meta.html" -->
+    <link rel="stylesheet" href="css/faq.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body class="doc-container">
+    <div class="inside-container">
+        <!-- include "../common/header.html" -->
+        <div class="band">
+            <div class="container">
+                <span class="group">
+                    <!-- <%=groups[group].etitle%> -->
+                    FAQ
+                </span>
+                <!-- <div class="search">
+                    <input type="text" class="searchbox" placeholder="Search">
+                </div> -->
+            </div>
+        </div>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li>
+                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a >
+                </li>
+                <li>
+                    <a onclick="javascript:window.location.href = '/faq'" style="cursor: pointer;color: #08c">&nbsp;FAQ</a >
+                </li>
+                {{#if name}}
+                <li class="active">
+                    &nbsp;{{name}}
+                </li>
+                {{/if}}
+            </ol>
+        </div>
+        <div class="page-body">
+            <div class="container row">
+                <div class="sidebar hidden-xs col-lg-2">
+                    <div class="panel-group" id="accordion" role="tablist">
+                        {{#each classify}}
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h4 class="card-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href=" " onclick="javascript: window.location.href = '/faq?id={{id}}'" aria-controls="">
+                                        {{name}}
+                                    </a >
+                                </h4>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <!-- <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h4 class="card-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
+                                        目录2
+                                    </a >
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h4 class="card-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="" aria-controls="">
+                                        目录3
+                                    </a >
+                                </h4>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div id="accordion">
+                        {{#each qa}}
+                        <div class="faq">
+                            <div class="faq-header" id="heading{{id}}">
+                                <h2 class="h2" data-toggle="collapse" data-target="#collapse{{id}}" aria-expanded="true" aria-controls="collapse{{id}}">
+                                    {{question}}
+                                </h2>
+                            </div>
+                            {{#if description}}
+                            <div class="faq-desc">
+                                {{description}}
+                            </div>
+                            {{/if}}
+                            <div id="collapse{{id}}" class="collapse" aria-labelledby="heading{{id}}" data-parent="#accordion">
+                                <div class="faq-body">
+                                    {{{answer}}}
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+    </div>
+    <!-- include "../common/footer.html" -->
+</body>
+
+</html>

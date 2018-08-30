@@ -109,7 +109,7 @@ static X509Cert crypto.loadCert(String filename);
 返回结果:
 * [X509Cert](../../object/ifs/X509Cert.md), 返回包含证书的对象
 
-loadFile 加载 mozilla 的 certdata,txt， 可于 [http](./http.md)://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt 下载使用
+loadFile 加载 mozilla 的 certdata,txt， 可于 [http](http.md)://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt 下载使用
 
 --------------------------
 ### loadCrl
