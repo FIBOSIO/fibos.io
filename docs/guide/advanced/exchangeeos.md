@@ -146,7 +146,7 @@ var config = {
     httpEndpoint: "http://ca-rpc.fibos.io:8870",
     verbose: false,
 }
-var eos_client = FIBOS({
+var fibos_client = FIBOS({
     chainId: config.chainId,
     keyProvider: config.priKey,
     httpEndpoint: config.httpEndpoint,
@@ -156,11 +156,11 @@ var eos_client = FIBOS({
         error: null
     }
 })
-let eosaccount = "" // 你的 FIBOS 账户名
+let fibosaccount = "" // 你的 FIBOS 账户名
 let value = "1.0000" + " EOS"; //转账 EOS 数量
-let ctx = eos_client.contractSync("eosio.token");
+let ctx = fibos_client.contractSync("eosio.token");
 let memo = "eoseoseoseos"; //填入你的eos 账号
-let result = ctx.transferSync(eosaccount, "fiboscouncil", value, memo);
+let result = ctx.transferSync(fibosaccount, "fiboscouncil", value, memo);
 console.log(result);
 ```
 
