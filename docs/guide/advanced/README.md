@@ -6,5 +6,5 @@
 
 - [FO 兑换教程](./exchangefo.md)
 
-- [EOS 兑换教程](./exchangeeos.md)
+- [FO 兑换 EOS 教程](./exchangeeos.md)
 
