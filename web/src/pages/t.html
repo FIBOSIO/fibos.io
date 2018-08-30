@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include "../common/meta.html" -->
+    <title>
+        Support Us - FIBOS，开发者友好的区块链生态系统
+    </title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'https://t.me/FIBOSIO',
+                dataType: 'json',
+                timeout: 10000,
+                complete: function (request, status) {
+                    if (status === 'timeout') {
+                        $(".t-backgroud").css("display","block")
+                    } else {
+                        window.location.href = "https://t.me/FIBOSIO"
+                    }
+                }
+            })
+        })
+    </script>
+    <style>
+        .t-backgroud {
+            width: 600px;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 100px;
+            display: none;
+        }
+
+        .t-bg {
+            width: 100%;
+        }
+
+        .t-content {
+            position: absolute;
+            top: 30%;
+            width: 700px;
+        }
+
+        .t-fl {
+            float: left;
+        }
+
+        .t-text {
+            padding-top: 30px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="t-title">
+        <div class="t-backgroud">
+            <img src="/imgs/bg.png" >
+            <div class="t-content">
+                <img src="/imgs/avtar.png " class="t-fl">
+                <div class="t-fl t-text">
+                    <h2>连接失败</h2>
+                    <h5>尝试更多方法</h5>
+                    <h5>加入Telegram和大神一起聊技术</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

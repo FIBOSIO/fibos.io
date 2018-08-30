@@ -159,8 +159,8 @@ var fibos_client = FIBOS({
 let fibosaccount = "" // 你的 FIBOS 账户名
 let value = "1.0000" + " EOS"; //转账 EOS 数量
 let ctx = fibos_client.contractSync("eosio.token");
-let memo = "eoseoseoseos"; //填入你的eos 账号
-let result = ctx.transferSync(fibosaccount, "fiboscouncil", value, memo);
+let memo = "eoseoseoseos"; //填入你的 EOS 账号
+let result = ctx.transferSync(eosaccount, "fiboscouncil", value, memo);
 console.log(result);
 ```
 

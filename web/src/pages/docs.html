@@ -2,19 +2,36 @@
 <html>
 
 <head>
-    <!-- include "../common/meta.html" -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript">
+    <link rel="icon" type="image/png" href="/imgs/favicon.ico" />
     <title>
-        <%-title%> - FIBOS，开发者友好的区块链生态系统
+        FIBOS -
+        <%=title%>
     </title>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="doc-container">
+    
     <!-- include "../common/header.html" -->
     <div class="band">
         <div class="container">
             <span class="group">
                 <!-- <%=groups[group].etitle%> -->
-                    <%=groups[group].title%>
+                <%=groups[group].title%>
             </span>
             <!-- <div class="search">
                 <input type="text" class="searchbox" placeholder="Search">
@@ -24,7 +41,10 @@
     <div class="container">
         <ol class="breadcrumb">
             <li>
-                <a href="/index.html">首页</a>
+                <a href="/" id="ToHome">首页</a>
+            </li>
+            <li>
+                <a href="/docs/guide/basic/about.md.html" id = "DevDoc">&nbsp;开发者文档</a>
             </li>
             <li>
                 <a href="<%=groups[group].url%>">
@@ -59,14 +79,14 @@
                 </div>
             </div>
 
-            <div class="content col-lg-8">
+            <div class="content col-lg-8 col-md-10">
                 <div class="content-container">
                     <%-doc%>
                         <!-- <div class="social-share" data-sites='weibo,twitter' data-description="分享"></div> -->
                 </div>
             </div>
 
-            <div class="sidebar col-lg-2 hidden-xssss">
+            <div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md">
                 <div id="toc"></div>
             </div>
         </div>
@@ -74,6 +94,9 @@
     </div>
 
     <!-- include "../common/footer.html" -->
+    <script>
+        document.body.addEventListener('touchstart', function () { });
+    </script>
 </body>
 
 </html>
