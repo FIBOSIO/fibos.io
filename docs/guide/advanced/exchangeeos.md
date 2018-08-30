@@ -156,7 +156,7 @@ var eos_client = FIBOS({
         error: null
     }
 })
-let eosaccount = "" // 你的 FIBOS 账户名
+let fibosaccount = "" // 你的 FIBOS 账户名
 let value = "1.0000" + " EOS"; //转账 EOS 数量
 let ctx = eos_client.contractSync("eosio.token");
 let memo = "eoseoseoseos"; //填入你的eos 账号
@@ -171,8 +171,8 @@ console.log(result);
 | 参数       | 含义                      |
 | ---------- | ------------------------- |
 | eosaccount | 转出方                    |
-| xxxx       | 转入方                    |
+| xxxx       | 转入方 fiboscouncil 固定                   |
 | value      | 数量:1.0000 EOS           |
-| memo       | 备注 /填入你 FIBOS 账号名 |
+| memo       | 备注 /填入你 EOS 账号名 |
 
 
