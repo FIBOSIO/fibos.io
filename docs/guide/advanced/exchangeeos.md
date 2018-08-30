@@ -1,6 +1,6 @@
 上文已经教会了大家如何加入 FIBOS 兑换 FO，本文将教会大家如何将 FIBOS 链上的 FO 兑换成 EOS 链上的 EOS！
 
-# EOS 兑换教程
+# FO 兑换 EOS 教程
 
 学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
 
@@ -166,13 +166,22 @@ console.log(result);
 
   **实例说明:**
 
-  实例操作中,配置好FIBOS MainNet 和 FIBOS RPC 地址 和 FIBOS 私钥后,便初始化了一个 fibos 客户端,通过调用 `transferSync` 方法,传入四个参数:
+  实例操作中,配置好FIBOS MainNet 和 FIBOS RPC 地址 和 FIBOS 私钥后,便初始化了一个 FIBOS 客户端,通过调用 `transferSync` 方法,传入四个参数:
 
+<<<<<<< HEAD
 | 参数         | 含义              |
 | ------------ | ----------------- |
 | eosaccount   | 转出方            |
 | fiboscouncil | 固定值            |
 | value        | 数量:1.0000 EOS   |
 | memo         | 备注:你的 EOS 账号 |
+=======
+| 参数         | 含义                     |
+| ------------ | ------------------------ |
+| eosaccount   | 转出方                   |
+| fiboscouncil | 指定转入方               |
+| value        | 数量:1.0000 EOS          |
+| memo         | 备注:填入你 FIBOS 账号名 |
+>>>>>>> d1c107c7b26bbfd1fa51f7b7bf7df547602c6d47
 
 
