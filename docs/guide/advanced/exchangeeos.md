@@ -168,11 +168,11 @@ console.log(result);
 
   实例操作中,配置好FIBOS MainNet 和 FIBOS RPC 地址 和 FIBOS 私钥后,便初始化了一个 FIBOS 客户端,通过调用 `transferSync` 方法,传入四个参数:
 
-| 参数           | 含义                     |
-| -------------- | ------------------------ |
-| eosaccount     | 转出方                   |
-| "fiboscouncil" | 指定转入方               |
-| value          | 数量:1.0000 EOS          |
-| memo           | 备注:填入你 FIBOS 账号名 |
+| 参数           | 含义                   |
+| -------------- | ---------------------- |
+| eosaccount     | 转出方                 |
+| "fiboscouncil" | 指定转入方             |
+| value          | 数量:1.0000 EOS        |
+| memo           | 备注:填入你 EOS 账号名 |
 
 

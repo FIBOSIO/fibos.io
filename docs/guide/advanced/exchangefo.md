@@ -154,12 +154,12 @@ console.log(result);
 
   实例操作中,配置好EOS MainNet 和 EOS RPC 地址 和 EOS 私钥后,便初始化了一个 eos 客户端,通过调用 `transferSync` 方法,传入四个参数:
 
-| 参数         | 含义                      |
-| ------------ | ------------------------- |
-| eosaccount   | 转出方                    |
-| fiboscouncil | 转入方                    |
-| value        | 数量:1.0000 EOS           |
-| memo         | 备注 /填入你 FIBOS 账号名 |
+| 参数           | 含义                      |
+| -------------- | ------------------------- |
+| eosaccount     | 转出方                    |
+| "fiboscouncil" | 转入方                    |
+| value          | 数量:1.0000 EOS           |
+| memo           | 备注 /填入你 FIBOS 账号名 |
 
   #### 查询 FIBOS 余额
 
