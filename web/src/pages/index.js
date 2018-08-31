@@ -88,7 +88,10 @@ Vue.component('App', {
       collapse: browser.versions.mobile,
       messages: [],
       isMobile: browser.versions.mobile,
-      members: 0
+      members: 0,
+      allHistoryMessage: [],
+      page: 0,
+      currentPage: 1
     };
   },
   created() {
@@ -104,7 +107,7 @@ Vue.component('App', {
       }
       this.collapse = !this.collapse;
     },
-    toTed(){
+    toTed() {
       window.open('/t.html');
     },
     pushMessage(messages, isHistory) {
@@ -121,21 +124,14 @@ Vue.component('App', {
       // });
       let latestMassage;
       if (isHistory) {
-        latestMassage = messages.concat(this.messages);
+        this.allHistoryMessage = messages;
+        this.page = (messages.length % 20 === 0 ? 0 : 1) + parseInt(messages.length / 20);
+        let initMessage = messages.slice(messages.length - 20);
+        latestMassage = initMessage.concat(this.messages);
       } else {
         latestMassage = this.messages.concat(messages)
       }
-      this.messages = latestMassage.map(function (ele) {
-        if (ele.text) {
-          var escapetext = escape(ele.text)
-          var escapetextlist = escapetext.split("%0A")
-          var messagelist = escapetextlist.map(function (ele) {
-            return unescape(ele);
-          })
-          ele.messagelist = messagelist;
-          return ele
-        }
-      });
+      this.messages = this.transferMessage(latestMassage);
 
       let e = this.$refs.messages;
       scroll = e.scrollHeight - e.scrollTop;
@@ -154,6 +150,55 @@ Vue.component('App', {
     pushMembers(data) {
       this.members = data;
     },
+    transferMessage(messages) {
+      return messages.map(function (ele) {
+        if (ele.text) {
+          var escapetext = escape(ele.text)
+          var escapetextlist = escapetext.split("%0A")
+          var messagelist = escapetextlist.map(function (ele) {
+            return unescape(ele);
+          })
+          ele.messagelist = messagelist;
+          return ele
+        }
+      });
+    },
+
+    // addMessage() {
+    //   let currentPage = this.currentPage;
+    //   alert("currentPage:" + currentPage);
+    //   let allHistoryMessage = this.allHistoryMessage;
+    //   alert("allHistoryMessage:" + allHistoryMessage.length);
+    //   let nextMessages = [];
+    //   if (currentPage < this.page) {
+    //     nextMessages = allHistoryMessage.slice(allHistoryMessage.length - (currentPage + 1) * 20, allHistoryMessage.length - currentPage * 20)
+    //   } else {
+    //     nextMessages = allHistoryMessage.slice(0, allHistoryMessage.length - currentPage * 20);
+    //   }
+    //   alert("nextMessages:" + nextMessages.length);
+    //   this.messages = this.messages.shift(this.transferMessage(nextMessages))
+    //   this.currentPage = this.currentPage + 1;
+    // },
+
+    scrollDid() {
+      let e = this.$refs.messages;
+      // let currentPage = this.currentPage;
+      // scroll = e.scrollHeight - e.scrollTop;
+      let that = this;
+      $(".messages").scroll(function () {
+        if (e.scrollTop === 0 && that.currentPage < that.page) {
+          let nextMessages = [];
+          if (that.currentPage + 1 < that.page) {
+            nextMessages = that.allHistoryMessage.slice(that.allHistoryMessage.length - (that.currentPage + 1) * 20, that.allHistoryMessage.length - that.currentPage * 20)
+          } else {
+            nextMessages = that.allHistoryMessage.slice(0, that.allHistoryMessage.length - that.currentPage * 20);
+          }
+          that.messages = that.transferMessage(nextMessages).concat(that.messages)
+          that.currentPage = that.currentPage + 1;
+        }
+      })
+    },
+
     initWebsocket() {
 
       var protocol = window.location.protocol
@@ -166,8 +211,8 @@ Vue.component('App', {
       // }]
       // this.pushMessage(message);
 
-      this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
-      //this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
+      //this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
+      this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
       //this.socket = new WebSocket('ws://fibos.io/1.0/push');
 
       this.socket.onmessage = e => {
@@ -192,7 +237,10 @@ Vue.component('App', {
         ? '/imgs/toggle-collapse.png'
         : '/imgs/toggle-open.png';
     }
-  }
+  },
+  mounted() {
+    this.scrollDid();
+  },
 });
 
 new Vue({
@@ -238,7 +286,7 @@ $(function () {
       mode: 'map', //用Map的方式使用资源文件中的值
       language: `${language === 'zh' ? 'zh' : 'en'} `,
       callback: function () {//加载成功后设置显示内容
-       
+
         $('#Home').html($.i18n.prop('Home'));
         $('#Roadmap').html($.i18n.prop('Roadmap'));
         $('#DEV_Community').html($.i18n.prop('DEV_Community'));
