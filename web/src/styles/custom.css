@@ -554,6 +554,8 @@ pre div.line-numbers {
 .doc-container>.page-body>.container .sidebar #toc .tocify-item a {
   color: #666;
   word-break: break-all;
+<<<<<<< HEAD
+=======
 }
 
 @media (min-width: 1080px) {
@@ -562,6 +564,7 @@ pre div.line-numbers {
     position: fixed;
     width: auto;
   }
+>>>>>>> 17b9a7a8ddf56b68fd9c64135101a2becae4e999
 }
 
 .doc-container>.page-body>.container .card {
