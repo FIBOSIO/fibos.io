@@ -249,8 +249,8 @@ Vue.component('App', {
       // }]
       // this.pushMessage(message);
 
-      //this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
-      this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
+      this.socket = new WebSocket(`${protocol.indexOf('https') >= 0 ? 'wss' : 'ws'}://${host}/1.0/push`)
+      //this.socket = new WebSocket('ws://115.47.142.152:9090/1.0/push');
       //this.socket = new WebSocket('ws://fibos.io/1.0/push');
 
       this.socket.onmessage = e => {
