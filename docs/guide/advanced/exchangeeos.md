@@ -69,9 +69,9 @@ console.log(result);
 
 
 
-## 转账
+## 进行 FIBOS 和 EOS 跨链转账
 
-- 重要提示：为防止出现转账失败的情况：
+- 重要提示：为防止出现跨链转账失败的情况：
 
 - - 请再三确认memo的填写是否正确（memo请填写“您的 EOS 账号”），一旦填错，可能会导致资产丢失：
 
@@ -168,11 +168,11 @@ console.log(result);
 
   实例操作中,配置好FIBOS MainNet 和 FIBOS RPC 地址 和 FIBOS 私钥后,便初始化了一个 FIBOS 客户端,通过调用 `transferSync` 方法,传入四个参数:
 
-| 参数         | 含义                     |
-| ------------ | ------------------------ |
-| eosaccount   | 转出方                   |
-| fiboscouncil | 指定转入方               |
-| value        | 数量:1.0000 EOS          |
-| memo         | 备注:填入你 FIBOS 账号名 |
+| 参数           | 含义                     |
+| -------------- | ------------------------ |
+| eosaccount     | 转出方                   |
+| "fiboscouncil" | 指定转入方               |
+| value          | 数量:1.0000 EOS          |
+| memo           | 备注:填入你 FIBOS 账号名 |
 
 
