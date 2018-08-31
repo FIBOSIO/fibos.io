@@ -133,6 +133,20 @@ header.header {
   margin: 0 auto;
 }
 
+.loadingshow{
+  display: block;
+  text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.loadingdis{
+  display: none;
+  text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
 .secone {
   padding: 100px 0 135px;
   h1.slogan {

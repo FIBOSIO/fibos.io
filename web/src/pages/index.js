@@ -64,6 +64,9 @@ Vue.component('App', {
       <img src="/imgs/blacklogo.png"/>
       </div>
           <div class="wrap">
+          <div :class = "loading ? 'loadingshow':'loadingdis'" >
+          <i class="el-icon-loading" ></i>
+          </div>
             <ul class="messages" ref="messages">
               <li class="message-container" v-for="message in messages" :key="message.id">
                 <Message :message="message"></Message>
@@ -92,7 +95,9 @@ Vue.component('App', {
       members: 0,
       allHistoryMessage: [],
       pageCount: 0,
-      currentPage: 2
+      currentPage: 2,
+      loading: false,
+      scrollHeight: 0
     };
   },
   created() {
@@ -128,8 +133,8 @@ Vue.component('App', {
         this.allHistoryMessage = messages;
         //this.page = (messages.length % 20 === 0 ? 0 : 1) + parseInt(messages.length / 20);
         this.pageCount = pageCount;
-        let initMessage = messages.slice(messages.length - 20);
-        latestMassage = initMessage.concat(this.messages);
+        //let initMessage = messages.slice(messages.length - 20);
+        latestMassage = messages.concat(this.messages);
       } else {
         latestMassage = this.messages.concat(messages)
       }
@@ -169,12 +174,15 @@ Vue.component('App', {
       //this.socket = new WebSocket(``)
       var protocol = window.location.protocol
       var host = window.location.host
-      //let url = `getTgHistory/${page}`
-      let url = `http://115.47.142.152:9090/getTgHistory/${page}`
+      let url = `getTgHistory/${page}`
+      //let url = `http://115.47.142.152:9090/getTgHistory/${page}`
+      this.loading = true;
       const result = await axios({
         method: 'Get',
         url,
       });
+      //alert(JSON.stringify(result))
+
       return result;
     },
 
@@ -200,13 +208,22 @@ Vue.component('App', {
       // scroll = e.scrollHeight - e.scrollTop;
       let that = this;
       $(".messages").scroll(function () {
-        if (e.scrollTop === 0 && that.currentPage <= that.pageCount) {
+        if (e.scrollTop === 0 && that.currentPage <= that.pageCount && !that.loading) {
+          //alert("scrollHeight:" + e.scrollHeight);
+          let currentHeight = e.scrollHeight
           let nextMessages = [];
           that.getLastPageMessage(that.currentPage).then((res) => {
-            nextMessages = res;
+            nextMessages = res.data.messages;
+            that.loading = false;
+            that.messages = that.transferMessage(nextMessages).concat(that.messages)
+            that.currentPage = that.currentPage + 1;
           }
           ).catch(() => {
             alert("请刷新页面重试")
+          }).finally(() => {
+            that.$nextTick(() => {
+              e.scrollTop = e.scrollHeight - currentHeight - 10
+            });
           })
 
           // if (that.currentPage + 1 < that.page) {
@@ -214,8 +231,7 @@ Vue.component('App', {
           // } else {
           //   nextMessages = that.allHistoryMessage.slice(0, that.allHistoryMessage.length - that.currentPage * 20);
           // }
-          that.messages = that.transferMessage(nextMessages).concat(that.messages)
-          that.currentPage = that.currentPage + 1;
+
         }
       })
     },
