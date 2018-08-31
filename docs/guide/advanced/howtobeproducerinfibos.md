@@ -148,7 +148,7 @@ ctx.delegatebwSync({
 ```javascript
 //初始化一个 fibos 客户端
 var ctx = fibos.contractSync("eosio");
-var a = ctx.voteproducerSync("voter", "proxy", "producers");
+var a = ctx.voteproducerSync("voter", "proxy", ["producers"]);
 ```
 
 **方法说明:**
@@ -177,7 +177,7 @@ var fibos = FIBOS({
 })
 var ctx = fibos.contractSync("eosio");
 
-var a = ctx.voteproducerSync("fibostest123", "", "fibosbpnode1");
+var a = ctx.voteproducerSync("fibostest123", "", ["fibosbpnode1"]);
 ```
 
 **实例说明:**
