@@ -3,22 +3,22 @@ var fs = require('fs');
 var os = require('os');
 var webpack = require('webpack');
 
-var recursiveReadSync = require('recursive-readdir-sync');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var UglifyJsParallelPlugin = require('webpack-uglify-parallel');
+var recursiveReadSync = require('recursive-readdir-sync')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var UglifyJsParallelPlugin = require('webpack-uglify-parallel')
 
-var mkdir = require('mkdir');
-var marked = require('marked');
-var ejs = require('ejs');
-var highlight = require('highlight.js');
-var Viz;
+var mkdir = require('mkdir')
+var marked = require('marked')
+var ejs = require('ejs')
+var highlight = require('highlight.js')
+var Viz
 
-var WebpackOnBuildPlugin = require('on-build-webpack');
+var WebpackOnBuildPlugin = require('on-build-webpack')
 
-var prod = process.argv.indexOf('--prod') !== -1;
-process.env.NODE_ENV = prod ? 'production' : 'development';
+var prod = process.argv.indexOf('--prod') !== -1
+process.env.NODE_ENV = prod ? 'production' : 'development'
 
 function cssLoaders(options) {
   options = options || {};
@@ -398,7 +398,7 @@ if (prod) {
   );
 } else webpack_config.devtool = 'source-map';
 
-var pages = path.resolve('./web/src/pages');
+var pages = path.resolve('./web/src/pages')
 
 recursiveReadSync(pages).forEach(function(file) {
   file = path.relative(pages, file);
@@ -441,4 +441,4 @@ recursiveReadSync(pages).forEach(function(file) {
   }
 });
 
-module.exports = webpack_config;
+module.exports = webpack_config
