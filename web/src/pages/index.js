@@ -5,6 +5,7 @@ import 'jquery.tocify';
 import '../js/jquery.i18n.properties'
 import buyfo from '../imgs/buyfo.png'
 import buyfo_en from '../imgs/buyfo-en.png'
+import axios from 'axios'
 
 var browser = {
   versions: (function () {
@@ -90,8 +91,8 @@ Vue.component('App', {
       isMobile: browser.versions.mobile,
       members: 0,
       allHistoryMessage: [],
-      page: 0,
-      currentPage: 1
+      pageCount: 0,
+      currentPage: 2
     };
   },
   created() {
@@ -110,7 +111,7 @@ Vue.component('App', {
     toTed() {
       window.open('/t.html');
     },
-    pushMessage(messages, isHistory) {
+    pushMessage(messages, isHistory, pageCount) {
       // let latestMassage = this.messages.concat(messages)
       // this.messages = latestMassage.map(function (ele) {
       //   if (ele.text) {
@@ -125,7 +126,8 @@ Vue.component('App', {
       let latestMassage;
       if (isHistory) {
         this.allHistoryMessage = messages;
-        this.page = (messages.length % 20 === 0 ? 0 : 1) + parseInt(messages.length / 20);
+        //this.page = (messages.length % 20 === 0 ? 0 : 1) + parseInt(messages.length / 20);
+        this.pageCount = pageCount;
         let initMessage = messages.slice(messages.length - 20);
         latestMassage = initMessage.concat(this.messages);
       } else {
@@ -163,6 +165,18 @@ Vue.component('App', {
         }
       });
     },
+    async getLastPageMessage(page) {
+      //this.socket = new WebSocket(``)
+      var protocol = window.location.protocol
+      var host = window.location.host
+      //let url = `getTgHistory/${page}`
+      let url = `http://115.47.142.152:9090/getTgHistory/${page}`
+      const result = await axios({
+        method: 'Get',
+        url,
+      });
+      return result;
+    },
 
     // addMessage() {
     //   let currentPage = this.currentPage;
@@ -186,13 +200,20 @@ Vue.component('App', {
       // scroll = e.scrollHeight - e.scrollTop;
       let that = this;
       $(".messages").scroll(function () {
-        if (e.scrollTop === 0 && that.currentPage < that.page) {
+        if (e.scrollTop === 0 && that.currentPage <= that.pageCount) {
           let nextMessages = [];
-          if (that.currentPage + 1 < that.page) {
-            nextMessages = that.allHistoryMessage.slice(that.allHistoryMessage.length - (that.currentPage + 1) * 20, that.allHistoryMessage.length - that.currentPage * 20)
-          } else {
-            nextMessages = that.allHistoryMessage.slice(0, that.allHistoryMessage.length - that.currentPage * 20);
+          that.getLastPageMessage(that.currentPage).then((res) => {
+            nextMessages = res;
           }
+          ).catch(() => {
+            alert("请刷新页面重试")
+          })
+
+          // if (that.currentPage + 1 < that.page) {
+          //   nextMessages = that.allHistoryMessage.slice(that.allHistoryMessage.length - (that.currentPage + 1) * 20, that.allHistoryMessage.length - that.currentPage * 20)
+          // } else {
+          //   nextMessages = that.allHistoryMessage.slice(0, that.allHistoryMessage.length - that.currentPage * 20);
+          // }
           that.messages = that.transferMessage(nextMessages).concat(that.messages)
           that.currentPage = that.currentPage + 1;
         }
@@ -218,7 +239,7 @@ Vue.component('App', {
       this.socket.onmessage = e => {
         var d = JSON.parse(e.data);
         if (d.data && d.data.messages) {
-          this.pushMessage(d.data.messages, d.data.isHistory);
+          this.pushMessage(d.data.messages, d.data.isHistory, d.data.pageCount);
           // if ($('ul.messages')[0].scrollHeight = $('ul.messages').scrollTop() + $(".wrap").height()) {
           //   $('ul.messages').scrollTop($('ul.messages')[0].scrollHeight)
           // }

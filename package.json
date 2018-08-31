@@ -46,5 +46,8 @@
     "viz.js": "^1.8.2",
     "webpack": "^1.14.0",
     "webpack-uglify-parallel": "^0.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
