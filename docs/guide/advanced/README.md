@@ -8,3 +8,5 @@
 
 - [FO 兑换 EOS 教程](./exchangeeos.md)
 
+- [如何成为 FIBOS 上的一个 BP 节点](./howtobeproducerinfibos.md)
+
