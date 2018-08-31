@@ -1,0 +1,386 @@
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  color: #0088cc;
+}
+
+.dot a,
+.dot a:hover,
+.dot a:active,
+.dot a:focus {
+  text-decoration: none;
+}
+
+.dot {
+  text-align: center;
+  overflow-x: auto;
+}
+
+.faq .faq-body img {
+  max-width: 100% !important;
+  display: block;
+  height: auto;
+}
+
+.faq .faq-body iframe {
+  max-width: 100% !important;
+  display: block;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+td,
+th {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+pre {
+  padding: 0px;
+  background-color: #f6f8fa;
+}
+
+code {
+  color: #000000;
+  background-color: #e8eaec;
+}
+
+pre code {
+  display: block;
+  margin: 0;
+  padding: 6px;
+  tab-size: 4;
+  overflow-x: auto;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  margin-left: 30px;
+  border-left: 1px solid #ccc;
+  font-size: 13px;
+  background-color: transparent;
+}
+
+pre div.line-numbers {
+  position: absolute;
+  margin-left: -35px;
+  width: 30px;
+  padding-right: 7px;
+  text-align: right;
+  color: #bbb;
+  user-select: none;
+}
+
+.faq {
+  background: #fff;
+  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.faq:not(:first-child) {
+  margin-top: 5px;
+}
+
+.faq .faq-header {
+  padding: 7px 18px;
+}
+
+.faq .faq-header h2 {
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: .375rem .75rem;
+  cursor: pointer;
+  line-height: 1.8;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.faq .faq-desc {
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  font-weight: 400;
+  padding: 13px 30px;
+  line-height: 1.8;
+  color: #333;
+  border-top: 2px dotted #eee;
+}
+
+.faq .faq-body {
+  border-top: 2px dotted #eee;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  padding: 13px 30px;
+  line-height: 1.5;
+}
+
+@media (max-width: 479px) {
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 29px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  pre code {
+    font-size: 11px;
+  }
+  .social-share {
+    zoom: 80%;
+  }
+  .navbar-default {
+    height: 65px;
+  }
+  .navbar-default .navbar-brand img {
+    margin-top: -15px;
+    width: 120px;
+  }
+  .navbar-default .navbar-brand {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .navbar-default .navbar-toggle {
+    margin-top: 10px;
+  }
+  .band {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .band .group {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .page-body {
+    background-color: transparent;
+    border-top: 2px solid #f4f4f4;
+    padding-top: 10px;
+  }
+  .home-os {
+    font-size: 40px;
+    padding: 0px;
+  }
+  .content {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .breadcrumb {
+    font-size: 12px;
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hidden-xssss {
+    display: none !important;
+  }
+  .col-md-10 {
+    flex: 0 0 83.333%;
+    max-width: 83.333%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-md-10 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .doc-container {
+    min-height: 100%;
+  }
+  .doc-container>.inside-container {
+    padding-bottom: 385px;
+    min-height: 100%;
+  }
+  footer {
+    margin-top: -385px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc-container {
+    min-height: 100%;
+  }
+  .doc-container>.inside-container {
+    padding-bottom: 242px;
+    min-height: 100%;
+  }
+  footer {
+    margin-top: -242px;
+  }
+}
+
+.doc-container .container {
+  width: 100%;
+  max-width: 100%;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  /* display: table; */
+  /* padding: 0px 50px; */
+}
+
+.doc-container #navbarNav {
+  transform: translateY(0.1rem);
+}
+
+.doc-container>.inside-container>.page-body .sidebar {
+  margin-bottom: 20px;
+}
+
+.doc-container>.inside-container>.page-body .sidebar #toc {
+  background-color: #ffffff;
+  /* max-width: 100%; */
+}
+
+.doc-container>.inside-container>.page-body .sidebar #toc .nav {
+  display: block;
+}
+
+.doc-container>.inside-container>.page-body .sidebar #toc .tocify-item {
+  line-height: 25px;
+}
+
+.doc-container>.inside-container>.page-body .sidebar #toc .tocify-item a {
+  color: #666;
+}
+
+@media (min-width: 1080px) {
+  .doc-container>.inside-container>.page-body .sidebar #toc.fixed_tocify {
+    flex: 0 0 16.666667%;
+    position: fixed;
+    width: auto;
+  }
+}
+
+.doc-container>.inside-container>.page-body .card {
+  margin-bottom: 0;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.doc-container>.inside-container>.page-body .card:not(:first-child) {
+  margin-top: 5px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-header {
+  padding: 10px 15px 10px 22px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 0;
+  background-color: #fff;
+  height: 50px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-header .card-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-header .card-title>a {
+  display: block;
+  padding: 2px;
+  color: #333;
+  font-size: 16px;
+  padding-left: 8px;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: Avenir, Segoe UI, Arial, Hiragino Sans GB, 冬青黑, Microsoft YaHei, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  height: 30px;
+  line-height: 30px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-body {
+  border-top: 1px solid #ddd;
+  padding: 15px 15px 15px 0px;
+  font-size: 14px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-body li.active {
+  background: #eeeeee;
+  border-color: #08c;
+  border-left: 2px solid;
+}
+
+.doc-container>.inside-container>.page-body .card .card-body ul {
+  padding-left: 15px;
+  list-style: none;
+}
+
+.doc-container>.inside-container>.page-body .card .card-body ul li {
+  border-left: 2px solid transparent;
+  line-height: 20px;
+  padding-bottom: 5px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-body ul li a {
+  display: block;
+  padding: 2px;
+  color: #666;
+  padding-left: 8px;
+}
+
+.doc-container>.inside-container>.page-body .card .card-body ul li a:hover {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.doc-container>.inside-container>.page-body .content {
+  /* padding: 20px; */
+  margin-right: 0;
+}
+
+.doc-container>.inside-container>.page-body .content .content-container {
+  padding: 20px;
+  background: #fff;
+  color: #333;
+}
+
+.doc-container>.inside-container>.page-body .content p {
+  line-height: 1.8;
+  color: #333;
+}
+
+.doc-container>.inside-container>.page-body .content h1 {
+  line-height: 1.1;
+  font-size: 36px;
+  font-weight: 500;
+  color: #333;
+}
+
+.doc-container>.inside-container>.page-body .content h2 {
+  line-height: 1.1;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.doc-container>.inside-container>.page-body .content table {
+  margin-bottom: 20px;
+}

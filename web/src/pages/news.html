@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include "../common/meta.html" -->
+    <link rel="stylesheet" href="css/news.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body class="doc-container">
+    <div class="inside-container">
+        <!-- include "../common/header.html" -->
+        <div class="band">
+            <div class="container">
+                <span class="group" id="News1">
+                    <!-- <%=groups[group].etitle%> -->
+                    新闻中心
+                </span>
+                <!-- <div class="search">
+                    <input type="text" class="searchbox" placeholder="Search">
+                </div> -->
+            </div>
+        </div>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li>
+                    <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a >
+                </li>
+                <li>
+                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c" id="News2">&nbsp;新闻中心</a >
+                </li>
+            </ol>
+        </div>
+        <div class=page-body>
+            <div class="container row">
+                <div class="col-lg-9 col-md-9 news-list-container">
+                    {{#each news}}
+                    <div class="new-item">
+                        <h4><a href="/details?id={{id}}">{{ title }}</a ></h4>
+                        <p class="info">发布时间: {{date}} 作者: {{author}}</p >
+                        <!-- <p class="desc">{{describe}}</p > -->
+                    </div>
+                    {{/each}}
+                    <!--
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item {{#if first}}disabled{{/if}}">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a >
+                                </li>
+                                {{#each pages}}
+                                <li class="page-item"><a class="page-link" href="/news?page={{@key}}">{{@key}}</a ></li>
+                                {{/each}}
+                                <li class="page-item {{#if last}}disabled{{/if}}">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a >
+                                </li>
+                            </ul>
+                        </nav>
+                    -->
+                </div>
+                <div class="col-lg-3 col-md-3 news-rec-container">
+                    <h5 id="NewsRec">新闻推荐</h5>
+                    <div class="rec-wrap">
+                        <ul class="rec-list">
+                            {{#each recommends}}
+                            <a class="rec-item" href="/details?id={{id}}">·{{title}}</a > {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- include "../common/footer.html" -->
+</body>
+
+</html>
