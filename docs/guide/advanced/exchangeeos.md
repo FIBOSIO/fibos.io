@@ -69,7 +69,7 @@ console.log(result);
 
 
 
-## 进行 FIBOS 和 EOS 跨链转账
+## 进行从 FIBOS 到 EOS 的跨链转账
 
 - 重要提示：为防止出现跨链转账失败的情况：
 

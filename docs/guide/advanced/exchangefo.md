@@ -85,7 +85,7 @@ console.log(rep);
 
 返回 message 为 success 时,证明你本次账号创建成功。
 
-### 进行 EOS 和 FIBOS 跨链转账
+### 进行从 EOS 到 FIBOS 的跨链转账
 
 - 重要提示：为防止出现跨链转账失败的情况：
 
