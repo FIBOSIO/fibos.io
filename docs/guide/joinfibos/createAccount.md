@@ -1,4 +1,4 @@
-# FIBOS 账号注册教程
+# 如何在 FIBOS 中注册账号？
 
 为了满足开发者能够在 FIBOS 主网上线后便可创建 FIBOS 账号，FIBOS 团队提供给开发者完整的开发文档。
 
@@ -15,9 +15,13 @@ var pubkey = FIBOS.modules.ecc.privateToPublic(prikey); //公钥
 console.log("公钥: %s\n私钥: %s",pubkey,prikey)
 ```
 
-### 免费创建一个 FIBOS 账号
+tips: FIBOS 的公钥是一个以 FO 为前缀的随机字符串，如：`FO8LhSy6K8NXaCfs8uMCLFsANkekQPbrgzbkfM1aNqJUALXQVHKF` 
 
-- 使用 HTTP Server
+### 创建一个 FIBOS 账号
+
+目前 FIBOS 主网暂时提供一个免费注册 FIBOS账户。
+
+- 使用 HTTP 请求发起注册
 
 **请求 URL:**
 
@@ -61,7 +65,7 @@ var rep = httpClient.post(httpServerHost, {
 console.log(rep);
 ```
 
-> 基于 FIBOS 实现HTTP Clinet
+> 基于 FIBOS 实现HTTP Client
 
 **返回实例:**
 
@@ -74,32 +78,3 @@ console.log(rep);
 ```
 
 返回 message 为 success 时，证明你本次账号创建成功。
-
-
-
-# FIBOS 主网地址列表
-
-P2P默认端口：9870
-
-RPC默认端口：8870
-
-```
-chainID： 6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a
-RPC地址列表:
-	se-rpc.fibos.io
-	sl-rpc.fibos.io
-	to-rpc.fibos.io
-	ca-rpc.fibos.io
-	ln-rpc.fibos.io
-	va-rpc.fibos.io
-P2P地址列表:
-	se-p2p.fibos.io
-	sl-p2p.fibos.io
-	to-p2p.fibos.io
-	ca-p2p.fibos.io
-	ln-p2p.fibos.io
-	va-p2p.fibos.io
-```
-
-
-
