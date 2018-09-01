@@ -116,7 +116,7 @@ function build_docs() {
 			},
 			joinfibos: {
 				etitle: 'Joinfibos',
-				title: '体验 FIBOS 主网',
+				title: 'FIBOS 基础操作',
 				path: 'guide/joinfibos'
 			},
 			development: {
