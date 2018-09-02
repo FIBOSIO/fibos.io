@@ -441,4 +441,4 @@ recursiveReadSync(pages).forEach(function(file) {
   }
 });
 
-module.exports = webpack_config
+module.exports = webpack_config;

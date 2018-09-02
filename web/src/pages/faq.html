@@ -3,7 +3,7 @@
 
 <head>
     <!-- include "../common/meta.html" -->
-    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="../css/faq.css">
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -36,7 +36,7 @@
                     <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a >
                 </li>
                 <li>
-                    <a onclick="javascript:window.location.href = '/faq'" style="cursor: pointer;color: #08c">&nbsp;FAQ</a >
+                    <a onclick="javascript:window.location.href = '/faq/index.html'" style="cursor: pointer;color: #08c">&nbsp;FAQ</a >
                 </li>
                 {{#if name}}
                 <li class="active">
@@ -53,7 +53,7 @@
                         <div class="card">
                             <div class="card-header" role="tab" id="headingOne">
                                 <h4 class="card-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href=" " onclick="javascript: window.location.href = '/faq?id={{id}}'" aria-controls="">
+                                    <a data-toggle="collapse" data-parent="#accordion" href=" " onclick="javascript: window.location.href = '{{path}}'" aria-controls="">
                                         {{name}}
                                     </a >
                                 </h4>

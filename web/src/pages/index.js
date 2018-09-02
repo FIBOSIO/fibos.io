@@ -175,7 +175,7 @@ Vue.component('App', {
       //this.socket = new WebSocket(``)
       var protocol = window.location.protocol
       var host = window.location.host
-      let url = `getTgHistory/${page}`
+      let url = `/1.0/app/getTgHistory/${page}`
       //let url = `http://115.47.142.152:9090/getTgHistory/${page}`
       this.loading = true;
       const result = await axios({
@@ -294,7 +294,7 @@ function getPrice() {
   $.ajax({
     type: "GET",
     data: {},
-    url: '/getExchangeInfo',
+    url: '/1.0/app/getExchangeInfo',
     success: function (data) {
       $('#myTargetElement').text(data.price)
     },
@@ -371,13 +371,25 @@ $(function () {
         $('#Built_in_Objects1').html($.i18n.prop('Built_in_Objects1'));
         $('#VacantSeat1').html($.i18n.prop('VacantSeat1'));
         $('#VacantSeat2').html($.i18n.prop('VacantSeat2'));
+        $('#VacantSeat3').html($.i18n.prop('VacantSeat3'));
         $('#StrategicPartners').html($.i18n.prop('StrategicPartners'));
         $('#Buy').html($.i18n.prop('Buy'));
         $('#Pass').html($.i18n.prop('Pass'));
         $('#News').html($.i18n.prop('News'));
         $('#Download').html($.i18n.prop('Download'));
+        $('#Dapps').html($.i18n.prop('Dapps'));
         $('#Total').html($.i18n.prop('Total'));
         $('#Rate').html($.i18n.prop('Rate'));
+        $('#MoreWalletDes').html($.i18n.prop('MoreWalletDes'));
+        $('#51TokenDes').html($.i18n.prop('51TokenDes'));
+        $('#OneDes').html($.i18n.prop('OneDes'));
+        $('#BrowserDes').html($.i18n.prop('BrowserDes'));
+        $('#Ironman').html($.i18n.prop('Ironman'));
+        $('#IronmanDes').html($.i18n.prop('IronmanDes'));
+        $('#BLExp').html($.i18n.prop('BLExp'));
+        $('#ExchangeFoWord').html($.i18n.prop('ExchangeFoWord'));
+        $('#SafeAndFast').html($.i18n.prop('SafeAndFast'));
+        $('#SQDownload').html($.i18n.prop('SQDownload'));
         var FastHeight = window.document.getElementById('Fast').scrollHeight;
         var StableHeight = window.document.getElementById('Stable').scrollHeight;
         if (language === 'zh') {

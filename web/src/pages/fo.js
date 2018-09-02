@@ -534,6 +534,7 @@ import 'common';
             $('#ExchangeWay').html($.i18n.prop('ExchangeWay'));
             $('#FOSmartWallet').html($.i18n.prop('FOSmartWallet'));
             $('#Supports').html($.i18n.prop('Supports'));
+            $('#Dapps').html($.i18n.prop('Dapps'));
         }
       });
     }

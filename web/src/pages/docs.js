@@ -593,6 +593,8 @@ $(function () {
                     $('#ContactUs').html($.i18n.prop('ContactUs'));
                     $('#News').html($.i18n.prop('News'));
                     $('#Download').html($.i18n.prop('Download'));
+                    $('#Dapps').html($.i18n.prop('Dapps'));
+                    
                 }
             });
         }
