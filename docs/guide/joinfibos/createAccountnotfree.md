@@ -21,8 +21,6 @@ console.log("公钥: %s\n私钥: %s",pubkey,prikey)
 
 - 前往[生成 FIBOS 公私钥](http://103.80.170.107:8080/) 点击 `生成FIBOS公私钥` 即可生成一对公私钥。
 
-FIBOS 的公钥是一个以 FO 为前缀的随机字符如：`FO8LhSy6K8NXaCfs8uMCLFsANkekQPbrgzbkfM1aNqJUALXQVHKF`
-
 ### 创建 FIBOS 账号
 
 保存如下代码到 `createAccount.js` :
