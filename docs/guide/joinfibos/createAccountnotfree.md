@@ -109,4 +109,4 @@ console.log(r);
           },
 ```
 
- 
+ 根据上面的打印信息，可以看到 `fibostest123` 账号创建了一个名为 `xinchengdai1` 的账号，下面 ``xinchengdai1`` 账号持有者就可以将私钥导入到 FO 钱包中来使用其中的各项功能啦！点击 [下载 FO 钱包](http://wallet.fo/) 来获取 FO 钱包吧 ~
