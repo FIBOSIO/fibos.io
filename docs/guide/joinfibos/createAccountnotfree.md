@@ -1,8 +1,8 @@
 # 如何帮助别人在 FIBOS 中创建账号
 
-> 随着 8.28 日 FIBOS 主网上线以来，已经有28000+用户通过官网的免费注册通道注册了 FIBOS 账号。这些账户的注册成本都是由 FIBOS 团队代为垫付，我们后续将会关闭免费注册通道，想要注册 FIBOS 账号的同学们可以让已经拥有 FIBOS 账号的小伙伴代为注册。
+> Tips:我们将在9.4日关闭免费注册 FIBOS 账号通道，后续想要注册 FIBOS 账号的同学们，可以通过学习本文档，让已经拥有 FIBOS 账号的小伙伴替你创建!
 
-学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
+学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](https://github.com/FIBOSIO/fibos.io/blob/81057e13f8a48f4f15a109232927ce1258e67c84/docs/guide/basic/fibosjs.md) 。
 
 ### 生成 FIBOS 公私钥
 
@@ -15,13 +15,13 @@ var pubkey = FIBOS.modules.ecc.privateToPublic(prikey); //公钥
 console.log("公钥: %s\n私钥: %s",pubkey,prikey)
 ```
 
-tips: FIBOS 的公钥是一个以 FO 为前缀的随机字符串，如：`FO8LhSy6K8NXaCfs8uMCLFsANkekQPbrgzbkfM1aNqJUALXQVHKF` 
+tips: FIBOS 的公钥是一个以 FO 为前缀的随机字符串，如：`FO8LhSy6K8NXaCfs8uMCLFsANkekQPbrgzbkfM1aNqJUALXQVHKF`
 
 ### 创建 FIBOS 账号
 
 保存如下代码到 `createAccount.js` :
 
-```javascript
+```
 var FIBOS = require('fibos.js');
 var fibos = FIBOS({
 	chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
@@ -49,25 +49,23 @@ var r = fibos.transactionSync(tr => {
 		tr.delegatebw({
 			from: "creater_account",
 			receiver: "your_account",
-			stake_net_quantity: '0.5000 FO',
-			stake_cpu_quantity: '0.5000 FO',
+			stake_net_quantity: '0.1000 FO',
+			stake_cpu_quantity: '0.1000 FO',
 			transfer: 1
 		});
 	});
 console.log(r);
 ```
 
-**参数说明:**
+上述代码中，一共调用了三个方法：`newaccount` 、`buyrambytes` 、`delegatebw`  ，下面简单的介绍下各个方法的作用和参数的含义。
 
-| 参数               | 含义                                                         |
-| ------------------ | ------------------------------------------------------------ |
-| keyProvider        | 代创建者私钥                                                 |
-| creator/payer/form | 代创建者账户名                                               |
-| name/receiver      | 被创建者账户名                                               |
-| owner              | 被创建者owner权限公钥                                        |
-| active             | 被创建者active权限公钥(tips:owner和active权限公钥可以是一个) |
+**newaccount**：通过该方法进行新账号的创建，`creater` 创建者的账户名，`name` 被创建者的账户名，`owner` 被创建者账户 owner 权限公钥，`active` 被创建者 active 权限公钥，owner 和 active 权限公钥可以填写同一个。
 
-执行代码 `fibos createAccount.js `  打印如下信息(截取部分)，即可帮别人成功注册账号！
+**buyrambytes**: 在链上存贮账户信息是需要消耗内存的，创建者调用该方法为被创建者购买内存来存放新账户的信息。`payer` 和 `receiver`  分别为创建者和被创建者账户名
+
+**delegatebw**: 创建者为被创建者抵押 FO 获取 CPU 和 NET ，让新账户能够进行转账。`from` 和 `receiver` 为创建者和被创建者账户名。这里有个需要注意的地方是 `transfer` 参数，`1` 代表替别人抵押 FO 获取资源。如果你想要自己获取资源，那么 `from` 和 `recevier` 都填上你的账户名，并将  `transfer` 参数值修改为 `0`。
+
+执行代码 `fibos createAccount.js` 打印如下信息(截取部分)，即可帮别人成功注册账号！
 
 ```
 "act": {
@@ -75,12 +73,12 @@ console.log(r);
           "name": "newaccount",
           "authorization": [
             {
-              "actor": "eosyanghejiu",
+              "actor": "fibostest123",
               "permission": "active"
             }
           ],
           "data": {
-            "creator": "eosyanghejiu",
+            "creator": "fibostest123",
             "name": "xinchengdai1",
             "owner": {
               "threshold": 1,
@@ -107,3 +105,4 @@ console.log(r);
           },
 ```
 
+ 
