@@ -6,6 +6,10 @@
 
 ### 生成 FIBOS 公私钥
 
+> Tips:生成的公私钥对需要将私钥妥善保存，并且切勿向任何人泄漏你的私钥！请别人帮人注册 FIBOS 账号只需要提供你的公钥即可，任何以帮忙注册 FIBOS 账号为名索要你的私钥的创建者都是欺骗者！
+
+生成公私钥有两种方式：
+
 - 使用 fibos.js 的 ecc 生成
 
 ```
@@ -15,7 +19,9 @@ var pubkey = FIBOS.modules.ecc.privateToPublic(prikey); //公钥
 console.log("公钥: %s\n私钥: %s",pubkey,prikey)
 ```
 
-tips: FIBOS 的公钥是一个以 FO 为前缀的随机字符串，如：`FO8LhSy6K8NXaCfs8uMCLFsANkekQPbrgzbkfM1aNqJUALXQVHKF`
+- 前往[生成 FIBOS 公私钥](http://103.80.170.107:8080/) 点击 `生成FIBOS公私钥` 即可生成一对公私钥。
+
+FIBOS 的公钥是一个以 FO 为前缀的随机字符如：`FO8LhSy6K8NXaCfs8uMCLFsANkekQPbrgzbkfM1aNqJUALXQVHKF`
 
 ### 创建 FIBOS 账号
 
@@ -59,7 +65,7 @@ console.log(r);
 
 上述代码中，一共调用了三个方法：`newaccount` 、`buyrambytes` 、`delegatebw`  ，下面简单的介绍下各个方法的作用和参数的含义。
 
-**newaccount**：通过该方法进行新账号的创建，`creater` 创建者的账户名，`name` 被创建者的账户名，`owner` 被创建者账户 owner 权限公钥，`active` 被创建者 active 权限公钥，owner 和 active 权限公钥可以填写同一个。
+**newaccount**：通过该方法进行新账号的创建，`creator` 创建者的账户名，`name` 被创建者的账户名，`owner` 被创建者账户 owner 权限公钥，`active` 被创建者 active 权限公钥，owner 和 active 权限公钥可以填写同一个。
 
 **buyrambytes**: 在链上存贮账户信息是需要消耗内存的，创建者调用该方法为被创建者购买内存来存放新账户的信息。`payer` 和 `receiver`  分别为创建者和被创建者账户名。
 
