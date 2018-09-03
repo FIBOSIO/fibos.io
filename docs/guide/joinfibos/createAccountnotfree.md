@@ -29,7 +29,7 @@ console.log("公钥: %s\n私钥: %s",pubkey,prikey)
 var FIBOS = require('fibos.js');
 var fibos = FIBOS({
 	chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
-	keyProvider: "creater_priKey",
+	keyProvider: "creator_priKey",
 	httpEndpoint: "http://ca-rpc.fibos.io:8870",
 	logger: {
 		log: null,
@@ -38,20 +38,20 @@ var fibos = FIBOS({
 });
 var r = fibos.transactionSync(tr => {
 		tr.newaccount({
-			creator: "creater_account",
+			creator: "creator_account",
 			name: "your_account",
 			owner: "your_owner_publicKey",
 			active: "your_active_publicKey"
 		});
 
 		tr.buyrambytes({
-			payer: "creater_account",
+			payer: "creator_account",
 			receiver: "your_account",
 			bytes: 4096
 		});
 
 		tr.delegatebw({
-			from: "creater_account",
+			from: "creator_account",
 			receiver: "your_account",
 			stake_net_quantity: '0.1000 FO',
 			stake_cpu_quantity: '0.1000 FO',
