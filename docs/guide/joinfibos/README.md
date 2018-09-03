@@ -7,3 +7,5 @@
 - [从 FIBOS 主网跨链转账到 EOS 主网](./fibos2eos.md)
 - [FIBOS RPC 以及 P2P 列表(持续更新)](./bp.md)
 - [在 FIBOS 主网中申请注册  BP 节点](./howtobeproducerinfibos.md)
+- [如何帮助别人在 FIBOS 中创建账号](./createAccountnotfree.md)
+
