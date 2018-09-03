@@ -2,7 +2,7 @@
 
 > Tips:我们将在9.4日关闭免费注册 FIBOS 账号通道，后续想要注册 FIBOS 账号的同学们，可以通过学习本文档，让已经拥有 FIBOS 账号的小伙伴替你创建!
 
-学习本文档前,你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](https://github.com/FIBOSIO/fibos.io/blob/81057e13f8a48f4f15a109232927ce1258e67c84/docs/guide/basic/fibosjs.md) 。
+学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
 
 ### 生成 FIBOS 公私钥
 
@@ -61,7 +61,7 @@ console.log(r);
 
 **newaccount**：通过该方法进行新账号的创建，`creater` 创建者的账户名，`name` 被创建者的账户名，`owner` 被创建者账户 owner 权限公钥，`active` 被创建者 active 权限公钥，owner 和 active 权限公钥可以填写同一个。
 
-**buyrambytes**: 在链上存贮账户信息是需要消耗内存的，创建者调用该方法为被创建者购买内存来存放新账户的信息。`payer` 和 `receiver`  分别为创建者和被创建者账户名
+**buyrambytes**: 在链上存贮账户信息是需要消耗内存的，创建者调用该方法为被创建者购买内存来存放新账户的信息。`payer` 和 `receiver`  分别为创建者和被创建者账户名。
 
 **delegatebw**: 创建者为被创建者抵押 FO 获取 CPU 和 NET ，让新账户能够进行转账。`from` 和 `receiver` 为创建者和被创建者账户名。这里有个需要注意的地方是 `transfer` 参数，`1` 代表替别人抵押 FO 获取资源。如果你想要自己获取资源，那么 `from` 和 `recevier` 都填上你的账户名，并将  `transfer` 参数值修改为 `0`。
 
