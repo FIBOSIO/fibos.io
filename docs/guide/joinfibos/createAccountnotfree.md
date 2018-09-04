@@ -8,8 +8,6 @@
 
 > Tips:生成的公私钥对需要将私钥妥善保存，并且切勿向任何人泄漏你的私钥！请别人帮人注册 FIBOS 账号只需要提供你的公钥即可，任何以帮忙注册 FIBOS 账号为名索要你的私钥的创建者都是欺骗者！
 
-生成公私钥有两种方式：
-
 - 使用 fibos.js 的 ecc 生成
 
 ```
@@ -18,8 +16,6 @@ var prikey = FIBOS.modules.ecc.randomKeySync(); //私钥
 var pubkey = FIBOS.modules.ecc.privateToPublic(prikey); //公钥
 console.log("公钥: %s\n私钥: %s",pubkey,prikey)
 ```
-
-- 前往[生成 FIBOS 公私钥](http://103.80.170.107:8080/) 点击 `生成FIBOS公私钥` 即可生成一对公私钥。
 
 ### 创建 FIBOS 账号
 
