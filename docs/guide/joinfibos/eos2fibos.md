@@ -33,7 +33,7 @@ var FIBOS = require("fibos.js");
 
 var config = {
     chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
-    priKey: "你的 EOS 私钥",
+    priKey: "你的 EOS active权限私钥",
     httpEndpoint: "http://api-mainnet.starteos.io",
     verbose: false,
 };
