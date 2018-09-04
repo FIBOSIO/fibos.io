@@ -1,0 +1,945 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 Redis </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 Redis </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li class="active"><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-Redis">对象 Redis</h1>
+<p>Redis 数据库客户端对象</p>
+<p>用以创建和管理 Redis 数据库，创建方法：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">var</span> db = <span class="hljs-built_in">require</span>(<span class="hljs-string">"db"</span>);
+<span class="hljs-keyword">var</span> test = <span class="hljs-keyword">new</span> db.openRedis(<span class="hljs-string">"redis-server"</span>);
+</code></pre>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="89pt" height="614pt"
+ viewBox="0.00 0.00 89.02 614.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 610)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-610 85.016,-610 85.016,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="11.6765,-553.5 11.6765,-605.5 69.3395,-605.5 69.3395,-553.5 11.6765,-553.5"/>
+<text text-anchor="middle" x="40.508" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="11.6765,-585.5 69.3395,-585.5 "/>
+<text text-anchor="start" x="19.6765" y="-572.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="19.6765" y="-560.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- Redis -->
+<g id="me" class="node">
+<title>Redis</title>
+<g id="a_me"><a xlink:title="Redis">
+<polygon fill="#d3d3d3" stroke="#000000" points="0,-.5 0,-516.5 81.016,-516.5 81.016,-.5 0,-.5"/>
+<text text-anchor="middle" x="40.508" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Redis</text>
+<polyline fill="none" stroke="#000000" points="0,-496.5 81.016,-496.5 "/>
+<text text-anchor="start" x="8" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">onsuberror</text>
+<polyline fill="none" stroke="#000000" points="0,-476.5 81.016,-476.5 "/>
+<text text-anchor="start" x="8" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">command()</text>
+<text text-anchor="start" x="8" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">set()</text>
+<text text-anchor="start" x="8" y="-439.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setNX()</text>
+<text text-anchor="start" x="8" y="-427.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setXX()</text>
+<text text-anchor="start" x="8" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">mset()</text>
+<text text-anchor="start" x="8" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">msetNX()</text>
+<text text-anchor="start" x="8" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">append()</text>
+<text text-anchor="start" x="8" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setRange()</text>
+<text text-anchor="start" x="8" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getRange()</text>
+<text text-anchor="start" x="8" y="-355.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">strlen()</text>
+<text text-anchor="start" x="8" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">bitcount()</text>
+<text text-anchor="start" x="8" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">get()</text>
+<text text-anchor="start" x="8" y="-319.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">mget()</text>
+<text text-anchor="start" x="8" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getset()</text>
+<text text-anchor="start" x="8" y="-295.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">decr()</text>
+<text text-anchor="start" x="8" y="-283.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">incr()</text>
+<text text-anchor="start" x="8" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setBit()</text>
+<text text-anchor="start" x="8" y="-259.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getBit()</text>
+<text text-anchor="start" x="8" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">exists()</text>
+<text text-anchor="start" x="8" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">type()</text>
+<text text-anchor="start" x="8" y="-223.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">keys()</text>
+<text text-anchor="start" x="8" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">del()</text>
+<text text-anchor="start" x="8" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">expire()</text>
+<text text-anchor="start" x="8" y="-187.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ttl()</text>
+<text text-anchor="start" x="8" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">persist()</text>
+<text text-anchor="start" x="8" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">rename()</text>
+<text text-anchor="start" x="8" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">renameNX()</text>
+<text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">sub()</text>
+<text text-anchor="start" x="8" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">unsub()</text>
+<text text-anchor="start" x="8" y="-115.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">psub()</text>
+<text text-anchor="start" x="8" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">unpsub()</text>
+<text text-anchor="start" x="8" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">pub()</text>
+<text text-anchor="start" x="8" y="-79.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getHash()</text>
+<text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getList()</text>
+<text text-anchor="start" x="8" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getSet()</text>
+<text text-anchor="start" x="8" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getSortedSet()</text>
+<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">dump()</text>
+<text text-anchor="start" x="8" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">restore()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">close()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;Redis -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;Redis</title>
+<path fill="none" stroke="#000000" d="M40.508,-543.1412C40.508,-535.2577 40.508,-526.3486 40.508,-516.6758"/>
+<polygon fill="#000000" stroke="#000000" points="37.0081,-543.2312 40.508,-553.2312 44.0081,-543.2313 37.0081,-543.2312"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="成员属性">成员属性</h2>
+<h3 id="onsuberror">onsuberror</h3>
+<p><strong>Function, 查询和设置错误处理函数，当 sub 出现错误或者网络中断时回调，当回调发生后，本对象的一切 sub 都将中止</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Function</span> Redis.onsuberror;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="command">command</h3>
+<p><strong>redis 基础命令方法</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Value Redis.command(<span class="hljs-built_in">String</span> cmd,
+    ...args);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>cmd: String, 指定发送的命令</li>
+<li>args: ..., 指定发送的参数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回服务器返回的结果</li>
+</ul>
+<hr>
+<h3 id="set">set</h3>
+<p><strong>将字符串值 value 关联到 key，如果 key 已经持有其他值， SET 就覆写旧值，无视类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Redis.set(Buffer key,
+    Buffer value,
+    Long ttl = <span class="hljs-number">0</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要关联的 key</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要关联的数据</li>
+<li>ttl: Long, 以毫秒为单位为 key 设置生存时间；如果 ttl 为 0 ，那么不设置生存时间</li>
+</ul>
+<hr>
+<h3 id="setNX">setNX</h3>
+<p><strong>将 key 的值设为 value ，当且仅当 key 不存在。若给定的 key 已经存在，则 SETNX 不做任何动作。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Redis.setNX(Buffer key,
+    Buffer value,
+    Long ttl = <span class="hljs-number">0</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要关联的 key</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要关联的数据</li>
+<li>ttl: Long, 以毫秒为单位为 key 设置生存时间；如果 ttl 为 0 ，那么不设置生存时间</li>
+</ul>
+<hr>
+<h3 id="setXX">setXX</h3>
+<p><strong>将 key 的值设为 value，只在键已经存在时，才对键进行设置操作。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Redis.setXX(Buffer key,
+    Buffer value,
+    Long ttl = <span class="hljs-number">0</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要关联的 key</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要关联的数据</li>
+<li>ttl: Long, 以毫秒为单位为 key 设置生存时间；如果 ttl 为 0 ，那么不设置生存时间</li>
+</ul>
+<hr>
+<h3 id="mset">mset</h3>
+<p><strong>同时设置一个或多个 key-value 对。如果某个给定 key 已经存在，那么 MSET 会用新值覆盖原来的旧值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.mset(<span class="hljs-built_in">Object</span> kvs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>kvs: Object, 指定要设置的 key/value 对象</li>
+</ul>
+<hr>
+<p><strong>同时设置一个或多个 key-value 对。如果某个给定 key 已经存在，那么 MSET 会用新值覆盖原来的旧值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.mset(...kvs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>kvs: ..., 指定要设置的 key/value 列表</li>
+</ul>
+<hr>
+<h3 id="msetNX">msetNX</h3>
+<p><strong>同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.msetNX(<span class="hljs-built_in">Object</span> kvs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>kvs: Object, 指定要设置的 key/value 对象</li>
+</ul>
+<hr>
+<p><strong>同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.msetNX(...kvs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>kvs: ..., 指定要设置的 key/value 列表</li>
+</ul>
+<hr>
+<h3 id="append">append</h3>
+<p><strong>如果 key 已经存在并且是一个字符串，append 命令将 value 追加到 key 原来的值的末尾。如果 key 不存在，append 就简单地将给定 key 设为 value</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Integer Redis.append(Buffer key,
+    Buffer value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要追加的 key</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要追加的数据</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 追加 value 之后， key 中字符串的长度</li>
+</ul>
+<hr>
+<h3 id="setRange">setRange</h3>
+<p><strong>用 value 参数覆写给定 key 所储存的字符串值，从偏移量 offset 开始</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Redis.setRange(Buffer key,
+    Integer offset,
+    Buffer value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要修改的 key</li>
+<li>offset: Integer, 指定修改的字节偏移</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定要覆盖的数据</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 被修改之后，字符串的长度</li>
+</ul>
+<hr>
+<h3 id="getRange">getRange</h3>
+<p><strong>返回 key 中字符串值的子字符串，字符串的截取范围由 start 和 end 两个偏移量决定(包括 start 和 end 在内)</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Buffer Redis.getRange(Buffer key,
+    Integer start,
+    Integer end);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要查询的 key</li>
+<li>start: Integer, 指定查询的起始字节偏移</li>
+<li>end: Integer, 指定查询的结束字节偏移</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 截取得出的子字符串</li>
+</ul>
+<hr>
+<h3 id="strlen">strlen</h3>
+<p><strong>返回 key 所储存的字符串值的长度。当 key 储存的不是字符串值时，返回一个错误</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Redis.strlen(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要计算的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 字符串值的长度。当 key 不存在时，返回 0</li>
+</ul>
+<hr>
+<h3 id="bitcount">bitcount</h3>
+<p><strong>计算给定字符串中，被设置为 1 的比特位的数量</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Redis.bitcount(Buffer key,
+    Integer start = <span class="hljs-number">0</span>,
+    Integer end = <span class="hljs-number">-1</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要计算的 key</li>
+<li>start: Integer, 指定要计算的起始字节，可以使用负数值，-1 表示最后一个字节，而 -2 表示倒数第二个字节，以此类推</li>
+<li>end: Integer, 指定要计算的结束字节，可以使用负数值，-1 表示最后一个字节，而 -2 表示倒数第二个字节，以此类推</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 被设置为 1 的位的数量</li>
+</ul>
+<hr>
+<h3 id="get">get</h3>
+<p><strong>返回 key 所关联的字符串值，如果 key 不存在那么返回特殊值 Null</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer Redis.get(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要关联的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 当 key 不存在时，返回 Null ，否则，返回 key 的值</li>
+</ul>
+<hr>
+<h3 id="mget">mget</h3>
+<p><strong>返回所有(一个或多个)给定 key 的值。如果给定的 key 里面，有某个 key 不存在，那么这个 key 返回特殊值 nil 。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray Redis.mget(<span class="hljs-built_in">Array</span> keys);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>keys: Array, 指定要查询的 key 数组</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 一个包含所有给定 key 的值的列表</li>
+</ul>
+<hr>
+<p><strong>返回所有(一个或多个)给定 key 的值。如果给定的 key 里面，有某个 key 不存在，那么这个 key 返回特殊值 nil 。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray Redis.mget(...keys);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>keys: ..., 指定要查询的 key 列表</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 一个包含所有给定 key 的值的列表</li>
+</ul>
+<hr>
+<h3 id="getset">getset</h3>
+<p><strong>将给定 key 的值设为 value ，并返回 key 的旧值(old value)</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Buffer Redis.getset(Buffer key,
+    Buffer value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要查询修改的 key</li>
+<li>value: <a href=buffer.md.html>Buffer</a>, 指定修改的数值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回给定 key 的旧值</li>
+</ul>
+<hr>
+<h3 id="decr">decr</h3>
+<p><strong>将 key 所储存的值减去减量</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Long Redis.decr(Buffer key,
+    Long num = <span class="hljs-number">1</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要修改的 key</li>
+<li>num: Long, 指定要减去的数值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Long, 减去 num 之后，key 的值</li>
+</ul>
+<hr>
+<h3 id="incr">incr</h3>
+<p><strong>将 key 所储存的值加上增量</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Long Redis.incr(Buffer key,
+    Long num = <span class="hljs-number">1</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要修改的 key</li>
+<li>num: Long, 指定要加上的数值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Long, 加上 num 之后，key 的值</li>
+</ul>
+<hr>
+<h3 id="setBit">setBit</h3>
+<p><strong>对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Redis.setBit(Buffer key,
+    Integer offset,
+    Integer value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要修改的 key</li>
+<li>offset: Integer, 指定修改的位偏移</li>
+<li>value: Integer, 指定设置或清除的参数，可以是 0 也可以是 1</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 指定偏移量原来储存的位</li>
+</ul>
+<hr>
+<h3 id="getBit">getBit</h3>
+<p><strong>对 key 所储存的字符串值，获取指定偏移量上的位(bit)</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Integer Redis.getBit(Buffer key,
+    Integer offset);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要查询的 key</li>
+<li>offset: Integer, 指定查询的位偏移</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 字符串值指定偏移量上的位(bit)</li>
+</ul>
+<hr>
+<h3 id="exists">exists</h3>
+<p><strong>检查给定 key 是否存在</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> Redis.exists(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要关联的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 若 key 存在，返回 True，否则返回 False</li>
+</ul>
+<hr>
+<h3 id="type">type</h3>
+<p><strong>返回 key 所储存的值的类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> Redis.type(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要查询的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回 key 所储存的值的类型，可能的值为 none(key不存在) string(字符串) list(列表) set(集合) zset(有序集) <a href=../../module/ifs/hash.md.html>hash</a>(哈希表)</li>
+</ul>
+<hr>
+<h3 id="keys">keys</h3>
+<p><strong>查找所有符合给定模式 pattern 的 key</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray Redis.keys(<span class="hljs-built_in">String</span> pattern);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>pattern: String, 指定查询模式</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 符合给定模式的 key 列表</li>
+</ul>
+<hr>
+<h3 id="del">del</h3>
+<p><strong>删除给定的一个或多个 key，不存在的 key 会被忽略</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Redis.del(<span class="hljs-built_in">Array</span> keys);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>keys: Array, 指定要删除的 key 数组</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 被删除 key 的数量</li>
+</ul>
+<hr>
+<p><strong>删除给定的一个或多个 key，不存在的 key 会被忽略</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Redis.del(...keys);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>keys: ..., 指定要删除的 key 列表</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 被删除 key 的数量</li>
+</ul>
+<hr>
+<h3 id="expire">expire</h3>
+<p><strong>为给定 key 设置生存时间，当 key 过期时，它会被自动删除</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Boolean</span> Redis.expire(Buffer key,
+    Long ttl);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要设定的 key</li>
+<li>ttl: Long, 以毫秒为单位为 key 设置生存时间</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 若 key 存在，返回 True，否则返回 False</li>
+</ul>
+<hr>
+<h3 id="ttl">ttl</h3>
+<p><strong>返回给定 key 的剩余生存时间</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Long Redis.ttl(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要查询的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Long, 以毫秒为单位，返回 key 的剩余生存时间，当 key 不存在时，返回 -2，当 key 存在但没有设置剩余生存时间时，返回 -1</li>
+</ul>
+<hr>
+<h3 id="persist">persist</h3>
+<p><strong>移除给定 key 的生存时间，将这个 key 从『易失的』(带生存时间 key )转换成『持久的』(一个不带生存时间、永不过期的 key)</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> Redis.persist(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要设定的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 若 key 存在，返回 True，否则返回 False</li>
+</ul>
+<hr>
+<h3 id="rename">rename</h3>
+<p><strong>将 key 改名为 newkey，当 key 和 newkey 相同，或者 key 不存在时，返回一个错误</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Redis.rename(Buffer key,
+    Buffer newkey);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要改名的 key</li>
+<li>newkey: <a href=buffer.md.html>Buffer</a>, 指定要改名的目的 key</li>
+</ul>
+<hr>
+<h3 id="renameNX">renameNX</h3>
+<p><strong>当且仅当 newkey 不存在时，将 key 改名为 newkey，当 key 不存在时，返回一个错误</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Boolean</span> Redis.renameNX(Buffer key,
+    Buffer newkey);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要改名的 key</li>
+<li>newkey: <a href=buffer.md.html>Buffer</a>, 指定要改名的目的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 修改成功时，返回 True，如果 newkey 已经存在，返回 False</li>
+</ul>
+<hr>
+<h3 id="sub">sub</h3>
+<p><strong>订阅给定的一个频道的信息，当消息发生时自动调用 func，func 包含两个参数，依次为 channel 和 message，同一频道同一函数只会回调一次</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Redis.sub(Buffer channel,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>channel: <a href=buffer.md.html>Buffer</a>, 指定订阅的频道名称</li>
+<li>func: Function, 指定回调函数</li>
+</ul>
+<hr>
+<p><strong>订阅给定的一组频道的信息，当消息发生时自动调用相应的回调函数，同一频道同一函数只会回调一次</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.sub(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定频道映射关系，对象属性名称将作为频道名称，属性的值将作为回调函数</li>
+</ul>
+<hr>
+<h3 id="unsub">unsub</h3>
+<p><strong>退订给定的频道的全部回调</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.unsub(Buffer channel);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>channel: <a href=buffer.md.html>Buffer</a>, 指定退订的频道名称</li>
+</ul>
+<hr>
+<p><strong>退订给定的频道的指定回调函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Redis.unsub(Buffer channel,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>channel: <a href=buffer.md.html>Buffer</a>, 指定退订的频道名称</li>
+<li>func: Function, 指定退订的回调函数</li>
+</ul>
+<hr>
+<p><strong>退订一组给定的频道的全部回调</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.unsub(<span class="hljs-built_in">Array</span> channels);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>channels: Array, 指定退订的频道数组</li>
+</ul>
+<hr>
+<p><strong>退订给定的一组频道的指定回调函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.unsub(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定频道映射关系，对象属性名称将作为频道名称，属性的值将作为回调函数</li>
+</ul>
+<hr>
+<h3 id="psub">psub</h3>
+<p><strong>按照模板订阅一组频道的信息，当消息发生时自动调用 func，func 包含三个参数，依次为 channel，message 和 pattern，同一模板同一函数只会回调一次</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Redis.psub(<span class="hljs-built_in">String</span> pattern,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>pattern: String, 指定订阅的频道模板</li>
+<li>func: Function, 指定回调函数</li>
+</ul>
+<hr>
+<p><strong>订阅给定的一组频道模板的信息，当消息发生时自动调用相应的 func，同一频道同一函数只会回调一次</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.psub(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定频道映射关系，对象属性名称将作为频道模板，属性的值将作为回调函数</li>
+</ul>
+<hr>
+<h3 id="unpsub">unpsub</h3>
+<p><strong>退订给定模板的频道的全部回调</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.unpsub(<span class="hljs-built_in">String</span> pattern);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>pattern: String, 指定退订的频道模板</li>
+</ul>
+<hr>
+<p><strong>退订给定模板的频道的指定回调函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Redis.unpsub(<span class="hljs-built_in">String</span> pattern,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>pattern: String, 指定退订的频道模板</li>
+<li>func: Function, 指定退订的回调函数</li>
+</ul>
+<hr>
+<p><strong>退订一组给定模板的频道的全部回调</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.unpsub(<span class="hljs-built_in">Array</span> patterns);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>patterns: Array, 指定发布的频道模板数组</li>
+</ul>
+<hr>
+<p><strong>退订一组模板的频道的指定回调函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.unpsub(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定频道映射关系，对象属性名称将作为频道模板，属性的值将作为回调函数</li>
+</ul>
+<hr>
+<h3 id="pub">pub</h3>
+<p><strong>将信息 message 发送到指定的频道 channel</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Integer Redis.pub(Buffer channel,
+    Buffer message);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>channel: <a href=buffer.md.html>Buffer</a>, 指定发布的频道</li>
+<li>message: <a href=buffer.md.html>Buffer</a>, 指定发布的消息</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 接收此消息的客户端数量</li>
+</ul>
+<hr>
+<h3 id="getHash">getHash</h3>
+<p><strong>获取指定 key 的 Hash 对象，此对象为包含指定 key 的客户端，只有调用其方法才会操作数据库</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>RedisHash Redis.getHash(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要获取的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=redishash.md.html>RedisHash</a>, 返回包含指定 key 的 Hash 对象</li>
+</ul>
+<hr>
+<h3 id="getList">getList</h3>
+<p><strong>获取指定 key 的 List 对象，此对象为包含指定 key 的客户端，只有调用其方法才会操作数据库</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>RedisList Redis.getList(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要获取的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=redislist.md.html>RedisList</a>, 返回包含指定 key 的 List 对象</li>
+</ul>
+<hr>
+<h3 id="getSet">getSet</h3>
+<p><strong>获取指定 key 的 Set 对象，此对象为包含指定 key 的客户端，只有调用其方法才会操作数据库</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>RedisSet Redis.getSet(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要获取的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=redisset.md.html>RedisSet</a>, 返回包含指定 key 的 Set 对象</li>
+</ul>
+<hr>
+<h3 id="getSortedSet">getSortedSet</h3>
+<p><strong>获取指定 key 的 SortedSet 对象，此对象为包含指定 key 的客户端，只有调用其方法才会操作数据库</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>RedisSortedSet Redis.getSortedSet(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要获取的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=redissortedset.md.html>RedisSortedSet</a>, 返回包含指定 key 的 SortedSet 对象</li>
+</ul>
+<hr>
+<h3 id="dump">dump</h3>
+<p><strong>序列化给定 key ，并返回被序列化的值，使用 restore 命令可以将这个值反序列化为 Redis 键</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer Redis.dump(Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要序列化的 key</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回序列化之后的值，如果 key 不存在，那么返回 null</li>
+</ul>
+<hr>
+<h3 id="restore">restore</h3>
+<p><strong>反序列化给定的序列化值，并将它和给定的 key 关联</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Redis.restore(Buffer key,
+    Buffer data,
+    Long ttl = <span class="hljs-number">0</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定要反序列化的 key</li>
+<li>data: <a href=buffer.md.html>Buffer</a>, 指定要反序列化的数据</li>
+<li>ttl: Long, 以毫秒为单位为 key 设置生存时间；如果 ttl 为 0 ，那么不设置生存时间</li>
+</ul>
+<hr>
+<h3 id="close">close</h3>
+<p><strong>关闭当前数据库连接或事务</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Redis.close();
+</code></pre>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> Redis.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value Redis.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

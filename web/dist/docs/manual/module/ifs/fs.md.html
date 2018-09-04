@@ -1,0 +1,700 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 模块 fs </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 基础模块 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 基础模块 </a></li><li class=active> 模块 fs </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=action.md.html>action</a></li>
+<li><a href=assert.md.html>assert</a></li>
+<li><a href=base32.md.html>base32</a></li>
+<li><a href=base64.md.html>base64</a></li>
+<li><a href=base64vlq.md.html>base64vlq</a></li>
+<li><a href=bson.md.html>bson</a></li>
+<li><a href=console.md.html>console</a></li>
+<li><a href=constants.md.html>constants</a></li>
+<li><a href=coroutine.md.html>coroutine</a></li>
+<li><a href=crypto.md.html>crypto</a></li>
+<li><a href=db.md.html>db</a></li>
+<li><a href=dgram.md.html>dgram</a></li>
+<li><a href=dns.md.html>dns</a></li>
+<li><a href=encoding.md.html>encoding</a></li>
+<li><a href=fibos.md.html>fibos</a></li>
+<li class="active"><a href=fs.md.html>fs</a></li>
+<li><a href=gd.md.html>gd</a></li>
+<li><a href=global.md.html>global</a></li>
+<li><a href=gui.md.html>gui</a></li>
+<li><a href=hash.md.html>hash</a></li>
+<li><a href=hex.md.html>hex</a></li>
+<li><a href=http.md.html>http</a></li>
+<li><a href=iconv.md.html>iconv</a></li>
+<li><a href=io.md.html>io</a></li>
+<li><a href=json.md.html>json</a></li>
+<li><a href=mq.md.html>mq</a></li>
+<li><a href=net.md.html>net</a></li>
+<li><a href=os.md.html>os</a></li>
+<li><a href=path.md.html>path</a></li>
+<li><a href=path_posix.md.html>path_posix</a></li>
+<li><a href=path_win32.md.html>path_win32</a></li>
+<li><a href=process.md.html>process</a></li>
+<li><a href=profiler.md.html>profiler</a></li>
+<li><a href=punycode.md.html>punycode</a></li>
+<li><a href=querystring.md.html>querystring</a></li>
+<li><a href=registry.md.html>registry</a></li>
+<li><a href=softfloat.md.html>softfloat</a></li>
+<li><a href=ssl.md.html>ssl</a></li>
+<li><a href=string_decoder.md.html>string_decoder</a></li>
+<li><a href=test.md.html>test</a></li>
+<li><a href=timers.md.html>timers</a></li>
+<li><a href=trans.md.html>trans</a></li>
+<li><a href=tty.md.html>tty</a></li>
+<li><a href=url.md.html>url</a></li>
+<li><a href=util.md.html>util</a></li>
+<li><a href=uuid.md.html>uuid</a></li>
+<li><a href=vm.md.html>vm</a></li>
+<li><a href=ws.md.html>ws</a></li>
+<li><a href=xml.md.html>xml</a></li>
+<li><a href=zip.md.html>zip</a></li>
+<li><a href=zlib.md.html>zlib</a></li>
+<li><a href=zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../object/ifs/buffer.md.html>Buffer</a></li>
+<li><a href=../../object/ifs/bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=../../object/ifs/chain.md.html>Chain</a></li>
+<li><a href=../../object/ifs/cipher.md.html>Cipher</a></li>
+<li><a href=../../object/ifs/condition.md.html>Condition</a></li>
+<li><a href=../../object/ifs/dbconnection.md.html>DbConnection</a></li>
+<li><a href=../../object/ifs/dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=../../object/ifs/digest.md.html>Digest</a></li>
+<li><a href=../../object/ifs/event.md.html>Event</a></li>
+<li><a href=../../object/ifs/eventemitter.md.html>EventEmitter</a></li>
+<li><a href=../../object/ifs/eventinfo.md.html>EventInfo</a></li>
+<li><a href=../../object/ifs/fiber.md.html>Fiber</a></li>
+<li><a href=../../object/ifs/file.md.html>File</a></li>
+<li><a href=../../object/ifs/handler.md.html>Handler</a></li>
+<li><a href=../../object/ifs/handlerex.md.html>HandlerEx</a></li>
+<li><a href=../../object/ifs/heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=../../object/ifs/heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=../../object/ifs/heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=../../object/ifs/httpclient.md.html>HttpClient</a></li>
+<li><a href=../../object/ifs/httpcollection.md.html>HttpCollection</a></li>
+<li><a href=../../object/ifs/httpcookie.md.html>HttpCookie</a></li>
+<li><a href=../../object/ifs/httphandler.md.html>HttpHandler</a></li>
+<li><a href=../../object/ifs/httpmessage.md.html>HttpMessage</a></li>
+<li><a href=../../object/ifs/httprequest.md.html>HttpRequest</a></li>
+<li><a href=../../object/ifs/httpresponse.md.html>HttpResponse</a></li>
+<li><a href=../../object/ifs/httpserver.md.html>HttpServer</a></li>
+<li><a href=../../object/ifs/httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=../../object/ifs/httpsserver.md.html>HttpsServer</a></li>
+<li><a href=../../object/ifs/image.md.html>Image</a></li>
+<li><a href=../../object/ifs/int64.md.html>Int64</a></li>
+<li><a href=../../object/ifs/leveldb.md.html>LevelDB</a></li>
+<li><a href=../../object/ifs/lock.md.html>Lock</a></li>
+<li><a href=../../object/ifs/lrucache.md.html>LruCache</a></li>
+<li><a href=../../object/ifs/mssql.md.html>MSSQL</a></li>
+<li><a href=../../object/ifs/memorystream.md.html>MemoryStream</a></li>
+<li><a href=../../object/ifs/message.md.html>Message</a></li>
+<li><a href=../../object/ifs/mongocollection.md.html>MongoCollection</a></li>
+<li><a href=../../object/ifs/mongocursor.md.html>MongoCursor</a></li>
+<li><a href=../../object/ifs/mongodb.md.html>MongoDB</a></li>
+<li><a href=../../object/ifs/mongoid.md.html>MongoID</a></li>
+<li><a href=../../object/ifs/mysql.md.html>MySQL</a></li>
+<li><a href=../../object/ifs/pkey.md.html>PKey</a></li>
+<li><a href=../../object/ifs/redis.md.html>Redis</a></li>
+<li><a href=../../object/ifs/redishash.md.html>RedisHash</a></li>
+<li><a href=../../object/ifs/redislist.md.html>RedisList</a></li>
+<li><a href=../../object/ifs/redisset.md.html>RedisSet</a></li>
+<li><a href=../../object/ifs/redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=../../object/ifs/routing.md.html>Routing</a></li>
+<li><a href=../../object/ifs/sqlite.md.html>SQLite</a></li>
+<li><a href=../../object/ifs/sandbox.md.html>SandBox</a></li>
+<li><a href=../../object/ifs/seekablestream.md.html>SeekableStream</a></li>
+<li><a href=../../object/ifs/semaphore.md.html>Semaphore</a></li>
+<li><a href=../../object/ifs/service.md.html>Service</a></li>
+<li><a href=../../object/ifs/smtp.md.html>Smtp</a></li>
+<li><a href=../../object/ifs/socket.md.html>Socket</a></li>
+<li><a href=../../object/ifs/sslhandler.md.html>SslHandler</a></li>
+<li><a href=../../object/ifs/sslserver.md.html>SslServer</a></li>
+<li><a href=../../object/ifs/sslsocket.md.html>SslSocket</a></li>
+<li><a href=../../object/ifs/stat.md.html>Stat</a></li>
+<li><a href=../../object/ifs/stats.md.html>Stats</a></li>
+<li><a href=../../object/ifs/stream.md.html>Stream</a></li>
+<li><a href=../../object/ifs/stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=../../object/ifs/subprocess.md.html>SubProcess</a></li>
+<li><a href=../../object/ifs/table.md.html>Table</a></li>
+<li><a href=../../object/ifs/tcpserver.md.html>TcpServer</a></li>
+<li><a href=../../object/ifs/timer.md.html>Timer</a></li>
+<li><a href=../../object/ifs/urlobject.md.html>UrlObject</a></li>
+<li><a href=../../object/ifs/websocket.md.html>WebSocket</a></li>
+<li><a href=../../object/ifs/websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=../../object/ifs/webview.md.html>WebView</a></li>
+<li><a href=../../object/ifs/worker.md.html>Worker</a></li>
+<li><a href=../../object/ifs/x509cert.md.html>X509Cert</a></li>
+<li><a href=../../object/ifs/x509crl.md.html>X509Crl</a></li>
+<li><a href=../../object/ifs/x509req.md.html>X509Req</a></li>
+<li><a href=../../object/ifs/xmlattr.md.html>XmlAttr</a></li>
+<li><a href=../../object/ifs/xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=../../object/ifs/xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=../../object/ifs/xmlcomment.md.html>XmlComment</a></li>
+<li><a href=../../object/ifs/xmldocument.md.html>XmlDocument</a></li>
+<li><a href=../../object/ifs/xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=../../object/ifs/xmlelement.md.html>XmlElement</a></li>
+<li><a href=../../object/ifs/xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=../../object/ifs/xmlnode.md.html>XmlNode</a></li>
+<li><a href=../../object/ifs/xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=../../object/ifs/xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=../../object/ifs/xmltext.md.html>XmlText</a></li>
+<li><a href=../../object/ifs/zipfile.md.html>ZipFile</a></li>
+<li><a href=../../object/ifs/zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=../../object/ifs/object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="模块-fs">模块 fs</h1>
+<p>文件系统处理模块</p>
+<p>使用方法：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+</code></pre>
+<h2 id="静态函数">静态函数</h2>
+<h3 id="exists">exists</h3>
+<p><strong>查询指定的文件或目录是否存在</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> <span class="hljs-built_in">Boolean</span> fs.exists(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定要查询的路径</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 返回 True 表示文件或目录存在</li>
+</ul>
+<hr>
+<h3 id="access">access</h3>
+<p><strong>查询用户对指定的文件的权限</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.access(<span class="hljs-built_in">String</span> path,
+    Integer mode = <span class="hljs-number">0</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定要查询的路径</li>
+<li>mode: Integer, 指定查询的权限,默认为文件是否存在</li>
+</ul>
+<hr>
+<h3 id="link">link</h3>
+<p><strong>创建硬链接文件, windows 下不支持此方法</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.link(<span class="hljs-built_in">String</span> oldPath,
+    <span class="hljs-built_in">String</span> newPath) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>oldPath: String, 源文件</li>
+<li>newPath: String, 将要被创建的文件</li>
+</ul>
+<hr>
+<h3 id="unlink">unlink</h3>
+<p><strong>删除指定的文件</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> fs.unlink(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定要删除的路径</li>
+</ul>
+<hr>
+<h3 id="mkdir">mkdir</h3>
+<p><strong>创建一个目录</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.mkdir(<span class="hljs-built_in">String</span> path,
+    Integer mode = <span class="hljs-number">0777</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定要创建的目录名</li>
+<li>mode: Integer, 指定文件权限，Windows 忽略此参数</li>
+</ul>
+<hr>
+<h3 id="rmdir">rmdir</h3>
+<p><strong>删除一个目录</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> fs.rmdir(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定要删除的目录名</li>
+</ul>
+<hr>
+<h3 id="rename">rename</h3>
+<p><strong>重新命名一个文件</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.rename(<span class="hljs-built_in">String</span> <span class="hljs-keyword">from</span>,
+    <span class="hljs-built_in">String</span> to) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>from: String, 指定更名的文件</li>
+<li>to: String, 指定要修改的新文件名</li>
+</ul>
+<hr>
+<h3 id="copy">copy</h3>
+<p><strong>复制一个文件</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.copy(<span class="hljs-built_in">String</span> <span class="hljs-keyword">from</span>,
+    <span class="hljs-built_in">String</span> to) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>from: String, 指定更名的文件</li>
+<li>to: String, 指定要修改的新文件名</li>
+</ul>
+<hr>
+<h3 id="chmod">chmod</h3>
+<p><strong>设置指定文件的访问权限，Windows 不支持此方法</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.chmod(<span class="hljs-built_in">String</span> path,
+    Integer mode) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定操作的文件</li>
+<li>mode: Integer, 指定设定的访问权限</li>
+</ul>
+<hr>
+<h3 id="lchmod">lchmod</h3>
+<p><strong>设置指定文件的访问权限，若文件是软连接则不改变指向文件的权限，只在macOS、BSD 系列平台上可用</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.lchmod(<span class="hljs-built_in">String</span> path,
+    Integer mode) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定操作的文件</li>
+<li>mode: Integer, 指定设定的访问权限</li>
+</ul>
+<hr>
+<h3 id="chown">chown</h3>
+<p><strong>设置指定文件的拥有者，Windows 不支持此方法</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> fs.chown(<span class="hljs-built_in">String</span> path,
+    Integer uid,
+    Integer gid) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定设置的文件</li>
+<li>uid: Integer, 文件拥有者用户id</li>
+<li>gid: Integer, 文件拥有者组id</li>
+</ul>
+<hr>
+<h3 id="lchown">lchown</h3>
+<p><strong>设置指定文件的拥有者，如果指定的文件是软连接则不会改变其指向文件的拥有者，Windows 不支持此方法</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> fs.lchown(<span class="hljs-built_in">String</span> path,
+    Integer uid,
+    Integer gid) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定设置的文件</li>
+<li>uid: Integer, 文件拥有者用户id</li>
+<li>gid: Integer, 文件拥有者组id</li>
+</ul>
+<hr>
+<h3 id="stat">stat</h3>
+<p><strong>查询指定文件的基础信息</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> Stat fs.stat(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定查询的文件</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/stat.md.html>Stat</a>, 返回文件的基础信息</li>
+</ul>
+<hr>
+<h3 id="lstat">lstat</h3>
+<p><strong>查询指定文件的基础信息, 和stat不同的是, 当<a href=path.md.html>path</a>是一个软连接的时候，返回的将是这个软连接的信息而不是指向的文件的信息</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> Stat fs.lstat(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定查询的文件</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/stat.md.html>Stat</a>, 返回文件的基础信息</li>
+</ul>
+<hr>
+<h3 id="readlink">readlink</h3>
+<p><strong>读取指定的软连接文件, windows 下不支持此方法</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> <span class="hljs-built_in">String</span> fs.readlink(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定读取的软连接文件</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回软连接指向的文件名</li>
+</ul>
+<hr>
+<h3 id="realpath">realpath</h3>
+<p><strong>返回指定路径的绝对路径，如果指定路径中包含相对路径也会被展开</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> <span class="hljs-built_in">String</span> fs.realpath(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定读取的路径</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回处理后的绝对路径</li>
+</ul>
+<hr>
+<h3 id="symlink">symlink</h3>
+<p><strong>创建软连接文件</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> fs.symlink(<span class="hljs-built_in">String</span> target,
+    <span class="hljs-built_in">String</span> linkpath,
+    <span class="hljs-built_in">String</span> type = <span class="hljs-string">"file"</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>target: String, 目标文件，可以是文件、目录、或不存在的路径</li>
+<li>linkpath: String, 将被创建的软连接文件</li>
+<li>type: String, 创建的软连接类型, 可选类型为&#39;file&#39;, &#39;dir&#39;, &#39;junction&#39;, 默认为&#39;file&#39;, 该参数只在windows上有效，当为&#39;junction&#39;的时候将要创建的目标路径linkpath必须为绝对路径, 而target则会被自动转化为绝对路径。</li>
+</ul>
+<hr>
+<h3 id="truncate">truncate</h3>
+<p><strong>修改文件尺寸,如果指定的长度大于源文件大小则用&#39;\0&#39;填充，否则多于的文件内容将丢失</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.truncate(<span class="hljs-built_in">String</span> path,
+    Integer len) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定被修改文件的路径</li>
+<li>len: Integer, 指定修改后文件的大小</li>
+</ul>
+<hr>
+<h3 id="read">read</h3>
+<p><strong>根据文件描述符，读取文件内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div><span class="hljs-keyword">static</span> Integer fs.read(Integer fd,
+    Buffer buffer,
+    Integer offset = <span class="hljs-number">0</span>,
+    Integer length = <span class="hljs-number">0</span>,
+    Integer position = <span class="hljs-number">-1</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fd: Integer, 文件描述符</li>
+<li>buffer: <a href=../../object/ifs/buffer.md.html>Buffer</a>, 读取结果写入的 <a href=../../object/ifs/buffer.md.html>Buffer</a> 对象</li>
+<li>offset: Integer, <a href=../../object/ifs/buffer.md.html>Buffer</a> 写入偏移量， 默认为 0</li>
+<li>length: Integer, 文件读取字节数，默认为 0</li>
+<li>position: Integer, 文件读取位置，默认为当前文件位置</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 实际读取的字节数</li>
+</ul>
+<hr>
+<h3 id="fchmod">fchmod</h3>
+<p><strong>根据文件描述符，改变文件模式。只在 POSIX 系统有效。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.fchmod(Integer fd,
+    Integer mode) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fd: Integer, 文件描述符</li>
+<li>mode: Integer, 文件的模式</li>
+</ul>
+<hr>
+<h3 id="fchown">fchown</h3>
+<p><strong>根据文件描述符，改变所有者。只在 POSIX 系统有效。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> fs.fchown(Integer fd,
+    Integer uid,
+    Integer gid) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fd: Integer, 文件描述符</li>
+<li>uid: Integer, 用户id</li>
+<li>gid: Integer, 组id</li>
+</ul>
+<hr>
+<h3 id="fdatasync">fdatasync</h3>
+<p><strong>根据文件描述符，同步数据到磁盘</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> fs.fdatasync(Integer fd) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fd: Integer, 文件描述符</li>
+</ul>
+<hr>
+<h3 id="fsync">fsync</h3>
+<p><strong>根据文件描述符，同步数据到磁盘</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> fs.fsync(Integer fd) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fd: Integer, 文件描述符</li>
+</ul>
+<hr>
+<h3 id="readdir">readdir</h3>
+<p><strong>读取指定目录的文件信息</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> NArray fs.readdir(<span class="hljs-built_in">String</span> path) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>path: String, 指定查询的目录</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 返回目录的文件信息数组</li>
+</ul>
+<hr>
+<h3 id="openFile">openFile</h3>
+<p><strong>打开文件，用于读取，写入，或者同时读写</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> SeekableStream fs.openFile(<span class="hljs-built_in">String</span> fname,
+    <span class="hljs-built_in">String</span> flags = <span class="hljs-string">"r"</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>flags: String, 指定文件打开方式，缺省为 &quot;r&quot;，只读方式</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/seekablestream.md.html>SeekableStream</a>, 返回打开的文件对象</li>
+</ul>
+<p>参数 flags 支持的方式如下：</p>
+<ul>
+<li>&#39;r&#39; 只读方式，文件不存在则抛出错误。</li>
+<li>&#39;r+&#39; 读写方式，文件不存在则抛出错误。</li>
+<li>&#39;w&#39; 只写方式，文件不存在则自动创建，存在则将被清空。</li>
+<li>&#39;w+&#39; 读写方式，文件不存在则自动创建。</li>
+<li>&#39;a&#39; 只写添加方式，文件不存在则自动创建。</li>
+<li>&#39;a+&#39; 读写添加方式，文件不存在则自动创建。</li>
+</ul>
+<hr>
+<h3 id="open">open</h3>
+<p><strong>打开文件描述符</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> Integer fs.open(<span class="hljs-built_in">String</span> fname,
+    <span class="hljs-built_in">String</span> flags = <span class="hljs-string">"r"</span>,
+    Integer mode = <span class="hljs-number">0666</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>flags: String, 指定文件打开方式，缺省为 &quot;r&quot;，只读方式</li>
+<li>mode: Integer, 当创建文件的时候，指定文件的模式，默认 0666</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回打开的文件描述符</li>
+</ul>
+<p>参数 flags 支持的方式如下：</p>
+<ul>
+<li>&#39;r&#39; 只读方式，文件不存在则抛出错误。</li>
+<li>&#39;r+&#39; 读写方式，文件不存在则抛出错误。</li>
+<li>&#39;w&#39; 只写方式，文件不存在则自动创建，存在则将被清空。</li>
+<li>&#39;w+&#39; 读写方式，文件不存在则自动创建。</li>
+<li>&#39;a&#39; 只写添加方式，文件不存在则自动创建。</li>
+<li>&#39;a+&#39; 读写添加方式，文件不存在则自动创建。</li>
+</ul>
+<hr>
+<h3 id="close">close</h3>
+<p><strong>关闭文件描述符</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> fs.close(Integer fd) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fd: Integer, 文件描述符</li>
+</ul>
+<hr>
+<h3 id="openTextStream">openTextStream</h3>
+<p><strong>打开文本文件，用于读取，写入，或者同时读写</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> BufferedStream fs.openTextStream(<span class="hljs-built_in">String</span> fname,
+    <span class="hljs-built_in">String</span> flags = <span class="hljs-string">"r"</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>flags: String, 指定文件打开方式，缺省为 &quot;r&quot;，只读方式</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/bufferedstream.md.html>BufferedStream</a>, 返回打开的文件对象</li>
+</ul>
+<p>参数 flags 支持的方式如下：</p>
+<ul>
+<li>&#39;r&#39; 只读方式，文件不存在则抛出错误。</li>
+<li>&#39;r+&#39; 读写方式，文件不存在则抛出错误。</li>
+<li>&#39;w&#39; 只写方式，文件不存在则自动创建，存在则将被清空。</li>
+<li>&#39;w+&#39; 读写方式，文件不存在则自动创建。</li>
+<li>&#39;a&#39; 只写添加方式，文件不存在则自动创建。</li>
+<li>&#39;a+&#39; 读写添加方式，文件不存在则自动创建。</li>
+</ul>
+<hr>
+<h3 id="readTextFile">readTextFile</h3>
+<p><strong>打开文本文件，并读取内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> <span class="hljs-built_in">String</span> fs.readTextFile(<span class="hljs-built_in">String</span> fname) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回文件文本内容</li>
+</ul>
+<hr>
+<h3 id="readFile">readFile</h3>
+<p><strong>打开二进制文件，并读取内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> Variant fs.readFile(<span class="hljs-built_in">String</span> fname,
+    <span class="hljs-built_in">String</span> encoding = <span class="hljs-string">""</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>encoding: String, 指定解码方式，缺省不解码</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Variant, 返回文件文本内容</li>
+</ul>
+<hr>
+<h3 id="readLines">readLines</h3>
+<p><strong>打开文件，以数组方式读取一组文本行，行结尾标识基于 EOL 属性的设置，缺省时，posix:&quot;\n&quot;；windows:&quot;\r\n&quot;</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> <span class="hljs-built_in">Array</span> fs.readLines(<span class="hljs-built_in">String</span> fname,
+    Integer maxlines = <span class="hljs-number">-1</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>maxlines: Integer, 指定此次读取的最大行数，缺省读取全部文本行</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Array, 返回读取的文本行数组，若无数据可读，或者连接中断，空数组</li>
+</ul>
+<hr>
+<h3 id="writeTextFile">writeTextFile</h3>
+<p><strong>创建文本文件，并写入内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.writeTextFile(<span class="hljs-built_in">String</span> fname,
+    <span class="hljs-built_in">String</span> txt) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>txt: String, 指定要写入的字符串</li>
+</ul>
+<hr>
+<h3 id="writeFile">writeFile</h3>
+<p><strong>创建二进制文件，并写入内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.writeFile(<span class="hljs-built_in">String</span> fname,
+    Buffer data) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>data: <a href=../../object/ifs/buffer.md.html>Buffer</a>, 指定要写入的二进制数据</li>
+</ul>
+<hr>
+<h3 id="appendFile">appendFile</h3>
+<p><strong>创建二进制文件，并写入内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.appendFile(<span class="hljs-built_in">String</span> fname,
+    Buffer data) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>data: <a href=../../object/ifs/buffer.md.html>Buffer</a>, 指定要写入的二进制数据</li>
+</ul>
+<hr>
+<h3 id="setZipFS">setZipFS</h3>
+<p><strong>设置 <a href=zip.md.html>zip</a> 虚拟文件映射</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> fs.setZipFS(<span class="hljs-built_in">String</span> fname,
+    Buffer data);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定映射路径</li>
+<li>data: <a href=../../object/ifs/buffer.md.html>Buffer</a>, 指定映射的 <a href=zip.md.html>zip</a> 文件数据</li>
+</ul>
+<hr>
+<h3 id="clearZipFS">clearZipFS</h3>
+<p><strong>清除 <a href=zip.md.html>zip</a> 虚拟文件映射</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> fs.clearZipFS(<span class="hljs-built_in">String</span> fname = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定映射路径，缺省清除全部缓存</li>
+</ul>
+<h2 id="静态属性">静态属性</h2>
+<h3 id="constants">constants</h3>
+<p><strong>Object, fs模块的常量对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> readonly <span class="hljs-built_in">Object</span> fs.constants;
+</code></pre>
+<h2 id="常量">常量</h2>
+<h3 id="SEEK_SET">SEEK_SET</h3>
+<p><strong>seek 方式常量，移动到绝对位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">const</span> fs.SEEK_SET = <span class="hljs-number">0</span>;
+</code></pre>
+<hr>
+<h3 id="SEEK_CUR">SEEK_CUR</h3>
+<p><strong>seek 方式常量，移动到当前位置的相对位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">const</span> fs.SEEK_CUR = <span class="hljs-number">1</span>;
+</code></pre>
+<hr>
+<h3 id="SEEK_END">SEEK_END</h3>
+<p><strong>seek 方式常量，移动到文件结尾的相对位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">const</span> fs.SEEK_END = <span class="hljs-number">2</span>;
+</code></pre>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../../object/readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

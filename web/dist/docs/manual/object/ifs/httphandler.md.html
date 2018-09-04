@@ -1,0 +1,396 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 HttpHandler </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 HttpHandler </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li class="active"><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-HttpHandler">对象 HttpHandler</h1>
+<p><a href=../../module/ifs/http.md.html>http</a> 协议转换处理器</p>
+<p>用以将数据流转换为 <a href=../../module/ifs/http.md.html>http</a> 协议消息，创建方式：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">var</span> hdlr = <span class="hljs-keyword">new</span> mq.HttpHandler(...);
+</code></pre>
+<p>或者：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">var</span> hdlr = <span class="hljs-keyword">new</span> http.Handler(...);
+</code></pre>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="113pt" height="420pt"
+ viewBox="0.00 0.00 113.44 420.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 416)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-416 109.443,-416 109.443,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="23.89,-359.5 23.89,-411.5 81.553,-411.5 81.553,-359.5 23.89,-359.5"/>
+<text text-anchor="middle" x="52.7215" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="23.89,-391.5 81.553,-391.5 "/>
+<text text-anchor="start" x="31.89" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="31.89" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- Handler -->
+<g id="node2" class="node">
+<title>Handler</title>
+<g id="a_node2"><a xlink:href=handler.md.html xlink:title="Handler">
+<polygon fill="#ffffff" stroke="#000000" points="13.333,-262.5 13.333,-322.5 92.11,-322.5 92.11,-262.5 13.333,-262.5"/>
+<text text-anchor="middle" x="52.7215" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Handler</text>
+<polyline fill="none" stroke="#000000" points="13.333,-302.5 92.11,-302.5 "/>
+<text text-anchor="start" x="21.333" y="-289.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">new Handler()</text>
+<polyline fill="none" stroke="#000000" points="13.333,-282.5 92.11,-282.5 "/>
+<text text-anchor="start" x="21.333" y="-269.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">invoke()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;Handler -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;Handler</title>
+<path fill="none" stroke="#000000" d="M52.7215,-348.8142C52.7215,-340.1162 52.7215,-330.9383 52.7215,-322.574"/>
+<polygon fill="#000000" stroke="#000000" points="49.2216,-349.0987 52.7215,-359.0987 56.2216,-349.0987 49.2216,-349.0987"/>
+</g>
+<!-- HandlerEx -->
+<g id="node3" class="node">
+<title>HandlerEx</title>
+<g id="a_node3"><a xlink:href=handlerex.md.html xlink:title="HandlerEx">
+<polygon fill="#ffffff" stroke="#000000" points="21.3855,-153.5 21.3855,-225.5 84.0575,-225.5 84.0575,-153.5 21.3855,-153.5"/>
+<text text-anchor="middle" x="52.7215" y="-212.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">HandlerEx</text>
+<polyline fill="none" stroke="#000000" points="21.3855,-205.5 84.0575,-205.5 "/>
+<text text-anchor="start" x="29.3855" y="-192.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">handler</text>
+<text text-anchor="start" x="29.3855" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">stats</text>
+<polyline fill="none" stroke="#000000" points="21.3855,-173.5 84.0575,-173.5 "/>
+<text text-anchor="start" x="29.3855" y="-160.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">onerror()</text>
+</a>
+</g>
+</g>
+<!-- Handler&#45;&gt;HandlerEx -->
+<g id="edge2" class="edge">
+<title>Handler&#45;&gt;HandlerEx</title>
+<path fill="none" stroke="#000000" d="M52.7215,-252.3647C52.7215,-243.5502 52.7215,-234.2682 52.7215,-225.6227"/>
+<polygon fill="#000000" stroke="#000000" points="49.2216,-252.4312 52.7215,-262.4312 56.2216,-252.4313 49.2216,-252.4312"/>
+</g>
+<!-- HttpHandler -->
+<g id="me" class="node">
+<title>HttpHandler</title>
+<g id="a_me"><a xlink:title="HttpHandler">
+<polygon fill="#d3d3d3" stroke="#000000" points="0,-.5 0,-116.5 105.443,-116.5 105.443,-.5 0,-.5"/>
+<text text-anchor="middle" x="52.7215" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">HttpHandler</text>
+<polyline fill="none" stroke="#000000" points="0,-96.5 105.443,-96.5 "/>
+<text text-anchor="start" x="8" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">new HttpHandler()</text>
+<polyline fill="none" stroke="#000000" points="0,-76.5 105.443,-76.5 "/>
+<text text-anchor="start" x="8" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">forceGZIP</text>
+<text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">maxHeadersCount</text>
+<text text-anchor="start" x="8" y="-39.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">maxBodySize</text>
+<text text-anchor="start" x="8" y="-27.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">serverName</text>
+<polyline fill="none" stroke="#000000" points="0,-20.5 105.443,-20.5 "/>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">enableCrossOrigin()</text>
+</a>
+</g>
+</g>
+<!-- HandlerEx&#45;&gt;HttpHandler -->
+<g id="edge3" class="edge">
+<title>HandlerEx&#45;&gt;HttpHandler</title>
+<path fill="none" stroke="#000000" d="M52.7215,-143.1779C52.7215,-134.6008 52.7215,-125.5426 52.7215,-116.6662"/>
+<polygon fill="#000000" stroke="#000000" points="49.2216,-143.3569 52.7215,-153.3569 56.2216,-143.3569 49.2216,-143.3569"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="构造函数">构造函数</h2>
+<h3 id="HttpHandler">HttpHandler</h3>
+<p><strong>创建一个 <a href=../../module/ifs/http.md.html>http</a> 协议处理器对象，将流对象的数据转变为 <a href=../../module/ifs/http.md.html>http</a> 消息对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">new</span> HttpHandler(Handler hdlr);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>hdlr: <a href=handler.md.html>Handler</a>, 内置消息处理器，处理函数，链式处理数组，路由对象，详见 <a href=../../module/ifs/mq.md.html#Handler>mq.Handler</a></li>
+</ul>
+<h2 id="成员属性">成员属性</h2>
+<h3 id="forceGZIP">forceGZIP</h3>
+<p><strong>Boolean, 查询和设置是否允强制使用 gzip 压缩输出，缺省为 false</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> HttpHandler.forceGZIP;
+</code></pre>
+<hr>
+<h3 id="maxHeadersCount">maxHeadersCount</h3>
+<p><strong>Integer, 查询和设置最大请求头个数，缺省为 128</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer HttpHandler.maxHeadersCount;
+</code></pre>
+<hr>
+<h3 id="maxBodySize">maxBodySize</h3>
+<p><strong>Integer, 查询和设置 body 最大尺寸，以 MB 为单位，缺省为 64</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer HttpHandler.maxBodySize;
+</code></pre>
+<hr>
+<h3 id="serverName">serverName</h3>
+<p><strong>String, 查询和设置服务器名称，缺省为：fibjs/0.x.0</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> HttpHandler.serverName;
+</code></pre>
+<hr>
+<h3 id="handler">handler</h3>
+<p><strong><a href=handler.md.html>Handler</a>, <a href=websocket.md.html>WebSocket</a> 协议转换处理器当前事件处理接口对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Handler HttpHandler.handler;
+</code></pre>
+<hr>
+<h3 id="stats">stats</h3>
+<p><strong><a href=stats.md.html>Stats</a>, 查询 <a href=websocket.md.html>WebSocket</a> 包协议转换处理器的工作状态</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Stats HttpHandler.stats;
+</code></pre>
+<p>返回的结果为一个 <a href=stats.md.html>Stats</a> 对象，结构如下：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7</div>{
+    <span class="hljs-attr">total</span>: <span class="hljs-number">1000</span>, <span class="hljs-comment">// 总计处理的请求</span>
+    pendding: <span class="hljs-number">100</span>, <span class="hljs-comment">// 当前正在处理的请求</span>
+    request: <span class="hljs-number">10</span>, <span class="hljs-comment">// 新建的请求</span>
+    response: <span class="hljs-number">10</span>, <span class="hljs-comment">// 发送的响应</span>
+    error: <span class="hljs-number">100</span> <span class="hljs-comment">// 发生的错误</span>
+}
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="enableCrossOrigin">enableCrossOrigin</h3>
+<p><strong>允许跨域请求</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpHandler.enableCrossOrigin(<span class="hljs-built_in">String</span> allowHeaders = <span class="hljs-string">"Content-Type"</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>allowHeaders: String, 指定接受的 <a href=../../module/ifs/http.md.html>http</a> 头字段</li>
+</ul>
+<hr>
+<h3 id="onerror">onerror</h3>
+<p><strong>设置错误处理器</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpHandler.onerror(<span class="hljs-built_in">Object</span> hdlrs);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>hdlrs: Object, 指定不同的错误的处理器，key 是错误号，value 是处理器，可以是内置消息处理器，处理函数，链式处理数组，路由对象，详见 <a href=../../module/ifs/mq.md.html#Handler>mq.Handler</a></li>
+</ul>
+<p>使用方式：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6</div>hdlr.onerror({
+    <span class="hljs-string">"404"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) </span>{
+        ...
+    },
+    <span class="hljs-string">"500"</span>: <span class="hljs-keyword">new</span> mq.Routing(...)
+})
+</code></pre>
+<hr>
+<h3 id="invoke">invoke</h3>
+<p><strong>处理一个消息或对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Handler HttpHandler.invoke(object v) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>v: <a href=object.md.html>object</a>, 指定处理的消息或对象</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=handler.md.html>Handler</a>, 返回下一步的处理器</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> HttpHandler.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value HttpHandler.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

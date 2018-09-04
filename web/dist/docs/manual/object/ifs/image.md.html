@@ -1,0 +1,1339 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 Image </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 Image </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li class="active"><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-Image">对象 Image</h1>
+<p>图像处理对象，用以对图像进行转换，绘制，存储等操作</p>
+<p>Image 对象属于 <a href=../../module/ifs/gd.md.html>gd</a> 模块，创建：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">var</span> img = gd.create(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>);
+<span class="hljs-keyword">var</span> img1 = gd.load(data);
+</code></pre>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="114pt" height="770pt"
+ viewBox="0.00 0.00 114.00 770.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 766)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-766 110.004,-766 110.004,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="24.1705,-709.5 24.1705,-761.5 81.8335,-761.5 81.8335,-709.5 24.1705,-709.5"/>
+<text text-anchor="middle" x="53.002" y="-748.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="24.1705,-741.5 81.8335,-741.5 "/>
+<text text-anchor="start" x="32.1705" y="-728.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="32.1705" y="-716.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- Image -->
+<g id="me" class="node">
+<title>Image</title>
+<g id="a_me"><a xlink:title="Image">
+<polygon fill="#d3d3d3" stroke="#000000" points="0,-.5 0,-672.5 106.004,-672.5 106.004,-.5 0,-.5"/>
+<text text-anchor="middle" x="53.002" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Image</text>
+<polyline fill="none" stroke="#000000" points="0,-652.5 106.004,-652.5 "/>
+<text text-anchor="start" x="8" y="-639.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">width</text>
+<text text-anchor="start" x="8" y="-627.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">height</text>
+<text text-anchor="start" x="8" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">format</text>
+<text text-anchor="start" x="8" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">type</text>
+<text text-anchor="start" x="8" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorsTotal</text>
+<text text-anchor="start" x="8" y="-579.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">transparent</text>
+<text text-anchor="start" x="8" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">progressive</text>
+<text text-anchor="start" x="8" y="-555.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">alphaBlending</text>
+<polyline fill="none" stroke="#000000" points="0,-548.5 106.004,-548.5 "/>
+<text text-anchor="start" x="8" y="-535.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getData()</text>
+<text text-anchor="start" x="8" y="-523.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">save()</text>
+<text text-anchor="start" x="8" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorAllocate()</text>
+<text text-anchor="start" x="8" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorAllocateAlpha()</text>
+<text text-anchor="start" x="8" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorClosest()</text>
+<text text-anchor="start" x="8" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorClosestHWB()</text>
+<text text-anchor="start" x="8" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorClosestAlpha()</text>
+<text text-anchor="start" x="8" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorExact()</text>
+<text text-anchor="start" x="8" y="-439.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorExactAlpha()</text>
+<text text-anchor="start" x="8" y="-427.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorResolve()</text>
+<text text-anchor="start" x="8" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorResolveAlpha()</text>
+<text text-anchor="start" x="8" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorDeallocate()</text>
+<text text-anchor="start" x="8" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">clip()</text>
+<text text-anchor="start" x="8" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getPixel()</text>
+<text text-anchor="start" x="8" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getTrueColorPixel()</text>
+<text text-anchor="start" x="8" y="-355.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setPixel()</text>
+<text text-anchor="start" x="8" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setThickness()</text>
+<text text-anchor="start" x="8" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">line()</text>
+<text text-anchor="start" x="8" y="-319.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">rectangle()</text>
+<text text-anchor="start" x="8" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">filledRectangle()</text>
+<text text-anchor="start" x="8" y="-295.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">polygon()</text>
+<text text-anchor="start" x="8" y="-283.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">openPolygon()</text>
+<text text-anchor="start" x="8" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">filledPolygon()</text>
+<text text-anchor="start" x="8" y="-259.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ellipse()</text>
+<text text-anchor="start" x="8" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">filledEllipse()</text>
+<text text-anchor="start" x="8" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">arc()</text>
+<text text-anchor="start" x="8" y="-223.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">filledArc()</text>
+<text text-anchor="start" x="8" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">fill()</text>
+<text text-anchor="start" x="8" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">fillToBorder()</text>
+<text text-anchor="start" x="8" y="-187.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">colorReplace()</text>
+<text text-anchor="start" x="8" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">clone()</text>
+<text text-anchor="start" x="8" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">resample()</text>
+<text text-anchor="start" x="8" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">crop()</text>
+<text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">flip()</text>
+<text text-anchor="start" x="8" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">rotate()</text>
+<text text-anchor="start" x="8" y="-115.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">convert()</text>
+<text text-anchor="start" x="8" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">copy()</text>
+<text text-anchor="start" x="8" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">copyMerge()</text>
+<text text-anchor="start" x="8" y="-79.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">copyMergeGray()</text>
+<text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">copyResized()</text>
+<text text-anchor="start" x="8" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">copyResampled()</text>
+<text text-anchor="start" x="8" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">copyRotated()</text>
+<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">filter()</text>
+<text text-anchor="start" x="8" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">affine()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">gaussianBlur()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;Image -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;Image</title>
+<path fill="none" stroke="#000000" d="M53.002,-699.2738C53.002,-691.4074 53.002,-682.4771 53.002,-672.7036"/>
+<polygon fill="#000000" stroke="#000000" points="49.5021,-699.3205 53.002,-709.3205 56.5021,-699.3205 49.5021,-699.3205"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="成员属性">成员属性</h2>
+<h3 id="width">width</h3>
+<p><strong>Integer, 查询图像宽度</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Image.width;
+</code></pre>
+<hr>
+<h3 id="height">height</h3>
+<p><strong>Integer, 查询图像高度</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Image.height;
+</code></pre>
+<hr>
+<h3 id="format">format</h3>
+<p><strong>Integer, 查询图像来源格式，结果为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a>, <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a>, <a href=../../module/ifs/gd.md.html#GIF>gd.GIF</a>, <a href=../../module/ifs/gd.md.html#BMP>gd.BMP</a>, <a href=../../module/ifs/gd.md.html#WEBP>gd.WEBP</a></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Image.format;
+</code></pre>
+<hr>
+<h3 id="type">type</h3>
+<p><strong>Integer, 查询图像类型，结果为 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a>, <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Image.type;
+</code></pre>
+<hr>
+<h3 id="colorsTotal">colorsTotal</h3>
+<p><strong>Integer, 查询图像颜色表内的颜色总数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Image.colorsTotal;
+</code></pre>
+<hr>
+<h3 id="transparent">transparent</h3>
+<p><strong>Integer, 查询和设定指定的颜色为透明色</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.transparent;
+</code></pre>
+<hr>
+<h3 id="progressive">progressive</h3>
+<p><strong>Boolean, 查询和设定图像是否渐进式，仅支持 jpeg 格式时</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> Image.progressive;
+</code></pre>
+<hr>
+<h3 id="alphaBlending">alphaBlending</h3>
+<p><strong>Boolean, 查询和设定绘图时是否计算 alpha 层，缺省为 true</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> Image.alphaBlending;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="getData">getData</h3>
+<p><strong>按照指定的格式返回图像数据</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Buffer Image.getData(Integer format = gd.PNG,
+    Integer quality = <span class="hljs-number">85</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>format: Integer, 指定返回数据的格式，允许值为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a>, <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a>, <a href=../../module/ifs/gd.md.html#GIF>gd.GIF</a>, <a href=../../module/ifs/gd.md.html#BMP>gd.BMP</a>, <a href=../../module/ifs/gd.md.html#WEBP>gd.WEBP</a>, 缺省为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a></li>
+<li>quality: Integer, 当格式为 <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a> 或 <a href=../../module/ifs/gd.md.html#WEBP>gd.WEBP</a> 时用于指定压缩质量，缺省为 85，其他格式忽略此参数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回格式化的数据</li>
+</ul>
+<hr>
+<h3 id="save">save</h3>
+<p><strong>按照指定的格式将图像数据存入流对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Image.save(Stream stm,
+    Integer format = gd.PNG,
+    Integer quality = <span class="hljs-number">85</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>stm: <a href=stream.md.html>Stream</a>, 指定要存入的流对象</li>
+<li>format: Integer, 指定返回数据的格式，允许值为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a>, <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a>, <a href=../../module/ifs/gd.md.html#GIF>gd.GIF</a>, <a href=../../module/ifs/gd.md.html#BMP>gd.BMP</a>, <a href=../../module/ifs/gd.md.html#WEBP>gd.WEBP</a>, 缺省为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a></li>
+<li>quality: Integer, 当格式为 <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a> 或 <a href=../../module/ifs/gd.md.html#WEBP>gd.WEBP</a> 时用于指定压缩质量，缺省为 85，其他格式忽略此参数</li>
+</ul>
+<hr>
+<p><strong>按照指定的格式将图像数据存入指定文件，文件将被强制覆盖</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Image.save(<span class="hljs-built_in">String</span> fname,
+    Integer format = gd.PNG,
+    Integer quality = <span class="hljs-number">85</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定文件名</li>
+<li>format: Integer, 指定返回数据的格式，允许值为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a>, <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a>, <a href=../../module/ifs/gd.md.html#GIF>gd.GIF</a>, <a href=../../module/ifs/gd.md.html#BMP>gd.BMP</a>, <a href=../../module/ifs/gd.md.html#WEBP>gd.WEBP</a>, 缺省为 <a href=../../module/ifs/gd.md.html#PNG>gd.PNG</a></li>
+<li>quality: Integer, 当格式为 <a href=../../module/ifs/gd.md.html#JPEG>gd.JPEG</a> 时用于指定压缩质量，缺省为 85，其他格式忽略此参数</li>
+</ul>
+<hr>
+<h3 id="colorAllocate">colorAllocate</h3>
+<p><strong>为指定的颜色申请一个颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Image.colorAllocate(Integer red,
+    Integer green,
+    Integer blue);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>为指定的颜色申请一个颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorAllocate(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorAllocateAlpha">colorAllocateAlpha</h3>
+<p><strong>为指定的颜色及透明申请一个颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Integer Image.colorAllocateAlpha(Integer red,
+    Integer green,
+    Integer blue,
+    <span class="hljs-built_in">Number</span> alpha);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+<li>alpha: Number, 透明分量，范围为 0-1.0</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>为指定的颜色及透明申请一个颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorAllocateAlpha(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorClosest">colorClosest</h3>
+<p><strong>为指定的颜色查找一个最接近的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Image.colorClosest(Integer red,
+    Integer green,
+    Integer blue);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>为指定的颜色查找一个最接近的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorClosest(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorClosestHWB">colorClosestHWB</h3>
+<p><strong>为指定的颜色查找一个最接近的颜色号，此方法使用 Hue/White/Black 计算查找最接近颜色，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Image.colorClosestHWB(Integer red,
+    Integer green,
+    Integer blue);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>为指定的颜色查找一个最接近的颜色号，此方法使用 Hue/White/Black 计算查找最接近颜色，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorClosestHWB(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorClosestAlpha">colorClosestAlpha</h3>
+<p><strong>为指定的颜色及透明查找一个最接近的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Integer Image.colorClosestAlpha(Integer red,
+    Integer green,
+    Integer blue,
+    <span class="hljs-built_in">Number</span> alpha);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+<li>alpha: Number, 透明分量，范围为 0-1.0</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>为指定的颜色及透明查找一个最接近的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorClosestAlpha(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorExact">colorExact</h3>
+<p><strong>查找指定的颜色对应的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Image.colorExact(Integer red,
+    Integer green,
+    Integer blue);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>查找指定的颜色对应的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorExact(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorExactAlpha">colorExactAlpha</h3>
+<p><strong>查找指定的颜色及透明对应的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Integer Image.colorExactAlpha(Integer red,
+    Integer green,
+    Integer blue,
+    <span class="hljs-built_in">Number</span> alpha);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+<li>alpha: Number, 透明分量，范围为 0-1.0</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>查找指定的颜色及透明对应的颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorExactAlpha(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorResolve">colorResolve</h3>
+<p><strong>查找指定的颜色对应的颜色号，如果颜色不存在，则为其申请一个新颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Integer Image.colorResolve(Integer red,
+    Integer green,
+    Integer blue);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>查找指定的颜色对应的颜色号，如果颜色不存在，则为其申请一个新颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgb 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorResolve(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorResolveAlpha">colorResolveAlpha</h3>
+<p><strong>查找指定的颜色及透明对应的颜色号，如果颜色不存在，则为其申请一个新颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Integer Image.colorResolveAlpha(Integer red,
+    Integer green,
+    Integer blue,
+    <span class="hljs-built_in">Number</span> alpha);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>red: Integer, 红色分量，范围为 0-255</li>
+<li>green: Integer, 绿色分量，范围为 0-255</li>
+<li>blue: Integer, 蓝色分量，范围为 0-255</li>
+<li>alpha: Number, 透明分量，范围为 0-1.0</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<p><strong>查找指定的颜色及透明对应的颜色号，如果颜色不存在，则为其申请一个新颜色号，对于 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a> 图像，颜色号为调色板索引，对于 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 图像，颜色号为 rgba 编码数值</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer Image.colorResolveAlpha(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 组合颜色值，可由 <a href=../../module/ifs/gd.md.html#color>gd.color</a>, gb.rgb, <a href=../../module/ifs/gd.md.html#rgba>gd.rgba</a> 等函数生成</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回颜色号，不成功返回 -1</li>
+</ul>
+<hr>
+<h3 id="colorDeallocate">colorDeallocate</h3>
+<p><strong>释放指定的颜色号，释放的颜色号将会被再次申请后替换</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image.colorDeallocate(Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 指定要释放的颜色号</li>
+</ul>
+<hr>
+<h3 id="clip">clip</h3>
+<p><strong>设定绘图的剪切窗口，设定后，所有的绘制将被剪切在窗口内部</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Image.clip(Integer x1,
+    Integer y1,
+    Integer x2,
+    Integer y2);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x1: Integer, 剪切窗口的左上 x 坐标</li>
+<li>y1: Integer, 剪切窗口的左上 y 坐标</li>
+<li>x2: Integer, 剪切窗口的右下 x 坐标</li>
+<li>y2: Integer, 剪切窗口的右下 y 坐标</li>
+</ul>
+<hr>
+<h3 id="getPixel">getPixel</h3>
+<p><strong>查询指定位置点的颜色</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Integer Image.getPixel(Integer x,
+    Integer y);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 指定查询的 x 坐标</li>
+<li>y: Integer, 指定查询的 y 坐标</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回指定点的颜色号</li>
+</ul>
+<hr>
+<h3 id="getTrueColorPixel">getTrueColorPixel</h3>
+<p><strong>查询指定位置点的真彩色颜色</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Integer Image.getTrueColorPixel(Integer x,
+    Integer y);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 指定查询的 x 坐标</li>
+<li>y: Integer, 指定查询的 y 坐标</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回指定点的颜色号</li>
+</ul>
+<hr>
+<h3 id="setPixel">setPixel</h3>
+<p><strong>在指定位置画一个点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Image.setPixel(Integer x,
+    Integer y,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 指定画点的 x 坐标</li>
+<li>y: Integer, 指定画点的 y 坐标</li>
+<li>color: Integer, 指定画点的颜色号</li>
+</ul>
+<hr>
+<h3 id="setThickness">setThickness</h3>
+<p><strong>设定画线的宽度，line, rectangle, arc 等方法画线时缺省宽度为一个像素，可使用此方法改变线的宽度</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image.setThickness(Integer thickness);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>thickness: Integer, 画线的宽度</li>
+</ul>
+<hr>
+<h3 id="line">line</h3>
+<p><strong>在指定的位置画一条线</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image.line(Integer x1,
+    Integer y1,
+    Integer x2,
+    Integer y2,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x1: Integer, 指定画线的起始 x 坐标</li>
+<li>y1: Integer, 指定画线的起始 y 坐标</li>
+<li>x2: Integer, 指定画线的结束 x 坐标</li>
+<li>y2: Integer, 指定画线的结束 y 坐标</li>
+<li>color: Integer, 指定画线的颜色号</li>
+</ul>
+<hr>
+<h3 id="rectangle">rectangle</h3>
+<p><strong>在指定的位置画一个矩形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image.rectangle(Integer x1,
+    Integer y1,
+    Integer x2,
+    Integer y2,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x1: Integer, 指定左上角 x 坐标</li>
+<li>y1: Integer, 指定左上角 y 坐标</li>
+<li>x2: Integer, 指定右下角 x 坐标</li>
+<li>y2: Integer, 指定右下角 y 坐标</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="filledRectangle">filledRectangle</h3>
+<p><strong>在指定的位置画一个填充的矩形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image.filledRectangle(Integer x1,
+    Integer y1,
+    Integer x2,
+    Integer y2,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x1: Integer, 指定左上角 x 坐标</li>
+<li>y1: Integer, 指定左上角 y 坐标</li>
+<li>x2: Integer, 指定右下角 x 坐标</li>
+<li>y2: Integer, 指定右下角 y 坐标</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="polygon">polygon</h3>
+<p><strong>根据给定的点绘制一个多边形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Image.polygon(<span class="hljs-built_in">Array</span> points,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>points: Array, 包含多边形点的数组，如 [[1, 1], [1, 10], [10, 15], [10, 20]]</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="openPolygon">openPolygon</h3>
+<p><strong>根据给定的点绘制一个开放多边形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Image.openPolygon(<span class="hljs-built_in">Array</span> points,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>points: Array, 包含多边形点的数组，如 [[1, 1], [1, 10], [10, 15], [10, 20]]</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="filledPolygon">filledPolygon</h3>
+<p><strong>根据给定的点绘制一个填充多边形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Image.filledPolygon(<span class="hljs-built_in">Array</span> points,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>points: Array, 包含多边形点的数组，如 [[1, 1], [1, 10], [10, 15], [10, 20]]</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="ellipse">ellipse</h3>
+<p><strong>画一个椭圆</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image.ellipse(Integer x,
+    Integer y,
+    Integer width,
+    Integer height,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 椭圆中心的 x 坐标</li>
+<li>y: Integer, 椭圆中心的 y 坐标</li>
+<li>width: Integer, 椭圆的宽度</li>
+<li>height: Integer, 椭圆的高度</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="filledEllipse">filledEllipse</h3>
+<p><strong>画一个填充的椭圆</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image.filledEllipse(Integer x,
+    Integer y,
+    Integer width,
+    Integer height,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 椭圆中心的 x 坐标</li>
+<li>y: Integer, 椭圆中心的 y 坐标</li>
+<li>width: Integer, 椭圆的宽度</li>
+<li>height: Integer, 椭圆的高度</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="arc">arc</h3>
+<p><strong>画一个扇形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7</div>Image.arc(Integer x,
+    Integer y,
+    Integer width,
+    Integer height,
+    Integer start,
+    Integer end,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 扇形中心的 x 坐标</li>
+<li>y: Integer, 扇形中心的 y 坐标</li>
+<li>width: Integer, 扇形所在椭圆的宽度</li>
+<li>height: Integer, 扇形所在椭圆的高度</li>
+<li>start: Integer, 扇形开始的角度，范围为 0-360</li>
+<li>end: Integer, 扇形结束的角度，范围为 0-360</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+</ul>
+<hr>
+<h3 id="filledArc">filledArc</h3>
+<p><strong>画一个填充扇形</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8</div>Image.filledArc(Integer x,
+    Integer y,
+    Integer width,
+    Integer height,
+    Integer start,
+    Integer end,
+    Integer color,
+    Integer style = gd.ARC);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 扇形中心的 x 坐标</li>
+<li>y: Integer, 扇形中心的 y 坐标</li>
+<li>width: Integer, 扇形所在椭圆的宽度</li>
+<li>height: Integer, 扇形所在椭圆的高度</li>
+<li>start: Integer, 扇形开始的角度，范围为 0-360</li>
+<li>end: Integer, 扇形结束的角度，范围为 0-360</li>
+<li>color: Integer, 指定矩形的颜色号</li>
+<li>style: Integer, 指定扇形的样式，允许的值有 <a href=../../module/ifs/gd.md.html#ARC>gd.ARC</a>, <a href=../../module/ifs/gd.md.html#CHORD>gd.CHORD</a>, <a href=../../module/ifs/gd.md.html#NOFILL>gd.NOFILL</a>, <a href=../../module/ifs/gd.md.html#EDGED>gd.EDGED</a> 及其组合</li>
+</ul>
+<hr>
+<h3 id="fill">fill</h3>
+<p><strong>从指定的点开始填充封闭区域</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>Image.fill(Integer x,
+    Integer y,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 开始填充的 x 坐标</li>
+<li>y: Integer, 开始填充的 y 坐标</li>
+<li>color: Integer, 指定填充的颜色号</li>
+</ul>
+<hr>
+<h3 id="fillToBorder">fillToBorder</h3>
+<p><strong>从指定的点开始在指定颜色的边框内填充封闭区域</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Image.fillToBorder(Integer x,
+    Integer y,
+    Integer borderColor,
+    Integer color);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 开始填充的 x 坐标</li>
+<li>y: Integer, 开始填充的 y 坐标</li>
+<li>borderColor: Integer, 指定边框的颜色号</li>
+<li>color: Integer, 指定填充的颜色号</li>
+</ul>
+<hr>
+<h3 id="colorReplace">colorReplace</h3>
+<p><strong>替换图像中指定的颜色为新颜色</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Image.colorReplace(Integer src,
+    Integer dst) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>src: Integer, 指定要替换的颜色</li>
+<li>dst: Integer, 指定新颜色</li>
+</ul>
+<hr>
+<h3 id="clone">clone</h3>
+<p><strong>复制当前图像为一个新图像</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image Image.clone() <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Image, 返回复制的新图像对象</li>
+</ul>
+<hr>
+<h3 id="resample">resample</h3>
+<p><strong>根据图像拉伸生成一个新尺寸的图像</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>Image Image.resample(Integer width,
+    Integer height) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>width: Integer, 指定拉伸的宽度</li>
+<li>height: Integer, 指定拉伸的高度</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Image, 返回新图像对象</li>
+</ul>
+<hr>
+<h3 id="crop">crop</h3>
+<p><strong>剪切图像的一部分为一个新的图像</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div>Image Image.crop(Integer x,
+    Integer y,
+    Integer width,
+    Integer height) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>x: Integer, 剪切窗口的左上 x 坐标</li>
+<li>y: Integer, 剪切窗口的左上 y 坐标</li>
+<li>width: Integer, 剪切窗口的宽度</li>
+<li>height: Integer, 剪切窗口的高度</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Image, 返回剪切出的图像</li>
+</ul>
+<hr>
+<h3 id="flip">flip</h3>
+<p><strong>镜像当前图像</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image.flip(Integer dir = gd.HORIZONTAL) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>dir: Integer, 镜像方向，允许值为 <a href=../../module/ifs/gd.md.html#BOTH>gd.BOTH</a>,<a href=../../module/ifs/gd.md.html#HORIZONTAL>gd.HORIZONTAL</a>, <a href=../../module/ifs/gd.md.html#VERTICAL>gd.VERTICAL</a>, 缺省为 <a href=../../module/ifs/gd.md.html#HORIZONTAL>gd.HORIZONTAL</a></li>
+</ul>
+<hr>
+<h3 id="rotate">rotate</h3>
+<p><strong>旋转当前图像</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image.rotate(Integer dir) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>dir: Integer, 旋转方向，允许值为 <a href=../../module/ifs/gd.md.html#LEFT>gd.LEFT</a>, <a href=../../module/ifs/gd.md.html#RIGHT>gd.RIGHT</a></li>
+</ul>
+<hr>
+<h3 id="convert">convert</h3>
+<p><strong>转换当前图像类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image.convert(Integer color = gd.TRUECOLOR) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>color: Integer, 指定图像类型，允许值为 <a href=../../module/ifs/gd.md.html#TRUECOLOR>gd.TRUECOLOR</a> 或 <a href=../../module/ifs/gd.md.html#PALETTE>gd.PALETTE</a></li>
+</ul>
+<hr>
+<h3 id="copy">copy</h3>
+<p><strong>从一个图像中复制一个区域到指定的位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7</div>Image.copy(Image source,
+    Integer dstX,
+    Integer dstY,
+    Integer srcX,
+    Integer srcY,
+    Integer width,
+    Integer height) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: Image, 源图像对象</li>
+<li>dstX: Integer, 指定复制目标的 x 坐标</li>
+<li>dstY: Integer, 指定复制目标的 y 坐标</li>
+<li>srcX: Integer, 指定复制源左上角的 x 坐标</li>
+<li>srcY: Integer, 指定复制源左上角的 y 坐标</li>
+<li>width: Integer, 指定复制的宽度</li>
+<li>height: Integer, 指定复制的高度</li>
+</ul>
+<hr>
+<h3 id="copyMerge">copyMerge</h3>
+<p><strong>从一个图像中复制一个区域覆盖到指定的位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8</div>Image.copyMerge(Image source,
+    Integer dstX,
+    Integer dstY,
+    Integer srcX,
+    Integer srcY,
+    Integer width,
+    Integer height,
+    Integer percent) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: Image, 源图像对象</li>
+<li>dstX: Integer, 指定复制目标的 x 坐标</li>
+<li>dstY: Integer, 指定复制目标的 y 坐标</li>
+<li>srcX: Integer, 指定复制源左上角的 x 坐标</li>
+<li>srcY: Integer, 指定复制源左上角的 y 坐标</li>
+<li>width: Integer, 指定复制的宽度</li>
+<li>height: Integer, 指定复制的高度</li>
+<li>percent: Integer, 指定覆盖的透明度</li>
+</ul>
+<hr>
+<h3 id="copyMergeGray">copyMergeGray</h3>
+<p><strong>从一个图像中复制一个区域的灰度覆盖到指定的位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8</div>Image.copyMergeGray(Image source,
+    Integer dstX,
+    Integer dstY,
+    Integer srcX,
+    Integer srcY,
+    Integer width,
+    Integer height,
+    Integer percent) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: Image, 源图像对象</li>
+<li>dstX: Integer, 指定复制目标的 x 坐标</li>
+<li>dstY: Integer, 指定复制目标的 y 坐标</li>
+<li>srcX: Integer, 指定复制源左上角的 x 坐标</li>
+<li>srcY: Integer, 指定复制源左上角的 y 坐标</li>
+<li>width: Integer, 指定复制的宽度</li>
+<li>height: Integer, 指定复制的高度</li>
+<li>percent: Integer, 指定覆盖的透明度</li>
+</ul>
+<hr>
+<h3 id="copyResized">copyResized</h3>
+<p><strong>将一个图像中的一个区域拉伸后复制到指定的位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9</div>Image.copyResized(Image source,
+    Integer dstX,
+    Integer dstY,
+    Integer srcX,
+    Integer srcY,
+    Integer dstW,
+    Integer dstH,
+    Integer srcW,
+    Integer srcH) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: Image, 源图像对象</li>
+<li>dstX: Integer, 指定复制目标的 x 坐标</li>
+<li>dstY: Integer, 指定复制目标的 y 坐标</li>
+<li>srcX: Integer, 指定复制源左上角的 x 坐标</li>
+<li>srcY: Integer, 指定复制源左上角的 y 坐标</li>
+<li>dstW: Integer, 指定复制的拉伸宽度</li>
+<li>dstH: Integer, 指定复制的拉伸高度</li>
+<li>srcW: Integer, 指定复制的源宽度</li>
+<li>srcH: Integer, 指定复制的源高度</li>
+</ul>
+<hr>
+<h3 id="copyResampled">copyResampled</h3>
+<p><strong>将一个图像中的一个区域拉伸后复制到指定的位置，不同与 copyResized，此方法拉伸时会对图像进行抖动</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9</div>Image.copyResampled(Image source,
+    Integer dstX,
+    Integer dstY,
+    Integer srcX,
+    Integer srcY,
+    Integer dstW,
+    Integer dstH,
+    Integer srcW,
+    Integer srcH) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: Image, 源图像对象</li>
+<li>dstX: Integer, 指定复制目标的 x 坐标</li>
+<li>dstY: Integer, 指定复制目标的 y 坐标</li>
+<li>srcX: Integer, 指定复制源左上角的 x 坐标</li>
+<li>srcY: Integer, 指定复制源左上角的 y 坐标</li>
+<li>dstW: Integer, 指定复制的拉伸宽度</li>
+<li>dstH: Integer, 指定复制的拉伸高度</li>
+<li>srcW: Integer, 指定复制的源宽度</li>
+<li>srcH: Integer, 指定复制的源高度</li>
+</ul>
+<hr>
+<h3 id="copyRotated">copyRotated</h3>
+<p><strong>将一个图像中的一个区域旋转后复制到指定的位置</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8</div>Image.copyRotated(Image source,
+    <span class="hljs-built_in">Number</span> dstX,
+    <span class="hljs-built_in">Number</span> dstY,
+    Integer srcX,
+    Integer srcY,
+    Integer width,
+    Integer height,
+    <span class="hljs-built_in">Number</span> angle) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: Image, 源图像对象</li>
+<li>dstX: Number, 指定复制目标的 x 坐标</li>
+<li>dstY: Number, 指定复制目标的 y 坐标</li>
+<li>srcX: Integer, 指定复制源左上角的 x 坐标</li>
+<li>srcY: Integer, 指定复制源左上角的 y 坐标</li>
+<li>width: Integer, 指定复制的宽度</li>
+<li>height: Integer, 指定复制的高度</li>
+<li>angle: Number, 指定旋转的角度</li>
+</ul>
+<hr>
+<h3 id="filter">filter</h3>
+<p><strong>把过滤器 filterType应用到图像上，根据过滤器类型传入所需参数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image.filter(Integer filterType,
+    <span class="hljs-built_in">Number</span> arg1 = <span class="hljs-number">0</span>,
+    <span class="hljs-built_in">Number</span> arg2 = <span class="hljs-number">0</span>,
+    <span class="hljs-built_in">Number</span> arg3 = <span class="hljs-number">0</span>,
+    <span class="hljs-built_in">Number</span> arg4 = <span class="hljs-number">0</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>filterType: Integer, 过滤器类型</li>
+<li>arg1: Number, 过滤器所需参数: SMOOTH 的平滑级别、BRIGHTNESS 的亮度级别、CONTRAST 的对比度级别、COLORIZE 的 red 分值</li>
+<li>arg2: Number, 过滤器所需参数: COLORIZE 的 green 分值</li>
+<li>arg3: Number, 过滤器所需参数: COLORIZE 的 blue 分值</li>
+<li>arg4: Number, 过滤器所需参数: COLORIZE 的透明度 alpha 分值</li>
+</ul>
+<p>参数 filterType 可以为以下数值：</p>
+<ul>
+<li>MEAN_REMOVAL,    用平均移除法来达到轮廓效果</li>
+<li>EDGEDETECT,      用边缘检测来突出图像的边缘</li>
+<li>EMBOSS,          使图像浮雕化</li>
+<li>SELECTIVE_BLUR,  模糊图像</li>
+<li>GAUSSIAN_BLUR,   用高斯算法模糊图像</li>
+<li>NEGATE,          将图像中所有颜色反转</li>
+<li>GRAYSCALE,       将图像转换为灰度图</li>
+<li>SMOOTH,          使图像更柔滑，用arg1设定柔滑级别</li>
+<li>BRIGHTNESS,      改变图像的亮度，用arg1设定亮度级别，取值范围是-255~255</li>
+<li>CONTRAST,        改变图像的对比度，用arg1设定对比度级别，取值范围是0~100</li>
+<li>COLORIZE,        改变图像的色调，用arg1、arg2、arg3分别指定red、blue、green分值，每种颜色范围是0~255，arg4为透明度，取值返回是0~127</li>
+</ul>
+<hr>
+<h3 id="affine">affine</h3>
+<p><strong>根据给定的矩阵，对当前图像进行仿射</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5</div>Image Image.affine(<span class="hljs-built_in">Array</span> affine,
+    Integer x = <span class="hljs-number">-1</span>,
+    Integer y = <span class="hljs-number">-1</span>,
+    Integer width = <span class="hljs-number">-1</span>,
+    Integer height = <span class="hljs-number">-1</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>affine: Array, 仿射矩阵，由  6 个 double 类型的数字组成</li>
+<li>x: Integer, 可选剪切区域的原点 x 坐标</li>
+<li>y: Integer, 可选剪切区域的原点 y 坐标</li>
+<li>width: Integer, 可选剪切区域的的宽度</li>
+<li>height: Integer, 可选剪切区域的的高度</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Image, 返回仿射后的图像</li>
+</ul>
+<p>参数 affine 是一个数组：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div>affine = [a0, a1, b0, b1, a2, b2];
+x ' = a0x + a1y + a2;
+y ' = b0x + b1y + b2;
+</code></pre>
+<hr>
+<h3 id="gaussianBlur">gaussianBlur</h3>
+<p><strong>对当前图像进行高斯模糊处理</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Image.gaussianBlur(Integer radius) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>radius: Integer, 模糊半径</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> Image.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value Image.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

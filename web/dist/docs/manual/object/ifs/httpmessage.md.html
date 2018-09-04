@@ -1,0 +1,590 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 HttpMessage </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 HttpMessage </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li class="active"><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-HttpMessage">对象 HttpMessage</h1>
+<p><a href=../../module/ifs/http.md.html>http</a> 基础消息对象</p>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="176pt" height="692pt"
+ viewBox="0.00 0.00 176.46 692.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 688)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-688 172.46,-688 172.46,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="52.9535,-631.5 52.9535,-683.5 110.6165,-683.5 110.6165,-631.5 52.9535,-631.5"/>
+<text text-anchor="middle" x="81.785" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="52.9535,-663.5 110.6165,-663.5 "/>
+<text text-anchor="start" x="60.9535" y="-650.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="60.9535" y="-638.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- Message -->
+<g id="node2" class="node">
+<title>Message</title>
+<g id="a_node2"><a xlink:href=message.md.html xlink:title="Message">
+<polygon fill="#ffffff" stroke="#000000" points="39.6155,-302.5 39.6155,-594.5 123.9545,-594.5 123.9545,-302.5 39.6155,-302.5"/>
+<text text-anchor="middle" x="81.785" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Message</text>
+<polyline fill="none" stroke="#000000" points="39.6155,-574.5 123.9545,-574.5 "/>
+<text text-anchor="start" x="47.6155" y="-561.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">new Message()</text>
+<polyline fill="none" stroke="#000000" points="39.6155,-554.5 123.9545,-554.5 "/>
+<text text-anchor="start" x="47.6155" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TEXT</text>
+<text text-anchor="start" x="47.6155" y="-529.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BINARY</text>
+<polyline fill="none" stroke="#000000" points="39.6155,-522.5 123.9545,-522.5 "/>
+<text text-anchor="start" x="47.6155" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">value</text>
+<text text-anchor="start" x="47.6155" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">params</text>
+<text text-anchor="start" x="47.6155" y="-485.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">type</text>
+<text text-anchor="start" x="47.6155" y="-473.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">data</text>
+<text text-anchor="start" x="47.6155" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">body</text>
+<text text-anchor="start" x="47.6155" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">length</text>
+<text text-anchor="start" x="47.6155" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">stream</text>
+<text text-anchor="start" x="47.6155" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lastError</text>
+<polyline fill="none" stroke="#000000" points="39.6155,-418.5 123.9545,-418.5 "/>
+<text text-anchor="start" x="47.6155" y="-405.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">read()</text>
+<text text-anchor="start" x="47.6155" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">readAll()</text>
+<text text-anchor="start" x="47.6155" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">write()</text>
+<text text-anchor="start" x="47.6155" y="-369.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">json()</text>
+<text text-anchor="start" x="47.6155" y="-357.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">end()</text>
+<text text-anchor="start" x="47.6155" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">isEnded()</text>
+<text text-anchor="start" x="47.6155" y="-333.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">clear()</text>
+<text text-anchor="start" x="47.6155" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">sendTo()</text>
+<text text-anchor="start" x="47.6155" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">readFrom()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;Message -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;Message</title>
+<path fill="none" stroke="#000000" d="M81.785,-621.4196C81.785,-613.334 81.785,-604.2734 81.785,-594.6492"/>
+<polygon fill="#000000" stroke="#000000" points="78.2851,-621.4526 81.785,-631.4526 85.2851,-621.4526 78.2851,-621.4526"/>
+</g>
+<!-- HttpMessage -->
+<g id="me" class="node">
+<title>HttpMessage</title>
+<g id="a_me"><a xlink:title="HttpMessage">
+<polygon fill="#d3d3d3" stroke="#000000" points="32.1115,-73.5 32.1115,-265.5 131.4585,-265.5 131.4585,-73.5 32.1115,-73.5"/>
+<text text-anchor="middle" x="81.785" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">HttpMessage</text>
+<polyline fill="none" stroke="#000000" points="32.1115,-245.5 131.4585,-245.5 "/>
+<text text-anchor="start" x="40.1115" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">protocol</text>
+<text text-anchor="start" x="40.1115" y="-220.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">headers</text>
+<text text-anchor="start" x="40.1115" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">keepAlive</text>
+<text text-anchor="start" x="40.1115" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">upgrade</text>
+<text text-anchor="start" x="40.1115" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">maxHeadersCount</text>
+<text text-anchor="start" x="40.1115" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">maxBodySize</text>
+<text text-anchor="start" x="40.1115" y="-160.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">socket</text>
+<polyline fill="none" stroke="#000000" points="32.1115,-153.5 131.4585,-153.5 "/>
+<text text-anchor="start" x="40.1115" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">hasHeader()</text>
+<text text-anchor="start" x="40.1115" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">firstHeader()</text>
+<text text-anchor="start" x="40.1115" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">allHeader()</text>
+<text text-anchor="start" x="40.1115" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">addHeader()</text>
+<text text-anchor="start" x="40.1115" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setHeader()</text>
+<text text-anchor="start" x="40.1115" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">removeHeader()</text>
+</a>
+</g>
+</g>
+<!-- Message&#45;&gt;HttpMessage -->
+<g id="edge2" class="edge">
+<title>Message&#45;&gt;HttpMessage</title>
+<path fill="none" stroke="#000000" d="M81.785,-292.2126C81.785,-283.1622 81.785,-274.2075 81.785,-265.5038"/>
+<polygon fill="#000000" stroke="#000000" points="78.2851,-292.463 81.785,-302.4631 85.2851,-292.4631 78.2851,-292.463"/>
+</g>
+<!-- HttpRequest -->
+<g id="node4" class="node">
+<title>HttpRequest</title>
+<g id="a_node4"><a xlink:href=httprequest.md.html xlink:title="HttpRequest">
+<polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-36.5 71.57,-36.5 71.57,-.5 0,-.5"/>
+<text text-anchor="middle" x="35.785" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">HttpRequest</text>
+</a>
+</g>
+</g>
+<!-- HttpMessage&#45;&gt;HttpRequest -->
+<g id="edge3" class="edge">
+<title>HttpMessage&#45;&gt;HttpRequest</title>
+<path fill="none" stroke="#000000" d="M49.5913,-63.8208C46.4735,-53.5862 43.6255,-44.2373 41.3365,-36.7235"/>
+<polygon fill="#000000" stroke="#000000" points="46.2599,-64.8956 52.5222,-73.4416 52.9561,-62.8557 46.2599,-64.8956"/>
+</g>
+<!-- HttpResponse -->
+<g id="node5" class="node">
+<title>HttpResponse</title>
+<g id="a_node5"><a xlink:href=httpresponse.md.html xlink:title="HttpResponse">
+<polygon fill="#ffffff" stroke="#000000" points="89.11,-.5 89.11,-36.5 168.46,-36.5 168.46,-.5 89.11,-.5"/>
+<text text-anchor="middle" x="128.785" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">HttpResponse</text>
+</a>
+</g>
+</g>
+<!-- HttpMessage&#45;&gt;HttpResponse -->
+<g id="edge4" class="edge">
+<title>HttpMessage&#45;&gt;HttpResponse</title>
+<path fill="none" stroke="#000000" d="M114.6785,-63.8208C117.8641,-53.5862 120.7741,-44.2373 123.1128,-36.7235"/>
+<polygon fill="#000000" stroke="#000000" points="111.3141,-62.8532 111.684,-73.4416 117.9978,-64.9336 111.3141,-62.8532"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="常量">常量</h2>
+<h3 id="TEXT">TEXT</h3>
+<p><strong>指定消息类型 1，代表一个文本类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">const</span> HttpMessage.TEXT = <span class="hljs-number">1</span>;
+</code></pre>
+<hr>
+<h3 id="BINARY">BINARY</h3>
+<p><strong>指定消息类型 2，代表一个二进制类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">const</span> HttpMessage.BINARY = <span class="hljs-number">2</span>;
+</code></pre>
+<h2 id="成员属性">成员属性</h2>
+<h3 id="protocol">protocol</h3>
+<p><strong>String, 协议版本信息，允许的格式为：HTTP/#.#</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> HttpMessage.protocol;
+</code></pre>
+<hr>
+<h3 id="headers">headers</h3>
+<p><strong><a href=httpcollection.md.html>HttpCollection</a>, 包含消息中 <a href=../../module/ifs/http.md.html>http</a> 消息头的容器，只读属性</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly HttpCollection HttpMessage.headers;
+</code></pre>
+<hr>
+<h3 id="keepAlive">keepAlive</h3>
+<p><strong>Boolean, 查询和设定是否保持连接</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> HttpMessage.keepAlive;
+</code></pre>
+<hr>
+<h3 id="upgrade">upgrade</h3>
+<p><strong>Boolean, 查询和设定是否是升级协议</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> HttpMessage.upgrade;
+</code></pre>
+<hr>
+<h3 id="maxHeadersCount">maxHeadersCount</h3>
+<p><strong>Integer, 查询和设置最大请求头个数，缺省为 128</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer HttpMessage.maxHeadersCount;
+</code></pre>
+<hr>
+<h3 id="maxBodySize">maxBodySize</h3>
+<p><strong>Integer, 查询和设置 body 最大尺寸，以 MB 为单位，缺省为 64</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer HttpMessage.maxBodySize;
+</code></pre>
+<hr>
+<h3 id="socket">socket</h3>
+<p><strong><a href=stream.md.html>Stream</a>, 查询当前对象的来源 socket</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Stream HttpMessage.socket;
+</code></pre>
+<hr>
+<h3 id="value">value</h3>
+<p><strong>String, 消息的基本内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> HttpMessage.value;
+</code></pre>
+<hr>
+<h3 id="params">params</h3>
+<p><strong>NArray, 消息的基本参数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly NArray HttpMessage.params;
+</code></pre>
+<hr>
+<h3 id="type">type</h3>
+<p><strong>Integer, 消息类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer HttpMessage.type;
+</code></pre>
+<hr>
+<h3 id="data">data</h3>
+<p><strong>Value, 查询消息的数据</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Value HttpMessage.data;
+</code></pre>
+<hr>
+<h3 id="body">body</h3>
+<p><strong><a href=seekablestream.md.html>SeekableStream</a>, 包含消息数据部分的流对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>SeekableStream HttpMessage.body;
+</code></pre>
+<hr>
+<h3 id="length">length</h3>
+<p><strong>Long, 消息数据部分的长度</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Long HttpMessage.length;
+</code></pre>
+<hr>
+<h3 id="stream">stream</h3>
+<p><strong><a href=stream.md.html>Stream</a>, 查询消息 readFrom 时的流对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Stream HttpMessage.stream;
+</code></pre>
+<hr>
+<h3 id="lastError">lastError</h3>
+<p><strong>String, 查询和设置消息处理的最后错误</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> HttpMessage.lastError;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="hasHeader">hasHeader</h3>
+<p><strong>检查是否存在指定键值的消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> HttpMessage.hasHeader(<span class="hljs-built_in">String</span> name);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>name: String, 指定要检查的键值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 返回键值是否存在</li>
+</ul>
+<hr>
+<h3 id="firstHeader">firstHeader</h3>
+<p><strong>查询指定键值的第一个消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Variant HttpMessage.firstHeader(<span class="hljs-built_in">String</span> name);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>name: String, 指定要查询的键值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Variant, 返回键值所对应的值，若不存在，则返回 undefined</li>
+</ul>
+<hr>
+<h3 id="allHeader">allHeader</h3>
+<p><strong>查询指定键值的全部消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>NArray HttpMessage.allHeader(<span class="hljs-built_in">String</span> name);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>name: String, 指定要查询的键值</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>NArray, 返回键值所对应全部值的数组，若数据不存在，则返回 null</li>
+</ul>
+<hr>
+<h3 id="addHeader">addHeader</h3>
+<p><strong>添加一个消息头，添加数据并不修改已存在的键值的消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.addHeader(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定要添加的键值数据字典</li>
+</ul>
+<hr>
+<p><strong>添加一个消息头，添加数据并不修改已存在的键值的消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>HttpMessage.addHeader(<span class="hljs-built_in">String</span> name,
+    Variant value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>name: String, 指定要添加的键值</li>
+<li>value: Variant, 指定要添加的数据</li>
+</ul>
+<hr>
+<h3 id="setHeader">setHeader</h3>
+<p><strong>设定一个消息头，设定数据将修改键值所对应的第一个数值，并清除相同键值的其余消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.setHeader(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定要设定的键值数据字典</li>
+</ul>
+<hr>
+<p><strong>设定一个消息头，设定数据将修改键值所对应的第一个数值，并清除相同键值的其余消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>HttpMessage.setHeader(<span class="hljs-built_in">String</span> name,
+    Variant value);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>name: String, 指定要设定的键值</li>
+<li>value: Variant, 指定要设定的数据</li>
+</ul>
+<hr>
+<h3 id="removeHeader">removeHeader</h3>
+<p><strong>删除指定键值的全部消息头</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.removeHeader(<span class="hljs-built_in">String</span> name);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>name: String, 指定要删除的键值</li>
+</ul>
+<hr>
+<h3 id="read">read</h3>
+<p><strong>从流内读取指定大小的数据，此方法为 body 相应方法的别名</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer HttpMessage.read(Integer bytes = <span class="hljs-number">-1</span>) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>bytes: Integer, 指定要读取的数据量，缺省为读取随机大小的数据块，读出的数据尺寸取决于设备</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回从流内读取的数据，若无数据可读，或者连接中断，则返回 null</li>
+</ul>
+<hr>
+<h3 id="readAll">readAll</h3>
+<p><strong>从流内读取剩余的全部数据，此方法为 body 相应方法的别名</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer HttpMessage.readAll() <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回从流内读取的数据，若无数据可读，或者连接中断，则返回 null</li>
+</ul>
+<hr>
+<h3 id="write">write</h3>
+<p><strong>写入给定的数据，此方法为 body 相应方法的别名</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.write(Buffer data) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: <a href=buffer.md.html>Buffer</a>, 给定要写入的数据</li>
+</ul>
+<hr>
+<h3 id="json">json</h3>
+<p><strong>以 JSON 编码写入给定的数据</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value HttpMessage.json(Value data);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: Value, 给定要写入的数据</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 此方法不会返回数据</li>
+</ul>
+<hr>
+<p><strong>以 JSON 编码解析消息中的数据</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value HttpMessage.json();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回解析的结果</li>
+</ul>
+<hr>
+<h3 id="end">end</h3>
+<p><strong>设置当前消息处理结束，<a href=chain.md.html>Chain</a> 处理器不再继续后面的事务</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.end();
+</code></pre>
+<hr>
+<h3 id="isEnded">isEnded</h3>
+<p><strong>查询当前消息是否结束</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> HttpMessage.isEnded();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 结束则返回 true</li>
+</ul>
+<hr>
+<h3 id="clear">clear</h3>
+<p><strong>清除消息的内容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.clear();
+</code></pre>
+<hr>
+<h3 id="sendTo">sendTo</h3>
+<p><strong>发送格式化消息到给定的流对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.sendTo(Stream stm) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>stm: <a href=stream.md.html>Stream</a>, 指定接收格式化消息的流对象</li>
+</ul>
+<hr>
+<h3 id="readFrom">readFrom</h3>
+<p><strong>从给定的缓存流对象中读取格式化消息，并解析填充对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>HttpMessage.readFrom(Stream stm) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>stm: <a href=stream.md.html>Stream</a>, 指定读取格式化消息的流对象</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> HttpMessage.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value HttpMessage.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

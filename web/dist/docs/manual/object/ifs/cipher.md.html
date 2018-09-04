@@ -1,0 +1,356 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 Cipher </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 Cipher </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li class="active"><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-Cipher">对象 Cipher</h1>
+<p>对称加密算法对象</p>
+<p>Cipher 对象属于 <a href=../../module/ifs/crypto.md.html>crypto</a> 模块，创建：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">var</span> c = <span class="hljs-keyword">new</span> crypto.Cipher(crypto.AES, crypto.ECB, ...);
+</code></pre>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="91pt" height="238pt"
+ viewBox="0.00 0.00 91.24 238.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 234)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-234 87.237,-234 87.237,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="12.787,-177.5 12.787,-229.5 70.45,-229.5 70.45,-177.5 12.787,-177.5"/>
+<text text-anchor="middle" x="41.6185" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="12.787,-209.5 70.45,-209.5 "/>
+<text text-anchor="start" x="20.787" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="20.787" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- Cipher -->
+<g id="me" class="node">
+<title>Cipher</title>
+<g id="a_me"><a xlink:title="Cipher">
+<polygon fill="#d3d3d3" stroke="#000000" points="0,-.5 0,-140.5 83.237,-140.5 83.237,-.5 0,-.5"/>
+<text text-anchor="middle" x="41.6185" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Cipher</text>
+<polyline fill="none" stroke="#000000" points="0,-120.5 83.237,-120.5 "/>
+<text text-anchor="start" x="8" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">new Cipher()</text>
+<polyline fill="none" stroke="#000000" points="0,-100.5 83.237,-100.5 "/>
+<text text-anchor="start" x="8" y="-87.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">name</text>
+<text text-anchor="start" x="8" y="-75.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">keySize</text>
+<text text-anchor="start" x="8" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ivSize</text>
+<text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">blockSize</text>
+<polyline fill="none" stroke="#000000" points="0,-44.5 83.237,-44.5 "/>
+<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">paddingMode()</text>
+<text text-anchor="start" x="8" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">encrypt()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">decrypt()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;Cipher -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;Cipher</title>
+<path fill="none" stroke="#000000" d="M41.6185,-167.1843C41.6185,-158.8801 41.6185,-149.7789 41.6185,-140.586"/>
+<polygon fill="#000000" stroke="#000000" points="38.1186,-167.2234 41.6185,-177.2235 45.1186,-167.2235 38.1186,-167.2234"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="构造函数">构造函数</h2>
+<h3 id="Cipher">Cipher</h3>
+<p><strong>Cipher 构造函数，仅用于 ARC4 初始化</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">new</span> Cipher(Integer provider,
+    Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>provider: Integer, 指定加密算法</li>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定加密解密密码</li>
+</ul>
+<hr>
+<p><strong>Cipher 构造函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">new</span> Cipher(Integer provider,
+    Integer mode,
+    Buffer key);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>provider: Integer, 指定加密算法</li>
+<li>mode: Integer, 指定分组密码工作模式</li>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定加密解密密码</li>
+</ul>
+<hr>
+<p><strong>Cipher 构造函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4</div><span class="hljs-keyword">new</span> Cipher(Integer provider,
+    Integer mode,
+    Buffer key,
+    Buffer iv);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>provider: Integer, 指定加密算法</li>
+<li>mode: Integer, 指定分组密码工作模式</li>
+<li>key: <a href=buffer.md.html>Buffer</a>, 指定加密解密密码</li>
+<li>iv: <a href=buffer.md.html>Buffer</a>, 指定初始向量</li>
+</ul>
+<h2 id="成员属性">成员属性</h2>
+<h3 id="name">name</h3>
+<p><strong>String, 返回当前算法名称</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly <span class="hljs-built_in">String</span> Cipher.name;
+</code></pre>
+<hr>
+<h3 id="keySize">keySize</h3>
+<p><strong>Integer, 返回当前算法密码长度，以位为单位</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Cipher.keySize;
+</code></pre>
+<hr>
+<h3 id="ivSize">ivSize</h3>
+<p><strong>Integer, 返回当前算法初始向量长度，以字节为单位</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Cipher.ivSize;
+</code></pre>
+<hr>
+<h3 id="blockSize">blockSize</h3>
+<p><strong>Integer, 返回当前算法数据块长度，以字节为单位</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer Cipher.blockSize;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="paddingMode">paddingMode</h3>
+<p><strong>使用填充模式</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Cipher.paddingMode(Integer mode);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>mode: Integer, 指定填充模式，缺省为 PADDING_PKCS7</li>
+</ul>
+<hr>
+<h3 id="encrypt">encrypt</h3>
+<p><strong>使用当前算法密码加密数据</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer Cipher.encrypt(Buffer data) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: <a href=buffer.md.html>Buffer</a>, 指定要加密的数据</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回加密后的数据</li>
+</ul>
+<hr>
+<h3 id="decrypt">decrypt</h3>
+<p><strong>使用当前算法密码解密数据</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer Cipher.decrypt(Buffer data) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: <a href=buffer.md.html>Buffer</a>, 指定要解密的数据</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=buffer.md.html>Buffer</a>, 返回解密后的数据</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> Cipher.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value Cipher.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

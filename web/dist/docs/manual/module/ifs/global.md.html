@@ -1,0 +1,707 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 模块 global </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 基础模块 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 基础模块 </a></li><li class=active> 模块 global </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=action.md.html>action</a></li>
+<li><a href=assert.md.html>assert</a></li>
+<li><a href=base32.md.html>base32</a></li>
+<li><a href=base64.md.html>base64</a></li>
+<li><a href=base64vlq.md.html>base64vlq</a></li>
+<li><a href=bson.md.html>bson</a></li>
+<li><a href=console.md.html>console</a></li>
+<li><a href=constants.md.html>constants</a></li>
+<li><a href=coroutine.md.html>coroutine</a></li>
+<li><a href=crypto.md.html>crypto</a></li>
+<li><a href=db.md.html>db</a></li>
+<li><a href=dgram.md.html>dgram</a></li>
+<li><a href=dns.md.html>dns</a></li>
+<li><a href=encoding.md.html>encoding</a></li>
+<li><a href=fibos.md.html>fibos</a></li>
+<li><a href=fs.md.html>fs</a></li>
+<li><a href=gd.md.html>gd</a></li>
+<li class="active"><a href=global.md.html>global</a></li>
+<li><a href=gui.md.html>gui</a></li>
+<li><a href=hash.md.html>hash</a></li>
+<li><a href=hex.md.html>hex</a></li>
+<li><a href=http.md.html>http</a></li>
+<li><a href=iconv.md.html>iconv</a></li>
+<li><a href=io.md.html>io</a></li>
+<li><a href=json.md.html>json</a></li>
+<li><a href=mq.md.html>mq</a></li>
+<li><a href=net.md.html>net</a></li>
+<li><a href=os.md.html>os</a></li>
+<li><a href=path.md.html>path</a></li>
+<li><a href=path_posix.md.html>path_posix</a></li>
+<li><a href=path_win32.md.html>path_win32</a></li>
+<li><a href=process.md.html>process</a></li>
+<li><a href=profiler.md.html>profiler</a></li>
+<li><a href=punycode.md.html>punycode</a></li>
+<li><a href=querystring.md.html>querystring</a></li>
+<li><a href=registry.md.html>registry</a></li>
+<li><a href=softfloat.md.html>softfloat</a></li>
+<li><a href=ssl.md.html>ssl</a></li>
+<li><a href=string_decoder.md.html>string_decoder</a></li>
+<li><a href=test.md.html>test</a></li>
+<li><a href=timers.md.html>timers</a></li>
+<li><a href=trans.md.html>trans</a></li>
+<li><a href=tty.md.html>tty</a></li>
+<li><a href=url.md.html>url</a></li>
+<li><a href=util.md.html>util</a></li>
+<li><a href=uuid.md.html>uuid</a></li>
+<li><a href=vm.md.html>vm</a></li>
+<li><a href=ws.md.html>ws</a></li>
+<li><a href=xml.md.html>xml</a></li>
+<li><a href=zip.md.html>zip</a></li>
+<li><a href=zlib.md.html>zlib</a></li>
+<li><a href=zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../object/ifs/buffer.md.html>Buffer</a></li>
+<li><a href=../../object/ifs/bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=../../object/ifs/chain.md.html>Chain</a></li>
+<li><a href=../../object/ifs/cipher.md.html>Cipher</a></li>
+<li><a href=../../object/ifs/condition.md.html>Condition</a></li>
+<li><a href=../../object/ifs/dbconnection.md.html>DbConnection</a></li>
+<li><a href=../../object/ifs/dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=../../object/ifs/digest.md.html>Digest</a></li>
+<li><a href=../../object/ifs/event.md.html>Event</a></li>
+<li><a href=../../object/ifs/eventemitter.md.html>EventEmitter</a></li>
+<li><a href=../../object/ifs/eventinfo.md.html>EventInfo</a></li>
+<li><a href=../../object/ifs/fiber.md.html>Fiber</a></li>
+<li><a href=../../object/ifs/file.md.html>File</a></li>
+<li><a href=../../object/ifs/handler.md.html>Handler</a></li>
+<li><a href=../../object/ifs/handlerex.md.html>HandlerEx</a></li>
+<li><a href=../../object/ifs/heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=../../object/ifs/heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=../../object/ifs/heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=../../object/ifs/httpclient.md.html>HttpClient</a></li>
+<li><a href=../../object/ifs/httpcollection.md.html>HttpCollection</a></li>
+<li><a href=../../object/ifs/httpcookie.md.html>HttpCookie</a></li>
+<li><a href=../../object/ifs/httphandler.md.html>HttpHandler</a></li>
+<li><a href=../../object/ifs/httpmessage.md.html>HttpMessage</a></li>
+<li><a href=../../object/ifs/httprequest.md.html>HttpRequest</a></li>
+<li><a href=../../object/ifs/httpresponse.md.html>HttpResponse</a></li>
+<li><a href=../../object/ifs/httpserver.md.html>HttpServer</a></li>
+<li><a href=../../object/ifs/httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=../../object/ifs/httpsserver.md.html>HttpsServer</a></li>
+<li><a href=../../object/ifs/image.md.html>Image</a></li>
+<li><a href=../../object/ifs/int64.md.html>Int64</a></li>
+<li><a href=../../object/ifs/leveldb.md.html>LevelDB</a></li>
+<li><a href=../../object/ifs/lock.md.html>Lock</a></li>
+<li><a href=../../object/ifs/lrucache.md.html>LruCache</a></li>
+<li><a href=../../object/ifs/mssql.md.html>MSSQL</a></li>
+<li><a href=../../object/ifs/memorystream.md.html>MemoryStream</a></li>
+<li><a href=../../object/ifs/message.md.html>Message</a></li>
+<li><a href=../../object/ifs/mongocollection.md.html>MongoCollection</a></li>
+<li><a href=../../object/ifs/mongocursor.md.html>MongoCursor</a></li>
+<li><a href=../../object/ifs/mongodb.md.html>MongoDB</a></li>
+<li><a href=../../object/ifs/mongoid.md.html>MongoID</a></li>
+<li><a href=../../object/ifs/mysql.md.html>MySQL</a></li>
+<li><a href=../../object/ifs/pkey.md.html>PKey</a></li>
+<li><a href=../../object/ifs/redis.md.html>Redis</a></li>
+<li><a href=../../object/ifs/redishash.md.html>RedisHash</a></li>
+<li><a href=../../object/ifs/redislist.md.html>RedisList</a></li>
+<li><a href=../../object/ifs/redisset.md.html>RedisSet</a></li>
+<li><a href=../../object/ifs/redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=../../object/ifs/routing.md.html>Routing</a></li>
+<li><a href=../../object/ifs/sqlite.md.html>SQLite</a></li>
+<li><a href=../../object/ifs/sandbox.md.html>SandBox</a></li>
+<li><a href=../../object/ifs/seekablestream.md.html>SeekableStream</a></li>
+<li><a href=../../object/ifs/semaphore.md.html>Semaphore</a></li>
+<li><a href=../../object/ifs/service.md.html>Service</a></li>
+<li><a href=../../object/ifs/smtp.md.html>Smtp</a></li>
+<li><a href=../../object/ifs/socket.md.html>Socket</a></li>
+<li><a href=../../object/ifs/sslhandler.md.html>SslHandler</a></li>
+<li><a href=../../object/ifs/sslserver.md.html>SslServer</a></li>
+<li><a href=../../object/ifs/sslsocket.md.html>SslSocket</a></li>
+<li><a href=../../object/ifs/stat.md.html>Stat</a></li>
+<li><a href=../../object/ifs/stats.md.html>Stats</a></li>
+<li><a href=../../object/ifs/stream.md.html>Stream</a></li>
+<li><a href=../../object/ifs/stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=../../object/ifs/subprocess.md.html>SubProcess</a></li>
+<li><a href=../../object/ifs/table.md.html>Table</a></li>
+<li><a href=../../object/ifs/tcpserver.md.html>TcpServer</a></li>
+<li><a href=../../object/ifs/timer.md.html>Timer</a></li>
+<li><a href=../../object/ifs/urlobject.md.html>UrlObject</a></li>
+<li><a href=../../object/ifs/websocket.md.html>WebSocket</a></li>
+<li><a href=../../object/ifs/websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=../../object/ifs/webview.md.html>WebView</a></li>
+<li><a href=../../object/ifs/worker.md.html>Worker</a></li>
+<li><a href=../../object/ifs/x509cert.md.html>X509Cert</a></li>
+<li><a href=../../object/ifs/x509crl.md.html>X509Crl</a></li>
+<li><a href=../../object/ifs/x509req.md.html>X509Req</a></li>
+<li><a href=../../object/ifs/xmlattr.md.html>XmlAttr</a></li>
+<li><a href=../../object/ifs/xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=../../object/ifs/xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=../../object/ifs/xmlcomment.md.html>XmlComment</a></li>
+<li><a href=../../object/ifs/xmldocument.md.html>XmlDocument</a></li>
+<li><a href=../../object/ifs/xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=../../object/ifs/xmlelement.md.html>XmlElement</a></li>
+<li><a href=../../object/ifs/xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=../../object/ifs/xmlnode.md.html>XmlNode</a></li>
+<li><a href=../../object/ifs/xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=../../object/ifs/xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=../../object/ifs/xmltext.md.html>XmlText</a></li>
+<li><a href=../../object/ifs/zipfile.md.html>ZipFile</a></li>
+<li><a href=../../object/ifs/zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=../../object/ifs/object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="模块-global">模块 global</h1>
+<p>全局对象，所有脚本均可以访问的基础对象</p>
+<h2 id="对象">对象</h2>
+<h3 id="Buffer">Buffer</h3>
+<p><strong>二进制数据缓存对象，用于 <a href=io.md.html>io</a> 读写的数据处理，参见 <a href=../../object/ifs/buffer.md.html>Buffer</a> 对象。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Buffer global.Buffer;
+</code></pre>
+<hr>
+<h3 id="Int64">Int64</h3>
+<p><strong>64位整数对象，参见 <a href=../../object/ifs/int64.md.html>Int64</a> 对象。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Int64 global.Int64;
+</code></pre>
+<hr>
+<h3 id="console">console</h3>
+<p><strong>控制台访问对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">console</span> global.console;
+</code></pre>
+<hr>
+<h3 id="process">process</h3>
+<p><strong>进程对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>process global.process;
+</code></pre>
+<h2 id="静态函数">静态函数</h2>
+<h3 id="run">run</h3>
+<p><strong>运行一个脚本</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> global.run(<span class="hljs-built_in">String</span> fname,
+    <span class="hljs-built_in">Array</span> argv = []);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>fname: String, 指定要运行的脚本路径</li>
+<li>argv: Array, 指定要运行的参数，此参数可在脚本内使用 argv 获取</li>
+</ul>
+<hr>
+<h3 id="require">require</h3>
+<p><strong>加载一个模块并返回模块对象，更多信息参阅 @ref module</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> Value global.require(<span class="hljs-built_in">String</span> id);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>id: String, 指定要加载的模块名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回加载模块的引出对象</li>
+</ul>
+<p>require 可用于加载基础模块，文件模块。</p>
+<p>基础模块是沙箱创建时初始化的模块，引用时只需传递相应的 id，比如 require(&quot;<a href=net.md.html>net</a>&quot;)。</p>
+<p>文件模块是用户自定义模块，引用时需传递以 ./ 或 ../ 开头的相对路径。文件模块支持 .js, .jsc 和 .<a href=json.md.html>json</a> 文件。</p>
+<p>文件模块也支持 package.json 格式，当模块为目录结构时，require 会先查询 package.json 中的 main，未发现则尝试加载路径下的 index.js, index.jsc 或 index.json。</p>
+<p>若引用路径不是 ./ 或 ../ 开头，并且非基础模块，require 从当前模块所在路径下的 node_modules 查找，并上级目录递归。</p>
+<p>基础流程如下:</p>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="360pt" height="1014pt"
+ viewBox="0.00 0.00 359.59 1013.64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1009.6446)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1009.6446 355.5924,-1009.6446 355.5924,4 -4,4"/>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="none" stroke="#000000" cx="57.5556" cy="-987.6446" rx="27" ry="18"/>
+<text text-anchor="middle" x="57.5556" y="-984.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">起始</text>
+</g>
+<!-- is_native -->
+<g id="node6" class="node">
+<title>is_native</title>
+<polygon fill="none" stroke="#000000" points="57.5556,-932.6446 -.0556,-914.6446 57.5556,-896.6446 115.1668,-914.6446 57.5556,-932.6446"/>
+<text text-anchor="middle" x="57.5556" y="-911.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">内置模块?</text>
+</g>
+<!-- start&#45;&gt;is_native -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;is_native</title>
+<path fill="none" stroke="#000000" d="M57.5556,-969.5996C57.5556,-961.5274 57.5556,-951.8209 57.5556,-942.8263"/>
+<polygon fill="#000000" stroke="#000000" points="61.0557,-942.7349 57.5556,-932.7349 54.0557,-942.735 61.0557,-942.7349"/>
+</g>
+<!-- resolve -->
+<g id="node2" class="node">
+<title>resolve</title>
+<polygon fill="none" stroke="#000000" points="199.0171,-648.6446 128.0941,-648.6446 128.0941,-612.6446 199.0171,-612.6446 199.0171,-648.6446"/>
+<text text-anchor="middle" x="163.5556" y="-627.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">path.resolve</text>
+</g>
+<!-- has_file -->
+<g id="node9" class="node">
+<title>has_file</title>
+<polygon fill="none" stroke="#000000" points="163.5556,-575.6446 105.497,-557.6446 163.5556,-539.6446 221.6141,-557.6446 163.5556,-575.6446"/>
+<text text-anchor="middle" x="163.5556" y="-554.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">原名存在？</text>
+</g>
+<!-- resolve&#45;&gt;has_file -->
+<g id="edge9" class="edge">
+<title>resolve&#45;&gt;has_file</title>
+<path fill="none" stroke="#000000" d="M163.5556,-612.5996C163.5556,-604.5274 163.5556,-594.8209 163.5556,-585.8263"/>
+<polygon fill="#000000" stroke="#000000" points="167.0557,-585.7349 163.5556,-575.7349 160.0557,-585.735 167.0557,-585.7349"/>
+</g>
+<!-- search -->
+<g id="node3" class="node">
+<title>search</title>
+<polygon fill="none" stroke="#000000" points="141.1357,-710.6446 59.9755,-710.6446 59.9755,-666.6446 141.1357,-666.6446 141.1357,-710.6446"/>
+<text text-anchor="middle" x="100.5556" y="-697.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">从当前路径</text>
+<text text-anchor="middle" x="100.5556" y="-685.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">向上递归查找</text>
+<text text-anchor="middle" x="100.5556" y="-673.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">node_modules</text>
+</g>
+<!-- search&#45;&gt;has_file -->
+<g id="edge5" class="edge">
+<title>search&#45;&gt;has_file</title>
+<path fill="none" stroke="#000000" d="M103.5182,-666.4827C106.2148,-650.8371 111.1049,-629.7072 119.5556,-612.6446 125.5763,-600.4882 134.6417,-588.5392 142.9824,-578.9007"/>
+<polygon fill="#000000" stroke="#000000" points="145.6494,-581.1693 149.7353,-571.394 140.4452,-576.4877 145.6494,-581.1693"/>
+</g>
+<!-- load -->
+<g id="node4" class="node">
+<title>load</title>
+<polygon fill="none" stroke="#000000" points="174.5556,-127.6446 120.5556,-127.6446 120.5556,-91.6446 174.5556,-91.6446 174.5556,-127.6446"/>
+<text text-anchor="middle" x="147.5556" y="-106.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">加载</text>
+</g>
+<!-- end -->
+<g id="node5" class="node">
+<title>end</title>
+<ellipse fill="none" stroke="#000000" cx="147.5556" cy="-27.3223" rx="23.1716" ry="23.1716"/>
+<ellipse fill="none" stroke="#000000" cx="147.5556" cy="-27.3223" rx="27.1457" ry="27.1457"/>
+<text text-anchor="middle" x="147.5556" y="-24.3223" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">返回</text>
+</g>
+<!-- load&#45;&gt;end -->
+<g id="edge20" class="edge">
+<title>load&#45;&gt;end</title>
+<path fill="none" stroke="#000000" d="M147.5556,-91.3746C147.5556,-83.5965 147.5556,-74.2193 147.5556,-65.0688"/>
+<polygon fill="#000000" stroke="#000000" points="151.0557,-64.9312 147.5556,-54.9312 144.0557,-64.9312 151.0557,-64.9312"/>
+</g>
+<!-- is_native&#45;&gt;end -->
+<g id="edge2" class="edge">
+<title>is_native&#45;&gt;end</title>
+<path fill="none" stroke="#000000" d="M52.4931,-898.0872C47.8056,-881.2717 41.5556,-854.3974 41.5556,-830.6446 41.5556,-830.6446 41.5556,-830.6446 41.5556,-109.6446 41.5556,-73.3759 80.7431,-50.7777 111.4642,-38.6343"/>
+<polygon fill="#000000" stroke="#000000" points="112.9298,-41.8234 121.0807,-35.0549 110.4879,-35.2631 112.9298,-41.8234"/>
+<text text-anchor="middle" x="46.8346" y="-470.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- is_mod -->
+<g id="node7" class="node">
+<title>is_mod</title>
+<polygon fill="none" stroke="#000000" points="104.5556,-848.6446 69.3629,-830.6446 104.5556,-812.6446 139.7483,-830.6446 104.5556,-848.6446"/>
+<text text-anchor="middle" x="104.5556" y="-827.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">模块?</text>
+</g>
+<!-- is_native&#45;&gt;is_mod -->
+<g id="edge3" class="edge">
+<title>is_native&#45;&gt;is_mod</title>
+<path fill="none" stroke="#000000" d="M66.1761,-899.2377C73.3065,-886.4939 83.5417,-868.2013 91.6493,-853.7111"/>
+<polygon fill="#000000" stroke="#000000" points="94.7874,-855.2705 96.6159,-844.8346 88.6786,-851.8525 94.7874,-855.2705"/>
+<text text-anchor="middle" x="89.1141" y="-869.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- is_mod&#45;&gt;search -->
+<g id="edge4" class="edge">
+<title>is_mod&#45;&gt;search</title>
+<path fill="none" stroke="#000000" d="M104.049,-812.6602C103.4003,-789.6312 102.2646,-749.3139 101.4645,-720.9123"/>
+<polygon fill="#000000" stroke="#000000" points="104.9563,-720.5689 101.1761,-710.6714 97.9591,-720.766 104.9563,-720.5689"/>
+<text text-anchor="middle" x="107.8346" y="-785.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- is_abs -->
+<g id="node8" class="node">
+<title>is_abs</title>
+<polygon fill="none" stroke="#000000" points="193.5556,-764.6446 128.9883,-746.6446 193.5556,-728.6446 258.1229,-746.6446 193.5556,-764.6446"/>
+<text text-anchor="middle" x="193.5556" y="-743.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">绝对路径？</text>
+</g>
+<!-- is_mod&#45;&gt;is_abs -->
+<g id="edge6" class="edge">
+<title>is_mod&#45;&gt;is_abs</title>
+<path fill="none" stroke="#000000" d="M116.9306,-818.9647C130.9305,-805.7514 154.0136,-783.9651 171.1918,-767.752"/>
+<polygon fill="#000000" stroke="#000000" points="173.745,-770.1549 178.6151,-760.7457 168.9403,-765.0642 173.745,-770.1549"/>
+<text text-anchor="middle" x="159.1141" y="-785.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- is_abs&#45;&gt;resolve -->
+<g id="edge8" class="edge">
+<title>is_abs&#45;&gt;resolve</title>
+<path fill="none" stroke="#000000" d="M189.129,-729.5284C184.3169,-710.9216 176.5509,-680.893 170.8378,-658.8024"/>
+<polygon fill="#000000" stroke="#000000" points="174.1902,-657.7862 168.2978,-648.9811 167.4132,-659.5389 174.1902,-657.7862"/>
+<text text-anchor="middle" x="189.1141" y="-685.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- is_abs&#45;&gt;has_file -->
+<g id="edge7" class="edge">
+<title>is_abs&#45;&gt;has_file</title>
+<path fill="none" stroke="#000000" d="M199.7779,-730.0237C208.4821,-704.1547 221.7242,-653.0362 207.5556,-612.6446 203.1285,-600.0239 194.4526,-588.1479 185.9666,-578.6839"/>
+<polygon fill="#000000" stroke="#000000" points="188.4081,-576.1724 178.9804,-571.3381 183.3357,-580.9964 188.4081,-576.1724"/>
+<text text-anchor="middle" x="218.8346" y="-627.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- has_file&#45;&gt;load -->
+<g id="edge10" class="edge">
+<title>has_file&#45;&gt;load</title>
+<path fill="none" stroke="#000000" d="M140.4355,-546.6603C115.8764,-533.1968 80.5556,-507.8822 80.5556,-473.6446 80.5556,-473.6446 80.5556,-473.6446 80.5556,-193.6446 80.5556,-170.2395 96.6497,-149.599 113.062,-134.6353"/>
+<polygon fill="#000000" stroke="#000000" points="115.7661,-136.9268 121.0754,-127.7583 111.2074,-131.6148 115.7661,-136.9268"/>
+<text text-anchor="middle" x="85.8346" y="-316.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- has_ext -->
+<g id="node10" class="node">
+<title>has_ext</title>
+<polygon fill="none" stroke="#000000" points="182.5556,-491.6446 108.8102,-473.6446 182.5556,-455.6446 256.3009,-473.6446 182.5556,-491.6446"/>
+<text text-anchor="middle" x="182.5556" y="-470.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">增加 .js 存在？</text>
+</g>
+<!-- has_file&#45;&gt;has_ext -->
+<g id="edge11" class="edge">
+<title>has_file&#45;&gt;has_ext</title>
+<path fill="none" stroke="#000000" d="M167.4005,-540.6459C169.9845,-529.2221 173.446,-513.9183 176.4086,-500.8209"/>
+<polygon fill="#000000" stroke="#000000" points="179.8587,-501.432 178.6512,-490.9063 173.0311,-499.8877 179.8587,-501.432"/>
+<text text-anchor="middle" x="179.1141" y="-512.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- has_ext&#45;&gt;load -->
+<g id="edge12" class="edge">
+<title>has_ext&#45;&gt;load</title>
+<path fill="none" stroke="#000000" d="M167.8422,-459.1747C151.2504,-441.2426 126.5556,-408.9574 126.5556,-375.6446 126.5556,-375.6446 126.5556,-375.6446 126.5556,-193.6446 126.5556,-174.5314 131.736,-153.6828 136.9508,-137.5375"/>
+<polygon fill="#000000" stroke="#000000" points="140.4004,-138.267 140.3286,-127.6724 133.7779,-135.9994 140.4004,-138.267"/>
+<text text-anchor="middle" x="131.8346" y="-274.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- has_package -->
+<g id="node11" class="node">
+<title>has_package</title>
+<polygon fill="none" stroke="#000000" points="232.5556,-407.6446 154.6751,-375.6446 232.5556,-343.6446 310.436,-375.6446 232.5556,-407.6446"/>
+<text text-anchor="middle" x="232.5556" y="-378.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/package.json</text>
+<text text-anchor="middle" x="232.5556" y="-366.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">存在？</text>
+</g>
+<!-- has_ext&#45;&gt;has_package -->
+<g id="edge13" class="edge">
+<title>has_ext&#45;&gt;has_package</title>
+<path fill="none" stroke="#000000" d="M190.8121,-457.4619C197.2115,-444.9189 206.32,-427.0663 214.3965,-411.2364"/>
+<polygon fill="#000000" stroke="#000000" points="217.5772,-412.7035 219.0043,-402.2052 211.3418,-409.5221 217.5772,-412.7035"/>
+<text text-anchor="middle" x="211.1141" y="-428.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- has_main -->
+<g id="node12" class="node">
+<title>has_main</title>
+<polygon fill="none" stroke="#000000" points="219.5556,-295.6446 154.7795,-277.6446 219.5556,-259.6446 284.3316,-277.6446 219.5556,-295.6446"/>
+<text text-anchor="middle" x="219.5556" y="-274.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main 存在？</text>
+</g>
+<!-- has_package&#45;&gt;has_main -->
+<g id="edge14" class="edge">
+<title>has_package&#45;&gt;has_main</title>
+<path fill="none" stroke="#000000" d="M228.5136,-345.174C226.8302,-332.4843 224.889,-317.8503 223.2449,-305.4563"/>
+<polygon fill="#000000" stroke="#000000" points="226.6752,-304.6992 221.8905,-295.2463 219.736,-305.6198 226.6752,-304.6992"/>
+<text text-anchor="middle" x="230.8346" y="-316.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- has_index -->
+<g id="node13" class="node">
+<title>has_index</title>
+<polygon fill="none" stroke="#000000" points="276.5556,-211.6446 201.4819,-193.6446 276.5556,-175.6446 351.6292,-193.6446 276.5556,-211.6446"/>
+<text text-anchor="middle" x="276.5556" y="-190.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">index.js 存在？</text>
+</g>
+<!-- has_package&#45;&gt;has_index -->
+<g id="edge15" class="edge">
+<title>has_package&#45;&gt;has_index</title>
+<path fill="none" stroke="#000000" d="M256.1214,-353.2289C269.9479,-338.386 286.1222,-317.6527 293.5556,-295.6446 302.0471,-270.5037 295.0652,-240.3902 287.6475,-219.4278"/>
+<polygon fill="#000000" stroke="#000000" points="290.8632,-218.0369 284.0369,-209.9342 284.3204,-220.5253 290.8632,-218.0369"/>
+<text text-anchor="middle" x="302.1141" y="-274.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- has_main&#45;&gt;load -->
+<g id="edge16" class="edge">
+<title>has_main&#45;&gt;load</title>
+<path fill="none" stroke="#000000" d="M209.7318,-262.3498C201.5923,-249.2471 190.0884,-229.6893 181.9976,-211.6446 171.0729,-187.2796 161.6152,-158.3429 155.3894,-137.5251"/>
+<polygon fill="#000000" stroke="#000000" points="158.69,-136.3423 152.5191,-127.73 151.9725,-138.3108 158.69,-136.3423"/>
+<text text-anchor="middle" x="186.8346" y="-190.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- has_main&#45;&gt;has_index -->
+<g id="edge17" class="edge">
+<title>has_main&#45;&gt;has_index</title>
+<path fill="none" stroke="#000000" d="M230.0103,-262.2377C238.474,-249.7648 250.5447,-231.9764 260.2729,-217.6401"/>
+<polygon fill="#000000" stroke="#000000" points="263.2553,-219.4783 265.9741,-209.2383 257.4629,-215.5478 263.2553,-219.4783"/>
+<text text-anchor="middle" x="256.1141" y="-232.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+<!-- has_index&#45;&gt;load -->
+<g id="edge18" class="edge">
+<title>has_index&#45;&gt;load</title>
+<path fill="none" stroke="#000000" d="M256.1151,-180.3345C236.5864,-167.6181 206.7356,-148.1804 183.2751,-132.9038"/>
+<polygon fill="#000000" stroke="#000000" points="184.9212,-129.7991 174.6314,-127.2753 181.1015,-135.6651 184.9212,-129.7991"/>
+<text text-anchor="middle" x="224.8346" y="-148.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">是</text>
+</g>
+<!-- has_index&#45;&gt;end -->
+<g id="edge19" class="edge">
+<title>has_index&#45;&gt;end</title>
+<path fill="none" stroke="#000000" d="M264.6508,-178.2955C243.3433,-150.8233 198.3414,-92.8014 170.749,-57.2261"/>
+<polygon fill="#000000" stroke="#000000" points="173.3642,-54.8869 164.4698,-49.1301 167.8329,-59.177 173.3642,-54.8869"/>
+<text text-anchor="middle" x="230.1141" y="-106.6446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">否</text>
+</g>
+</g>
+</svg>
+</div>
+
+<hr>
+<h3 id="setTimeout">setTimeout</h3>
+<p><strong>在指定的时间后调用函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> Timer global.setTimeout(<span class="hljs-built_in">Function</span> callback,
+    <span class="hljs-built_in">Number</span> timeout = <span class="hljs-number">1</span>,
+    ...args);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>callback: Function, 指定回调函数</li>
+<li>timeout: Number, 指定延时的时间，以毫秒为单位。超过 2^31 的话,立即执行。</li>
+<li>args: ..., 额外的参数，传入到指定的 callback 内，可选。</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/timer.md.html>Timer</a>, 返回定时器对象</li>
+</ul>
+<hr>
+<h3 id="clearTimeout">clearTimeout</h3>
+<p><strong>清除指定的定时器</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> global.clearTimeout(Value t);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>t: Value, 指定要清除的定时器</li>
+</ul>
+<hr>
+<h3 id="setInterval">setInterval</h3>
+<p><strong>每间隔指定的时间后调用函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> Timer global.setInterval(<span class="hljs-built_in">Function</span> callback,
+    <span class="hljs-built_in">Number</span> timeout,
+    ...args);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>callback: Function, 指定回调函数</li>
+<li>timeout: Number, 指定间隔的时间，以毫秒为单位。超过 2^31 的话,立即执行。</li>
+<li>args: ..., 额外的参数，传入到指定的 callback 内，可选。</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/timer.md.html>Timer</a>, 返回定时器对象</li>
+</ul>
+<hr>
+<h3 id="clearInterval">clearInterval</h3>
+<p><strong>清除指定的定时器</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> global.clearInterval(Value t);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>t: Value, 指定要清除的定时器</li>
+</ul>
+<hr>
+<h3 id="setHrInterval">setHrInterval</h3>
+<p><strong>每间隔指定的时间后调用函数，这是个高精度定时器，会主动打断正在运行的 JavaScript 脚本执行定时器</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> Timer global.setHrInterval(<span class="hljs-built_in">Function</span> callback,
+    <span class="hljs-built_in">Number</span> timeout,
+    ...args);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>callback: Function, 指定回调函数</li>
+<li>timeout: Number, 指定间隔的时间，以毫秒为单位。超过 2^31 的话,立即执行。</li>
+<li>args: ..., 额外的参数，传入到指定的 callback 内，可选。</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/timer.md.html>Timer</a>, 返回定时器对象</li>
+</ul>
+<p>由于 setHrInterval 的定时器会中断正在运行的代码执行回调，因此不要在回调函数内修改可能影响其它模块的数据，或者在回调中调用任何标记为 async 的 api 函数，否则将会产生不可预知的结果。例如：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div><span class="hljs-keyword">var</span> timers = <span class="hljs-built_in">require</span>(<span class="hljs-string">'timers'</span>);
+
+<span class="hljs-keyword">var</span> cnt = <span class="hljs-number">0</span>;
+timers.setHrInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    cnt++;
+}, <span class="hljs-number">100</span>);
+
+<span class="hljs-keyword">while</span> (cnt &lt; <span class="hljs-number">10</span>);
+
+<span class="hljs-built_in">console</span>.error(<span class="hljs-string">"===============================&gt; done"</span>);
+</code></pre>
+<p>这段代码中，第 8 行的循环并不会因为 cnt 的改变而结束，因为 JavaScript 在优化代码时会认定在这个循环过程中 cnt 不会被改变。</p>
+<hr>
+<h3 id="clearHrInterval">clearHrInterval</h3>
+<p><strong>清除指定的定时器</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> global.clearHrInterval(Value t);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>t: Value, 指定要清除的定时器</li>
+</ul>
+<hr>
+<h3 id="setImmediate">setImmediate</h3>
+<p><strong>下一个空闲时间立即执行回调函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> Timer global.setImmediate(<span class="hljs-built_in">Function</span> callback,
+    ...args);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>callback: Function, 指定回调函数</li>
+<li>args: ..., 额外的参数，传入到指定的 callback 内，可选。</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=../../object/ifs/timer.md.html>Timer</a>, 返回定时器对象</li>
+</ul>
+<hr>
+<h3 id="clearImmediate">clearImmediate</h3>
+<p><strong>清除指定的定时器</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> global.clearImmediate(Value t);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>t: Value, 指定要清除的定时器</li>
+</ul>
+<hr>
+<h3 id="GC">GC</h3>
+<p><strong>强制要求进行垃圾回收</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> global.GC();
+</code></pre>
+<hr>
+<h3 id="repl">repl</h3>
+<p><strong>进入交互模式，可以交互执行内部命令和代码，仅在启动 js 可以引用</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> global.repl(<span class="hljs-built_in">Array</span> cmds = []);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>cmds: Array, 补充命令</li>
+</ul>
+<p>参数 cmd 格式如下：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</div>[{
+        <span class="hljs-attr">cmd</span>: <span class="hljs-string">".test"</span>,
+        <span class="hljs-attr">help</span>: <span class="hljs-string">"this is a test"</span>,
+        <span class="hljs-attr">exec</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">argv</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(argv);
+        }
+    },
+    {
+        <span class="hljs-attr">cmd</span>: <span class="hljs-string">".test1"</span>,
+        <span class="hljs-attr">help</span>: <span class="hljs-string">"this is an other test"</span>,
+        <span class="hljs-attr">exec</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">argv</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(argv);
+        }
+    }
+]
+</code></pre>
+<hr>
+<p><strong>进入交互模式，可以交互执行内部命令和代码，仅在启动 js 可以引用</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> global.repl(Stream out,
+    <span class="hljs-built_in">Array</span> cmds = []);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>out: <a href=../../object/ifs/stream.md.html>Stream</a>, 输入输出流对象，通常为网络连接</li>
+<li>cmds: Array, 补充命令</li>
+</ul>
+<p>同一时刻只允许一个 <a href=../../object/ifs/stream.md.html>Stream</a> repl，新建一个 <a href=../../object/ifs/stream.md.html>Stream</a> repl 时，前一个 repl 将被关闭。</p>
+<p>参数 cmd 格式如下：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</div>[{
+        <span class="hljs-attr">cmd</span>: <span class="hljs-string">".test"</span>,
+        <span class="hljs-attr">help</span>: <span class="hljs-string">"this is a test"</span>,
+        <span class="hljs-attr">exec</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">argv</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(argv);
+        }
+    },
+    {
+        <span class="hljs-attr">cmd</span>: <span class="hljs-string">".test1"</span>,
+        <span class="hljs-attr">help</span>: <span class="hljs-string">"this is an other test"</span>,
+        <span class="hljs-attr">exec</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">argv</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(argv);
+        }
+    }
+]
+</code></pre>
+<h2 id="静态属性">静态属性</h2>
+<h3 id="Master">Master</h3>
+<p><strong><a href=../../object/ifs/worker.md.html>Worker</a>, <a href=../../object/ifs/worker.md.html>Worker</a> 宿主对象，仅在 <a href=../../object/ifs/worker.md.html>Worker</a> 入口脚本有效</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> readonly Worker global.Master;
+</code></pre>
+<hr>
+<h3 id="global">global</h3>
+<p><strong>Object, 全局对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> readonly <span class="hljs-built_in">Object</span> <span class="hljs-keyword">new</span> global;
+</code></pre>
+<hr>
+<h3 id="argv">argv</h3>
+<p><strong>Array, 获取当前脚本的运行参数，启动 js 获取进程启动参数，run 执行的脚本获取传递的参数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> readonly <span class="hljs-built_in">Array</span> global.argv;
+</code></pre>
+<hr>
+<h3 id="__filename">__filename</h3>
+<p><strong>String, 当前脚本文件名</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> readonly <span class="hljs-built_in">String</span> global.__filename;
+</code></pre>
+<hr>
+<h3 id="__dirname">__dirname</h3>
+<p><strong>String, 当前脚本所在目录</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> readonly <span class="hljs-built_in">String</span> global.__dirname;
+</code></pre>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../../object/readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

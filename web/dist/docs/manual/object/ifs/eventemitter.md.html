@@ -1,0 +1,672 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 EventEmitter </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 EventEmitter </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li class="active"><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-EventEmitter">对象 EventEmitter</h1>
+<p>事件触发对象，可用于建立观察者模式，支持事件触发的对象均继承于此，同一事件的同一函数只会产生一次回调</p>
+<p><a href=event.md.html>Event</a> 对象可独立创建，以用于组建自定义的事件系统：</p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">var</span> EventEmitter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'events'</span>);
+
+<span class="hljs-keyword">var</span> e = <span class="hljs-keyword">new</span> EventEmitter();
+</code></pre>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="468pt" height="407pt"
+ viewBox="0.00 0.00 468.28 407.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 403)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-403 464.2805,-403 464.2805,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="209.449,-346.5 209.449,-398.5 267.112,-398.5 267.112,-346.5 209.449,-346.5"/>
+<text text-anchor="middle" x="238.2805" y="-385.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="209.449,-378.5 267.112,-378.5 "/>
+<text text-anchor="start" x="217.449" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="217.449" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter -->
+<g id="me" class="node">
+<title>EventEmitter</title>
+<g id="a_me"><a xlink:title="EventEmitter">
+<polygon fill="#d3d3d3" stroke="#000000" points="178.88,-73.5 178.88,-309.5 297.681,-309.5 297.681,-73.5 178.88,-73.5"/>
+<text text-anchor="middle" x="238.2805" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">EventEmitter</text>
+<polyline fill="none" stroke="#000000" points="178.88,-289.5 297.681,-289.5 "/>
+<text text-anchor="start" x="186.88" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">new EventEmitter()</text>
+<polyline fill="none" stroke="#000000" points="178.88,-269.5 297.681,-269.5 "/>
+<text text-anchor="start" x="186.88" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">defaultMaxListeners</text>
+<polyline fill="none" stroke="#000000" points="178.88,-249.5 297.681,-249.5 "/>
+<text text-anchor="start" x="186.88" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">on()</text>
+<text text-anchor="start" x="186.88" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">addListener()</text>
+<text text-anchor="start" x="186.88" y="-212.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">prependListener()</text>
+<text text-anchor="start" x="186.88" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">once()</text>
+<text text-anchor="start" x="186.88" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">prependOnceListener()</text>
+<text text-anchor="start" x="186.88" y="-176.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">off()</text>
+<text text-anchor="start" x="186.88" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">removeListener()</text>
+<text text-anchor="start" x="186.88" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">removeAllListeners()</text>
+<text text-anchor="start" x="186.88" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">setMaxListeners()</text>
+<text text-anchor="start" x="186.88" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getMaxListeners()</text>
+<text text-anchor="start" x="186.88" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">listeners()</text>
+<text text-anchor="start" x="186.88" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">listenerCount()</text>
+<text text-anchor="start" x="186.88" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">eventNames()</text>
+<text text-anchor="start" x="186.88" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">emit()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;EventEmitter -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;EventEmitter</title>
+<path fill="none" stroke="#000000" d="M238.2805,-336.1738C238.2805,-328.1367 238.2805,-319.1977 238.2805,-309.8169"/>
+<polygon fill="#000000" stroke="#000000" points="234.7806,-336.181 238.2805,-346.181 241.7806,-336.1811 234.7806,-336.181"/>
+</g>
+<!-- DgramSocket -->
+<g id="node3" class="node">
+<title>DgramSocket</title>
+<g id="a_node3"><a xlink:href=dgramsocket.md.html xlink:title="DgramSocket">
+<polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-36.5 76.561,-36.5 76.561,-.5 0,-.5"/>
+<text text-anchor="middle" x="38.2805" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">DgramSocket</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter&#45;&gt;DgramSocket -->
+<g id="edge2" class="edge">
+<title>EventEmitter&#45;&gt;DgramSocket</title>
+<path fill="none" stroke="#000000" d="M171.1432,-133.4262C132.2439,-99.7784 85.8805,-59.674 59.4814,-36.8388"/>
+<polygon fill="#000000" stroke="#000000" points="168.9625,-136.1677 178.8154,-140.0627 173.542,-130.8735 168.9625,-136.1677"/>
+</g>
+<!-- LruCache -->
+<g id="node4" class="node">
+<title>LruCache</title>
+<g id="a_node4"><a xlink:href=lrucache.md.html xlink:title="LruCache">
+<polygon fill="#ffffff" stroke="#000000" points="94.609,-.5 94.609,-36.5 153.952,-36.5 153.952,-.5 94.609,-.5"/>
+<text text-anchor="middle" x="124.2805" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">LruCache</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter&#45;&gt;LruCache -->
+<g id="edge3" class="edge">
+<title>EventEmitter&#45;&gt;LruCache</title>
+<path fill="none" stroke="#000000" d="M173.102,-92.5887C158.9233,-71.072 145.4342,-50.6016 136.2424,-36.6527"/>
+<polygon fill="#000000" stroke="#000000" points="170.3514,-94.7756 178.7763,-101.1998 176.1965,-90.9239 170.3514,-94.7756"/>
+</g>
+<!-- Service -->
+<g id="node5" class="node">
+<title>Service</title>
+<g id="a_node5"><a xlink:href=service.md.html xlink:title="Service">
+<polygon fill="#ffffff" stroke="#000000" points="172.2805,-.5 172.2805,-36.5 226.2805,-36.5 226.2805,-.5 172.2805,-.5"/>
+<text text-anchor="middle" x="198.948" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Service</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter&#45;&gt;Service -->
+<g id="edge4" class="edge">
+<title>EventEmitter&#45;&gt;Service</title>
+<path fill="none" stroke="#000000" d="M209.3814,-63.3067C207.1116,-53.238 205.0651,-44.16 203.4173,-36.8502"/>
+<polygon fill="#000000" stroke="#000000" points="206.0068,-64.2528 211.6203,-73.2383 212.8354,-62.7134 206.0068,-64.2528"/>
+</g>
+<!-- WebSocket -->
+<g id="node6" class="node">
+<title>WebSocket</title>
+<g id="a_node6"><a xlink:href=websocket.md.html xlink:title="WebSocket">
+<polygon fill="#ffffff" stroke="#000000" points="244.719,-.5 244.719,-36.5 311.842,-36.5 311.842,-.5 244.719,-.5"/>
+<text text-anchor="middle" x="278.2805" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">WebSocket</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter&#45;&gt;WebSocket -->
+<g id="edge5" class="edge">
+<title>EventEmitter&#45;&gt;WebSocket</title>
+<path fill="none" stroke="#000000" d="M267.9206,-63.3067C270.2486,-53.238 272.3475,-44.16 274.0377,-36.8502"/>
+<polygon fill="#000000" stroke="#000000" points="264.467,-62.7068 265.6243,-73.2383 271.2871,-64.2838 264.467,-62.7068"/>
+</g>
+<!-- WebView -->
+<g id="node7" class="node">
+<title>WebView</title>
+<g id="a_node7"><a xlink:href=webview.md.html xlink:title="WebView">
+<polygon fill="#ffffff" stroke="#000000" points="330.169,-.5 330.169,-36.5 388.392,-36.5 388.392,-.5 330.169,-.5"/>
+<text text-anchor="middle" x="359.2805" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">WebView</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter&#45;&gt;WebView -->
+<g id="edge6" class="edge">
+<title>EventEmitter&#45;&gt;WebView</title>
+<path fill="none" stroke="#000000" d="M303.5379,-98.1982C319.9613,-74.7167 335.9143,-51.9079 346.5155,-36.7507"/>
+<polygon fill="#000000" stroke="#000000" points="300.5805,-96.3199 297.7171,-106.5204 306.3167,-100.3319 300.5805,-96.3199"/>
+</g>
+<!-- Worker -->
+<g id="node8" class="node">
+<title>Worker</title>
+<g id="a_node8"><a xlink:href=worker.md.html xlink:title="Worker">
+<polygon fill="#ffffff" stroke="#000000" points="406.2805,-.5 406.2805,-36.5 460.2805,-36.5 460.2805,-.5 406.2805,-.5"/>
+<text text-anchor="middle" x="432.888" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Worker</text>
+</a>
+</g>
+</g>
+<!-- EventEmitter&#45;&gt;Worker -->
+<g id="edge7" class="edge">
+<title>EventEmitter&#45;&gt;Worker</title>
+<path fill="none" stroke="#000000" d="M305.7751,-131.6202C343.4451,-98.2001 387.736,-58.9061 412.9582,-36.5295"/>
+<polygon fill="#000000" stroke="#000000" points="303.0042,-129.3996 297.8465,-138.6543 307.6497,-134.6359 303.0042,-129.3996"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="构造函数">构造函数</h2>
+<h3 id="EventEmitter">EventEmitter</h3>
+<p><strong>构造函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">new</span> EventEmitter();
+</code></pre>
+<h2 id="静态属性">静态属性</h2>
+<h3 id="defaultMaxListeners">defaultMaxListeners</h3>
+<p><strong>Integer, 默认全局最大监听器数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">static</span> Integer EventEmitter.defaultMaxListeners;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="on">on</h3>
+<p><strong>绑定一个事件处理函数到对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.on(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回成功绑定的数量，如果函数已绑定则返回 0</li>
+</ul>
+<hr>
+<p><strong>绑定一个事件处理函数到对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.on(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称将作为事件名称，属性的值将作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<h3 id="addListener">addListener</h3>
+<p><strong>绑定一个事件处理函数到对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.addListener(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<p><strong>绑定一个事件处理函数到对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.addListener(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称将作为事件名称，属性的值将作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<h3 id="prependListener">prependListener</h3>
+<p><strong>绑定一个事件处理函数到对象起始</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.prependListener(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回成功绑定的数量，如果函数已绑定则返回 0</li>
+</ul>
+<hr>
+<p><strong>绑定一个事件处理函数到对象起始</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.prependListener(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称将作为事件名称，属性的值将作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回成功绑定的数量，如果函数已绑定则返回 0</li>
+</ul>
+<hr>
+<h3 id="once">once</h3>
+<p><strong>绑定一个一次性事件处理函数到对象，一次性处理函数只会触发一次</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.once(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<p><strong>绑定一个一次性事件处理函数到对象，一次性处理函数只会触发一次</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.once(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称将作为事件名称，属性的值将作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<h3 id="prependOnceListener">prependOnceListener</h3>
+<p><strong>绑定一个事件处理函数到对象起始</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.prependOnceListener(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回成功绑定的数量，如果函数已绑定则返回 0</li>
+</ul>
+<hr>
+<p><strong>绑定一个事件处理函数到对象起始</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.prependOnceListener(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称将作为事件名称，属性的值将作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回成功绑定的数量，如果函数已绑定则返回 0</li>
+</ul>
+<hr>
+<h3 id="off">off</h3>
+<p><strong>从对象处理队列中取消指定函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.off(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<p><strong>取消对象处理队列中的全部函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.off(<span class="hljs-built_in">String</span> ev);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<p><strong>从对象处理队列中取消指定函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.off(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称作为事件名称，属性的值作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<h3 id="removeListener">removeListener</h3>
+<p><strong>从对象处理队列中取消指定函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Object</span> EventEmitter.removeListener(<span class="hljs-built_in">String</span> ev,
+    <span class="hljs-built_in">Function</span> func);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+<li>func: Function, 指定事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<p><strong>取消对象处理队列中的全部函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.removeListener(<span class="hljs-built_in">String</span> ev);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<p><strong>从对象处理队列中取消指定函数</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.removeListener(<span class="hljs-built_in">Object</span> map);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>map: Object, 指定事件映射关系，对象属性名称作为事件名称，属性的值作为事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<h3 id="removeAllListeners">removeAllListeners</h3>
+<p><strong>从对象处理队列中取消所有事件的所有监听器， 如果指定事件，则移除指定事件的所有监听器。</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Object</span> EventEmitter.removeAllListeners(<span class="hljs-built_in">Array</span> evs = []);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>evs: Array, 指定事件的名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Object, 返回事件对象本身，便于链式调用</li>
+</ul>
+<hr>
+<h3 id="setMaxListeners">setMaxListeners</h3>
+<p><strong>监听器的默认限制的数量，仅用于兼容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>EventEmitter.setMaxListeners(Integer n);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>n: Integer, 指定事件的数量</li>
+</ul>
+<hr>
+<h3 id="getMaxListeners">getMaxListeners</h3>
+<p><strong>获取监听器的默认限制的数量，仅用于兼容</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer EventEmitter.getMaxListeners();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回默认限制数量</li>
+</ul>
+<hr>
+<h3 id="listeners">listeners</h3>
+<p><strong>查询对象指定事件的监听器数组</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Array</span> EventEmitter.listeners(<span class="hljs-built_in">String</span> ev);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Array, 返回指定事件的监听器数组</li>
+</ul>
+<hr>
+<h3 id="listenerCount">listenerCount</h3>
+<p><strong>查询对象指定事件的监听器数量</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Integer EventEmitter.listenerCount(<span class="hljs-built_in">String</span> ev);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 指定事件的名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Integer, 返回指定事件的监听器数量</li>
+</ul>
+<hr>
+<h3 id="eventNames">eventNames</h3>
+<p><strong>查询监听器事件名称</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Array</span> EventEmitter.eventNames();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Array, 返回事件名称数组</li>
+</ul>
+<hr>
+<h3 id="emit">emit</h3>
+<p><strong>主动触发一个事件</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-built_in">Boolean</span> EventEmitter.emit(<span class="hljs-built_in">String</span> ev,
+    ...args);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>ev: String, 事件名称</li>
+<li>args: ..., 事件参数，将会传递给事件处理函数</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 返回事件触发状态，有响应事件返回 true，否则返回 false</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> EventEmitter.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value EventEmitter.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>

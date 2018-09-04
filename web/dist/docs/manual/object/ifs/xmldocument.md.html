@@ -1,0 +1,732 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=keywords content=EOS,区块链,BANCOR,钱包,fibos.js,DAPP,通证,token,FIBOS,区块链开发,发币,智能合约,JavaScript><link rel=icon type=image/png href=../../../../imgs/favicon.ico><title>FIBOS - 对象 XmlDocument </title><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?591f113ef60e4a996b20363318251e5c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><script src=https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js></script><link href=../../../../css/common.css rel=stylesheet><link href=../../../../css/docs.css rel=stylesheet></head><body class=doc-container><header class="header header-shrink header-inverse"><div class=container><nav class="navbar navbar-expand-lg navbar-dark navbar-header"><a class=navbar-brand onclick="window.location.href = '/'"><span class=logo-default><img src=../../../../imgs/logo.png alt="" style="transform: translateY(-10px);cursor: pointer;"> </span></a><button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label=""><span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse doc-collapse" id=navbarNav><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class=nav-link onclick="window.location.href = '/'" style="cursor: pointer;" id=Home>首页</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#roadmap'" style="cursor: pointer;" id=Roadmap>路线图</a></li><li class="nav-item dropdown"><a id=DEV_Community class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>开发社区 <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2" aria-labelledby=navbarDropdown><a class=dropdown-item onclick="window.location.href = '/docs/guide/basic/about.md.html'" id=Documentation>开发者文档</a> <a class=dropdown-item href=https://github.com/fibosio target=_blank>Github</a> <a class=dropdown-item onclick="window.location.href = '/faq.html'" id=FAQ>FAQ</a></div></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/news.html'" id=News>新闻</a></li><li class=nav-item><a class=nav-link href=http://bbs.fibos.io id=BBS target=_blank>BBS</a></li><li class=nav-item><a class=nav-link onclick="window.location.href = '/#dapps'" style="cursor: pointer;" id=Dapps>社区应用</a></li><li class="nav-item dropdown"><a id=Language class="nav-link dropdown-toggle" href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false><i class="lnr lnr-chevron-down u-fs-12 ml-1"></i></a><div class="dropdown-menu box-shadow-v2 language" aria-labelledby=navbarDropdown><a class=dropdown-item href="" id=language-zh>中文</a> <a class=dropdown-item href="" id=language-en>English</a></div></li></ul></div></nav></div></header><div class=band><div class=container><span class=group> 内置对象 </span></div></div><div class=container><ol class=breadcrumb><li><a href=../../../.. id=ToHome>首页</a></li><li><a href=../../../guide/basic/about.md.html id=DevDoc>&nbsp;开发者文档</a></li><li><a href=../readme.md.html> 内置对象 </a></li><li class=active> 对象 XmlDocument </li></ol></div><div class=page-body><div class="container row"><div class="sidebar hidden-xs col-lg-2"><div class=panel-group id=accordion role=tablist>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_basic" aria-controls="collapse_basic"> 基础入门 </a></h4></div><div id="collapse_basic" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/basic/about.md.html>FIBOS 是什么？</a></li>
+<li><a href=../../../guide/basic/install.md.html>搭建一个 FIBOS 开发环境</a></li>
+<li><a href=../../../guide/basic/fibosjs.md.html>使用 fibos.js 与 FIBOS 交互</a></li>
+<li><a href=../../../guide/basic/deploycontracts.md.html>发布一个简单的 JS 合约</a></li>
+<li><a href=../../../guide/basic/test.md.html>体验 FIBOS 超棒的测试框架</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_joinfibos" aria-controls="collapse_joinfibos"> FIBOS 基础操作 </a></h4></div><div id="collapse_joinfibos" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/joinfibos/fibosmainnet.md.html>FIBOS 主网信息</a></li>
+<li><a href=../../../guide/joinfibos/createaccount.md.html>如何在 FIBOS 中注册账号？</a></li>
+<li><a href=../../../guide/joinfibos/eos2fibos.md.html>从 EOS 主网跨链转账到 FIBOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/eos2fo.md.html>在 FIBOS 中 EOS 通证与 FO 通证相互兑换</a></li>
+<li><a href=../../../guide/joinfibos/fibos2eos.md.html>从 FIBOS 主网跨链转账到 EOS 主网</a></li>
+<li><a href=../../../guide/joinfibos/bp.md.html>FIBOS RPC 以及 P2P 列表(持续更新)</a></li>
+<li><a href=../../../guide/joinfibos/howtobeproducerinfibos.md.html>在 FIBOS 主网中申请注册  BP 节点</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_development" aria-controls="collapse_development"> FIBOS TestNet </a></h4></div><div id="collapse_development" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/development/abouttestnet.md.html>FIBOS TestNet 是什么？</a></li>
+<li><a href=../../../guide/development/jointestnet.md.html>如何加入到 FIBOS TestNet?</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_advanced" aria-controls="collapse_advanced"> 深入理解 FIBOS </a></h4></div><div id="collapse_advanced" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/advanced/fibosauth.md.html>由浅入深理解 FIBOS 权限系统</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_community" aria-controls="collapse_community"> FIBOS 扩展应用 </a></h4></div><div id="collapse_community" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../../guide/community/fibosmongodb.md.html>三行代码，让 FIBOS 支持 mangoDB 富查询</a></li>
+<li><a href=../../../guide/community/fibosapibasics.md.html>fibos.js API 基础篇</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_module" aria-controls="collapse_module"> 基础模块 </a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=../../module/ifs/action.md.html>action</a></li>
+<li><a href=../../module/ifs/assert.md.html>assert</a></li>
+<li><a href=../../module/ifs/base32.md.html>base32</a></li>
+<li><a href=../../module/ifs/base64.md.html>base64</a></li>
+<li><a href=../../module/ifs/base64vlq.md.html>base64vlq</a></li>
+<li><a href=../../module/ifs/bson.md.html>bson</a></li>
+<li><a href=../../module/ifs/console.md.html>console</a></li>
+<li><a href=../../module/ifs/constants.md.html>constants</a></li>
+<li><a href=../../module/ifs/coroutine.md.html>coroutine</a></li>
+<li><a href=../../module/ifs/crypto.md.html>crypto</a></li>
+<li><a href=../../module/ifs/db.md.html>db</a></li>
+<li><a href=../../module/ifs/dgram.md.html>dgram</a></li>
+<li><a href=../../module/ifs/dns.md.html>dns</a></li>
+<li><a href=../../module/ifs/encoding.md.html>encoding</a></li>
+<li><a href=../../module/ifs/fibos.md.html>fibos</a></li>
+<li><a href=../../module/ifs/fs.md.html>fs</a></li>
+<li><a href=../../module/ifs/gd.md.html>gd</a></li>
+<li><a href=../../module/ifs/global.md.html>global</a></li>
+<li><a href=../../module/ifs/gui.md.html>gui</a></li>
+<li><a href=../../module/ifs/hash.md.html>hash</a></li>
+<li><a href=../../module/ifs/hex.md.html>hex</a></li>
+<li><a href=../../module/ifs/http.md.html>http</a></li>
+<li><a href=../../module/ifs/iconv.md.html>iconv</a></li>
+<li><a href=../../module/ifs/io.md.html>io</a></li>
+<li><a href=../../module/ifs/json.md.html>json</a></li>
+<li><a href=../../module/ifs/mq.md.html>mq</a></li>
+<li><a href=../../module/ifs/net.md.html>net</a></li>
+<li><a href=../../module/ifs/os.md.html>os</a></li>
+<li><a href=../../module/ifs/path.md.html>path</a></li>
+<li><a href=../../module/ifs/path_posix.md.html>path_posix</a></li>
+<li><a href=../../module/ifs/path_win32.md.html>path_win32</a></li>
+<li><a href=../../module/ifs/process.md.html>process</a></li>
+<li><a href=../../module/ifs/profiler.md.html>profiler</a></li>
+<li><a href=../../module/ifs/punycode.md.html>punycode</a></li>
+<li><a href=../../module/ifs/querystring.md.html>querystring</a></li>
+<li><a href=../../module/ifs/registry.md.html>registry</a></li>
+<li><a href=../../module/ifs/softfloat.md.html>softfloat</a></li>
+<li><a href=../../module/ifs/ssl.md.html>ssl</a></li>
+<li><a href=../../module/ifs/string_decoder.md.html>string_decoder</a></li>
+<li><a href=../../module/ifs/test.md.html>test</a></li>
+<li><a href=../../module/ifs/timers.md.html>timers</a></li>
+<li><a href=../../module/ifs/trans.md.html>trans</a></li>
+<li><a href=../../module/ifs/tty.md.html>tty</a></li>
+<li><a href=../../module/ifs/url.md.html>url</a></li>
+<li><a href=../../module/ifs/util.md.html>util</a></li>
+<li><a href=../../module/ifs/uuid.md.html>uuid</a></li>
+<li><a href=../../module/ifs/vm.md.html>vm</a></li>
+<li><a href=../../module/ifs/ws.md.html>ws</a></li>
+<li><a href=../../module/ifs/xml.md.html>xml</a></li>
+<li><a href=../../module/ifs/zip.md.html>zip</a></li>
+<li><a href=../../module/ifs/zlib.md.html>zlib</a></li>
+<li><a href=../../module/ifs/zmq.md.html>zmq</a></li>
+</ul>
+ </div></div></div>  <div class=card><div class=card-header role=tab id=headingOne><h4 class=card-title><a data-toggle=collapse data-parent=#accordion href="#collapse_object" aria-controls="collapse_object"> 内置对象 </a></h4></div><div id="collapse_object" class="panel-collapse collapse show" aria-labelledby=headingOne><div class=card-body> <ul>
+<li><a href=buffer.md.html>Buffer</a></li>
+<li><a href=bufferedstream.md.html>BufferedStream</a></li>
+<li><a href=chain.md.html>Chain</a></li>
+<li><a href=cipher.md.html>Cipher</a></li>
+<li><a href=condition.md.html>Condition</a></li>
+<li><a href=dbconnection.md.html>DbConnection</a></li>
+<li><a href=dgramsocket.md.html>DgramSocket</a></li>
+<li><a href=digest.md.html>Digest</a></li>
+<li><a href=event.md.html>Event</a></li>
+<li><a href=eventemitter.md.html>EventEmitter</a></li>
+<li><a href=eventinfo.md.html>EventInfo</a></li>
+<li><a href=fiber.md.html>Fiber</a></li>
+<li><a href=file.md.html>File</a></li>
+<li><a href=handler.md.html>Handler</a></li>
+<li><a href=handlerex.md.html>HandlerEx</a></li>
+<li><a href=heapgraphedge.md.html>HeapGraphEdge</a></li>
+<li><a href=heapgraphnode.md.html>HeapGraphNode</a></li>
+<li><a href=heapsnapshot.md.html>HeapSnapshot</a></li>
+<li><a href=httpclient.md.html>HttpClient</a></li>
+<li><a href=httpcollection.md.html>HttpCollection</a></li>
+<li><a href=httpcookie.md.html>HttpCookie</a></li>
+<li><a href=httphandler.md.html>HttpHandler</a></li>
+<li><a href=httpmessage.md.html>HttpMessage</a></li>
+<li><a href=httprequest.md.html>HttpRequest</a></li>
+<li><a href=httpresponse.md.html>HttpResponse</a></li>
+<li><a href=httpserver.md.html>HttpServer</a></li>
+<li><a href=httpuploaddata.md.html>HttpUploadData</a></li>
+<li><a href=httpsserver.md.html>HttpsServer</a></li>
+<li><a href=image.md.html>Image</a></li>
+<li><a href=int64.md.html>Int64</a></li>
+<li><a href=leveldb.md.html>LevelDB</a></li>
+<li><a href=lock.md.html>Lock</a></li>
+<li><a href=lrucache.md.html>LruCache</a></li>
+<li><a href=mssql.md.html>MSSQL</a></li>
+<li><a href=memorystream.md.html>MemoryStream</a></li>
+<li><a href=message.md.html>Message</a></li>
+<li><a href=mongocollection.md.html>MongoCollection</a></li>
+<li><a href=mongocursor.md.html>MongoCursor</a></li>
+<li><a href=mongodb.md.html>MongoDB</a></li>
+<li><a href=mongoid.md.html>MongoID</a></li>
+<li><a href=mysql.md.html>MySQL</a></li>
+<li><a href=pkey.md.html>PKey</a></li>
+<li><a href=redis.md.html>Redis</a></li>
+<li><a href=redishash.md.html>RedisHash</a></li>
+<li><a href=redislist.md.html>RedisList</a></li>
+<li><a href=redisset.md.html>RedisSet</a></li>
+<li><a href=redissortedset.md.html>RedisSortedSet</a></li>
+<li><a href=routing.md.html>Routing</a></li>
+<li><a href=sqlite.md.html>SQLite</a></li>
+<li><a href=sandbox.md.html>SandBox</a></li>
+<li><a href=seekablestream.md.html>SeekableStream</a></li>
+<li><a href=semaphore.md.html>Semaphore</a></li>
+<li><a href=service.md.html>Service</a></li>
+<li><a href=smtp.md.html>Smtp</a></li>
+<li><a href=socket.md.html>Socket</a></li>
+<li><a href=sslhandler.md.html>SslHandler</a></li>
+<li><a href=sslserver.md.html>SslServer</a></li>
+<li><a href=sslsocket.md.html>SslSocket</a></li>
+<li><a href=stat.md.html>Stat</a></li>
+<li><a href=stats.md.html>Stats</a></li>
+<li><a href=stream.md.html>Stream</a></li>
+<li><a href=stringdecoder.md.html>StringDecoder</a></li>
+<li><a href=subprocess.md.html>SubProcess</a></li>
+<li><a href=table.md.html>Table</a></li>
+<li><a href=tcpserver.md.html>TcpServer</a></li>
+<li><a href=timer.md.html>Timer</a></li>
+<li><a href=urlobject.md.html>UrlObject</a></li>
+<li><a href=websocket.md.html>WebSocket</a></li>
+<li><a href=websocketmessage.md.html>WebSocketMessage</a></li>
+<li><a href=webview.md.html>WebView</a></li>
+<li><a href=worker.md.html>Worker</a></li>
+<li><a href=x509cert.md.html>X509Cert</a></li>
+<li><a href=x509crl.md.html>X509Crl</a></li>
+<li><a href=x509req.md.html>X509Req</a></li>
+<li><a href=xmlattr.md.html>XmlAttr</a></li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a></li>
+<li><a href=xmlcharacterdata.md.html>XmlCharacterData</a></li>
+<li><a href=xmlcomment.md.html>XmlComment</a></li>
+<li class="active"><a href=xmldocument.md.html>XmlDocument</a></li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a></li>
+<li><a href=xmlelement.md.html>XmlElement</a></li>
+<li><a href=xmlnamednodemap.md.html>XmlNamedNodeMap</a></li>
+<li><a href=xmlnode.md.html>XmlNode</a></li>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a></li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a></li>
+<li><a href=xmltext.md.html>XmlText</a></li>
+<li><a href=zipfile.md.html>ZipFile</a></li>
+<li><a href=zmqsocket.md.html>ZmqSocket</a></li>
+<li><a href=object.md.html>object</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content col-lg-8 col-md-10"><div class=content-container> <h1 id="对象-XmlDocument">对象 XmlDocument</h1>
+<p>XmlDocument 对象代表整个 XML 文档</p>
+<p>XmlDocument 对象是一棵文档树的根，可为我们提供对文档数据的最初（或最顶层）的访问入口。
+用于元素节点、文本节点、注释、处理指令等均无法存在于 XmlDocument 之外， XmlDocument 对象同样提供了创建这些对象的方法。 <a href=xmlnode.md.html>XmlNode</a> 对象提供了一个 ownerDocument 属性，此属性可把它们与在其中创建它们的 XmlDocument 关联起来。</p>
+<h2 id="继承关系">继承关系</h2>
+<div class="dot">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: %0 Pages: 1 -->
+<svg width="156pt" height="695pt"
+ viewBox="0.00 0.00 155.68 695.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 691)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-691 151.678,-691 151.678,4 -4,4"/>
+<!-- object -->
+<g id="node1" class="node">
+<title>object</title>
+<g id="a_node1"><a xlink:href=object.md.html xlink:title="object">
+<polygon fill="#ffffff" stroke="#000000" points="45.0075,-634.5 45.0075,-686.5 102.6705,-686.5 102.6705,-634.5 45.0075,-634.5"/>
+<text text-anchor="middle" x="73.839" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">object</text>
+<polyline fill="none" stroke="#000000" points="45.0075,-666.5 102.6705,-666.5 "/>
+<text text-anchor="start" x="53.0075" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toString()</text>
+<text text-anchor="start" x="53.0075" y="-641.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toJSON()</text>
+</a>
+</g>
+</g>
+<!-- XmlNode -->
+<g id="node2" class="node">
+<title>XmlNode</title>
+<g id="a_node2"><a xlink:href=xmlnode.md.html xlink:title="XmlNode">
+<polygon fill="#ffffff" stroke="#000000" points="12.5025,-321.5 12.5025,-597.5 135.1755,-597.5 135.1755,-321.5 12.5025,-321.5"/>
+<text text-anchor="middle" x="73.839" y="-584.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">XmlNode</text>
+<polyline fill="none" stroke="#000000" points="12.5025,-577.5 135.1755,-577.5 "/>
+<text text-anchor="start" x="20.5025" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nodeType</text>
+<text text-anchor="start" x="20.5025" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nodeName</text>
+<text text-anchor="start" x="20.5025" y="-540.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nodeValue</text>
+<text text-anchor="start" x="20.5025" y="-528.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ownerDocument</text>
+<text text-anchor="start" x="20.5025" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">parentNode</text>
+<text text-anchor="start" x="20.5025" y="-504.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">childNodes</text>
+<text text-anchor="start" x="20.5025" y="-492.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">firstChild</text>
+<text text-anchor="start" x="20.5025" y="-480.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lastChild</text>
+<text text-anchor="start" x="20.5025" y="-468.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">previousSibling</text>
+<text text-anchor="start" x="20.5025" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">nextSibling</text>
+<polyline fill="none" stroke="#000000" points="12.5025,-449.5 135.1755,-449.5 "/>
+<text text-anchor="start" x="20.5025" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">hasChildNodes()</text>
+<text text-anchor="start" x="20.5025" y="-424.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">normalize()</text>
+<text text-anchor="start" x="20.5025" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">cloneNode()</text>
+<text text-anchor="start" x="20.5025" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lookupPrefix()</text>
+<text text-anchor="start" x="20.5025" y="-388.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">lookupNamespaceURI()</text>
+<text text-anchor="start" x="20.5025" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">insertBefore()</text>
+<text text-anchor="start" x="20.5025" y="-364.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">insertAfter()</text>
+<text text-anchor="start" x="20.5025" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">appendChild()</text>
+<text text-anchor="start" x="20.5025" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">replaceChild()</text>
+<text text-anchor="start" x="20.5025" y="-328.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">removeChild()</text>
+</a>
+</g>
+</g>
+<!-- object&#45;&gt;XmlNode -->
+<g id="edge1" class="edge">
+<title>object&#45;&gt;XmlNode</title>
+<path fill="none" stroke="#000000" d="M73.839,-624.0057C73.839,-616.0715 73.839,-607.2257 73.839,-597.8667"/>
+<polygon fill="#000000" stroke="#000000" points="70.3391,-624.2227 73.839,-634.2228 77.3391,-624.2228 70.3391,-624.2227"/>
+</g>
+<!-- XmlDocument -->
+<g id="me" class="node">
+<title>XmlDocument</title>
+<g id="a_me"><a xlink:title="XmlDocument">
+<polygon fill="#d3d3d3" stroke="#000000" points="0,-.5 0,-284.5 147.678,-284.5 147.678,-.5 0,-.5"/>
+<text text-anchor="middle" x="73.839" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">XmlDocument</text>
+<polyline fill="none" stroke="#000000" points="0,-264.5 147.678,-264.5 "/>
+<text text-anchor="start" x="8" y="-251.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">new XmlDocument()</text>
+<polyline fill="none" stroke="#000000" points="0,-244.5 147.678,-244.5 "/>
+<text text-anchor="start" x="8" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">inputEncoding</text>
+<text text-anchor="start" x="8" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">xmlStandalone</text>
+<text text-anchor="start" x="8" y="-207.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">xmlVersion</text>
+<text text-anchor="start" x="8" y="-195.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">doctype</text>
+<text text-anchor="start" x="8" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">documentElement</text>
+<text text-anchor="start" x="8" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">head</text>
+<text text-anchor="start" x="8" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">title</text>
+<text text-anchor="start" x="8" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">body</text>
+<polyline fill="none" stroke="#000000" points="0,-140.5 147.678,-140.5 "/>
+<text text-anchor="start" x="8" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">load()</text>
+<text text-anchor="start" x="8" y="-115.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getElementsByTagName()</text>
+<text text-anchor="start" x="8" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getElementsByTagNameNS()</text>
+<text text-anchor="start" x="8" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getElementById()</text>
+<text text-anchor="start" x="8" y="-79.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">getElementsByClassName()</text>
+<text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">createElement()</text>
+<text text-anchor="start" x="8" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">createElementNS()</text>
+<text text-anchor="start" x="8" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">createTextNode()</text>
+<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">createComment()</text>
+<text text-anchor="start" x="8" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">createCDATASection()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">createProcessingInstruction()</text>
+</a>
+</g>
+</g>
+<!-- XmlNode&#45;&gt;XmlDocument -->
+<g id="edge2" class="edge">
+<title>XmlNode&#45;&gt;XmlDocument</title>
+<path fill="none" stroke="#000000" d="M73.839,-311.3595C73.839,-302.4613 73.839,-293.5194 73.839,-284.6465"/>
+<polygon fill="#000000" stroke="#000000" points="70.3391,-311.3813 73.839,-321.3813 77.3391,-311.3814 70.3391,-311.3813"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h2 id="构造函数">构造函数</h2>
+<h3 id="XmlDocument">XmlDocument</h3>
+<p><strong>构造一个 XmlDocument 对象</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-keyword">new</span> XmlDocument(<span class="hljs-built_in">String</span> type = <span class="hljs-string">"text/xml"</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>type: String, 指定文档对象的类型，缺省为 &quot;text/<a href=../../module/ifs/xml.md.html>xml</a>&quot;，若需要处理 html 则需要指定 &quot;text/html&quot;</li>
+</ul>
+<h2 id="成员属性">成员属性</h2>
+<h3 id="inputEncoding">inputEncoding</h3>
+<p><strong>String, 返回用于文档的编码（在解析时）</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly <span class="hljs-built_in">String</span> XmlDocument.inputEncoding;
+</code></pre>
+<hr>
+<h3 id="xmlStandalone">xmlStandalone</h3>
+<p><strong>Boolean, 设置或返回文档是否为 standalone</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> XmlDocument.xmlStandalone;
+</code></pre>
+<hr>
+<h3 id="xmlVersion">xmlVersion</h3>
+<p><strong>String, 设置或返回文档的 XML 版本</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlDocument.xmlVersion;
+</code></pre>
+<hr>
+<h3 id="doctype">doctype</h3>
+<p><strong><a href=xmldocumenttype.md.html>XmlDocumentType</a>, 返回与文档相关的文档类型声明（Document Type Declaration）</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlDocumentType XmlDocument.doctype;
+</code></pre>
+<p>对于没有 DTD 的 XML 文档，则返回 null。此属性可提供对 <a href=xmldocumenttype.md.html>XmlDocumentType</a> 对象（ XmlDocument 的一个子节点）的直接访问。</p>
+<hr>
+<h3 id="documentElement">documentElement</h3>
+<p><strong><a href=xmlelement.md.html>XmlElement</a>, 返回文档的根节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlElement XmlDocument.documentElement;
+</code></pre>
+<hr>
+<h3 id="head">head</h3>
+<p><strong><a href=xmlelement.md.html>XmlElement</a>, 返回 HTML 文档的 head 节点，仅在 html 模式有效</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlElement XmlDocument.head;
+</code></pre>
+<hr>
+<h3 id="title">title</h3>
+<p><strong>String, 返回 HTML 文档的 title 节点的内容，仅在 html 模式有效</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly <span class="hljs-built_in">String</span> XmlDocument.title;
+</code></pre>
+<hr>
+<h3 id="body">body</h3>
+<p><strong><a href=xmlelement.md.html>XmlElement</a>, 返回 HTML 文档的 body 节点，仅在 html 模式有效</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlElement XmlDocument.body;
+</code></pre>
+<hr>
+<h3 id="nodeType">nodeType</h3>
+<p><strong>Integer, 返回节点的节点类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly Integer XmlDocument.nodeType;
+</code></pre>
+<p>不同对象的 nodeType 会返回不同的值：</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>: ELEMENT_NODE(1)</li>
+<li><a href=xmlattr.md.html>XmlAttr</a>: ATTRIBUTE_NODE(2)</li>
+<li><a href=xmltext.md.html>XmlText</a>: TEXT_NODE(3)</li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>: CDATA_SECTION_NODE(4)</li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>: PROCESSING_INSTRUCTION_NODE(7)</li>
+<li><a href=xmlcomment.md.html>XmlComment</a>: COMMENT_NODE(8)</li>
+<li>XmlDocument: DOCUMENT_NODE(9)</li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a>: DOCUMENT_TYPE_NODE(10)</li>
+</ul>
+<hr>
+<h3 id="nodeName">nodeName</h3>
+<p><strong>String, 返回节点的名称，根据其类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly <span class="hljs-built_in">String</span> XmlDocument.nodeName;
+</code></pre>
+<p>不同对象的 nodeName 会返回不同的值：</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>: element name</li>
+<li><a href=xmlattr.md.html>XmlAttr</a>: 属性名称</li>
+<li><a href=xmltext.md.html>XmlText</a>: #text</li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>: #cdata-section</li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>: 返回指定目标 target</li>
+<li><a href=xmlcomment.md.html>XmlComment</a>: #comment</li>
+<li>XmlDocument: #document</li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a>: doctype 名称</li>
+</ul>
+<hr>
+<h3 id="nodeValue">nodeValue</h3>
+<p><strong>String, 返回节点的名称，根据其类型</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlDocument.nodeValue;
+</code></pre>
+<p>不同对象的 nodeName 会返回不同的值：</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>: null</li>
+<li><a href=xmlattr.md.html>XmlAttr</a>: 属性的值</li>
+<li><a href=xmltext.md.html>XmlText</a>: 节点的内容</li>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>: 节点的内容</li>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>: 返回指定内容 data</li>
+<li><a href=xmlcomment.md.html>XmlComment</a>: 注释文本</li>
+<li>XmlDocument: null</li>
+<li><a href=xmldocumenttype.md.html>XmlDocumentType</a>: null</li>
+</ul>
+<hr>
+<h3 id="ownerDocument">ownerDocument</h3>
+<p><strong>XmlDocument, 返回节点的根元素（XmlDocument 对象）</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlDocument XmlDocument.ownerDocument;
+</code></pre>
+<hr>
+<h3 id="parentNode">parentNode</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 可返回某节点的父节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlDocument.parentNode;
+</code></pre>
+<hr>
+<h3 id="childNodes">childNodes</h3>
+<p><strong><a href=xmlnodelist.md.html>XmlNodeList</a>, 返回指定节点的子节点的节点列表</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNodeList XmlDocument.childNodes;
+</code></pre>
+<hr>
+<h3 id="firstChild">firstChild</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回节点的首个子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlDocument.firstChild;
+</code></pre>
+<hr>
+<h3 id="lastChild">lastChild</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回节点的最后一个子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlDocument.lastChild;
+</code></pre>
+<hr>
+<h3 id="previousSibling">previousSibling</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回某节点之前紧跟的节点（处于同一树层级），如果没有此节点，那么该属性返回 null</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlDocument.previousSibling;
+</code></pre>
+<hr>
+<h3 id="nextSibling">nextSibling</h3>
+<p><strong><a href=xmlnode.md.html>XmlNode</a>, 返回某个元素之后紧跟的节点（处于同一树层级中），如果无此节点，则属性返回 null</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>readonly XmlNode XmlDocument.nextSibling;
+</code></pre>
+<h2 id="成员函数">成员函数</h2>
+<h3 id="load">load</h3>
+<p><strong>通过解析一个 XML/HTML 字符串来组成该文档，不支持多语种</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlDocument.load(<span class="hljs-built_in">String</span> source);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: String, 要解析的 XML/HTML 文本，取决于文档创建时的类型</li>
+</ul>
+<hr>
+<p><strong>通过解析一个二进制 XML/HTML 字符串来组成该文档，并根据语种自动转换</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlDocument.load(Buffer source);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>source: <a href=buffer.md.html>Buffer</a>, 要解析的 XML/HTML 文本，取决于文档创建时的类型</li>
+</ul>
+<hr>
+<h3 id="getElementsByTagName">getElementsByTagName</h3>
+<p><strong>返回带有指定名称的所有元素的一个节点列表</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNodeList XmlDocument.getElementsByTagName(<span class="hljs-built_in">String</span> tagName);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>tagName: String, 需检索的标签名。值 &quot;*&quot; 匹配所有的标签</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a>, 文档树中具有指定标记的 <a href=xmlelement.md.html>XmlElement</a> 节点的 <a href=xmlnodelist.md.html>XmlNodeList</a> 集合。返回的元素节点的顺序就是它们在源文档中出现的顺序。</li>
+</ul>
+<p>该方法将返回一个 <a href=xmlnodelist.md.html>XmlNodeList</a> 对象（可以作为只读数组处理），该对象存放文档中具有指定标签名的所有 <a href=xmlelement.md.html>XmlElement</a> 节点，它们存放的顺序就是在源文档中出现的顺序。 <a href=xmlnodelist.md.html>XmlNodeList</a> 对象是“活”的，即如果在文档中添加或删除了指定标签名的元素，它的内容会自动进行必要的更新。</p>
+<hr>
+<h3 id="getElementsByTagNameNS">getElementsByTagNameNS</h3>
+<p><strong>返回带有指定命名空间和名称的所有元素的一个节点列表</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNodeList XmlDocument.getElementsByTagNameNS(<span class="hljs-built_in">String</span> namespaceURI,
+    <span class="hljs-built_in">String</span> localName);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>namespaceURI: String, 指定检索的命名空间 URI。值 &quot;*&quot; 可匹配所有的标签</li>
+<li>localName: String, 需检索的标签名。值 &quot;*&quot; 匹配所有的标签</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a>, 文档树中具有指定标记的 <a href=xmlelement.md.html>XmlElement</a> 节点的 <a href=xmlnodelist.md.html>XmlNodeList</a> 集合。返回的元素节点的顺序就是它们在源文档中出现的顺序。</li>
+</ul>
+<p>该方法与 getElementsByTagName() 方法相似，只是它根据命名空间和名称来检索元素。</p>
+<hr>
+<h3 id="getElementById">getElementById</h3>
+<p><strong>返回拥有指定 id 属性的元素</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlElement XmlDocument.getElementById(<span class="hljs-built_in">String</span> id);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>id: String, 需检索的 id</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>, 节点树中具有指定 id 属性的 <a href=xmlelement.md.html>XmlElement</a> 节点</li>
+</ul>
+<p>该方法将遍历文档的子孙节点，返回一个 <a href=xmlelement.md.html>XmlElement</a> 节点对象，表示第一个具有指定 id 属性的文档元素。。</p>
+<hr>
+<h3 id="getElementsByClassName">getElementsByClassName</h3>
+<p><strong>返回带有指定 class 名称的所有元素的一个节点列表</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNodeList XmlDocument.getElementsByClassName(<span class="hljs-built_in">String</span> className);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>className: String, 需检索的 class 名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnodelist.md.html>XmlNodeList</a>, 文档树中具有指定 class 名的 <a href=xmlelement.md.html>XmlElement</a> 节点的 <a href=xmlnodelist.md.html>XmlNodeList</a> 集合。返回的元素节点的顺序就是它们在源文档中出现的顺序。</li>
+</ul>
+<p>该方法将返回一个 <a href=xmlnodelist.md.html>XmlNodeList</a> 对象（可以作为只读数组处理），该对象存放文档中具有指定 class 名的所有 <a href=xmlelement.md.html>XmlElement</a> 节点，它们存放的顺序就是在源文档中出现的顺序。 <a href=xmlnodelist.md.html>XmlNodeList</a> 对象是“活”的，即如果在文档中添加或删除了指定标签名的元素，它的内容会自动进行必要的更新。</p>
+<hr>
+<h3 id="createElement">createElement</h3>
+<p><strong>创建元素节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlElement XmlDocument.createElement(<span class="hljs-built_in">String</span> tagName);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>tagName: String, 指定元素节点规定名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>, 返回新创建的 <a href=xmlelement.md.html>XmlElement</a> 节点，具有指定的标签名</li>
+</ul>
+<hr>
+<h3 id="createElementNS">createElementNS</h3>
+<p><strong>创建带有指定命名空间的元素节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlElement XmlDocument.createElementNS(<span class="hljs-built_in">String</span> namespaceURI,
+    <span class="hljs-built_in">String</span> qualifiedName);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>namespaceURI: String, 指定元素节点命名空间 URI</li>
+<li>qualifiedName: String, 指定元素节点规定名称</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlelement.md.html>XmlElement</a>, 返回新创建的 <a href=xmlelement.md.html>XmlElement</a> 节点，具有指定的标签名</li>
+</ul>
+<hr>
+<h3 id="createTextNode">createTextNode</h3>
+<p><strong>创建文本节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlText XmlDocument.createTextNode(<span class="hljs-built_in">String</span> data);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: String, 指定此节点的文本</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmltext.md.html>XmlText</a>, 返回新创建的 <a href=xmltext.md.html>XmlText</a> 节点，表示指定的 data 字符串</li>
+</ul>
+<hr>
+<h3 id="createComment">createComment</h3>
+<p><strong>创建注释节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlComment XmlDocument.createComment(<span class="hljs-built_in">String</span> data);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: String, 指定此节点的注释文本</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlcomment.md.html>XmlComment</a>, 返回新创建的 <a href=xmlcomment.md.html>XmlComment</a> 节点，注释文本为指定的 data</li>
+</ul>
+<hr>
+<h3 id="createCDATASection">createCDATASection</h3>
+<p><strong>创建 <a href=xmlcdatasection.md.html>XmlCDATASection</a> 节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlCDATASection XmlDocument.createCDATASection(<span class="hljs-built_in">String</span> data);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>data: String, 指定此节点规定 CDATA 数据</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlcdatasection.md.html>XmlCDATASection</a>, 返回新创建的 <a href=xmlcdatasection.md.html>XmlCDATASection</a> 节点，内容为指定的 data</li>
+</ul>
+<hr>
+<h3 id="createProcessingInstruction">createProcessingInstruction</h3>
+<p><strong>创建 <a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a> 节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlProcessingInstruction XmlDocument.createProcessingInstruction(<span class="hljs-built_in">String</span> target,
+    <span class="hljs-built_in">String</span> data);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>target: String, 指定处理指令的目标</li>
+<li>data: String, 指定处理指令的内容文本</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlprocessinginstruction.md.html>XmlProcessingInstruction</a>, 新创建的 ProcessingInstruction 节点</li>
+</ul>
+<hr>
+<h3 id="hasChildNodes">hasChildNodes</h3>
+<p><strong>查询是否存在子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">Boolean</span> XmlDocument.hasChildNodes();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>Boolean, 存在任何子节点时返回 true，否则返回 false</li>
+</ul>
+<hr>
+<h3 id="normalize">normalize</h3>
+<p><strong>合并相邻的 Text 节点并删除空的 Text 节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlDocument.normalize();
+</code></pre>
+<p>这个方法将遍历当前节点的所有子孙节点，通过删除空的 Text 节点，已经合并所有相邻的 Text 节点来规范化文档。该方法在进行节点的插入或删除操作后，对于简化文档树的结构很有用。</p>
+<hr>
+<h3 id="cloneNode">cloneNode</h3>
+<p><strong>创建指定的节点的精确拷贝</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNode XmlDocument.cloneNode(<span class="hljs-built_in">Boolean</span> deep = <span class="hljs-literal">true</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>deep: Boolean, 是否深度拷贝，为 true 时，被克隆的节点会克隆原节点的所有子节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回所复制的节点</li>
+</ul>
+<p>该方法将复制并返回调用它的节点的副本。如果传递给它的参数是 true，它还将递归复制当前节点的所有子孙节点。 否则，它只复制当前节点。返回的节点不属于文档树，它的 parentNode 属性为 null。当复制的是 Element 节点时，它的所有属性都将被复制。</p>
+<hr>
+<h3 id="lookupPrefix">lookupPrefix</h3>
+<p><strong>返回在当前节点上匹配指定的命名空间 URI 的前缀</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlDocument.lookupPrefix(<span class="hljs-built_in">String</span> namespaceURI);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>namespaceURI: String, 指定匹配的命名空间 URI</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回匹配的前缀，未匹配到返回 null</li>
+</ul>
+<hr>
+<h3 id="lookupNamespaceURI">lookupNamespaceURI</h3>
+<p><strong>返回在当前节点上匹配指定的前缀的命名空间 URI</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlDocument.lookupNamespaceURI(<span class="hljs-built_in">String</span> prefix);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>prefix: String, 指定匹配的前缀</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回匹配的命名空间 URI，未匹配到返回 null</li>
+</ul>
+<hr>
+<h3 id="insertBefore">insertBefore</h3>
+<p><strong>在已有的子节点前插入一个新的子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNode XmlDocument.insertBefore(XmlNode newChild,
+    XmlNode refChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 插入新的节点</li>
+<li>refChild: <a href=xmlnode.md.html>XmlNode</a>, 在此节点前插入新节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回新的子节点</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="insertAfter">insertAfter</h3>
+<p><strong>在已有的子节点后插入一个新的子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNode XmlDocument.insertAfter(XmlNode newChild,
+    XmlNode refChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 插入新的节点</li>
+<li>refChild: <a href=xmlnode.md.html>XmlNode</a>, 在此节点后插入新节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回新的子节点</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="appendChild">appendChild</h3>
+<p><strong>向节点的子节点列表的末尾添加新的子节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNode XmlDocument.appendChild(XmlNode newChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 指定添加的节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 返回这个新的子节点</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="replaceChild">replaceChild</h3>
+<p><strong>将某个子节点替换为另一个</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div>XmlNode XmlDocument.replaceChild(XmlNode newChild,
+    XmlNode oldChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>newChild: <a href=xmlnode.md.html>XmlNode</a>, 指定新的节点</li>
+<li>oldChild: <a href=xmlnode.md.html>XmlNode</a>, 指定被替换的节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 如替换成功，此方法可返回被替换的节点，如替换失败，则返回 null</li>
+</ul>
+<p>如果文档树中已经存在了 newChild，它将从文档树中删除，然后重新插入它的新位置。来自一个文档的节点（或由一个文档创建的节点）不能插入另一个文档。也就是说，newChild 的 ownerDocument 属性必须与当前节点的 ownerDocument 属性相同。</p>
+<hr>
+<h3 id="removeChild">removeChild</h3>
+<p><strong>从子节点列表中删除某个节点</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>XmlNode XmlDocument.removeChild(XmlNode oldChild);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>oldChild: <a href=xmlnode.md.html>XmlNode</a>, 指定被删除的节点</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li><a href=xmlnode.md.html>XmlNode</a>, 如删除成功，此方法可返回被删除的节点，如失败，则返回 null</li>
+</ul>
+<hr>
+<h3 id="toString">toString</h3>
+<p><strong>返回对象的字符串表示，一般返回 &quot;[Native Object]&quot;，对象可以根据自己的特性重新实现</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> XmlDocument.toString();
+</code></pre>
+<p>返回结果:</p>
+<ul>
+<li>String, 返回对象的字符串表示</li>
+</ul>
+<hr>
+<h3 id="toJSON">toJSON</h3>
+<p><strong>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value XmlDocument.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p>调用参数:</p>
+<ul>
+<li>key: String, 未使用</li>
+</ul>
+<p>返回结果:</p>
+<ul>
+<li>Value, 返回包含可 JSON 序列化的值</li>
+</ul>
+ </div></div><div class="sidebar col-lg-2 hidden-xssss hidden-xs hidden-sm hidden-md"><div id=toc></div></div></div></div><footer><section class=links><div class=container><div class=row><div class="col-lg-3 col-md-3 col-sm-3 col-12"><h5 id=Doc>开发文档</h5><ul><li><a href=../../../guide/basic/about.md.html id=DEV_Guides1>开发指南</a></li><li><a href=../../module/readme.md.html id=Basic_Modules1>基础模块</a></li><li><a href=../readme.md.html id=Built_in_Objects1>内置对象</a></li></ul></div><div class="col-lg-4 col-md-4 col-sm-4 col-12"><h5 id=ContactUs>联系我们</h5><ul class=social-media><li><a class=qrcodeContainer href=javascript:void(0)><img src=../../../../imgs/wechat.png alt=""> <img class=qrcodeImg src=../../../../imgs/qrcode.jpeg alt=""></a></li><li><a href=https://twitter.com/fibos_io target=_blank><img src=../../../../imgs/twitter.png alt=""></a></li><li><a href=https://t.me/FIBOSIO target=_blank><img src=../../../../imgs/telegram.png alt=""></a></li><li><a href=https://github.com/FIBOSIO target=_blank><img src=../../../../imgs/github.png alt=""></a></li></ul></div></div></div></section><section class=copyright><div class=container><p class=text-center>Copyright © 2018 <a href=https://fibos.io target=_blank>FIBOS</a>&nbsp;<span class=text-span>FOUNDATION LTD All Rights Reserved</span></p></div></section></footer><script>document.body.addEventListener('touchstart', function () { });</script><script type=text/javascript src=../../../../js/common.js></script><script type=text/javascript src=../../../../js/docs.js></script></body></html>
