@@ -18,7 +18,7 @@
 
 ## 注册一个 FIBOS 账户
 
-上篇文章已经教会大家如何注册一个 FIBOS 账户。[如何在 FIBOS 中注册账号？](./createAccount.md) 
+上篇文章已经教会大家如何注册一个 FIBOS 账户。[如何帮助别人在 FIBOS 中创建账号](./createAccountnotfree.md) 
 
 ## 从 EOS 到 FIBOS 的跨链转账
 
