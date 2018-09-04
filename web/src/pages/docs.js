@@ -170,7 +170,7 @@ import './docs.css';
         */
 
         var i;
-        if (typeof (value) == 'string') {
+        if (typeof (value) == 'string' && !!value.indexOf) {
             // Handle escape characters. Done separately from the tokenizing loop below because escape characters are
             // active in quoted strings.
             i = 0;
@@ -504,16 +504,23 @@ $(function () {
     var _toc = $("#toc");
     console.log("_toc", _toc);
 
-    //Calls the tocify method on your HTML div.
-    _toc.tocify({
-        showAndHide: false,
-        extendPage: false,
-        hashGenerator: function (text, element) {
-            return text.replace(/\s+/g, '-');
-        }
-    });
+    try {
+        //Calls the tocify method on your HTML div.
+        _toc.tocify({
+            showAndHide: false,
+            extendPage: false,
+            hashGenerator: function (text, element) {
+                console.log("element", element);
+                console.log("text", text);
+                return text.replace(/\s+/g, '-');
+            }
+        });
+    } catch(e) {
+        console.log(e);
+    }
 
     var _content = $(".content");
+    console.log("_content", _content);
     var _window = $(window);
     var _document = $(document);
 
@@ -593,6 +600,8 @@ $(function () {
                     $('#ContactUs').html($.i18n.prop('ContactUs'));
                     $('#News').html($.i18n.prop('News'));
                     $('#Download').html($.i18n.prop('Download'));
+                    $('#Dapps').html($.i18n.prop('Dapps'));
+                    
                 }
             });
         }
@@ -608,7 +617,6 @@ $(function () {
            
           }
     }
-
 
     _sync();
     initlanguage();

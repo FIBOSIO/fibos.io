@@ -1012,7 +1012,7 @@ $(function () {
       setCookie(language);
       jQuery.i18n.properties({
         name: 'strings', //资源文件名称
-        path: '../i18n/', //资源文件路径
+        path: '../../i18n/', //资源文件路径
         mode: 'map', //用Map的方式使用资源文件中的值
         language: `${language === 'zh' ? 'zh' : 'en'} `,
         callback: function () {//加载成功后设置显示内容
@@ -1033,6 +1033,7 @@ $(function () {
             $('#ContactUs').html($.i18n.prop('ContactUs'));
             $('#News').html($.i18n.prop('News'));
             $('#Download').html($.i18n.prop('Download'));
+            $('#Dapps').html($.i18n.prop('Dapps'));
         }
       });
     }

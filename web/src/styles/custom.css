@@ -462,6 +462,9 @@ pre div.line-numbers {
   h3 {
     font-size: 20px;
   }
+  h4 {
+    font-size: 16px;
+  }
   pre code {
     font-size: 11px;
   }

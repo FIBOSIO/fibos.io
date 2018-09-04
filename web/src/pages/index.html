@@ -15,92 +15,143 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
-    </script> -->
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    </script> 
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+    <link href="/css/common.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header header-shrink header-inverse">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="/">
-                    <span class="logo-default">
-                        <img src="/imgs/logo.png" alt="">
-                    </span>
-                </a>
+    <div class="container toptitle">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">
+                <span class="logo-default">
+                    <img src="/imgs/logo.png" alt="">
+                </span>
+            </a>
 
-                <button class="navbar-toggler index-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler index-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="" id="Home">首页</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#roadmap" id="Roadmap">路线图</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="DEV_Community" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                开发社区
-                                <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                            </a>
-                            <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/docs/guide/basic/about.md.html" id="Documentation">开发者文档</a>
-                                <a class="dropdown-item" href="https://github.com/fibosio" target="_blank">Github</a>
-                                <a class="dropdown-item" href="/faq">FAQ</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/news" id="News">新闻</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://bbs.fibos.io" id="BBS" target="_blank">BBS</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="/news" id = "Download">下载</a>
-                        </li> -->
-                        <li class="nav-item dropdown">
-                            <a id='Language' class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
-                            </a>
-                            <div class="dropdown-menu box-shadow-v2 language" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="" id="language-zh">中文</a>
-                                <a class="dropdown-item" href="" id="language-en">English</a>
-                            </div>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#fibos-news">新闻</a>
-                        </li> -->
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- END container-->
-        <section class="secone">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h1 class="slogan" id="slogan">
-                            开发者友好的区块链生态系统
-                        </h1>
-                        <p class="desc" id="desc">
-                            JavaScript 开发 + BANCOR 协议智能通证 + 开发者服务，FIBOS 平台实现了快速开发、快速部署和稳定且流动的通证体系，帮助开发者一步进入区块链时代。
-                        </p>
-                        <a href="https://github.com/fibosio" target="_blank" class="btn btn-lg btn-primary btn-join" id="joinin">
-                            加入开发社区
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="" id="Home">首页</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#roadmap" id="Roadmap">路线图</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="DEV_Community" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            开发社区
+                            <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
                         </a>
-                        <a href="/#exchange" class="btn btn-lg btn-white btn-join" id="ExchangeFo">
-                            兑换 FO 智能通证
+                        <div class="dropdown-menu box-shadow-v2" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/docs/guide/basic/about.md.html" id="Documentation">开发者文档</a>
+                            <a class="dropdown-item" href="https://github.com/fibosio" target="_blank">Github</a>
+                            <a class="dropdown-item" href="/faq.html">FAQ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news.html" id="News">新闻</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bbs.fibos.io" id="BBS" target="_blank">BBS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dapps" id="Dapps">社区应用</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                                <a class="nav-link" href="/news" id = "Download">下载</a>
+                            </li> -->
+                    <li class="nav-item dropdown">
+                        <a id='Language' class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="lnr lnr-chevron-down u-fs-12 ml-1"></i>
                         </a>
-                    </div>
+                        <div class="dropdown-menu box-shadow-v2 language" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="" id="language-zh">中文</a>
+                            <a class="dropdown-item" href="" id="language-en">English</a>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
+                                <a class="nav-link" href="#fibos-news">新闻</a>
+                            </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="header header-shrink header-inverse item active banner1">
+                    <section class="secone bannerFixedHeight">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h1 class="slogan" id="slogan">
+                                        开发者友好的区块链生态系统
+                                    </h1>
+                                    <p class="desc" id="desc">
+                                        JavaScript 开发 + BANCOR 协议智能通证 + 开发者服务，FIBOS 平台实现了快速开发、快速部署和稳定且流动的通证体系，帮助开发者一步进入区块链时代。
+                                    </p>
+                                    <a href="https://github.com/fibosio" target="_blank" class="btn btn-lg btn-primary btn-join" id="joinin">
+                                        加入开发社区
+                                    </a>
+                                    <a href="/#exchange" class="btn btn-lg btn-white btn-join" id="ExchangeFo">
+                                        兑换 FO 智能通证
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </section>
-    </header>
+            <div class="item">
+                <div class="header header-shrink header-inverse banner2">
+
+                    <!-- END container-->
+                    <a href="http://wallet.fo" target="_blank" class="link">
+                        <section class="sectwo bannerFixedHeight">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-7 bannerleft col-12">
+                                        <div class="row">
+                                            <div class="col-lg-5 text-right foleft col-5">
+                                                <img src="/imgs/banner_logo.png">
+                                            </div>
+                                            <div class="col-lg-7 text-left foright col-5">
+                                                <h3 id = "ExchangeFoWord">
+                                                    一键兑换FO
+                                                </h3>
+                                                <h4 id = "SafeAndFast">
+                                                        安全快速又简单
+                                                    </h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center appqr">
+                                            <img src="/imgs/sqrcode.png">
+                                            <h4 id = "SQDownload">扫一扫&nbsp;下载FO钱包</h4>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <img src="/imgs/apphone.png" class="appphone">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- END header -->
 
     <section class="video">
@@ -120,13 +171,9 @@
                                 <img src="/imgs/dapp1.jpg" class="card-img-top">
                             </div> -->
                             <div class="item active">
-                                <img src="/imgs/fibos.png" class="card-img-top">
+                                <img src="/imgs/fibos.png"
+                                    class="card-img-top">
                             </div>
-                            {{#each urls}}
-                            <div class="item">
-                                <img src="{{url}}" class=card-img-top>
-                            </div>
-                            {{/each}}
                         </div>
                     </div>
 
@@ -198,8 +245,10 @@
             <h3 class="title">
                 <div class="row">
                     <div class="col-4 text-right line col-lg-5" id="Buy">兑换</div>
-                    <div class="col-lg-2 col-3"><img class="foimg" id="buyfoImg" src="/imgs/fologo.png" alt="兑换 FO 智能通证"
-                            height="63"></div>
+                    <div class="col-lg-2 col-3">
+                        <img class="foimg" id="buyfoImg" src="/imgs/fologo.png"
+                            alt="兑换 FO 智能通证" height="63">
+                    </div>
                     <div class="col-5 text-left line col-lg-5" id="Pass">智能通行证</div>
                 </div>
             </h3>
@@ -233,7 +282,7 @@
             </div> -->
             <div class="row">
                 <div class="col-12 text-center">
-                    <a id="btn-bancor-download" href="/docs/guide/advanced/exchangefo.md.html" class="btn btn-lg btn-white btn-buy" style="background-color: #19d;color: white">
+                    <a id="btn-bancor-download" href="/5b8b51baaba908441dbbfc81.html" class="btn btn-lg btn-white btn-buy" style="background-color: #19d;color: white">
                         FO 兑换教程
                     </a>
                 </div>
@@ -273,7 +322,7 @@
                 </div>
                 <div class="node col-sm-3 col-12">
                     <div class="process-bar active"></div>
-                    <div class="process-bar-right"></div>
+                    <div class="process-bar-right active"></div>
                     <div class="node-mark active"></div>
                     <div class="content xs-right">
                         <div class="time">
@@ -292,15 +341,15 @@
                     </div>
                 </div>
                 <div class="node col-sm-3 col-12">
-                    <div class="process-bar"></div>
+                    <div class="process-bar active"></div>
                     <div class="process-bar-right"></div>
-                    <div class="node-mark"></div>
+                    <div class="node-mark active"></div>
                     <div class="content">
                         <div class="time">
-                            Sep. 15, 2018
+                            Sep. 2, 2018
                         </div>
                         <div class="title" id="SmartWallet">
-                            发布 FO 智能钱包
+                            发布 FO 钱包
                         </div>
                         <!-- <ul>
                             <li>测试网发布内容一</li>
@@ -350,14 +399,16 @@
             </div>
         </div>
     </section> -->
+    <a name="dapps" style="height: 0"></a>
     <section class="dapps">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="h1 title" id="Partners">DApp 合作伙伴</h2>
+                    <h2 class="h1 title" id="Partners">社区应用</h2>
                     <div class="title-sub"></div>
                 </div>
                 <div class="dapp">
+                    <a href="http://wallet.fo" target="_blank" class="link">
                     <div class="card">
                         <div class="card-img-top">
                             <img src="/imgs/dapp1.png" alt="">
@@ -367,40 +418,108 @@
                             <p class="card-text" id="Supports">支持多种通证，可直接发布通证，内置 DApp Store 直接抵达用户</p>
                         </div>
                     </div>
+                </a>
                 </div>
                 <div class="dapp">
-                    <div class="card">
-                        <div class="card-img-top">
-                            <img src="/imgs/dapp2.png" alt="">
+                    <a href="https://more.top/app" target="_blank" class="link">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img src="/imgs/dapp2.png" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">MORE Wallet</h5>
+                                <p class="card-text" id="MoreWalletDes">
+                                    EOS生态资讯门户IMEOS.ONE也开发了一款面向EOS生态的钱包
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title" id="VacantSeat">虚位以待</h5>
-                            <p class="card-text"><br/><br/>
-                            </p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="dapp">
-                    <div class="card">
-                        <div class="card-img-top">
-                            <img src="/imgs/dapp3.png" alt="">
+                    <a href="http://www.51Token.im" target="_blank" class="link">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img src="/imgs/dapp3.png" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">51token</h5>
+                                <p class="card-text" id="51TokenDes">
+                                    去中心化的手机钱包Dapp，向用户推荐好玩好用的Dapp
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title" id="VacantSeat1">虚位以待</h5>
-                            <p class="card-text"><br/><br/>
-                            </p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="dapp">
+                    <a href="http://www.onechain.one" target="_blank" class="link">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img src="/imgs/dapp4.png" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">onechain.one</h5>
+                                <p class="card-text" id="OneDes">
+                                    ONE数字货币全能Dapp，闪电转账，去中心化交易所和聊天</p>
+                            </div>
+
+                        </div>
+                </div>
+                </a>
+            </div>
+            <div class="row">
+                <div class="dapp">
+                    <a href="http://explorer.fibos.rocks/voting" target="_blank" class="link">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img src="/imgs/dapp5.png" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" id = "BLExp">区块链浏览器</h5>
+                                <p class="card-text" id="BrowserDes">
+                                    一款支持FIBOS交易及区块查询的区块链浏览器
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="dapp">
+                    <a href="http://foironman.com" target="_blank" class="link">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img src="/imgs/dapp6.png" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="Ironman">Ironman浏览器插件钱包</h5>
+                                <p class="card-text" id="IronmanDes">
+                                        Scatter的扩展，已经全面支持 EOS / FIBOS / ENU，一个钱包三网通用.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="dapp">
+                    <a href="https://h5.tomatowallet.cn/fibos/fo-market.html" target="_blank" class="link">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img src="/imgs/dapp7.png" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="Tomato">番茄 - FO 监控</h5>
+                                <p class="card-text" id="TomatoDes">
+                                    关注 FO 实时动态，掌握通证持有者分布情况。
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="dapp lastVas">
                     <div class="card">
                         <div class="card-img-top">
-                            <img src="/imgs/dapp4.png" alt="">
+                            <img src="/imgs/dapp8.png" alt="">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title" id="VacantSeat2">虚位以待</h5>
-                            <p class="card-text"><br/><br/>
-                            </p>
+                            <h5 class="card-title" id="VacantSeat3">虚位以待</h5>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                 </div>
@@ -520,9 +639,6 @@
                                 <a href="/docs/manual/object/readme.md.html" id="Built_in_Objects1">内置对象</a>
                             </li>
                             <!-- <li>
-                                <a href="/docs/awesome/readme.md.html">社区模块</a>
-                            </li> -->
-                            <!-- <li>
                                 <a href="#">服务端模块热更新</a>
                             </li> -->
                         </ul>
@@ -587,9 +703,9 @@
     <div id="tele-app-wrapper"></div>
     <div id="myTargetElement" style="display: none;"></div>
 
-  
-    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+
+    <script src="../js/lib/vue.min.js"></script>
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -598,17 +714,6 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
-    </script>
-    <!-- <script src="js/lib/countUp.min.js"></script>
-    <script src="js/lib/eosjs-ecc.min.js"></script>
-    <script src="js/lib/eos.min.js"></script>
-    <script src="js/lib/bignumber.min.js"></script> -->
-    <script>
-        $('.carousel').carousel({
-            interval: 2100
-        });
-    </script>
-    <script>
         document.body.addEventListener('touchstart', function () { });
     </script>
 </body>

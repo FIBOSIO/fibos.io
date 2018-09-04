@@ -27,7 +27,7 @@
     "html-webpack-plugin": "^2.30.1",
     "html5shiv": "^3.7.3",
     "includes-loader": "^0.1.0",
-    "jquery": "^1.12.4",
+    "jquery": "3.3.1",
     "jquery-ui": "^1.12.1",
     "jquery.tocify": "^1.9.1",
     "json-format": "^1.0.1",
@@ -46,5 +46,11 @@
     "viz.js": "^1.8.2",
     "webpack": "^1.14.0",
     "webpack-uglify-parallel": "^0.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap3": "^3.3.5",
+    "element-ui": "^2.4.6",
+    "vue.js": "2.5.17-beta.0"
   }
 }

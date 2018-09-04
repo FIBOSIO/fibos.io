@@ -1,4 +1,7 @@
 node_modules
 package-lock.json
-web/dist/download/index.html
+yarn.lock
+yarn-error.log
 web/dist
+.DS_Store
+*/.DS_Store

@@ -64,3 +64,19 @@ static String fibos.data_dir;
 static String fibos.config_dir;
 ```
 
+--------------------------
+### pubkey_prefix
+**String, fibos 公钥前缀**
+
+```JavaScript
+static String fibos.pubkey_prefix;
+```
+
+--------------------------
+### enableJSContract
+**Boolean, 查询和设置 JavaScript 智能合约状态，为 True 时支持 JavaScript 智能合约**
+
+```JavaScript
+static Boolean fibos.enableJSContract;
+```
+

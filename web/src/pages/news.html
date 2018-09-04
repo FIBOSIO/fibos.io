@@ -3,7 +3,7 @@
 
 <head>
     <!-- include "../common/meta.html" -->
-    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="../css/news.css">
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -36,7 +36,7 @@
                     <a onclick="javascript:window.location.href = '/'" style="cursor: pointer;color: #08c" id="ToHome">首页</a >
                 </li>
                 <li>
-                    <a onclick="javascript:window.location.href = '/news'" style="cursor: pointer;color: #08c" id="News2">&nbsp;新闻中心</a >
+                    <a onclick="javascript:window.location.href = '/news.html'" style="cursor: pointer;color: #08c" id="News2">&nbsp;新闻中心</a >
                 </li>
             </ol>
         </div>
@@ -45,7 +45,7 @@
                 <div class="col-lg-9 col-md-9 news-list-container">
                     {{#each news}}
                     <div class="new-item">
-                        <h4><a href="/details?id={{id}}">{{ title }}</a ></h4>
+                        <h4><a href="{{path}}">{{ title }}</a ></h4>
                         <p class="info">发布时间: {{date}} 作者: {{author}}</p >
                         <!-- <p class="desc">{{describe}}</p > -->
                     </div>
@@ -75,7 +75,7 @@
                     <div class="rec-wrap">
                         <ul class="rec-list">
                             {{#each recommends}}
-                            <a class="rec-item" href="/details?id={{id}}">·{{title}}</a > {{/each}}
+                            <a class="rec-item" href="{{path}}">·{{title}}</a > {{/each}}
                         </ul>
                     </div>
                 </div>
