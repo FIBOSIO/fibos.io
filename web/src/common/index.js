@@ -15,6 +15,10 @@ import './ie10-viewport'
 if (self != top) top.location = location.href
 
 $(document).ready(function() {
+    $('.carousel').carousel({
+        interval: 4500
+    })
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > 50) {
             $('#back-to-top').fadeIn()

@@ -9,13 +9,15 @@ trans 模块
 ```JavaScript
 static trans.send_inline(String account,
     String name,
-    Object args);
+    Object args,
+    Array authorization = []);
 ```
 
 调用参数:
 * account: String, [action](action.md) 发送者的帐号名称
 * name: String, [action](action.md) 名称
 * args: Object, [action](action.md) 附带的数据
+* authorization: Array, [action](action.md) 的权限
 
 --------------------------
 ### send_context_free_inline

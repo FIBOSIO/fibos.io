@@ -114,19 +114,24 @@ function build_docs() {
         title: '基础入门',
         path: 'guide/basic'
       },
+      joinfibos: {
+        etitle: 'Joinfibos',
+        title: 'FIBOS 基础操作',
+        path: 'guide/joinfibos'
+      },
       development: {
         etitle: 'Development',
-        title: '业务开发',
+        title: 'FIBOS TestNet',
         path: 'guide/development'
       },
       advanced: {
         etitle: 'Advanced',
-        title: '深入理解',
+        title: '深入理解 FIBOS',
         path: 'guide/advanced'
       },
       community: {
         etitle: 'Community',
-        title: '其他支持',
+        title: 'FIBOS 扩展应用',
         path: 'guide/community'
       },
       // guide: {

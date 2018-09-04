@@ -1,16 +1,17 @@
-import 'common';
-import 'js/icons';
-import 'jquery-ui';
-import 'jquery.tocify';
+import 'common'
+import 'jquery'
+import 'bootstrap3'
+// import Vue from '../js/lib/vue.min.js'
+import 'js/icons'
 import '../js/jquery.i18n.properties'
 import buyfo from '../imgs/buyfo.png'
 import buyfo_en from '../imgs/buyfo-en.png'
 import axios from 'axios'
 
 var browser = {
-  versions: (function () {
+  versions: (function() {
     var u = navigator.userAgent,
-      app = navigator.appVersion;
+      app = navigator.appVersion
     return {
       trident: u.indexOf('Trident') > -1, //IE内核
       presto: u.indexOf('Presto') > -1, //opera内核
@@ -24,12 +25,28 @@ var browser = {
       webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
       weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
       qq: u.match(/\sQQ/i) == ' qq' //是否QQ
-    };
+    }
   })(),
   language: (navigator.browserLanguage || navigator.language).toLowerCase()
-};
+}
 
-
+function getPrice() {
+  // var protocol = window.location.protocol
+  // var port = window.location.port;
+  // var hostname = window.location.hostname;
+  // var url = protocol + "//" + hostname + port + "/getExchangeInfo";
+  $.ajax({
+    type: 'GET',
+    data: {},
+    url: '/1.0/app/getExchangeInfo',
+    success: function(data) {
+      $('#myTargetElement').text(data.price)
+    },
+    error: function() {
+      console.log('')
+    }
+  })
+}
 
 Vue.component('Message', {
   template: `
@@ -50,7 +67,7 @@ Vue.component('Message', {
     </div>
     `,
   props: ['message']
-});
+})
 
 Vue.component('App', {
   template: `
@@ -98,23 +115,23 @@ Vue.component('App', {
       currentPage: 2,
       loading: false,
       scrollHeight: 0
-    };
+    }
   },
   created() {
     if (!browser.versions.mobile) {
-      this.initWebsocket();
+      this.initWebsocket()
     }
   },
   methods: {
     toggleCollapseOrLink() {
       if (browser.versions.mobile) {
-        window.open('https://t.me/FIBOSIO');
-        return;
+        window.open('https://t.me/FIBOSIO')
+        return
       }
-      this.collapse = !this.collapse;
+      this.collapse = !this.collapse
     },
     toTed() {
-      window.open('/t.html');
+      window.open('/t.html')
     },
     pushMessage(messages, isHistory, pageCount) {
       // let latestMassage = this.messages.concat(messages)
@@ -128,47 +145,46 @@ Vue.component('App', {
       //     return ele
       //   }
       // });
-      let latestMassage;
+      let latestMassage
       if (isHistory) {
-        this.allHistoryMessage = messages;
+        this.allHistoryMessage = messages
         //this.page = (messages.length % 20 === 0 ? 0 : 1) + parseInt(messages.length / 20);
-        this.pageCount = pageCount;
+        this.pageCount = pageCount
         //let initMessage = messages.slice(messages.length - 20);
-        latestMassage = messages.concat(this.messages);
+        latestMassage = messages.concat(this.messages)
       } else {
         latestMassage = this.messages.concat(messages)
       }
-      this.messages = this.transferMessage(latestMassage);
+      this.messages = this.transferMessage(latestMassage)
 
-      let e = this.$refs.messages;
-      scroll = e.scrollHeight - e.scrollTop;
+      let e = this.$refs.messages
+      scroll = e.scrollHeight - e.scrollTop
       if (isHistory) {
-        this.$nextTick(function () {
-          e.scrollTop = e.scrollHeight;
-        });
+        this.$nextTick(function() {
+          e.scrollTop = e.scrollHeight
+        })
       }
       if (scroll >= 300 && scroll <= 600) {
-        this.$nextTick(function () {
-          e.scrollTop = e.scrollHeight;
-        });
+        this.$nextTick(function() {
+          e.scrollTop = e.scrollHeight
+        })
       }
-
     },
     pushMembers(data) {
-      this.members = data;
+      this.members = data
     },
     transferMessage(messages) {
-      return messages.map(function (ele) {
+      return messages.map(function(ele) {
         if (ele.text) {
           var escapetext = escape(ele.text)
-          var escapetextlist = escapetext.split("%0A")
-          var messagelist = escapetextlist.map(function (ele) {
-            return unescape(ele);
+          var escapetextlist = escapetext.split('%0A')
+          var messagelist = escapetextlist.map(function(ele) {
+            return unescape(ele)
           })
-          ele.messagelist = messagelist;
+          ele.messagelist = messagelist
           return ele
         }
-      });
+      })
     },
     async getLastPageMessage(page) {
       //this.socket = new WebSocket(``)
@@ -176,14 +192,14 @@ Vue.component('App', {
       var host = window.location.host
       let url = `/1.0/app/getTgHistory/${page}`
       //let url = `http://115.47.142.152:9090/getTgHistory/${page}`
-      this.loading = true;
+      this.loading = true
       const result = await axios({
         method: 'Get',
-        url,
-      });
+        url
+      })
       //alert(JSON.stringify(result))
 
-      return result;
+      return result
     },
 
     // addMessage() {
@@ -203,41 +219,42 @@ Vue.component('App', {
     // },
 
     scrollDid() {
-      let e = this.$refs.messages;
+      let e = this.$refs.messages
       // let currentPage = this.currentPage;
       // scroll = e.scrollHeight - e.scrollTop;
-      let that = this;
-      $(".messages").scroll(function () {
+      let that = this
+      $('.messages').scroll(function() {
         if (e.scrollTop === 0 && that.currentPage <= that.pageCount && !that.loading) {
           //alert("scrollHeight:" + e.scrollHeight);
           let currentHeight = e.scrollHeight
-          let nextMessages = [];
-          that.getLastPageMessage(that.currentPage).then((res) => {
-            nextMessages = res.data.messages;
-            that.loading = false;
-            that.messages = that.transferMessage(nextMessages).concat(that.messages)
-            that.currentPage = that.currentPage + 1;
-          }
-          ).catch(() => {
-            alert("请刷新页面重试")
-          }).finally(() => {
-            that.$nextTick(() => {
-              e.scrollTop = e.scrollHeight - currentHeight - 10
-            });
-          })
+          let nextMessages = []
+          that
+            .getLastPageMessage(that.currentPage)
+            .then(res => {
+              nextMessages = res.data.messages
+              that.loading = false
+              that.messages = that.transferMessage(nextMessages).concat(that.messages)
+              that.currentPage = that.currentPage + 1
+            })
+            .catch(() => {
+              alert('请刷新页面重试')
+            })
+            .finally(() => {
+              that.$nextTick(() => {
+                e.scrollTop = e.scrollHeight - currentHeight - 10
+              })
+            })
 
           // if (that.currentPage + 1 < that.page) {
           //   nextMessages = that.allHistoryMessage.slice(that.allHistoryMessage.length - (that.currentPage + 1) * 20, that.allHistoryMessage.length - that.currentPage * 20)
           // } else {
           //   nextMessages = that.allHistoryMessage.slice(0, that.allHistoryMessage.length - that.currentPage * 20);
           // }
-
         }
       })
     },
 
     initWebsocket() {
-
       var protocol = window.location.protocol
       var host = window.location.host
 
@@ -253,172 +270,151 @@ Vue.component('App', {
       //this.socket = new WebSocket('ws://fibos.io/1.0/push');
 
       this.socket.onmessage = e => {
-        var d = JSON.parse(e.data);
+        var d = JSON.parse(e.data)
         if (d.data && d.data.messages) {
-          this.pushMessage(d.data.messages, d.data.isHistory, d.data.pageCount);
+          this.pushMessage(d.data.messages, d.data.isHistory, d.data.pageCount)
           // if ($('ul.messages')[0].scrollHeight = $('ul.messages').scrollTop() + $(".wrap").height()) {
           //   $('ul.messages').scrollTop($('ul.messages')[0].scrollHeight)
           // }
         }
         if (d.data && d.data.members) {
-          this.pushMembers(d.data.members);
+          this.pushMembers(d.data.members)
         }
-      };
-
-
+      }
     }
   },
   computed: {
     imgSrc() {
-      return this.collapse
-        ? '/imgs/toggle-collapse.png'
-        : '/imgs/toggle-open.png';
+      return this.collapse ? '/imgs/toggle-collapse.png' : '/imgs/toggle-open.png'
     }
   },
   mounted() {
-    this.scrollDid();
-  },
-});
+    this.scrollDid()
+  }
+})
 
 new Vue({
   el: '#tele-app-wrapper',
   template: `<App />`
-});
+})
 
-function getPrice() {
-  // var protocol = window.location.protocol
-  // var port = window.location.port;
-  // var hostname = window.location.hostname;
-  // var url = protocol + "//" + hostname + port + "/getExchangeInfo";
-  $.ajax({
-    type: "GET",
-    data: {},
-    url: '/1.0/app/getExchangeInfo',
-    success: function (data) {
-      $('#myTargetElement').text(data.price)
-    },
-    error: function () {
-      console.log("")
-    }
-  })
-}
-
-
-$(function () {
-  getPrice();
-  setInterval(getPrice, 20000);
-  var localLanguage = localStorage.getItem("fibosLanguage")
+$(function() {
+  getPrice()
+  setInterval(getPrice, 20000)
+  var localLanguage = localStorage.getItem('fibosLanguage')
   if (localLanguage) {
     changeLanguage(JSON.parse(localLanguage))
   } else {
-    changeLanguage('zh');
+    changeLanguage('zh')
   }
 
   function changeLanguage(language) {
     localStorage.setItem('fibosLanguage', JSON.stringify(language))
-    setCookie(language);
+    setCookie(language)
     jQuery.i18n.properties({
       name: 'strings', //资源文件名称
       path: '../i18n/', //资源文件路径
       mode: 'map', //用Map的方式使用资源文件中的值
       language: `${language === 'zh' ? 'zh' : 'en'} `,
-      callback: function () {//加载成功后设置显示内容
+      callback: function() {
+        //加载成功后设置显示内容
 
-        $('#Home').html($.i18n.prop('Home'));
-        $('#Roadmap').html($.i18n.prop('Roadmap'));
-        $('#DEV_Community').html($.i18n.prop('DEV_Community'));
-        $('#Documentation').html($.i18n.prop('Documentation'));
-        $('#DEV_Guides').html($.i18n.prop('DEV_Guides'));
-        $('#Basic_Modules').html($.i18n.prop('Basic_Modules'));
-        $('#Built_in_Objects').html($.i18n.prop('Built_in_Objects'));
-        $('#Language').html($.i18n.prop('Language'));
-        $('#slogan').html($.i18n.prop('slogan'));
-        $('#desc').html($.i18n.prop('desc'));
-        $('#joinin').html($.i18n.prop('joinin'));
-        $('#ExchangeFo').html($.i18n.prop('ExchangeFo'));
-        $('#QuickDev').html($.i18n.prop('QuickDev'));
-        $('#QuickDevDesc').html($.i18n.prop('QuickDevDesc'));
-        $('#StartLearn').html($.i18n.prop('StartLearn'));
-        $('#Characteristic').html($.i18n.prop('Characteristic'));
-        $('#Fast').html($.i18n.prop('Fast'));
-        $('#LowLearn').html($.i18n.prop('LowLearn'));
-        $('#LessRes').html($.i18n.prop('LessRes'));
-        $('#LessRam').html($.i18n.prop('LessRam'));
-        $('#Security').html($.i18n.prop('Security'));
-        $('#Sandbox').html($.i18n.prop('Sandbox'));
-        $('#Auditable').html($.i18n.prop('Auditable'));
-        $('#JavaScriptDev').html($.i18n.prop('JavaScriptDev'));
-        $('#Stable').html($.i18n.prop('Stable'));
-        $('#Bancor').html($.i18n.prop('Bancor'));
-        $('#Onestep').html($.i18n.prop('Onestep'));
-        $('#FIBOSDev').html($.i18n.prop('FIBOSDev'));
-        $('#btn-bancor-download').html($.i18n.prop('btn-bancor-download'));
-        $('#FIBOSRoadmap').html($.i18n.prop('FIBOSRoadmap'));
-        $('#TestNet').html($.i18n.prop('TestNet'));
-        $('#MainNet').html($.i18n.prop('MainNet'));
-        $('#SmartWallet').html($.i18n.prop('SmartWallet'));
-        $('#Release').html($.i18n.prop('Release'));
-        $('#Partners').html($.i18n.prop('Partners'));
-        $('#FOSmartWallet').html($.i18n.prop('FOSmartWallet'));
-        $('#Supports').html($.i18n.prop('Supports'));
-        $('#VacantSeat').html($.i18n.prop('VacantSeat'));
-        $('#Doc').html($.i18n.prop('Doc'));
-        $('#ContactUs').html($.i18n.prop('ContactUs'));
-        $('#Will').html($.i18n.prop('Will'));
-        $('#DEV_Guides1').html($.i18n.prop('DEV_Guides1'));
-        $('#Basic_Modules1').html($.i18n.prop('Basic_Modules1'));
-        $('#Built_in_Objects1').html($.i18n.prop('Built_in_Objects1'));
-        $('#VacantSeat1').html($.i18n.prop('VacantSeat1'));
-        $('#VacantSeat2').html($.i18n.prop('VacantSeat2'));
-        $('#VacantSeat3').html($.i18n.prop('VacantSeat3'));
-        $('#StrategicPartners').html($.i18n.prop('StrategicPartners'));
-        $('#Buy').html($.i18n.prop('Buy'));
-        $('#Pass').html($.i18n.prop('Pass'));
-        $('#News').html($.i18n.prop('News'));
-        $('#Download').html($.i18n.prop('Download'));
-        $('#Dapps').html($.i18n.prop('Dapps'));
-        $('#Total').html($.i18n.prop('Total'));
-        $('#Rate').html($.i18n.prop('Rate'));
-        $('#MoreWalletDes').html($.i18n.prop('MoreWalletDes'));
-        $('#51TokenDes').html($.i18n.prop('51TokenDes'));
-        $('#OneDes').html($.i18n.prop('OneDes'));
-        $('#BrowserDes').html($.i18n.prop('BrowserDes'));
-        $('#Ironman').html($.i18n.prop('Ironman'));
-        $('#IronmanDes').html($.i18n.prop('IronmanDes'));
-        $('#BLExp').html($.i18n.prop('BLExp'));
-        $('#ExchangeFoWord').html($.i18n.prop('ExchangeFoWord'));
-        $('#SafeAndFast').html($.i18n.prop('SafeAndFast'));
-        $('#SQDownload').html($.i18n.prop('SQDownload'));
-        var FastHeight = window.document.getElementById('Fast').scrollHeight;
-        var StableHeight = window.document.getElementById('Stable').scrollHeight;
+        $('#Home').html($.i18n.prop('Home'))
+        $('#Roadmap').html($.i18n.prop('Roadmap'))
+        $('#DEV_Community').html($.i18n.prop('DEV_Community'))
+        $('#Documentation').html($.i18n.prop('Documentation'))
+        $('#DEV_Guides').html($.i18n.prop('DEV_Guides'))
+        $('#Basic_Modules').html($.i18n.prop('Basic_Modules'))
+        $('#Built_in_Objects').html($.i18n.prop('Built_in_Objects'))
+        $('#Language').html($.i18n.prop('Language'))
+        $('#slogan').html($.i18n.prop('slogan'))
+        $('#desc').html($.i18n.prop('desc'))
+        $('#joinin').html($.i18n.prop('joinin'))
+        $('#ExchangeFo').html($.i18n.prop('ExchangeFo'))
+        $('#QuickDev').html($.i18n.prop('QuickDev'))
+        $('#QuickDevDesc').html($.i18n.prop('QuickDevDesc'))
+        $('#StartLearn').html($.i18n.prop('StartLearn'))
+        $('#Characteristic').html($.i18n.prop('Characteristic'))
+        $('#Fast').html($.i18n.prop('Fast'))
+        $('#LowLearn').html($.i18n.prop('LowLearn'))
+        $('#LessRes').html($.i18n.prop('LessRes'))
+        $('#LessRam').html($.i18n.prop('LessRam'))
+        $('#Security').html($.i18n.prop('Security'))
+        $('#Sandbox').html($.i18n.prop('Sandbox'))
+        $('#Auditable').html($.i18n.prop('Auditable'))
+        $('#JavaScriptDev').html($.i18n.prop('JavaScriptDev'))
+        $('#Stable').html($.i18n.prop('Stable'))
+        $('#Bancor').html($.i18n.prop('Bancor'))
+        $('#Onestep').html($.i18n.prop('Onestep'))
+        $('#FIBOSDev').html($.i18n.prop('FIBOSDev'))
+        $('#btn-bancor-download').html($.i18n.prop('btn-bancor-download'))
+        $('#FIBOSRoadmap').html($.i18n.prop('FIBOSRoadmap'))
+        $('#TestNet').html($.i18n.prop('TestNet'))
+        $('#MainNet').html($.i18n.prop('MainNet'))
+        $('#SmartWallet').html($.i18n.prop('SmartWallet'))
+        $('#Release').html($.i18n.prop('Release'))
+        $('#Partners').html($.i18n.prop('Partners'))
+        $('#FOSmartWallet').html($.i18n.prop('FOSmartWallet'))
+        $('#Supports').html($.i18n.prop('Supports'))
+        $('#VacantSeat').html($.i18n.prop('VacantSeat'))
+        $('#Doc').html($.i18n.prop('Doc'))
+        $('#ContactUs').html($.i18n.prop('ContactUs'))
+        $('#Will').html($.i18n.prop('Will'))
+        $('#DEV_Guides1').html($.i18n.prop('DEV_Guides1'))
+        $('#Basic_Modules1').html($.i18n.prop('Basic_Modules1'))
+        $('#Built_in_Objects1').html($.i18n.prop('Built_in_Objects1'))
+        $('#VacantSeat1').html($.i18n.prop('VacantSeat1'))
+        $('#VacantSeat2').html($.i18n.prop('VacantSeat2'))
+        $('#VacantSeat3').html($.i18n.prop('VacantSeat3'))
+        $('#StrategicPartners').html($.i18n.prop('StrategicPartners'))
+        $('#Buy').html($.i18n.prop('Buy'))
+        $('#Pass').html($.i18n.prop('Pass'))
+        $('#News').html($.i18n.prop('News'))
+        $('#Download').html($.i18n.prop('Download'))
+        $('#Dapps').html($.i18n.prop('Dapps'))
+        $('#Total').html($.i18n.prop('Total'))
+        $('#Rate').html($.i18n.prop('Rate'))
+        $('#MoreWalletDes').html($.i18n.prop('MoreWalletDes'))
+        $('#51TokenDes').html($.i18n.prop('51TokenDes'))
+        $('#OneDes').html($.i18n.prop('OneDes'))
+        $('#BrowserDes').html($.i18n.prop('BrowserDes'))
+        $('#Ironman').html($.i18n.prop('Ironman'))
+        $('#IronmanDes').html($.i18n.prop('IronmanDes'))
+        $('#Tomato ').html($.i18n.prop('Tomato'))
+        $('#TomatoDes').html($.i18n.prop('TomatoDes'))
+        $('#BLExp').html($.i18n.prop('BLExp'))
+        $('#ExchangeFoWord').html($.i18n.prop('ExchangeFoWord'))
+        $('#SafeAndFast').html($.i18n.prop('SafeAndFast'))
+        $('#SQDownload').html($.i18n.prop('SQDownload'))
+        var FastHeight = window.document.getElementById('Fast').scrollHeight
+        var StableHeight = window.document.getElementById('Stable').scrollHeight
         if (language === 'zh') {
-          $("#QuickDevDesc").css("font-size", "1.2rem")
-          $("#GetStart").css("font-size", "1.2rem")
-          $("#QuickDev").css("font-size", "2rem")
-          $("#StartLearn").css("font-size", "1.3rem")
+          $('#QuickDevDesc').css('font-size', '1.2rem')
+          $('#GetStart').css('font-size', '1.2rem')
+          $('#QuickDev').css('font-size', '2rem')
+          $('#StartLearn').css('font-size', '1.3rem')
         } else {
-          $("#QuickDevDesc").css("font-size", "1.1rem")
-          $("#QuickDev").css("font-size", "1.6rem")
-          $("#GetStart").css("font-size", "1rem")
-          $("#StartLearn").css("font-size", "1rem")
+          $('#QuickDevDesc').css('font-size', '1.1rem')
+          $('#QuickDev').css('font-size', '1.6rem')
+          $('#GetStart').css('font-size', '1rem')
+          $('#StartLearn').css('font-size', '1rem')
         }
-        $("#LessRes").css("height", FastHeight)
-        $("#Security").css("height", FastHeight)
-        $("#Auditable").css("height", StableHeight)
+        $('#LessRes').css('height', FastHeight)
+        $('#Security').css('height', FastHeight)
+        $('#Auditable').css('height', StableHeight)
       }
-    });
+    })
   }
 
   function setCookie(language) {
-    window.document.cookie = ("lang" + "=" + language + ";");
+    window.document.cookie = 'lang' + '=' + language + ';'
   }
 
-  $('#language-zh').click(function () {
-    changeLanguage('zh');
+  $('#language-zh').click(function() {
+    changeLanguage('zh')
   })
 
-  $('#language-en').click(function () {
-    changeLanguage('en');
+  $('#language-en').click(function() {
+    changeLanguage('en')
   })
-
 })
