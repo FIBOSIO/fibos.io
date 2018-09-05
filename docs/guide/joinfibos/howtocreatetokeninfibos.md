@@ -46,6 +46,21 @@ let r = ctx.excreateSync(name, "100000000000.0000 ABC",  0, '0.0000 ABC','0.0000
 console.log(r);
 ```
 
+##### 增发普通通证
+
+```javascript
+//初始化 fibos 客户端
+...
+let name = "fibostest123";
+let ctx = fibos.contractSync("eosio.token");
+let r = ctx.exissueSync(name, "1000000.0000 ABC", "issue to fibostest123", {
+				authorization: name
+			})
+console.log(r);
+```
+
+**Tips** : 只有普通通证可以进行增发操作，智能通证不支持增发！
+
 #### 发行智能通证
 
 ```js
@@ -81,7 +96,7 @@ let rs = fibos.getTableRowsSync(true, "eosio.token", "fibostest123", "accounts")
 console.log(rs);
 ```
 
-##### 转账
+#### 转账
 
 ```javascript
 //初始化 fibos 客户端
