@@ -31,7 +31,7 @@ void token::excreate(
 )
 ```
 
-在 FIBOS 上你可以发行两种通证，一种是传统通证，一种智能通证。两种通证的不同点在于智能通证可以通过 bancor 协议进行兑换。如果还不了解什么事 bancor 协议的同学，可以参考 [bancor 协议中文白皮书](https://github.com/FIBOSIO/bancor) 一文。
+在 FIBOS 上你可以发行两种通证，一种是传统通证，一种智能通证。两种通证的不同点在于智能通证可以通过 bancor 协议进行兑换。如果还不了解什么是 bancor 协议的同学，可以参考 [bancor 协议中文白皮书](https://github.com/FIBOSIO/bancor) 一文。
 
 #### 发行普通通证
 
