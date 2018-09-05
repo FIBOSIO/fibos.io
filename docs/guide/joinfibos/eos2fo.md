@@ -6,7 +6,7 @@
 
 整个兑换过程是在 FIBOS 主网执行，所以使用的是执行过程中使用的是 FIBOS 主网的私钥以及账户信息。
 
-```
+```javascript
 var FIBOS = require("fibos.js");
 var config = {
     chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
@@ -28,7 +28,7 @@ var fibos_client = FIBOS({
 
 **调用方法:**
 
-```
+```javascript
 let ctx = client.contractSync("eosio.token");
 let result = ctx.exchangeSync(owner, quantity, tosymbol, memo);
 ```
@@ -48,11 +48,11 @@ let result = ctx.exchangeSync(owner, quantity, tosymbol, memo);
 
 ### 发起 EOS 兑换 FO
 
-```
+```javascript
 let ctx = fibos_client.contractSync("eosio.token");
 let owner = "你的 FIBOS 账户名";
 let eos2fo_quantity = "10.0000 EOS@eosio";
-let meo = "exchange EOS to FO";
+let memo = "exchange EOS to FO";
 
 var result = ctx.exchangeSync(owner, eos2fo_quantity, `0.0000 FO@eosio`, memo, {
     authorization: owner
@@ -63,7 +63,7 @@ console.log(result);
 
 ### 查询兑换的 FO 通证
 
-```
+```javascript
 var rs = fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "accounts");
 console.log(rs);
 ```
@@ -73,13 +73,13 @@ console.log(rs);
 上面我们学会了在 FIBOS 主网中 EOS 如何兑换 FO，下面我们来看下 FO 如何兑换 EOS。
 
 
-### 发起 EOS 兑换 FO
+### 发起 FO 兑换 EOS
 
-```
+```javascript
 let ctx = fibos_client.contractSync("eosio.token");
 let owner = "你的 FIBOS 账户名";
 let fo2eos_quantity = "10.0000 FO@eosio";
-let meo = "exchange EOS to FO";
+let memo = "exchange FO to EOS";
 
 var result = ctx.exchangeSync(owner, fo2eos_quantity, `0.0000 EOS@eosio`, memo, {
     authorization: owner
@@ -89,7 +89,7 @@ console.log(result);
 
 ### 查询兑换的 EOS 通证
 
-```
+```javascript
 var rs = fibos_client.getTableRowsSync(true, "eosio.token", "你的 FIBOS 账户名", "accounts");
 console.log(rs);
 ```
