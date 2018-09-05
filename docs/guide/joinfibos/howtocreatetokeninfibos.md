@@ -59,7 +59,7 @@ let r = ctx.excreateSync(name, "100000000000.0000 AAA",  0.15,'10000000000.0000 
 console.log(r);
 ```
 
-观察发行传统通证和创建智能通证的代码，我们不难发现，当一个通证的连接器权重(CW)值为0时，它就是传统通证 。而对于智能通证来说，它必须要有对应的 cw（0-1之间）和max_exchange。以及根据 bancor 协议计算出 reserve_supply 和 reserve_connector_balance 。
+观察发行传统通证和创建智能通证的代码，我们不难发现，当一个通证的连接器权重(CW)值为0时，它就是传统通证。而对于智能通证来说，它必须要有对应的 cw（0-1之间）和max_exchange。以及根据 bancor 协议计算出 reserve_supply 和 reserve_connector_balance 。
 
 #### FO 通证兑换智能通证
 
