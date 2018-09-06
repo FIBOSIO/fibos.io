@@ -116,7 +116,7 @@ console.log(r);
 //初始化 fibos 客户端
 ...
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.exdestroySync(`0.0000 AAA`, {authorization: "fibostest123"});
+let r = ctx.exdestroySync(`0.0000 AAA@fibostest123`, {authorization: "fibostest123"});
 ```
 
 当不再需要该通证时，调用 `exdestroySync` 方法来销毁通证。
