@@ -121,7 +121,7 @@ fibos.load("producer", {
 });
 fibos.config_dir = "fibos_config_dir/";
 fibos.data_dir = "fibos_data_dir/";
-
+fibos.enableJSContract = true；
 fibos.start();
 ```
 以上代码保存至工作目录 `node.js`:
