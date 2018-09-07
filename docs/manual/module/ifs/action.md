@@ -9,12 +9,17 @@ fibos.setcodeSync(name, 0, 0, fibos.compileCode(js_code));
 ```
 
 ## 静态函数
-        
+
 ### is_account
 **判断账户是否存在**
 
 ```JavaScript
-static Boolean action.is_account(String name);
+exports.hi = v => {
+  console.error(
+    action.is_account(action.account), 
+    action.is_account("notexists")
+  )
+};
 ```
 
 调用参数:
@@ -28,7 +33,12 @@ static Boolean action.is_account(String name);
 **action 执行成后，名为 name 的账号是否会收到通知**
 
 ```JavaScript
-static Boolean action.has_recipient(String name);
+exports.hi = v => {
+   console.error(
+     action.has_recipient(action.receiver), 
+     action.has_recipient("test")
+  );
+};
 ```
 
 调用参数:
@@ -42,7 +52,9 @@ static Boolean action.has_recipient(String name);
 **向通知列表增加特定账号**
 
 ```JavaScript
-static action.require_recipient(String name);
+exports.hi = v => {
+  action.require_recipient(action.receiver);
+};
 ```
 
 调用参数:
@@ -53,7 +65,9 @@ static action.require_recipient(String name);
 **验证 action 是否需要特定账户的授权**
 
 ```JavaScript
-static Boolean action.has_auth(String name);
+exports.hi = v => {
+  console.error(action.has_auth(action.receiver));
+};
 ```
 
 调用参数:
@@ -67,8 +81,9 @@ static Boolean action.has_auth(String name);
 **向 action 的授权列表中添加特定账户及对应的权限，若添加失败则会抛出异常**
 
 ```JavaScript
-static action.require_auth(String name,
-    String permission = "");
+exports.hi = v => {
+  console.error(action.require_auth(action.receiver))
+};
 ```
 
 调用参数:
@@ -76,12 +91,14 @@ static action.require_auth(String name,
 * permission: String, 需要该账户授权的权限
 
 ## 静态属性
-        
+
 ### name
 **String, * @brief action 名称**
 
 ```JavaScript
-static readonly String action.name;
+exports.hi = v => {
+  console.log(action.name)
+};
 ```
 
 --------------------------
@@ -89,7 +106,9 @@ static readonly String action.name;
 **String, action 发送者的账户名**
 
 ```JavaScript
-static readonly String action.account;
+exports.hi = v => {
+  console.log(action.account)
+};
 ```
 
 --------------------------
@@ -97,7 +116,9 @@ static readonly String action.account;
 **String, action 接收者**
 
 ```JavaScript
-static readonly String action.receiver;
+exports.hi = v => {
+  console.log(action.receiver)
+};
 ```
 
 --------------------------
@@ -105,7 +126,9 @@ static readonly String action.receiver;
 **Long, 返回从1970年1月1日0时0分0秒（UTC，即协调世界时）距离出块时间的毫秒数。**
 
 ```JavaScript
-static readonly Long action.publication_time;
+exports.hi = v => {
+  console.log(action.publication_time)
+};
 ```
 
 --------------------------
@@ -113,6 +136,8 @@ static readonly Long action.publication_time;
 **Array, 执行该 action 需要得到数组中所有账户的授权**
 
 ```JavaScript
-static readonly Array action.authorization;
+exports.hi = v => {
+  console.log(action.authorization)
+};
 ```
 

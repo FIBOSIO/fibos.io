@@ -1,20 +1,65 @@
 # 对象 Table
-multi index table 对象
-
-## 继承关系
+## ABI定义数据表
 ```dot
-digraph {
-    node [fontname="Helvetica,sans-Serif", fontsize=10, shape="record", style="filled", fillcolor="white"];
-
-    object [tooltip="object", URL="object.md", label="{object|toString()\ltoJSON()\l}"];
-    Table [tooltip="Table", fillcolor="lightgray", id="me", label="{Table|name\lcode\lscope\l|emplace()\lget()\lerase()\lmodify()\l}"];
-
-    object -> Table [dir=back];
+var abi =  {
+    "version": "eosio::abi/1.0",
+    "types": [{
+        "new_type_name": "my_account_name",
+        "type": "name"
+    }],
+    "structs": [{
+        "name": "player",
+        "base": "",
+        "fields": [{
+            "name": "title",
+            "type": "string"
+        }, {
+            "name": "age",
+            "type": "int32"
+        }]
+    }, {
+        "name": "hi",
+        "base": "",
+        "fields": [{
+            "name": "user",
+            "type": "name"
+        }]
+    }],
+    "actions": [{
+        "name": "hi",
+        "type": "hi",
+        "ricardian_contract": ""
+    }],
+    "tables": [{
+        "name": "players",
+        "type": "player",
+        "index_type": "i64",
+        "key_names": ["nickname"],
+        "key_types": ["my_account_name"]
+    }, {
+        "name": "players1",
+        "type": "player",
+        "index_type": "i64",
+        "key_names": ["id"],
+        "key_types": ["int64"]
+    }]
 }
 ```
 
+表需要在abi里定义，相关的table才能在db对象访问到, 如db.players
+
+- `players`以`nickname`作为索引，
+- `players1`以`id`作为索引
+
+```
+// 初始化table对象
+var players = db.players("code", "scope");
+```
+
+------
+
 ## 成员属性
-        
+
 ### name
 **String, table 名**
 
@@ -39,13 +84,20 @@ readonly String Table.scope;
 ```
 
 ## 成员函数
-        
+
 ### emplace
 **向 table 存入新数据**
 
 ```JavaScript
-Table.emplace(String payer,
-    Object val);
+exports.hi = v => {
+  var players = db.players(action.account, action.account);
+  players.emplace(action.account, { 
+    title: "ceo",
+    age:48, 
+    nickname:"lion1",
+    id:123
+  });
+};
 ```
 
 调用参数:
@@ -57,7 +109,10 @@ Table.emplace(String payer,
 **获取索引值为 id 的数据**
 
 ```JavaScript
-Value Table.get(Value id);
+exports.hi = v => {
+  var players = db.players1(action.account, action.account);
+  console.log(players.get(v))
+};
 ```
 
 调用参数:
@@ -71,7 +126,10 @@ Value Table.get(Value id);
 **删除索引值为 id 的数据**
 
 ```JavaScript
-Table.erase(Value id);
+exports.hi => (user) {
+  var players = db.players1(action.account, action.account);
+  players.erase(123);
+};
 ```
 
 调用参数:
@@ -82,9 +140,18 @@ Table.erase(Value id);
 **修改索引值为 id 的对应的数据**
 
 ```JavaScript
-Table.modify(Value id,
-    String payer,
-    Object val);
+exports.hi = (user) {
+  var players = db.players(action.account, action.account);
+  players.modify(
+    123, 
+    action.account, 
+    { 
+      title: "cto", 
+      age:23, 
+      id:123 
+    }
+  );
+};
 ```
 
 调用参数:
