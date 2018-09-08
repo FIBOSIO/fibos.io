@@ -14,11 +14,16 @@ fibos.setcodeSync(name, 0, 0, fibos.compileCode(js_code));
 **判断账户是否存在**
 
 ```JavaScript
+static Boolean action.is_account(String name);
+```
+
+**实例**
+
+```JavaScript
 exports.hi = v => {
-  console.error(
-    action.is_account(action.account), 
-    action.is_account("notexists")
-  )
+   if(action.is_account(account)) console.notice("account exists");
+    else console.error("account notexists")
+  
 };
 ```
 
@@ -33,10 +38,15 @@ exports.hi = v => {
 **action 执行成后，名为 name 的账号是否会收到通知**
 
 ```JavaScript
-exports.hi = v => {
-   console.error(
-     action.has_recipient(action.receiver), 
-     action.has_recipient("test")
+static Boolean action.has_recipient(String name);
+```
+
+**实例**
+
+```JavaScript
+exports.hi = v => {  
+    if(action.has_recipient(receiver)) console.notice("action received")
+     else console.error("action not received");
   );
 };
 ```
@@ -65,8 +75,14 @@ exports.hi = v => {
 **验证 action 是否需要特定账户的授权**
 
 ```JavaScript
+static Boolean action.has_auth(String name);
+```
+
+**实例**
+
+```JavaScript
 exports.hi = v => {
-  console.error(action.has_auth(action.receiver));
+  if(action.has_auth(account)) console.notice("action be authed") 
 };
 ```
 
@@ -81,8 +97,15 @@ exports.hi = v => {
 **向 action 的授权列表中添加特定账户及对应的权限，若添加失败则会抛出异常**
 
 ```JavaScript
+static action.require_auth(String name,
+    String permission = "");
+```
+
+**实例**
+
+```JavaScript
 exports.hi = v => {
-  console.error(action.require_auth(action.receiver))
+ if(action.require_auth(account)) console.notice("auth success")
 };
 ```
 
@@ -95,6 +118,12 @@ exports.hi = v => {
 ### name
 **String, * @brief action 名称**
 
+```
+static readonly String action.name;
+```
+
+**实例**
+
 ```JavaScript
 exports.hi = v => {
   console.log(action.name)
@@ -104,6 +133,12 @@ exports.hi = v => {
 --------------------------
 ### account
 **String, action 发送者的账户名**
+
+```
+static readonly String action.account;
+```
+
+**实例**
 
 ```JavaScript
 exports.hi = v => {
@@ -115,6 +150,12 @@ exports.hi = v => {
 ### receiver
 **String, action 接收者**
 
+```
+static readonly String action.receiver;
+```
+
+**实例**
+
 ```JavaScript
 exports.hi = v => {
   console.log(action.receiver)
@@ -125,6 +166,12 @@ exports.hi = v => {
 ### publication_time
 **Long, 返回从1970年1月1日0时0分0秒（UTC，即协调世界时）距离出块时间的毫秒数。**
 
+```
+static readonly Long action.publication_time;
+```
+
+**实例**
+
 ```JavaScript
 exports.hi = v => {
   console.log(action.publication_time)
@@ -134,6 +181,12 @@ exports.hi = v => {
 --------------------------
 ### authorization
 **Array, 执行该 action 需要得到数组中所有账户的授权**
+
+```
+static readonly Array action.authorization;
+```
+
+**实例**
 
 ```JavaScript
 exports.hi = v => {

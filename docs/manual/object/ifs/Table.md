@@ -1,5 +1,23 @@
 # 对象 Table
+multi index table 对象
+
+## 继承关系
+
+```dot
+digraph {
+    node [fontname="Helvetica,sans-Serif", fontsize=10, shape="record", style="filled", fillcolor="white"];
+
+    object [tooltip="object", URL="object.md", label="{object|toString()\ltoJSON()\l}"];
+    Table [tooltip="Table", fillcolor="lightgray", id="me", label="{Table|name\lcode\lscope\l|emplace()\lget()\lerase()\lmodify()\l}"];
+
+    object -> Table [dir=back];
+}
+```
+
+------
+
 ## ABI定义数据表
+
 ```dot
 var abi =  {
     "version": "eosio::abi/1.0",
@@ -88,6 +106,18 @@ readonly String Table.scope;
 ### emplace
 **向 table 存入新数据**
 
+```
+Table.emplace(String payer,
+    Object val);
+```
+
+调用参数:
+
+- payer: String, 为此次操作付费的账户
+- val: Object, 将要存入到 table 的值
+
+**实例**
+
 ```JavaScript
 exports.hi = v => {
   var players = db.players(action.account, action.account);
@@ -100,13 +130,23 @@ exports.hi = v => {
 };
 ```
 
-调用参数:
-* payer: String, 为此次操作付费的账户
-* val: Object, 将要存入到 table 的值
-
 --------------------------
 ### get
 **获取索引值为 id 的数据**
+
+```
+Value Table.get(Value id);
+```
+
+调用参数:
+
+- id: Value, 索引值
+
+返回结果:
+
+- Value, Table 中索引为 index 的数据
+
+**实例**
 
 ```JavaScript
 exports.hi = v => {
@@ -115,15 +155,19 @@ exports.hi = v => {
 };
 ```
 
-调用参数:
-* id: Value, 索引值
-
-返回结果:
-* Value, Table 中索引为 index 的数据
-
 --------------------------
 ### erase
 **删除索引值为 id 的数据**
+
+```
+Table.erase(Value id);
+```
+
+调用参数:
+
+- id: Value, 索引值
+
+**实例**
 
 ```JavaScript
 exports.hi => (user) {
@@ -132,12 +176,26 @@ exports.hi => (user) {
 };
 ```
 
-调用参数:
-* id: Value, 索引值
+
 
 --------------------------
 ### modify
+
 **修改索引值为 id 的对应的数据**
+
+```
+Table.modify(Value id,
+    String payer,
+    Object val);
+```
+
+调用参数:
+
+- id: Value, 
+- payer: String, 为此次操作付费的账户
+- val: Object, 
+
+**实例**
 
 ```JavaScript
 exports.hi = (user) {
@@ -154,10 +212,7 @@ exports.hi = (user) {
 };
 ```
 
-调用参数:
-* id: Value, 
-* payer: String, 为此次操作付费的账户
-* val: Object, 
+
 
 --------------------------
 ### toString
