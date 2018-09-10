@@ -6,3 +6,4 @@
 - [在 FIBOS 主网中申请注册  BP 节点](./howtobeproducerinfibos.md)
 - [如何帮助别人在 FIBOS 中创建账号](./createAccountnotfree.md)
 - [如何在 FIBOS 中发行和销毁通证](./howtocreatetokeninfibos.md)
+- [如何在 FIBOS 中进行智能通证之间的互兑](./howtoexchangetokeninfibos.md)
