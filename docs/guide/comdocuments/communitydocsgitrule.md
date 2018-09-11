@@ -12,7 +12,7 @@ git clone git@github.com:xxxx/fibos.io.git
 
 ### 添加你要提交的文件
 
-1)cd fibos.io/docs/guide/communitydocuments
+1)cd fibos.io/docs/guide/comdocuments
 
 2)添加 markdown 格式文档 如 `fibosapibasics.md`
 
