@@ -26,7 +26,7 @@ git add .
 
 git commit -m"update:add fibosapibasics.md"
 
-git push git push origin master
+git push origin master
 
 ### 从本地仓库提交 pull request 到远端仓库
 
