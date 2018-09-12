@@ -83,3 +83,4 @@ setInterval(() => {
 
 上述代码中，我们首先通过查询 `stats` 中 `eosio` 账号发行的所有智能通证，然后获取到 `FO` 通证的 `connector_weight` 、`reserve_connector_balance`、`connector_balance`、`reserve_supply` 和 `supply` 值，最后通过 `Bancor` 协议中的公式计算出当前的 `FO` 兑换比例！
 
+执行代码 `fibos getExchangeInfo.js` 即可得到 FO 实时兑换比例。
