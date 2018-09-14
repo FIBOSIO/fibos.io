@@ -1,4 +1,4 @@
-# 痛饮狂歌
+# 痛饮狂歌专栏
 
 - [fibos.js API 方法之 getAccountSync](./getaccountsync.md)
 - [fibos.js API 方法之 getBlockSync](./getblocksync.md)
