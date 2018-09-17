@@ -20,9 +20,9 @@ FIBOS 主网部分 P2P 地址如下所示:
 
 | 位置     | P2P 地址                    |
 | -------- | --------------------------- |
-| 新加坡   | se-rpc.fibos.io:9870 |
-| 首尔     | sl-rpc.fibos.io:9870 |
-| 东京     | to-rpc.fibos.io:9870 |
-| 加拿大   | ca-rpc.fibos.io:9870 |
-| 伦敦     | ln-rpc.fibos.io:9870 |
-| 弗吉尼亚 | va-rpc.fibos.io:9870 |
+| 新加坡   | se-p2p.fibos.io:9870 |
+| 首尔     | sl-p2p.fibos.io:9870 |
+| 东京     | to-p2p.fibos.io:9870 |
+| 加拿大   | ca-p2p.fibos.io:9870 |
+| 伦敦     | ln-p2p.fibos.io:9870 |
+| 弗吉尼亚 | va-p2p.fibos.io:9870 |
