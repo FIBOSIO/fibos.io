@@ -1,4 +1,5 @@
 - [FIBOS 是什么？](./about.md)
+- [FIBJS 是什么？](./whatisfibjs.md)
 - [搭建一个 FIBOS 开发环境](./install.md)
 - [使用 fibos.js 与 FIBOS 交互](./fibosjs.md)
 - [发布一个简单的 JS 合约](./deployContracts.md)
