@@ -77,11 +77,11 @@ describe('test callback', () => {
     });
 });
 
-process.exit(-test.run(console.DEBUG));
+process.exit(test.run(console.DEBUG));
 ```
 
 ## 对象
-        
+
 ### assert
 **断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出**
 
@@ -90,7 +90,7 @@ assert test.assert;
 ```
 
 ## 静态函数
-        
+
 ### describe
 **定义一个测试模块，可嵌套定义**
 
@@ -235,7 +235,7 @@ static test.setup();
 ```
 
 ## 静态属性
-        
+
 ### slow
 **Integer, 设置和查询慢速测试警告阀值，以 ms 为单位，缺省为 75**
 
