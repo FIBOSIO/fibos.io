@@ -9,20 +9,20 @@
 1. 获得 TestNet 的 chainId 
 
 ```
-chainId : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
+chainId : "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a"
 ```
 
 2. 提供 P2P 监听的地址以及端口
 
 ```
-"p2p-listen-endpoint" : "0.0.0.0:9876"
+"p2p-listen-endpoint" : "0.0.0.0:9870"
 ```
 3. 区块数据同步的目标节点信息
 
-目前 TestNet 节点信息，请查阅下面的节点列表, `103.80.170.107:9876` 是网络根 BP 节点网络信息。
+目前 TestNet 节点信息，请查阅下面的节点列表, `103.80.170.236:9870` 是网络根 BP 节点网络信息。
 
 ```
-"p2p-peer-address" : "103.80.170.107:9876"
+"p2p-peer-address" : "103.80.170.236:9870"
 ```
 
 - 本章涉及到文章列表：
@@ -52,12 +52,12 @@ console.notice("config_dir:", fibos.config_dir);
 console.notice("data_dir:", fibos.data_dir);
 
 fibos.load("http", {
-	"http-server-address": "0.0.0.0:8888"
+	"http-server-address": "0.0.0.0:8870"
 });
 
 fibos.load("net", {
-	"p2p-listen-endpoint": "0.0.0.0:9876",
-	"p2p-peer-address": "103.80.170.107:9876"
+	"p2p-listen-endpoint": "0.0.0.0:9870",
+	"p2p-peer-address": ["103.80.170.236:9870"]
 });
 
 fibos.load("producer");
@@ -65,8 +65,6 @@ fibos.load("chain", {
 	"delete-all-blocks": true
 });
 fibos.load("chain_api");
-fibos.load("wallet");
-fibos.load("wallet_api");
 
 fibos.start();
 ```
@@ -121,12 +119,12 @@ if (fs.exists(fibos.data_dir) || fs.exists(fibos.config_dir)) {
 }
 
 fibos.load("http", {
-	"http-server-address": "0.0.0.0:8888"
+	"http-server-address": "0.0.0.0:8870"
 });
 
 fibos.load("net", {
-	"p2p-listen-endpoint": "0.0.0.0:9876",
-	"p2p-peer-address": "103.80.170.107:9876"
+	"p2p-listen-endpoint": "0.0.0.0:9870",
+	"p2p-peer-address": "103.80.170.236:9870"
 });
 
 fibos.load("producer", {
@@ -137,9 +135,6 @@ fibos.load("producer", {
 
 fibos.load("chain");
 fibos.load("chain_api");
-fibos.load("wallet");
-fibos.load("wallet_api");
-
 
 fibos.start();
 ```
@@ -168,7 +163,7 @@ fibos producer_node.js
 ```
 var FIBOS = require('fibos.js');
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+	"chainId": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key",
@@ -197,7 +192,7 @@ ctx.regproducerSync(config["producer-name"], config["public-key"], config["url"]
 
 ```
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f", // TestNet节点chainID
+	"chainId": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a", // TestNet节点chainID
 	"producer-name": "producer-name", //producer名称
 	"public-key": "producer public key", //producer公钥
 	"private-key": "producer private key", //producer私钥
@@ -220,7 +215,7 @@ Producer 可以为自己投票，请查看下面的示例代码，保存代码�
 ```
 var FIBOS = require('fibos.js');
 var config = {
-	"chainId": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+	"chainId": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key",
