@@ -25,7 +25,7 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 
 ```
 IP : "103.80.170.236"
-chainID : "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a"
+chainID : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 ```
 
 支持 FIBOS TestNet 账户注册: <http://103.80.170.236/>
@@ -57,7 +57,7 @@ var FIBOS = require("fibos.js");
 
 function initClient(_keyProvider) {
 	return FIBOS({
-		chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+		chainId: "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 		keyProvider: _keyProvider,
 		httpEndpoint: "http://103.80.170.236:8870",
 		logger: {

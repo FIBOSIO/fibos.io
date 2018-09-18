@@ -9,7 +9,7 @@
 1. 获得 TestNet 的 chainId 
 
 ```
-chainId : "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a"
+chainId : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 ```
 
 2. 提供 P2P 监听的地址以及端口
@@ -163,7 +163,7 @@ fibos producer_node.js
 ```
 var FIBOS = require('fibos.js');
 var config = {
-	"chainId": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+	"chainId": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key",
@@ -192,7 +192,7 @@ ctx.regproducerSync(config["producer-name"], config["public-key"], config["url"]
 
 ```
 var config = {
-	"chainId": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a", // TestNet节点chainID
+	"chainId": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a", // TestNet节点chainID
 	"producer-name": "producer-name", //producer名称
 	"public-key": "producer public key", //producer公钥
 	"private-key": "producer private key", //producer私钥
@@ -215,7 +215,7 @@ Producer 可以为自己投票，请查看下面的示例代码，保存代码�
 ```
 var FIBOS = require('fibos.js');
 var config = {
-	"chainId": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+	"chainId": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 	"producer-name": "producer-name",
 	"public-key": "producer public key",
 	"private-key": "producer private key",
