@@ -94,7 +94,7 @@ console.log(result);
   "schedule_version": 0,
   "new_producers": null,
   "header_extensions": [],
-  "producer_signature": 	   				           "SIG_K1_111111111111111111111111111111111111111111111111111111111111111116uk5ne",
+  "producer_signature": "SIG_K1_111111111111111111111111111111111111111111111111111111111111111116uk5ne",
   "transactions": [],
   "block_extensions": [],
   "id": "000000018efcb02cbe6329996bdf007c30077907a3fbec119373644a4da3902e",
