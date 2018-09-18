@@ -25,7 +25,7 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 
 ```
 IP : "103.80.170.236"
-chainID : "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a"
+chainID : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 ```
 
 支持 FIBOS TestNet 账户注册: <http://103.80.170.236/>
@@ -57,7 +57,7 @@ var FIBOS = require("fibos.js");
 
 function initClient(_keyProvider) {
 	return FIBOS({
-		chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+		chainId: "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 		keyProvider: _keyProvider,
 		httpEndpoint: "http://103.80.170.236:8870",
 		logger: {
@@ -85,21 +85,21 @@ console.log(result);
 
 ```
 {
-  "timestamp": "2018-08-28T00:00:00.000",
+  "timestamp": "2018-08-01T00:00:00.000",
   "producer": "",
   "confirmed": 1,
   "previous": "0000000000000000000000000000000000000000000000000000000000000000",
   "transaction_mroot": "0000000000000000000000000000000000000000000000000000000000000000",
-  "action_mroot": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
+  "action_mroot": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
   "schedule_version": 0,
   "new_producers": null,
   "header_extensions": [],
   "producer_signature": "SIG_K1_111111111111111111111111111111111111111111111111111111111111111116uk5ne",
   "transactions": [],
   "block_extensions": [],
-  "id": "000000018efcb02cbe6329996bdf007c30077907a3fbec119373644a4da3902e",
+  "id": "00000001269a989da17ee0bf745abdcdb62d5440e0e7bf1a37837ba5016f5156",
   "block_num": 1,
-  "ref_block_prefix": 2569626558
+  "ref_block_prefix": 3219160737
 }
 ```
 
