@@ -53,9 +53,9 @@ console.log(r);
 ...
 let name = "fibostest123";
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.exissueSync(name, "1000000.0000 ABC", "issue to fibostest123", {
+let r = ctx.exissueSync(name, "1000000.0000 ABC@fibostest123", "issue to fibostest123", {
 				authorization: name
-			})
+			});
 console.log(r);
 ```
 

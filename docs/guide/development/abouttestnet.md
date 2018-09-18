@@ -24,21 +24,21 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 根 BP 连接信息: 
 
 ```
-IP : "103.80.170.107"
-chainID : "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f"
+IP : "103.80.170.236"
+chainID : "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a"
 ```
 
-支持 FIBOS TestNet 账户注册: http://103.80.170.107:8080
+支持 FIBOS TestNet 账户注册: <http://103.80.170.236/>
 
-(默认账户送 50 FO币)
+(默认账户送 10 EOS 通证)
 
-## TestNet BP 列表
+## TestNet Seed 列表
 
 
 | BP Name  | BP IP  | HTTP port | P2P port |
 |:-------------: |:---------------:| :-------------:| :-------------:|
-| gulou      | 103.80.170.107 |         8888 | 9876 |
-| xuanwu      | 45.121.142.171 |         8888 | 9876 |
+| gulou      | 103.80.170.236 |       8870 | 9870 |
+| xuanwu      | 103.80.170.237 |       8870 | 9870 |
 
 ## 如何在 FIBOS TestNet 上进行测试？
 
@@ -57,9 +57,9 @@ var FIBOS = require("fibos.js");
 
 function initClient(_keyProvider) {
 	return FIBOS({
-		chainId: "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+		chainId: "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
 		keyProvider: _keyProvider,
-		httpEndpoint: "http://103.80.170.107:8888",
+		httpEndpoint: "http://103.80.170.236:8870",
 		logger: {
 			log: null,
 			error: null
@@ -85,21 +85,21 @@ console.log(result);
 
 ```
 {
-  "timestamp": "2018-06-01T12:00:00.000",
+  "timestamp": "2018-08-28T00:00:00.000",
   "producer": "",
   "confirmed": 1,
   "previous": "0000000000000000000000000000000000000000000000000000000000000000",
   "transaction_mroot": "0000000000000000000000000000000000000000000000000000000000000000",
-  "action_mroot": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+  "action_mroot": "6aa7bd33b6b45192465afa3553dedb531acaaff8928cf64b70bd4c5e49b7ec6a",
   "schedule_version": 0,
   "new_producers": null,
   "header_extensions": [],
-  "producer_signature": "SIG_K1_111111111111111111111111111111111111111111111111111111111111111116uk5ne",
+  "producer_signature": 	   				           "SIG_K1_111111111111111111111111111111111111111111111111111111111111111116uk5ne",
   "transactions": [],
   "block_extensions": [],
-  "id": "00000001bcf2f448225d099685f14da76803028926af04d2607eafcf609c265c",
+  "id": "000000018efcb02cbe6329996bdf007c30077907a3fbec119373644a4da3902e",
   "block_num": 1,
-  "ref_block_prefix": 2517196066
+  "ref_block_prefix": 2569626558
 }
 ```
 
@@ -133,7 +133,10 @@ fibos getBalance.js
 {
   "rows": [
     {
-      "balance": "xxxxx FO"
+      "balance": {
+          "quantity":"xxxxx FO",
+          "contract":"eosio"
+      }
     }
   ],
   "more": false

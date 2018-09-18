@@ -86,7 +86,7 @@ void token::ctxextract(
 //初始化 fibos 客户端
 ...
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.ctxextractSync("tteesstt1122", "100.0000 BDC@nmslwsndhjyz", "ctxextract", {
+let r = ctx.ctxextractSync("tteesstt1122", "100.0000 ADC@nmslwsndhjyz", "ctxextract", {
 			authorization: "tteesstt1122"
 		})
 console.notice(r);
@@ -111,7 +111,7 @@ void token::ctxtransfer(
 **实例**
 
 ```js
-ctx.ctxtransferSync("tteesstt1122", "tteesstt2222", "50.0000 BDC@nmslwsndhjyz", "ctxtransfer", {
+ctx.ctxtransferSync("tteesstt1122", "tteesstt2222", "50.0000 ADC@nmslwsndhjyz", "ctxtransfer", {
 			authorization: "nmslwsndhjyz"
 		})
 ```
