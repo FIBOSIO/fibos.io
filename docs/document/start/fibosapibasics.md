@@ -20,7 +20,7 @@ console.log(fibos.getInfoSync());
 
 ### 环境搭建
 
-使用 FIBOS 客户端 API 之前，需要搭建好开发环境，具体搭建过程，参见[安装FIBOS运行环境](../basic/install.md)。
+使用 FIBOS 客户端 API 之前，需要搭建好开发环境，具体搭建过程，参见[安装FIBOS运行环境](../start/install.md)。
 
 配置好运行环境后，下面就让我们开始愉快地使用 API 吧！
 

@@ -8,7 +8,7 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
 
 
 
-赶紧安装新版 FIBOS 试试吧！[安装运行环境](../basic/install.md)
+赶紧安装新版 FIBOS 试试吧！[安装运行环境](../start/install.md)
 
 
 
@@ -28,7 +28,7 @@ EOS 本身提供了mongoDB 的插件（eosio::mongo_db_plugin），FIBOS 也沿�
         └── node.js
     ```
 
-- 依赖：fibos.js 如何安装请参考[使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md)
+- 依赖：fibos.js 如何安装请参考[使用 fibos.js 与 FIBOS 交互](../start/fibosjs.md)
 
 - 本章节示例代码地址：https://github.com/FIBOSIO/samples
 
@@ -64,7 +64,7 @@ fibos$ mongod
 
 #### 启动 FIBOS 环境
 
-如果你还未安装 FIBOS，请参考 [安装运行环境](../basic/install.md)。
+如果你还未安装 FIBOS，请参考 [安装运行环境](../start/install.md)。
 
 想要将数据同步至 mongoDB ，仅需在入门教程中的代码加入一段 `fibos.load("mongo_db")` ，将 mongo_db 这个模块载入 FIBOS。只需要三行代码，FIBOS 便会将区块数据自动同步至 mongoDB，非常方便。
 

@@ -2,7 +2,7 @@
 
 > Tips:我们将在9.4日关闭免费注册 FIBOS 账号通道，后续想要注册 FIBOS 账号的同学们，可以通过学习本文档，让已经拥有 FIBOS 账号的小伙伴替你创建!
 
-学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
+学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../start/fibosjs.md) 。
 
 ### 生成 FIBOS 公私钥
 

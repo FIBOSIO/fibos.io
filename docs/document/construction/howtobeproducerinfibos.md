@@ -6,7 +6,7 @@ UTC 时间 2018 年 8 月 28 日 0 时，FIBOS 主网上线成功。新加坡、
 
 ### 配置 Producer 信息启动 FIBOS 节点服务
 
-如何配置 Producer 信息启动 FIBOS 节点服务，在 [如何加入到 FIBOS TestNet?](../development/jointestnet.md) 一文中已经作了详细的介绍，本文就不再赘述。只不过需要将测试网的配置信息修改为主网的配置。
+如何配置 Producer 信息启动 FIBOS 节点服务，在 [如何加入到 FIBOS TestNet?](./jointestnet.md) 一文中已经作了详细的介绍，本文就不再赘述。只不过需要将测试网的配置信息修改为主网的配置。
 
 ### 使用 Producer 身份发起注册申请
 

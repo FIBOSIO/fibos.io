@@ -1,6 +1,6 @@
 # 如何在 FIBOS 中进行智能通证之间的互兑
 
-> 学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
+> 学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../start/fibosjs.md) 。
 
 随着9.5日 FIBOS 主网开放了创建通证的通道之后，很多用户都在 FIBOS 上发行了属于自己的通证，还不知道如何发行通证的同学可以参考上文，[如何在 FIBOS 中发行和销毁通证](howtocreatetokeninfibos.md) 。其中智能通证在 FIBOS 上可以进行互兑，本文将教会大家如何进行兑换。
 
