@@ -53,7 +53,7 @@ action 部分的作用是声明智能合约有哪些可以调用的 action。如
 }]
 ```
 
-上述代码构造了一个 table 名是 players，结构体类型是 players，主键名称是 id，类型是 int64 的数据表。
+上述代码构造了一个 table 名是 players，结构体类型是 player，主键名称是 id，类型是 int64 的数据表。
 
 ### structs
 
@@ -99,7 +99,7 @@ FIBOS 系统会根据 `actions` 部分中声明的 `type` ，在 `structs` 部�
 
 ### types
 
-`types` 部分用来建立类型的别名，比如你想给 `my_account_name` 类型建立一个别名：
+`types` 用于自定义数据的类型：
 
 ```json
 {
@@ -108,7 +108,7 @@ FIBOS 系统会根据 `actions` 部分中声明的 `type` ，在 `structs` 部�
 }
 ```
 
-这样在这个 ABI 文件里就可以用 `name` 来代替 `my_account_name`了。
+这样在这个 ABI 文件里就自定义了一个类型名称为 `my_account_name` 的类型，类型是 `name` ，`new_type_name` 和 `type` 是关键字，类型 `name` 是系统定义的数据类型。
 
 ## 总结
 
