@@ -46,7 +46,7 @@ chainID : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 
 在 FIBOS TestNet 上测试需要拥有一个测试账号，请按照上述内容进行注册，你会获得一个账户的公钥和私钥。
 
-一下内容需要依赖 `fibos.js` 包，请查看上几章节学习如何安装 `fibos.js` [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md)。
+一下内容需要依赖 `fibos.js` 包，请查看上几章节学习如何安装 `fibos.js` [使用 fibos.js 与 FIBOS 交互](../start/fibosjs.md)。
 
 现在我们编写一段基于 `fibos.js` 的客户端访问 FIBOS TestNet，如果读者阅读过新手入门模块，对于这个例子应该十分熟悉了，只不过在新手入门模块我们连接的是本地节点，在本章中，我们将连接 TestNet 节点。
 

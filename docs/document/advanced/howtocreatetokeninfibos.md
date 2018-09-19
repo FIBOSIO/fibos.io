@@ -1,6 +1,6 @@
 # 如何在 FIBOS 中发行和销毁通证
 
-> 学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md) 。
+> 学习本文档前，你需要对 FIBOS 和 fibos.js 有一定的了解。假如你对 FIBOS 和 fibos.js 不了解，请参阅 [使用 fibos.js 与 FIBOS 交互](../start/fibosjs.md) 。
 
 相比于在 EOS 上发行通证的复杂性和高成本，在 FIBOS 上发行通证只需要两步:
 

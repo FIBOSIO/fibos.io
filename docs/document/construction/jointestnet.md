@@ -186,7 +186,7 @@ var ctx = fibos.contractSync("eosio");
 ctx.regproducerSync(config["producer-name"], config["public-key"], config["url"], 1);
 ```
 
-以上代码依赖 `fibos.js` 库，如果你还不了解此，请查阅[使用 fibos.js 与 FIBOS 交互](../basic/fibosjs.md)
+以上代码依赖 `fibos.js` 库，如果你还不了解此，请查阅[使用 fibos.js 与 FIBOS 交互](../start/fibosjs.md)
 
 配置说明：
 
