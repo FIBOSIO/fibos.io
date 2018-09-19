@@ -154,4 +154,4 @@ FIBOS 系统会根据 `actions` 部分中声明的 `type` ，在 `structs` 部�
 };
 ```
 
-通过该 ABI 文件，我们就定义了一个有 id 、 nickname 、 age 三个字段，类型分别是 int64 、my_account_name 、 int32 ，主键是 id 的数据表 player 和一个传递参数名是 nickname ，类型是 my_account_name 的名为 hi 的 action 方法。􏰠􏲸􏰆􏰉􏰊􏰽􏰾􏰖􏱄􏳲􏳑􏴀􏳒􏰆􏰉􏰊􏰽􏰾􏲊􏰗􏰀􏰁􏲑􏰂􏰃􏴁􏴂􏰟􏰎􏰓􏰔􏰕
+通过该 ABI 文件，我们就定义了一个有 id 、 nickname 、 age 三个字段，类型分别是 int64 、my_account_name 、 int32 ，主键是 id 的数据表 player 和一个传递参数名是 nickname ，类型是 my_account_name 的名为 hi 的 action 方法。􏰠􏲸􏰆
