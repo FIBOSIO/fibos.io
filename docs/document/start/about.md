@@ -1,6 +1,6 @@
 # FIBOS 是什么？
 
-##  FIBOS和FIBJS的区别
+##  FIBOS 和 FIBJS 的区别
 
 * FIBOS 是一个结合 FIBJS 以及 EOS 的 JavaScript 的运行平台，它使得 EOS 提供可编程性，并允许使用 JavaScript 编写智能合约。
 
