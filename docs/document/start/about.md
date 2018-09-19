@@ -1,8 +1,12 @@
 # FIBOS 是什么？
 
-FIBOS 是一个结合 FIBJS 以及 EOS 的 JavaScript 的运行平台，它使得 EOS 提供可编程性，并允许使用 JavaScript 编写智能合约。
+##  FIBOS和FIBJS的区别
 
-FIBOS 平台的出现让第三代 EOS 智能合约编程变得简单、快捷!
+* FIBOS 是一个结合 FIBJS 以及 EOS 的 JavaScript 的运行平台，它使得 EOS 提供可编程性，并允许使用 JavaScript 编写智能合约。
+
+  FIBOS 平台的出现让第三代 EOS 智能合约编程变得简单、快捷!
+
+* FIBJS 是一个主要为 web 后端开发而设计的应用服务器开发框架，它建立在 Google v8 JavaScript 引擎基础上，运用 C++ 语言开发的 JS 运行平台，并且选择了和传统的 callback 不同的并发解决方案。FIBJS 利用 fiber 在框架层隔离了异步调用带来的业务复杂性，极大降低了开发难度，并减少因为用户空间频繁异步处理带来的性能问题。
 
 ## 为什么要创造 FIBOS ？
 
