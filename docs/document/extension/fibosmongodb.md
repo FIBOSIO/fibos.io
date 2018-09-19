@@ -234,7 +234,7 @@ result:  {
 
 ## 进阶，利用 mongoDB 查询 TestNet 数据
 
-如果你对加入 TestNet 网络的步骤还不熟悉，请参考 [如何加入到 TestNet 网络](../development/abouttestnet.md)。
+如果你对加入 TestNet 网络的步骤还不熟悉，请参考 [如何加入到 TestNet 网络](../construction/abouttestnet.md)。
 
 #### 启动 FIBOS 环境，加入 TestNet 网络
 
