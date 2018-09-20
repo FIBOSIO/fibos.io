@@ -12,7 +12,7 @@ FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每�
 
 * **发布一个 JavaScript 合约**
 
-首先让我们通过发布合约来实现一个支持对数据表的 CRUD 的合约，代码保存至`update_contract2.js`：
+首先让我们通过发布合约来实现一个支持对数据表的 CRUD 的合约，代码保存至 `update_contract2.js`：
 
 ~~~js
 var	FIBOS = require('fibos.js');
