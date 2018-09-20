@@ -6,7 +6,7 @@
 
 ### 发布调用其他合约方法的合约
 
-> 前提条件:用户 `fibostest123` 拥有发布一个合约的资源,包括足够的 RAM、CPU 和 NET
+> 前提条件:用户 `fibostest123` 拥有发布一个合约的资源，包括足够的 RAM、CPU 和 NET
 
 保存如下代码到 `inlinecall.js`
 
