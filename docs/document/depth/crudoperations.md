@@ -14,7 +14,7 @@ FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每�
 
 首先让我们通过发布合约来实现一个支持对数据表的 CRUD 的合约，代码保存至 `update_contract2.js`：
 
-```js
+```javascript
 var	FIBOS = require('fibos.js');
 //合约所属账户 hellocode2	的公私钥对
 
@@ -81,7 +81,7 @@ fibos.setabiSync(name, abi);
 CRUD — 保存
 
 
-```js
+```javascript
 exports.emplace = param => {
     var players = db.players(action.account, action.account);
     players.emplace(action.account, { 
@@ -97,7 +97,7 @@ exports.emplace = param => {
 
 CRUD — 查看
 
-```js
+```javascript
 exports.find = param => {
     var players = db.players(action.account, action.account);
     console.log(players.find(v))
@@ -108,7 +108,7 @@ exports.find = param => {
 
 CRUD — 修改
 
-```js
+```javascript
 exports.update = param {
     var players = db.players(action.account, action.account);
     players.update(
@@ -127,7 +127,7 @@ exports.update = param {
 
 CRUD — 删除
 
-```js
+```javascript
 exports.remove => param {
     var players = db.players(action.account, action.account);
     players.remove(123);
