@@ -15,14 +15,14 @@ FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每�
 首先让我们通过发布合约来实现一个支持对数据表的 CRUD 的合约，代码保存至 `update_contract2.js`：
 
 ```javascript
-var	FIBOS = require('fibos.js');
+var FIBOS = require('fibos.js');
 //合约所属账户 hellocode2	的公私钥对
 
-let	pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
-let	prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
+let pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
+let prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
 
 //创建合约账号
-var	name = 'hellocode2';
+var name = 'hellocode2';
 //发布一个合约
 var abi = {
     "version": "eosio::abi/1.0",
