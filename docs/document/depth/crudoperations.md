@@ -27,27 +27,27 @@ var name = 'hellocode2';
 var abi = {
     "version": "eosio::abi/1.0",
     "types": [{
-	    "new_type_name": "my_account_name",
-	    "type": "name"
+	"new_type_name": "my_account_name",
+	"type": "name"
 	}],
     "structs": [{
-		"name": "player",
-		"base": "",
-		"fields": [{
-			"name":	"nickname",
-			"type":	"my_account_name"
-		},{
-			"name":	"age",
-			"type":	"int32"
-		}]
-	}, {
-		"name": "param",
-		"base": "",
-		"fields": [{
-			"name": "nickname",
-			"type": "my_account_name"
-		}]
-	}],
+	"name": "player",
+	"base": "",
+	"fields": [{
+	    "name":"nickname",
+	    "type":"my_account_name"
+	},{
+	    "name":"age",
+	    "type":"int32"
+	}]
+     }, {
+	    "name": "param",
+	    "base": "",
+	    "fields": [{
+	    "name": "nickname",
+	    "type": "my_account_name"
+	}]
+    }],
     "actions": [{
         "name": "hi",
         "type": "hi",
