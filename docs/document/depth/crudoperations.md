@@ -90,7 +90,7 @@ exports.emplace = param => {
         nickname:"lion1",
         id:123
       });
-  };
+};
 ```
 
 
@@ -101,7 +101,7 @@ CRUD — 查看
 exports.find = param => {
     var players = db.players(action.account, action.account);
     console.log(players.find(v))
-  };
+};
 ```
 
 
@@ -120,7 +120,7 @@ exports.update = param {
         id:123 
       }
     );
-  };
+};
 ```
 
 
@@ -131,7 +131,7 @@ CRUD — 删除
 exports.remove => param {
     var players = db.players(action.account, action.account);
     players.remove(123);
-  };
+};
 ```
 
 定义了4个 **CRUD** 合约 action：分别为 emplace，find，update，remove。
