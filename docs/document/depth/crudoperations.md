@@ -16,7 +16,7 @@ FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每�
 
 ```javascript
 var FIBOS = require('fibos.js');
-//合约所属账户 hellocode2	的公私钥对
+//合约所属账户 hellocode2 的公私钥对
 
 let pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
 let prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
