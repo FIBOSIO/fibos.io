@@ -4,7 +4,7 @@
 
 * **对于FIBOS 的 JavaScript 合约为什么需要数据持久化**
 
-FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每一次的合约 action 操作来说，action 的上下文环境（Apple Context）都是新建的，类似于新建一个合约的实例，当 action 执行完毕后，所有定义的内容都会释放。合约的每个 action 操作都是独立的，因此为了帮助业务中存储过程数据就需要合约能够做到数据的持久化。
+FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每一次的合约 action 操作来说，action 的上下文环境（Apply Context）都是新建的，类似于新建一个合约的实例，当 action 执行完毕后，所有定义的内容都会释放。合约的每个 action 操作都是独立的，因此为了帮助业务中存储过程数据就需要合约能够做到数据的持久化。
 
 
 
@@ -14,40 +14,40 @@ FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每�
 
 首先让我们通过发布合约来实现一个支持对数据表的 CRUD 的合约，代码保存至 `update_contract2.js`：
 
-~~~js
-var	FIBOS = require('fibos.js');
+```javascript
+var FIBOS = require('fibos.js');
 //合约所属账户 hellocode2	的公私钥对
 
-let	pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
-let	prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
+let pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
+let prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
 
 //创建合约账号
-var	name = 'hellocode2';
+var name = 'hellocode2';
 //发布一个合约
 var abi = {
     "version": "eosio::abi/1.0",
     "types": [{
-	    "new_type_name": "my_account_name",
-	    "type": "name"
+	"new_type_name": "my_account_name",
+	"type": "name"
 	}],
     "structs": [{
-		"name": "player",
-		"base": "",
-		"fields": [{
-			"name":	"nickname",
-			"type":	"my_account_name"
-		},{
-			"name":	"age",
-			"type":	"int32"
-		}]
-	}, {
-		"name": "param",
-		"base": "",
-		"fields": [{
-			"name": "nickname",
-			"type": "my_account_name"
-		}]
-	}],
+	"name": "player",
+	"base": "",
+	"fields": [{
+	    "name":"nickname",
+	    "type":"my_account_name"
+	},{
+	    "name":"age",
+	    "type":"int32"
+	}]
+     }, {
+	    "name": "param",
+	    "base": "",
+	    "fields": [{
+	    "name": "nickname",
+	    "type": "my_account_name"
+	}]
+    }],
     "actions": [{
         "name": "hi",
         "type": "hi",
@@ -72,7 +72,7 @@ fibos = FIBOS({
 })
 fibos.setabiSync(name, abi);
                 
-~~~
+```
 
 
 
@@ -80,58 +80,59 @@ fibos.setabiSync(name, abi);
 
 CRUD — 保存
 
-~~~js
- exports.emplace = param => {
-            var players = db.players(action.account, action.account);
-            players.emplace(action.account, { 
-            title: "ceo",
-            age:48, 
-            nickname:"lion1",
-            id:123
-            });
-        };
-~~~
+
+```javascript
+exports.emplace = param => {
+    var players = db.players(action.account, action.account);
+    players.emplace(action.account, { 
+        title: "ceo",
+        age:48, 
+        nickname:"lion1",
+        id:123
+      });
+};
+```
 
 
 
 CRUD — 查看
 
-~~~js
- exports.find = param => {
-            var players = db.players(action.account, action.account);
-            console.log(players.find(v))
-        };
-~~~
+```javascript
+exports.find = param => {
+    var players = db.players(action.account, action.account);
+    console.log(players.find(v))
+};
+```
 
 
 
 CRUD — 修改
 
-~~~js
-   exports.update = param {
-            var players = db.players(action.account, action.account);
-            players.update(
-                123, 
-                action.account, 
-            { 
-                title: "cto", 
-                age:23, 
-                id:123 
-            }
-        );
-    };
-~~~
+```javascript
+exports.update = param {
+    var players = db.players(action.account, action.account);
+    players.update(
+        123, 
+        action.account, 
+      { 
+        title: "cto", 
+        age:23, 
+        id:123 
+      }
+    );
+};
+```
 
 
 
 CRUD — 删除
 
-~~~js
- exports.remove => param {
-            var players = db.players(action.account, action.account);
-            players.remove(123);
-        };
-~~~
+```javascript
+exports.remove => param {
+    var players = db.players(action.account, action.account);
+    players.remove(123);
+};
+```
 
 定义了4个 **CRUD** 合约 action：分别为 emplace，find，update，remove。
 
