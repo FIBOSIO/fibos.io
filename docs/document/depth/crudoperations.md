@@ -90,7 +90,7 @@ exports.emplace = param => {
         nickname:"lion1",
         id:123
       });
-   };
+  };
 ```
 
 
@@ -101,7 +101,7 @@ CRUD — 查看
 exports.find = param => {
     var players = db.players(action.account, action.account);
     console.log(players.find(v))
-   };
+  };
 ```
 
 
