@@ -15,7 +15,7 @@ git clone git@github.com:OrioGod/fibos.io.git
 
 * 1 `cd fibos.io/docs/fromcommunity/ipcolumn`
 
-* 2 创建属于你自己的专栏文件夹,例如 `zzx`，然后新建 `README.md` 和 `SUMMARY.md` 两个文件
+* 2 创建属于你自己的专栏文件夹,例如 `zzx`，然后在文件夹中新建 `README.md` 和 `SUMMARY.md` 两个文件
 
 * 3 添加 markdown 格式文档 如 `fibosapibasics.md`
 
@@ -27,7 +27,7 @@ git clone git@github.com:OrioGod/fibos.io.git
 
 ```
 git add .
-git commit -m"update:add zzx column and fibosapibasics.md"
+git commit -m "update:add zzx column and fibosapibasics.md"
 git push origin master
 ```
 
