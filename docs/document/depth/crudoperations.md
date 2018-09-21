@@ -44,26 +44,26 @@ fibos.newaccountSync({
 var abi = {
     "version": "eosio::abi/1.0",
     "types": [{
-	"new_type_name": "my_account_name",
-	"type": "name"
-	}],
+        "new_type_name": "my_account_name",
+        "type": "name"
+    }],
     "structs": [{
-	"name": "player",
-	"base": "",
-	"fields": [{
-	    "name":"nickname",
-	    "type":"my_account_name"
+        "name": "player",
+        "base": "",
+        "fields": [{
+            "name": "nickname",
+            "type": "my_account_name"
+         },{
+            "name": "age",
+            "type": "int32"
+         }]
     },{
-	    "name":"age",
-	    "type":"int32"
-	}]
-    },{
-	    "name": "param",
-	    "base": "",
-	    "fields": [{
-	    "name": "nickname",
-	    "type": "my_account_name"
-	}]
+        "name": "param",
+        "base": "",
+        "fields": [{
+            "name": "nickname",
+            "type": "my_account_name"
+         }]
     }],
     "actions": [{
         "name": "emplace",
@@ -82,7 +82,7 @@ var abi = {
         "type": "param",
         "ricardian_contract":""
     }],
-     "tables": [{
+    "tables": [{
         "name": "players",
         "type": "player",
         "index_type": "i64",
@@ -118,7 +118,7 @@ exports.emplace = param => {
         age:48, 
         nickname:"lion1",
         id:123
-      });
+    });
 };
 ```
 
