@@ -2,12 +2,13 @@
 
 ### Fork 项目
 
-将 fibos.io 项目 fork 到你的仓库中
+将 fibos.io 项目 fork 到你的仓库中，项目地址:[https://github.com/FIBOSIO/fibos.js](https://github.com/FIBOSIO/fibos.js)
 
 ### 拉取本地仓库代码
 
 ```
-git clone git@github.com:xxxx/fibos.io.git
+//例如:你的GitHub账户名为：OrioGod
+git clone git@github.com:OrioGod/fibos.io.git
 ```
 
 ### 添加你要提交的文件
