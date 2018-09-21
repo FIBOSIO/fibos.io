@@ -12,17 +12,34 @@ FIBOS  的 JavaScript 合约运行在一个独立的沙箱环境内，对于每�
 
 * **发布一个 JavaScript 合约**
 
-首先让我们通过发布合约来实现一个支持对数据表的 CRUD 的合约，代码保存至 `update_contract2.js`：
+首先让我们通过发布合约，来实现一个支持对数据表的 CRUD 的合约。
 
 ```javascript
 var FIBOS = require('fibos.js');
-//合约所属账户 hellocode2 的公私钥对
 
+var fibos = FIBOS({
+    chainId:'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f',
+    keyProvider:'5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3',
+    httpEndpoint:'http://127.0.0.1:8888',
+    logger:{
+        log:null,
+        error:null
+    }
+})
+
+//合约所属账户 hellocode2 的公私钥对
 let pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
 let prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
 
 //创建合约账号
 var name = 'hellocode2';
+fibos.newaccountSync({
+    creator:'eosio',
+    name:name,
+    owner:pubkey,
+    active:pubkey
+})
+
 //发布一个合约
 var abi = {
     "version": "eosio::abi/1.0",
@@ -36,11 +53,11 @@ var abi = {
 	"fields": [{
 	    "name":"nickname",
 	    "type":"my_account_name"
-	},{
+    },{
 	    "name":"age",
 	    "type":"int32"
 	}]
-     }, {
+    },{
 	    "name": "param",
 	    "base": "",
 	    "fields": [{
@@ -49,16 +66,28 @@ var abi = {
 	}]
     }],
     "actions": [{
-        "name": "hi",
-        "type": "hi",
+        "name": "emplace",
+        "type": "param",
         "ricardian_contract": ""
+    },{
+        "name": "find",
+        "type": "param",
+        "ricardian_contract":""
+    },{
+        "name": "update",
+        "type": "param",
+        "ricardian_contract":""
+    },{
+        "name": "remove",
+        "type": "param",
+        "ricardian_contract":""
     }],
      "tables": [{
         "name": "players",
         "type": "player",
         "index_type": "i64",
-        "key_names": ["nickname"],
-        "key_types": ["my_account_name"]
+        "key_names": ["id"],
+        "key_types": ["int64"]
     }]
 }
 //由 hellocode2 提供私钥发布合约
