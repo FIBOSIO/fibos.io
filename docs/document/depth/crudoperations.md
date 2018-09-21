@@ -168,5 +168,4 @@ exports.remove => param {
 ## 3. 结语
 
 * 模块 db 是 FIBOS 中的基础模块 — 数据库访问模块，可用于创建和操作数据库资源。
-* 引用方式：`var db = require('db');`
 * 通过 db 对象可以对数据表进行 CURD 操作。
