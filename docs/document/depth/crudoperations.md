@@ -28,7 +28,7 @@ var fibos = FIBOS({
 })
 
 //合约所属账户 hellocode2 的公私钥对
-let pubkey = "EOS8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
+let pubkey = "FO8h9mRbfNXix1PaC9bpUB4tr5SjVRrrkTVzMh78tfQSQRBXPPH8";
 let prikey = '5JE7knh6S5EWdzMjv6cadpaf8HLGoX95tALdG2KmzGVsSsaxMB7';
 
 //创建合约账号
@@ -129,7 +129,7 @@ CRUD — 查看
 ```javascript
 exports.find = param => {
     var players = db.players(action.account, action.account);
-    console.log(players.find(v))
+    console.log(players.find(param))
 };
 ```
 
@@ -159,7 +159,8 @@ CRUD — 删除
 ```javascript
 exports.remove => param {
     var players = db.players(action.account, action.account);
-    players.remove(123);
+    var record_id = 123;
+    players.remove(record_id);
 };
 ```
 
