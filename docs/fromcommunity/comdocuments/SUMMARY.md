@@ -1,1 +1,2 @@
 - [社区文档 Git 提交规范](./communitydocsgitrule.md)
+- [开发者文档撰写规范](./writespecifications.md)
