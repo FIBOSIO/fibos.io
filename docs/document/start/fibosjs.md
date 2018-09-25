@@ -1,6 +1,6 @@
 # 使用 fibos.js 与 FIBOS 交互
 
-`fibos.js` 是一个通用 JavaScript Library，通过简单的编码使它成为一个 FIBOS 的 JavaScript Client，它可以与 FIBOS 以及 EOS 区块链进行交互。
+[fibos.js](https://github.com/FIBOSIO/fibos.js) 是一个通用 JavaScript Library，通过简单的编码使它成为一个 FIBOS 的 JavaScript Client，它可以与 FIBOS 以及 EOS 区块链进行交互。
 
 阅读完本章你可以学会使用 `fibos.js` 库与 `FIBOS` 交互。
 
