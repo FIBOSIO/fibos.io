@@ -293,7 +293,7 @@ fibos$ fibos ./testnet/node.js
 
 #### 新建账户，在 mongoDB 中查询数据
 
-我们可以在 [FIBOS TestNet 账户注册](http://103.80.170.107:8080/) 进行 TestNet 新账户的注册。在本教程中，我们新建了一个名为 hellomongodb 的账户。
+在本教程中，我们新建了一个名为 hellomongodb 的账户。
 
 我们新建脚本用来查询刚刚注册的账户信息，以下代码保存至 `./testnet/client.js`（注意替换你自己生成的私钥以及账户名）：
 
