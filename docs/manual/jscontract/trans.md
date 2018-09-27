@@ -4,7 +4,7 @@ trans 模块提供了两种函数间调用的方法，其中 send_inline 方法�
 ## 静态函数
 
 ### send_inline
-**向特定帐号发送 inline [action](action.md)**
+**向特定帐号发送 inline [action](./action.md)**
 
 ```
 static trans.send_inline(String account,
@@ -15,10 +15,10 @@ static trans.send_inline(String account,
 
 调用参数:
 
-- account: String, [action](action.md) 发送者的帐号名称
-- name: String, [action](action.md) 名称
-- args: Object, [action](action.md) 附带的数据
-- authorization: Array, [action](action.md) 的权限
+- account: String, [action](./action.md) 发送者的帐号名称
+- name: String, [action](./action.md) 名称
+- args: Object, [action](./action.md) 附带的数据
+- authorization: Array, [action](./action.md) 的权限
 
 **实例**
 
@@ -49,7 +49,7 @@ exports.hi2 = (user, friend) => {
 
 --------------------------
 ### send_context_free_inline
-**向特定帐号发送 context_free inline [action](action.md)**
+**向特定帐号发送 context_free inline [action](./action.md)**
 
 ```
 static trans.send_context_free_inline(String account,
@@ -59,9 +59,9 @@ static trans.send_context_free_inline(String account,
 
 调用参数:
 
-- account: String, [action](action.md) 发送者的帐号名称
-- name: String, [action](action.md) 名称
-- args: Object, [action](action.md) 附带的数据
+- account: String, [action](./action.md) 发送者的帐号名称
+- name: String, [action](./action.md) 名称
+- args: Object, [action](./action.md) 附带的数据
 
 **实例**
 
