@@ -24,11 +24,11 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 根 BP 连接信息: 
 
 ```
-IP : "103.80.170.236"
+IP : "http://testnet.fibos.fo"
 chainID : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 ```
 
-支持 FIBOS TestNet 账户注册: <http://103.80.170.236/>
+支持 FIBOS TestNet 账户注册: <http://testnet.fibos.fo/>
 
 (默认账户送 10 EOS 通证)
 
@@ -37,8 +37,8 @@ chainID : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 
 | BP Name  | BP IP  | HTTP port | P2P port |
 |:-------------: |:---------------:| :-------------:| :-------------:|
-| gulou      | 103.80.170.236 |       8870 | 9870 |
-| xuanwu      | 103.80.170.237 |       8870 | 9870 |
+| gulou      | <http://testnet.fibos.fo> |       8870 | 9870 |
+| xuanwu      | <http://testnet2.fibos.fo> |       8870 | 9870 |
 
 ## 如何在 FIBOS TestNet 上进行测试？
 
@@ -59,7 +59,7 @@ function initClient(_keyProvider) {
 	return FIBOS({
 		chainId: "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 		keyProvider: _keyProvider,
-		httpEndpoint: "http://103.80.170.236:8870",
+		httpEndpoint: "http://testnet.fibos.fo:8870",
 		logger: {
 			log: null,
 			error: null
