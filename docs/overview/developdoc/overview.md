@@ -4,7 +4,7 @@
 
 ## 新手指引
 
-* 假如您还是一个 FIBOS 初学者。建议您可以先通过阅读：
+* 假如您还是一个 FIBOS 初学者。建议您可以先通过阅读：
 
   [FIBOS 是什么](../../document/start/about.md) — 了解 FIBOS 的基本知识以及为什么创造 FIBOS。
 
