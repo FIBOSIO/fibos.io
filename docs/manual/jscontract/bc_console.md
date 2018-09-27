@@ -1,12 +1,12 @@
 # 模块 bc_console
-[console](console.md) 对象
+[console](../module/ifs/console.md) 对象
 
 控制台访问对象
 
 全局对象。可用于提示信息，警告和错误记录。通过启动配置文件，可将日志定位到不同的设备，以便于跟踪。
 
 ## 静态函数
-        
+
 ### log
 **记录普通日志信息，与 info 等同**
 
@@ -365,7 +365,7 @@ static bc_console.assert(Value value,
 * msg: String, 报错信息
 
 ## 常量
-        
+
 ### FATAL
 **loglevel 级别常量**
 
