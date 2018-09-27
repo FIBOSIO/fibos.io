@@ -7,6 +7,7 @@
 - [如何在 FIBOS 中发行和销毁通证](./howtocreatetokeninfibos.md)
 - [如何在 FIBOS 中进行智能通证之间的互兑](./howtoexchangetokeninfibos.md)
 - [如何使用 FIBOS 合约子钱包](./howtousecontractaccount.md)
+- [如何使用 FIBOS 的锁仓和解锁功能](./howtouselock.md)
 
 
 
