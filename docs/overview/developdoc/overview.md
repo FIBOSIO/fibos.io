@@ -4,11 +4,11 @@
 
 ## 新手指引
 
-* 假如您还是一个 FIBOS 小白。建议您可以先通过阅读：
+* 假如您还是一个 FIBOS 初学者。建议您可以先通过阅读：
 
   [FIBOS 是什么](../../document/start/about.md) — 了解 FIBOS 的基本知识以及为什么创造 FIBOS。
 
-  [FIBOS 主网信息](../../document/basic/fibosmainnet.md) —了解 FIBOS 的主网的配置信息。
+  [FIBOS 主网信息](../../document/basic/fibosmainnet.md) — 了解 FIBOS 的主网的配置信息。
 
 ## 快速入门
 
@@ -42,7 +42,7 @@
 
 * 如果您想对 FIBOS 有更深一步的了解和认识，可以阅读 `节点建设` 和 `深入理解` 专栏。
 
-* `节点建设 `  专栏：
+* `节点建设 ` 专栏：
 
   [FIBOS TestNet 是什么](../../document/construction/abouttestnet.md) — 介绍 TestNet ，以及如何在 FIBOS TestNet 上进行测试。
 
@@ -52,7 +52,7 @@
 
   [FIBOS RPC 以及 P2P 列表(持续更新)](../../document/construction/bp.md) — 介绍FIBOS RPC 以及 P2P 列表。
 
-* `深入理解 `  专栏：
+* `深入理解 ` 专栏：
 
   [详解 FIBOS 权限系统 ](../../document/depth/fibosauth.md)  — 理解 FIBOS 的权限系统，能够在实际业务开发中合理的配置、管理账户权限。
 
