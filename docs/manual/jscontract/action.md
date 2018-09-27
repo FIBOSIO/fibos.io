@@ -1,9 +1,7 @@
 # 模块 action
-action 对象
+**静态属性** action 模块中有一些静态属性如 name、account、receiver 等，用户可以调用 `action.name` 去获取该 action 的名称，也可以通过类似的方法去获取其余的静态属性。
 
-**静态属性** 它有一些静态属性，name、account、receiver、publication_time 以及 authorization。用户可以调用 `action.name` 去获取该 action 的名称，也可以通过类似的方法去获取它其余的静态属性。
-
-**静态函数** action 模块中还提供了许多静态函数方法，比如 is_account 方法来判断该账号是否存在等等..
+**静态函数** action 模块中还提供了许多静态函数，例如使用 is_account 方法来判断该账号是否存在。
 
  使用方法：在 [fibos](./fibos.md) 的 js 合约中使用
 

@@ -1,9 +1,9 @@
 # 模块 bc_DB
 DB 模块可以在 js 合约中直接使用，无需引用， DB 模块中提供了两种对象。
 
-**DBIterator 对象** 当查询返回的每条数据都是一个新的 DBIterator 对象。DBIterator 对象中提供了判读是否为首数据、是否为尾数据、获取前一个数据、删除数据、修改数据等方法。
+**DBIterator 对象** 查询当前数据，返回所有数据对象，每个数据是一个新的 DBIterator 对象。DBIterator 对象中提供了判读是否为首数据、是否为尾数据、获取前一个数据、删除数据、修改数据等方法。
 
-**Table 对象** 通过 `var table = db.table(scope,code)` 来获取某个数据表，Table 对象有一些成员属性，包括 name、scope、code等，提供了新增数据、查询数据方法、以及返回数据的封装，并支持多索引。
+**Table 对象** 通过 `var table = db.table(scope,code)` 来获取某个Table，Table 对象有一些成员属性，包括 name、scope、code等，提供了新增数据、查询数据方法、以及对返回数据的封装，并支持多索引。
 
 ## DBIterator 对象
 ```dot
