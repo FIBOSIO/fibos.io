@@ -19,7 +19,7 @@ chainId : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 ```
 3. 区块数据同步的目标节点信息
 
-目前 TestNet 节点信息，请查阅下面的节点列表, <testnet.fibos.fo:9870> 是网络根 BP 节点网络信息。
+目前 TestNet 节点信息，请查阅下面的节点列表, `testnet.fibos.fo:9870` 是网络根 BP 节点网络信息。
 
 ```
 "p2p-peer-address" : "testnet.fibos.fo:9870"
