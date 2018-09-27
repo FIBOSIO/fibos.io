@@ -19,10 +19,10 @@ chainId : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 ```
 3. 区块数据同步的目标节点信息
 
-目前 TestNet 节点信息，请查阅下面的节点列表, `103.80.170.236:9870` 是网络根 BP 节点网络信息。
+目前 TestNet 节点信息，请查阅下面的节点列表, <testnet.fibos.fo:9870> 是网络根 BP 节点网络信息。
 
 ```
-"p2p-peer-address" : "103.80.170.236:9870"
+"p2p-peer-address" : "testnet.fibos.fo:9870"
 ```
 
 - 本章涉及到文章列表：
@@ -37,6 +37,36 @@ testNet
 ```
 
 - 本章示例代码地址：https://github.com/FIBOSIO/samples
+- `genesis.json` 文件：
+
+```json
+{
+    "initial_timestamp": "2018-08-01T00:00:00.000",
+    "initial_key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "initial_configuration": {
+        "max_block_net_usage": 1048576,
+        "target_block_net_usage_pct": 1000,
+        "max_transaction_net_usage": 524288,
+        "base_per_transaction_net_usage": 12,
+        "net_usage_leeway": 500,
+        "context_free_discount_net_usage_num": 20,
+        "context_free_discount_net_usage_den": 100,
+        "max_block_cpu_usage": 200000,
+        "target_block_cpu_usage_pct": 1000,
+        "max_transaction_cpu_usage": 150000,
+        "min_transaction_cpu_usage": 100,
+        "max_transaction_lifetime": 3600,
+        "deferred_trx_expiration_window": 600,
+        "max_transaction_delay": 3888000,
+        "max_inline_action_size": 4096,
+        "max_inline_action_depth": 4,
+        "max_authority_depth": 6
+    },
+    "initial_chain_id": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
+}
+```
+
+
 
 ## 如何成为一个 FIBOS 同步节点
 
@@ -57,7 +87,7 @@ fibos.load("http", {
 
 fibos.load("net", {
 	"p2p-listen-endpoint": "0.0.0.0:9870",
-	"p2p-peer-address": ["103.80.170.236:9870"]
+	"p2p-peer-address": ["testnet.fibos.fo:9870"]
 });
 
 fibos.load("producer");
@@ -124,7 +154,7 @@ fibos.load("http", {
 
 fibos.load("net", {
 	"p2p-listen-endpoint": "0.0.0.0:9870",
-	"p2p-peer-address": "103.80.170.236:9870"
+	"p2p-peer-address": "testnet.fibos.fo:9870"
 });
 
 fibos.load("producer", {
