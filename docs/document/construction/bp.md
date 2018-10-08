@@ -14,8 +14,8 @@ FIBOS 主网部分 RPC  http 地址如下所示:
 | 新加坡   | http://fibos.smr123.com       |
 
 FIBOS 主网部分 RPC  https 地址如下所示:
-| 位置     | RPC 地址 (https)               |
-| -------- | ------------------------------ |
+| 位置     | RPC 地址 (http)               |
+| -------- | ----------------------------- |
 | 东京     | https://api.fibos.me           |
 | 香港     | https://rpc-mainnet.fibscan.io |
 | 俄勒冈州 | https://api.bitze.site         |
