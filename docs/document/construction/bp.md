@@ -15,7 +15,7 @@ FIBOS 主网部分 RPC  http 地址如下所示:
 
 FIBOS 主网部分 RPC  https 地址如下所示:
 
-| 位置     | RPC 地址 (http)               |
+| 位置     | RPC 地址 (https)               |
 | -------- | ----------------------------- |
 | 东京     | https://api.fibos.me           |
 | 香港     | https://rpc-mainnet.fibscan.io |
