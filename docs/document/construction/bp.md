@@ -2,27 +2,36 @@
 
 ## FIBOS RPC 列表
 
-FIBOS 主网部分 RPC 地址如下所示:
+FIBOS 主网部分 RPC  http 地址如下所示:
 
-| 位置     | RPC 地址                    |
-| -------- | --------------------------- |
-| 新加坡   | http://se-rpc.fibos.io:8870 |
-| 首尔     | http://sl-rpc.fibos.io:8870 |
-| 东京     | http://to-rpc.fibos.io:8870 |
-| 加拿大   | http://ca-rpc.fibos.io:8870 |
-| 伦敦     | http://ln-rpc.fibos.io:8870 |
-| 弗吉尼亚 | http://va-rpc.fibos.io:8870 |
+| 位置     | RPC 地址 (http)               |
+| -------- | ----------------------------- |
+| 东京     | http://api.fibos.me           |
+| 香港     | http://rpc-mainnet.fibscan.io |
+| 俄勒冈州 | http://api.bitze.site         |
+| 旧金山   | http://api.fibos.icu          |
+| 伦敦     | http://api.fibosutility.com   |
+| 新加坡   | http://fibos.smr123.com       |
 
+FIBOS 主网部分 RPC  https 地址如下所示:
+| 位置     | RPC 地址 (https)               |
+| -------- | ------------------------------ |
+| 东京     | https://api.fibos.me           |
+| 香港     | https://rpc-mainnet.fibscan.io |
+| 俄勒冈州 | https://api.bitze.site         |
+| 旧金山   | https://api.fibos.icu          |
+| 伦敦     | https://api.fibosutility.com   |
+| 新加坡   | https://fibos.smr123.com       |
 
-## FIBOS P2P 列表
+##  P2P 列表
 
 FIBOS 主网部分 P2P 地址如下所示:
 
 | 位置     | P2P 地址                    |
 | -------- | --------------------------- |
-| 新加坡   | se-p2p.fibos.io:9870 |
-| 首尔     | sl-p2p.fibos.io:9870 |
-| 东京     | to-p2p.fibos.io:9870 |
-| 加拿大   | ca-p2p.fibos.io:9870 |
-| 伦敦     | ln-p2p.fibos.io:9870 |
-| 弗吉尼亚 | va-p2p.fibos.io:9870 |
+| 东京 | p2p.mainnet.fibos.me:80 |
+| 香港   | seed-mainnet.fibscan.io:9103 |
+| 俄勒冈州 | seed.bitze.site:9870         |
+| 旧金山 | seed.fibos.icu:9870 |
+| 伦敦     | p2p.fibosutility.com:9870 |
+| 新加坡 | fibos.smr123.com:7890 |

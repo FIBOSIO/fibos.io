@@ -1,1 +1,0 @@
-- [FIBOS 主网信息](./fibosmainnet.md)

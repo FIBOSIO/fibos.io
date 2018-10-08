@@ -8,7 +8,7 @@
 
   [FIBOS 是什么](../../document/start/about.md) — 了解 FIBOS 的基本知识以及为什么创造 FIBOS。
 
-  [FIBOS 主网信息](../../document/basic/fibosmainnet.md) — 了解 FIBOS 的主网的配置信息。
+  [FIBOS 主网信息](../../document/start/fibosmainnet.md) — 了解 FIBOS 的主网的配置信息。
 
 ## 快速入门
 

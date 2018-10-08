@@ -37,7 +37,9 @@ action 部分的作用是声明智能合约有哪些可以调用的 action。如
 }]
 ```
 
-其中每一项的 `name` 就是 action 的名字，`type` 用来在 `structs` 中查找数据结构。
+其中每一项的 `name` 就是 action 的名字，`type` 用来在 `structs` 中查找数据结构，`ricardian_contract ` 是李嘉图合约。
+
+李嘉图合约是一种特殊的结构化文本，主要用作交易中明确双方的意图。在 FIBOS 上，你所发送的每一条action，都是可以附加上合约。这种合约很特殊，有着固定的格式，既能够被程序读取，也能为人类阅读。这一合约，就叫做李嘉图合约。
 
 ### tables
 
@@ -61,11 +63,36 @@ action 部分的作用是声明智能合约有哪些可以调用的 action。如
 
 ```json
 "structs":  [{
-    "name": "hi",
+    "name": "shape",
     "base": "",
     "fields": [{
-        "name": "nickname",
-        "type": "my_account_name"
+        "name": "area",
+        "type": "flout64"
+    }]
+}]
+```
+
+```JSON
+"structs":  [{
+    "name": "colorshape",
+    "base": "shape",
+    "fields": [{
+        "name": "color",
+        "type": "int64"
+    }]
+}]
+```
+通过 `base` 字段继承相当于：
+```JSON
+"structs":  [{
+    "name": "colorshape",
+    "base": "",
+    "fields": [{
+        "name": "area",
+        "type": "flout64"
+    },{
+        "name": "color",
+        "type": "int64"
     }]
 }]
 ```
