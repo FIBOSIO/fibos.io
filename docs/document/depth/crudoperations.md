@@ -129,7 +129,9 @@ CRUD — 查看
 ```javascript
 exports.find = param => {
     var players = db.players(action.account, action.account);
-    console.log(players.find(param))
+    var record_id = 123;
+    var itr = players.find(record_id);
+    console.log('find =>', itr.data);
 };
 ```
 
@@ -138,17 +140,13 @@ exports.find = param => {
 CRUD — 修改
 
 ```javascript
-exports.update = param {
+exports.update = param => {
     var players = db.players(action.account, action.account);
-    players.update(
-        123, 
-        action.account, 
-      { 
-        title: "cto", 
-        age:23, 
-        id:123 
-      }
-    );
+    var record_id = 123; 
+    var itr = players.find(record_id);
+    itr.data.title = 'cto';
+    itr.data.age = 23;
+    itr.update(action.account);
 };
 ```
 
@@ -157,10 +155,11 @@ exports.update = param {
 CRUD — 删除
 
 ```javascript
-exports.remove => param {
+exports.remove = param => {
     var players = db.players(action.account, action.account);
     var record_id = 123;
-    players.remove(record_id);
+    var itr = players.find(record_id); 
+    itr.remove();
 };
 ```
 

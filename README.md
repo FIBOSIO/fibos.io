@@ -8,7 +8,7 @@
 
 ### Fork 项目
 
-将 fibos.io 项目 fork 到你的仓库中，项目地址: [https://github.com/FIBOSIO/fibos.js](https://github.com/FIBOSIO/fibos.js)
+将 fibos.io 项目 fork 到你的仓库中，项目地址: [https://github.com/FIBOSIO/fibos.io](https://github.com/FIBOSIO/fibos.io)
 
 ### 拉取本地仓库代码
 
