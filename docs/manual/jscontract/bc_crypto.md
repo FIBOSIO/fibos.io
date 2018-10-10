@@ -1,14 +1,12 @@
 # 模块 bc_crypto
-bc_crypto 模块
-
 加密算法模块
 
-bc_crypto 是 FIBOS 中的加密模块，支持 SHA1 、SHA256 、SHA 512等加密算法，在 js 合约中可以直接使用。
+bc_crypto 模块是 FIBOS 中的加密模块，支持 SHA1 、SHA256 、SHA 512等加密算法，在 js 合约中可以直接使用。
 
 ## 静态函数
-        
+
 ### recover_key
-**从给定的 [hash](hash.md) 和签名中恢复公钥**
+**从给定的 hash 和签名中恢复公钥**
 
 ```JavaScript
 static String bc_crypto.recover_key(String digest,
@@ -16,7 +14,7 @@ static String bc_crypto.recover_key(String digest,
 ```
 
 调用参数:
-* digest: String, 指定消息的 [hash](hash.md) 结果
+* digest: String, 指定消息的 hash 结果
 * signature: String, 指定的签名
 
 返回结果:
@@ -41,10 +39,10 @@ static String bc_crypto.sha1(Buffer data);
 ```
 
 调用参数:
-* data: [Buffer](../../object/ifs/Buffer.md), 创建同时更新的二进制数据
+* data: Buffer, 创建同时更新的二进制数据
 
 返回结果:
-* String, 返回信息摘要结果的 [hex](hex.md) 编码字符串
+* String, 返回信息摘要结果的 hex 编码字符串
 
 实例:
 
@@ -64,10 +62,10 @@ static String bc_crypto.sha256(Buffer data);
 ```
 
 调用参数:
-* data: [Buffer](../../object/ifs/Buffer.md), 创建同时更新的二进制数据
+* data: Buffer, 创建同时更新的二进制数据
 
 返回结果:
-* String, 返回信息摘要结果的 [hex](hex.md) 编码字符串
+* String, 返回信息摘要结果的 hex 编码字符串
 
 实例:
 
@@ -87,10 +85,10 @@ static String bc_crypto.sha512(Buffer data);
 ```
 
 调用参数:
-* data: [Buffer](../../object/ifs/Buffer.md), 创建同时更新的二进制数据
+* data: Buffer, 创建同时更新的二进制数据
 
 返回结果:
-* String, 返回信息摘要结果的 [hex](hex.md) 编码字符串
+* String, 返回信息摘要结果的 hex 编码字符串
 
 实例:
 
@@ -110,10 +108,10 @@ static String bc_crypto.ripemd160(Buffer data);
 ```
 
 调用参数:
-* data: [Buffer](../../object/ifs/Buffer.md), 创建同时更新的二进制数据
+* data:  Buffer, 创建同时更新的二进制数据
 
 返回结果:
-* String, 返回信息摘要结果的 [hex](hex.md) 编码字符串
+* String, 返回信息摘要结果的 hex 编码字符串
 
 实例:
 
