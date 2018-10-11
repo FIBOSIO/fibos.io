@@ -130,7 +130,7 @@ DBIterator.update(String payer);
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
     var data = players.find(v);
-    data.age = 18;
+    data.data.age = 18;
     data.update(action.account);
 }；
 ```
