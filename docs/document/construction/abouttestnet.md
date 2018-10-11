@@ -6,7 +6,7 @@ FIBOS TestNet 是一个通过 FIBOS 节点 P2P 互联的测试链，它可以方
 
   系统：macOS
 
-- 本章涉及的文章列表：
+- 本章示例代码的目录结构：
 
   ```
   testNet
