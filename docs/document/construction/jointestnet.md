@@ -25,7 +25,7 @@ chainId : "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a"
 "p2p-peer-address" : "testnet.fibos.fo:9870"
 ```
 
-- 本章涉及到文章列表：
+- 本章涉及的目录结构列表：
 
 ```
 testNet
