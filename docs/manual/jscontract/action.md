@@ -74,7 +74,7 @@ exports.hi = v => {
 
 --------------------------
 ### has_auth
-**验证 action 是否需要特定账户的授权**
+**验证 action 是否拥有特定账户的授权**
 
 ```JavaScript
 static Boolean action.has_auth(String name);

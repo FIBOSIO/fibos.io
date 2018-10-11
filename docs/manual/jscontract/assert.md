@@ -7,19 +7,6 @@
 var assert = require('assert');
 ```
 
-或者通过 [test](../module/ifs/test.md) 模块引用：
-
-```JavaScript
-var test = require('test');
-var assert = test.assert;
-```
-
-或者通过 [test.setup](../module/ifs/test.md#setup) 配置：
-
-```JavaScript
-require("test").setup();
-```
-
 ## 静态函数
 
 ### Function
