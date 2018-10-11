@@ -33,8 +33,8 @@ Boolean DBIterator.is_begin();
 ```JavaScript
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
-    var data = players.find(v);
-    console.log(data.is_begin());
+    var itr = players.find(v);
+    console.log(itr.is_begin());
 }；
 ```
 
@@ -51,8 +51,8 @@ Boolean DBIterator.is_end();
 ```JavaScript
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
-    var data = players.find(v);
-    console.log(data.is_end());
+    var itr = players.find(v);
+    console.log(itr.is_end());
 }；
 ```
 
@@ -69,9 +69,9 @@ DBIterator DBIterator.next();
 ```JavaScript
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
-    var data = players.find(v);
-    var data1 = data.next();
-    console.log(data1.toJSON());
+    var itr = players.find(v);
+    var itr1 = itr.next();
+    console.log(itr1.toJSON());
 }；
 ```
 
@@ -88,10 +88,10 @@ DBIterator DBIterator.previous();
 ```JavaScript
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
-    var data = players.find(v);
-    var data1 = data.next();
-    var data2 = data1.previous();
-    console.log(data2.toJSON());
+    var itr = players.find(v);
+    var itr1 = itr.next();
+    var itr2 = itr1.previous();
+    console.log(itr2.toJSON());
 }；
 ```
 
@@ -108,8 +108,8 @@ DBIterator.remove();
 ```JavaScript
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
-    var data = players.find(v);
-    data.remove();
+    var itr = players.find(v);
+    itr.remove();
 }；
 ```
 
@@ -129,9 +129,9 @@ DBIterator.update(String payer);
 ```JavaScript
 exports.hi1 = v => {
     var players = db.players(action.account, action.account);
-    var data = players.find(v);
-    data.age = 18;
-    data.update(action.account);
+    var itr = players.find(v);
+    itr.data.age = 18;
+    itr.update(action.account);
 }；
 ```
 
