@@ -46,6 +46,17 @@ let r = ctx.excreateSync(name, "100000000000.0000 ABC",  0, '0.0000 ABC','0.0000
 console.log(r);
 ```
 
+##### 查询发行的通证
+
+```js
+//初始化 fibos 客户端
+...
+let r = fibos.getTableRowsSync(true, 'eosio.token', 'fibostest123', 'stats');
+console.log(r);
+```
+
+通过调用查询通证的方法，可以查询到我们已经发行的通证。
+
 ##### 增发普通通证
 
 ```javascript
