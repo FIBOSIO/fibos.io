@@ -1,1 +1,1 @@
-- [三行代码，让 FIBOS 支持 mangoDB 富查询](./fibosmongodb.md)
+- [三行代码，让 FIBOS 支持 mongoDB 富查询](./fibosmongodb.md)
