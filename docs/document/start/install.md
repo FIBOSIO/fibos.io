@@ -118,9 +118,13 @@ FIBOS 暂时未开源，待开源后提供编译教程!
 ```js
 var fibos = require('fibos');
 
-fibos.load("http");
+fibos.load("http", {
+	"http-server-address": "0.0.0.0:8888"
+});
 fibos.load("chain");
-fibos.load("net");
+fibos.load("net", {
+	"p2p-listen-endpoint": "0.0.0.0:9876"
+});
 fibos.load("chain_api");
 fibos.load("history_api");
 fibos.load("producer", {
