@@ -28,6 +28,7 @@ void token::excreate(
   asset maximum_exchange, // 最大可兑换(流通)的通证数量
   asset reserve_supply, // 未流通通证数量
   asset reserve_connector_balance // 未流通通证保证金数量
+  time_point_sec expiration // 项目方预设的项目锁仓期（可以传时间戳和日期格式，时间戳单位为秒，时间需要大于等于当前时间）
 )
 ```
 
@@ -40,7 +41,7 @@ void token::excreate(
 ...
 let name = "fibostest123";
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.excreateSync(name, "100000000000.0000 ABC",  0, '0.0000 ABC','0.0000 ABC', '0.0000 FO', {
+let r = ctx.excreateSync(name, "100000000000.0000 ABC",  0, '0.0000 ABC','0.0000 ABC', '0.0000 FO',0, {
     authorization: name
 });
 console.log(r);
@@ -79,7 +80,7 @@ console.log(r);
 ...
 let name = "fibostest123";
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.excreateSync(name, "100000000000.0000 AAA",  0.15,'10000000000.0000 AAA', '3000000000.0000 AAA', '90000.0000 FO', {
+let r = ctx.excreateSync(name, "100000000000.0000 AAA",  0.15,'10000000000.0000 AAA', '3000000000.0000 AAA', '90000.0000 FO',1539830655, {
     authorization: name
 });
 console.log(r);
