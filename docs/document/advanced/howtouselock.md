@@ -21,7 +21,8 @@ void token::exlocktrans(
     account_name from, //通证转出方
     account_name to, //通证转入方
     extended_asset quantity, //通证数量
-    time_point_sec expiration, //锁仓期
+    time_point_sec expiration, //待转出锁仓时间
+    time_point_sec expiration_to //待转入锁仓时间
     string memo //附言
 )
 ```
@@ -36,13 +37,13 @@ void token::exlocktrans(
 //初始化 fibos 客户端
 ...
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.exlocktransSync("nmslwsndhjyz", "fibostest123", "10000.0000 ADC@nmslwsndhjyz", 1537960501, "lock transfer to fibostest123", {
+let r = ctx.exlocktransSync("nmslwsndhjyz", "fibostest123", "10000.0000 ADC@nmslwsndhjyz", 1539830655,1539830948, "lock transfer to fibostest123", {
 			authorization: "nmslwsndhjyz"
 		})
 console.notice(r);
 ```
 
-上述代码中 `nmslwsndhjyz` 给用户 `fibostest123` 锁仓转账了 10000.0000 个 ADC 通证。并设置了解锁时间为 1537960501。
+上述代码中 `nmslwsndhjyz` 给用户 `fibostest123` 锁仓转账了 10000.0000 个 ADC 通证。并设置了解锁时间为 1539830948。
 
 ## 解锁
 
@@ -67,7 +68,7 @@ void token::exunlock(
 //初始化 fibos 客户端
 ...
 let ctx = fibos.contractSync("eosio.token");
-let r = ctx.exunlockSync("fibostest123", "100.0000 ADC@nmslwsndhjyz", 1537960501, "unlock 100.0000 ADC", {
+let r = ctx.exunlockSync("fibostest123", "100.0000 ADC@nmslwsndhjyz", 1539830948, "unlock 100.0000 ADC", {
 			authorization: "hujzwsndnmsl"
 		})
 console.notice(r);
